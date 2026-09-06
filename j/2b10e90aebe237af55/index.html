@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex,notranslate">
+<meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>빈도순 일본어 — 한자 · 문형 · 문법 · 활용 · 품사 · 구어체</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=20260907-elsewhere">
+<script>
+/* 화면 배율을 그리기 전에 먼저 건다. 여기서 안 걸면 100% 로 한 번 그렸다가 튄다. */
+(function(){
+  var d=document.documentElement, ZS=[1,1.25,1.5,1.75], z=1.5;
+  try{ var v=parseFloat(localStorage.getItem('jpstudy:zoom')); if(ZS.indexOf(v)>-1) z=v; }catch(e){}
+  d.style.setProperty('--zoom',z);
+  window.__zoomSteps=ZS; window.__zoom=z;
+  /* 배율이 걸리면 미디어 쿼리가 보는 폭과 눈에 보이는 폭이 어긋나므로 분기를 여기서 건다 */
+  window.__brk=function(){
+    var zz=parseFloat(d.style.getPropertyValue('--zoom'))||1, w=window.innerWidth/zz;
+    [1400,1180,1000,560].forEach(function(n){ d.classList.toggle('w'+n, w<=n); });
+  };
+  window.__brk();
+})();
+</script>
+</head>
+<body>
+<div class="layout">
+
+  <aside class="side">
+    <div class="side-top">
+      <div class="brand">JAPANESE</div>
+      <a class="brand-t" href="#">빈도순 한자 · JLPT 문형 · 문법 · 활용 · 품사 · 구어체</a>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-h">학습 모드</div>
+      <div class="tabs">
+        <button class="tab on" data-v="study"><span class="tab-ic">📚</span>학습 카드 <span id="cntStudy">—</span></button>
+        <button class="tab" data-v="pat"><span class="tab-ic">📖</span>문형 사전 <span id="cntPat">—</span></button>
+        <button class="tab" data-v="gram"><span class="tab-ic">📐</span>문법 <span id="cntGram">—</span></button>
+        <button class="tab" data-v="conj"><span class="tab-ic">🧮</span>활용표 <span id="cntConj">—</span></button>
+        <button class="tab" data-v="pos"><span class="tab-ic">🧩</span>품사 사전 <span id="cntPos">—</span></button>
+        <button class="tab" data-v="spoken"><span class="tab-ic">🗣</span>구어체 <span id="cntSpoken">—</span></button>
+        <button class="tab" data-v="expr"><span class="tab-ic">💬</span>표현·관용구 <span id="cntExpr">—</span></button>
+        <button class="fltToggle" id="fltToggle">☰ 필터</button>
+      </div>
+
+      <div class="nav-h">검색·필터</div>
+
+      <!-- study toolbar -->
+      <div class="toolbar" id="tbStudy">
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="qStudy" type="search" placeholder="한자·뜻·읽기·예문  ( / )" autocomplete="off">
+        </div>
+        <div class="chips lvchips" id="lvChips">
+          <button class="chip on" data-l="all">N 전체</button>
+          <button class="chip lv5" data-l="5">N5</button>
+          <button class="chip lv4" data-l="4">N4</button>
+          <button class="chip lv3" data-l="3">N3</button>
+          <button class="chip lv2" data-l="2">N2</button>
+          <button class="chip lv1" data-l="1">N1</button>
+        </div>
+        <button class="furi" data-furi>ふりがな ON</button>
+      </div>
+
+      <!-- pattern toolbar -->
+      <div class="toolbar hidden" id="tbPat">
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="qPat" type="search" placeholder="문형·의미  ( / )" autocomplete="off">
+        </div>
+        <div class="chips lvchips" id="patLv">
+          <button class="chip on" data-l="all">N 전체</button>
+          <button class="chip lv5" data-l="5">N5</button>
+          <button class="chip lv4" data-l="4">N4</button>
+          <button class="chip lv3" data-l="3">N3</button>
+          <button class="chip lv2" data-l="2">N2</button>
+          <button class="chip lv1" data-l="1">N1</button>
+        </div>
+        <select id="patCat"><option value="all">의미 분류: 전체</option></select>
+        <button class="furi" data-furi>ふりがな ON</button>
+      </div>
+
+      <!-- grammar toolbar -->
+      <div class="toolbar hidden" id="tbGram">
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="qGram" type="search" placeholder="문법  ( / )" autocomplete="off">
+        </div>
+        <div class="chips" id="gramCh"></div>
+        <div class="chips lvchips" id="gramLv">
+          <button class="chip on" data-l="all">N 전체</button>
+          <button class="chip lv5" data-l="5">N5</button>
+          <button class="chip lv4" data-l="4">N4</button>
+          <button class="chip lv3" data-l="3">N3</button>
+          <button class="chip lv2" data-l="2">N2</button>
+          <button class="chip lv1" data-l="1">N1</button>
+        </div>
+        <button class="furi" data-furi>ふりがな ON</button>
+      </div>
+
+      <!-- conjugation toolbar -->
+      <div class="toolbar hidden" id="tbConj">
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="qConj" type="search" placeholder="활용형·규칙  ( / )" autocomplete="off">
+        </div>
+        <div class="chips" id="conjG"></div>
+        <button class="furi" data-furi>ふりがな ON</button>
+      </div>
+
+      <!-- part-of-speech toolbar -->
+      <div class="toolbar hidden" id="tbPos">
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="qPos" type="search" placeholder="조사·부사·동사·형용사·낱말  ( / )" autocomplete="off">
+        </div>
+        <div class="chips segChips" id="posView">
+          <button class="chip on" data-m="group">묶음 보기</button>
+          <button class="chip" data-m="word">낱말 보기</button>
+        </div>
+        <div class="chips" id="posP"></div>
+        <button class="furi" data-furi>ふりがな ON</button>
+      </div>
+
+      <!-- spoken toolbar -->
+      <div class="toolbar hidden" id="tbSpoken">
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="qSpoken" type="search" placeholder="축약·종조사·유행어  ( / )" autocomplete="off">
+        </div>
+        <div class="chips" id="spokenSec"></div>
+        <button class="furi" data-furi>ふりがな ON</button>
+      </div>
+
+      <!-- expression toolbar -->
+      <div class="toolbar hidden" id="tbExpr">
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="qExpr" type="search" placeholder="표현·뜻  ( / )" autocomplete="off">
+        </div>
+        <div class="chips" id="exprCat">
+          <button class="chip on" data-c="all">전체</button>
+          <button class="chip" data-c="aizuchi">아이즈치</button>
+          <button class="chip" data-c="kimari">상용구·정형구</button>
+          <button class="chip" data-c="spoken">구어 표현</button>
+          <button class="chip" data-c="kanyou">관용구·숙어</button>
+        </div>
+        <button class="furi" data-furi>ふりがな ON</button>
+      </div>
+
+      <div id="sidePagerSlot" aria-label="학습 카드 페이지 이동"></div>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="top">
+      <button class="tbtn tocopen" id="navbtn">목차</button>
+      <div class="crumb" id="crumb"><b>빈도순 일본어</b> · 학습 카드</div>
+      <div class="gs">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="qAll" type="search" placeholder="전체 검색 — 한자·문형·문법·품사·구어체  (Ctrl+K)" autocomplete="off" aria-label="전체 검색">
+        <div class="gsPanel" id="gsPanel" hidden role="listbox"></div>
+      </div>
+      <span class="kbdhint"><kbd>1</kbd>–<kbd>7</kbd> 모드</span>
+      <button type="button" class="zoom" id="zoomBtn" title="화면 배율 — 100 → 125 → 150 → 175%">150%</button>
+      <div class="rd">
+        <button class="tbtn" id="rdbtn" aria-expanded="false">읽기 설정</button>
+        <div class="rdpop" id="rdpop" hidden>
+          <div class="rdrow"><span>글자 크기</span>
+            <div class="seg" data-seg="fs">
+              <button data-v="0">작게</button><button data-v="1">기본</button><button data-v="2">크게</button><button data-v="3">더 크게</button>
+            </div>
+          </div>
+          <div class="rdrow"><span>줄 간격</span>
+            <div class="seg" data-seg="lh"><button data-v="0">보통</button><button data-v="1">넓게</button></div>
+          </div>
+          <div class="rdrow"><span>고대비</span>
+            <div class="seg" data-seg="hc"><button data-v="0">끄기</button><button data-v="1">켜기</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page" id="main">
+      <header class="hero">
+        <div class="page-ic">📚</div>
+        <p class="eyebrow">Frequency-ranked Kanji · JLPT N5–N1</p>
+        <h1>빈도순 일본어</h1>
+        <p>신문 코퍼스 빈도순 한자와 JLPT 문형·문법을, 표로만 읽히는 <b>활용표</b>와 교과서에 안 나오는 <b>구어체 규칙</b>까지 한 화면에서 오간다. 예문은 모두 후리가나를 달았고, 표제어가 걸린 자리에는 밑줄이 붙는다.</p>
+        <div class="props" id="props"></div>
+      </header>
+
+      <hr class="divider">
+
+      <div class="note" id="noteStudy"><b>빈도순 2,600자 + 🍽식재료 47자</b>를 학습 카드로 제공합니다. 예문 속 <b>파란 표시</b>는 해당 한자, <span class="u">밑줄</span>은 그 한자가 쓰인 낱말입니다. N레벨 필터를 켜면 해당 수준의 상세 예문만 볼 수 있습니다.</div>
+      <div class="note hidden" id="notePat">JLPT 문형을 <b>의미 분류 → 세부 클러스터</b> 순으로 묶어 정리했습니다. 뜻이 겹치는 문형이 한자리에 모이므로, 비슷한 것끼리 대조하며 외울 수 있습니다.</div>
+      <div class="note hidden" id="noteGram"><b>기초·JLPT 문법 588항목</b>을 N5부터 N1까지 정리했습니다. 활용을 설명하는 항목에는 <b>활용표로 건너뛰는 배지</b>가 붙고, 관련 문형 배지를 누르면 문형 사전으로 이동합니다.</div>
+      <div class="note hidden" id="noteConj"><b>활용표</b> — 문법 설명은 산문이지만, 동사 3그룹·て형 음편·조건 4형·경어 대응·조수사는 표로 대조해야 외워집니다. 규칙이 눈으로 맞춰지는 항목만 골라 표로 세웠습니다.</div>
+      <div class="note hidden" id="notePos"><b>품사 사전</b> — 두 층으로 봅니다. <b>묶음 보기</b>는 조사 · 동사 · 명사 · 부사 · 의성의태어 · 감탄사 · 형용사 · 수사 · 접속사 · 연체사 · 접두접미사를 기능별로 묶은 표입니다. 반대말끼리, 같은 자리끼리 붙여 두어 대조하며 외웁니다. <b>낱말 보기</b>는 낱말 하나에 카드 하나로, <b>읽기 · 뜻 · 예문 · 쓰임 메모</b>가 붙습니다. 품사 필터는 두 보기에 함께 걸립니다.</div>
+      <div class="note hidden" id="noteSpoken"><b>구어체</b> — 표현 낱개가 아니라 <b>규칙</b>입니다. 축약이 어떻게 만들어지는지, 종조사가 무엇을 바꾸는지, 어느 자리에서 반말로 내려가는지를 정식형 → 구어형 변환표로 정리했습니다.</div>
+      <div class="note hidden" id="noteExpr"><b>표현·관용구</b> — 아이즈치(相槌) · 상용구·정형구(決まり文句) · 구어 표현(口語表現) · 관용구·숙어(慣用句) 네 갈래입니다. 분류별 개수는 각 묶음 머리에, 전체 개수는 목록 위 회색 줄에 있습니다. 예문 속 <span class="u">밑줄</span>은 해당 표현이 쓰인 자리입니다.</div>
+
+      <div class="count" id="cnt"></div>
+
+      <div class="pager hidden" id="pagerTop">
+        <button class="pgBtn" data-a="prev">◀ 이전</button>
+        <span class="pgInfo"></span>
+        <button class="pgBtn" data-a="next">다음 ▶</button>
+        <span class="pgJump"><span class="pgJumpLabel">순위로 바로 이동</span><input class="pgRank" type="number" min="1" placeholder="예: 500"><button class="pgBtn" data-a="go">이동</button></span>
+      </div>
+
+      <div id="view-study"></div>
+
+      <div class="pager hidden" id="pagerBot">
+        <button class="pgBtn" data-a="prev">◀ 이전</button>
+        <span class="pgInfo"></span>
+        <button class="pgBtn" data-a="next">다음 ▶</button>
+        <span class="pgJump"><span class="pgJumpLabel">순위로 바로 이동</span><input class="pgRank" type="number" min="1" placeholder="예: 500"><button class="pgBtn" data-a="go">이동</button></span>
+      </div>
+
+      <div id="view-pat" class="hidden"></div>
+      <div id="view-gram" class="hidden"></div>
+      <div id="view-conj" class="hidden"></div>
+      <div id="view-pos" class="hidden"></div>
+      <div id="view-spoken" class="hidden"></div>
+      <div id="view-expr" class="hidden"></div>
+    </div>
+
+    <footer>
+      일상 빈도: 신문 코퍼스 빈도 랭킹(KANJIDIC2) · 문형: JLPT 문형 의미별 총정리 연동<br>
+      빈도순 한자 학습 카드 · JLPT N5~N1 문형 · 문법 · 활용표 · 품사 사전 · 구어체 · 표현
+    </footer>
+  </main>
+</div>
+
+<button id="toTop" aria-label="맨 위로">↑</button>
+
+<script src="data/kanji-list.js?v=20260907-elsewhere"></script>
+<script src="data/kanji-cards.js?v=20260907-elsewhere"></script>
+<script src="data/patterns.js?v=20260907-elsewhere"></script>
+<script src="data/grammar.js?v=20260907-elsewhere"></script>
+<script src="data/expressions.js?v=20260907-elsewhere"></script>
+<script src="data/conjugation.js?v=20260907-elsewhere"></script>
+<script src="data/colloquial.js?v=20260907-elsewhere"></script>
+<script src="data/colloquial-2.js?v=20260907-elsewhere"></script>
+<script src="data/pos-josa.js?v=20260907-elsewhere"></script>
+<script src="data/pos-fukushi.js?v=20260907-elsewhere"></script>
+<script src="data/pos-other.js?v=20260907-elsewhere"></script>
+<script src="data/pos-verb.js?v=20260907-elsewhere"></script>
+<script src="data/pos-noun.js?v=20260907-elsewhere"></script>
+<script src="data/pos-words.js?v=20260907-elsewhere"></script>
+<script src="js/app.js?v=20260907-elsewhere"></script>
+<script src="js/ui.js?v=20260907-elsewhere"></script>
+</body>
+</html>
