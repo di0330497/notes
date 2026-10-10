@@ -184,8 +184,8 @@ function cardHTML(e,rank,rankLabel){
          +(m?' — 문장 속 표현 '+fmt(m[1]):"")+'</span></div>'
     });
   }).join("");
-  const onTip = e.on ? '<div class="uCue" style="margin-top:8px;"><span class="uLabel">💡 음독 팁</span><span>'+esc(e.k)+'은(는) 한자 단독으로는 읽히지 않고, 다른 한자와 합쳐서 "'+esc(e.on)+'"으로 읽혀요. <b>漢字|한자</b>를 생각하면 돼요.</span></div>' : '';
-  const kunTip = e.kun ? '<div class="uCue" style="margin-top:8px;"><span class="uLabel">💡 훈독 팁</span><span>'+esc(e.k)+'은(는) 히라가나와 함께 "'+esc(e.kun)+'"으로 읽혀요. <b>固有語|고유어</b>를 생각하면 돼요.</span></div>' : '';
+  const onTip = e.on ? '<div class="uCue" style="margin-top:8px;"><span class="uLabel">💡 음독 팁</span><span>'+esc(e.k)+'은(는) 혼자서는 안 읽히고 다른 한자와 합쳐진 낱말에서 "'+esc(e.on)+'"처럼 중국에서 온 음으로 읽어요.</span></div>' : '';
+  const kunTip = e.kun ? '<div class="uCue" style="margin-top:8px;"><span class="uLabel">💡 훈독 팁</span><span>'+esc(e.k)+'은(는) 일본 고유어 낱말에서 "'+esc(e.kun)+'"처럼 홀로 읽어요.</span></div>' : '';
   return '<div class="card" data-r="'+rank+'"><div class="kanjiCol">'
     +'<span class="rank">'+(rankLabel||('#'+rank))+'</span><div class="bigK">'+esc(e.k)+'</div>'
     +'<div class="hun">'+esc(e.hun)+'</div>'+kor+'</div>'
@@ -240,6 +240,7 @@ function paintStudy(scroll){
   const end=Math.min(studyPage+PAGE,studyItems.length);
   $("#view-study").innerHTML=studyItems.slice(studyPage,end).map(x=>x.html).join("");
   setPager(end);
+  updateProgress();
   if(scroll)window.scrollTo({top:0});
 }
 function setPager(end){
@@ -804,6 +805,9 @@ function gsMove(d){
 const VIEWS=GS_ORDER;
 const TBID={study:"tbStudy",pat:"tbPat",gram:"tbGram",conj:"tbConj",pos:"tbPos",spoken:"tbSpoken",expr:"tbExpr"};
 const NOTEID={study:"noteStudy",pat:"notePat",gram:"noteGram",conj:"noteConj",pos:"notePos",spoken:"noteSpoken",expr:"noteExpr"};
+/* ELI5 요약 노드 ID — 각 학습 모드의 "💡 한 줄 요약" */
+const ELI5ID={study:"eli5Study",pat:"eli5Pat",gram:"eli5Gram",conj:"eli5Conj",pos:"eli5Pos",spoken:"eli5Spoken",expr:"eli5Expr"};
+let eli5Visible=true;
 const RENDER={study:renderStudy,pat:renderPat,gram:renderGrammar,conj:renderConj,
               pos:renderPos,spoken:renderSpoken,expr:renderExpr};
 function switchView(v){
@@ -813,9 +817,12 @@ function switchView(v){
     $("#view-"+x).classList.toggle("hidden",x!==v);
     const tb=$("#"+TBID[x]);if(tb)tb.classList.toggle("hidden",x!==v);
     const nt=$("#"+NOTEID[x]);if(nt)nt.classList.toggle("hidden",x!==v);
+    const el5=$("#"+ELI5ID[x]);
+    if(el5)el5.classList.toggle("hidden",x!==v||!eli5Visible);
   });
   $$(".pager").forEach(p=>{if(v!=="study")p.classList.add("hidden");});
   RENDER[v]();
+  updateProgress();
   window.scrollTo({top:0});
 }
 $$(".tab").forEach(t=>t.onclick=()=>switchView(t.dataset.v));
@@ -912,14 +919,13 @@ renderStudy();
 /* ══════════ ELI5 + UI/UX 개선 ══════════ */
 
 /* ELI5 노트 토글 — 각 모드의 "💡 한 줄 요약"을 접고 펼 수 있다 */
-const ELI5ID={study:"eli5Study",pat:"eli5Pat",gram:"eli5Gram",conj:"eli5Conj",
-  pos:"eli5Pos",spoken:"eli5Spoken",expr:"eli5Expr"};
-let eli5Visible=true;
 function toggleEli5(){
   eli5Visible=!eli5Visible;
-  Object.keys(ELI5ID).forEach(k=>{
-    const el=$("#"+ELI5ID[k]);
-    if(el)el.classList.toggle("hidden",!eli5Visible);
+  const cur=$$(".tab.on")[0];
+  const v=cur?cur.dataset.v:"study";
+  VIEWS.forEach(x=>{
+    const el=$("#"+ELI5ID[x]);
+    if(el)el.classList.toggle("hidden",x!==v||!eli5Visible);
   });
   toast(eli5Visible?"💡 한 줄 요약을 펼쳤어요":"💡 한 줄 요약을 접었어요");
 }
@@ -953,23 +959,21 @@ function toggleTheme(){
 if($("#themeToggle"))$("#themeToggle").addEventListener("click",toggleTheme);
 initTheme();
 
-/* 진행률 바 — 학습 카드 모드에서 스크롤 진행률 */
+/* 진행률 바 — 학습 카드에서 "전체 한자 중 몇 번째까지 왔는지"를 보여 준다.
+   스크롤이 아니라 페이징 기준이라 렌더링·이동 시점에만 갱신하면 된다 */
 function updateProgress(){
-  const bar=$("#progressBar");
-  if(!bar)return;
+  const wrap=$("#progressWrap"),bar=$("#progressBar");
+  if(!wrap||!bar)return;
   const view=$("#view-study");
-  if(view&&!view.classList.contains("hidden")){
-    const scrollTop=window.scrollY;
-    const docHeight=document.documentElement.scrollHeight-window.innerHeight;
-    const pct=docHeight>0?Math.min(100,Math.max(0,(scrollTop/docHeight)*100)):0;
-    bar.style.width=pct.toFixed(1)+"%";
-    bar.parentElement.style.display="block";
-  }else{
-    bar.parentElement.style.display="none";
-  }
+  const isStudy=view&&!view.classList.contains("hidden");
+  if(!isStudy||!studyItems.length){wrap.style.display="none";return;}
+  wrap.style.display="block";
+  const end=Math.min(studyPage+PAGE,studyItems.length);
+  const lastRank=studyItems[end-1].rank;
+  const pct=Math.min(100,(lastRank/ALL.length)*100);
+  bar.style.width=pct.toFixed(1)+"%";
+  bar.title=num(lastRank)+" / "+num(ALL.length)+"자 ("+pct.toFixed(0)+"%)";
 }
-window.addEventListener("scroll",updateProgress,{passive:true});
-window.addEventListener("resize",updateProgress);
 
 /* 토스트 알림 */
 let toastTimer=null;
