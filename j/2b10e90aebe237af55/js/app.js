@@ -216,6 +216,37 @@ function gradeBadge(g){
   return '';
 }
 
+/* ══════════ 북마크 — 학습 카드에 별 표시 ══════════
+   renderStudy() 보다 앞에 둔다. cardHTML 이 이 Set 을 바로 읽기 때문에
+   뒤에 두면 TDZ(초기화 전 접근) 오류로 렌더가 통째로 죽는다. */
+let bookmarks=new Set(JSON.parse(localStorage.getItem("jpstudy:bookmarks")||"[]"));
+function saveBookmarks(){
+  localStorage.setItem("jpstudy:bookmarks",JSON.stringify([...bookmarks]));
+}
+function toggleBookmark(rank){
+  if(bookmarks.has(rank)){
+    bookmarks.delete(rank);
+    toast("북마크를 지웠어요");
+  }else{
+    bookmarks.add(rank);
+    toast("\u2605 북마크에 저장했어요");
+  }
+  saveBookmarks();
+  renderBookmarks();
+}
+function renderBookmarks(){
+  document.querySelectorAll(".bookmark-btn").forEach(btn=>{
+    const r=parseInt(btn.dataset.r,10);
+    btn.classList.toggle("active",bookmarks.has(r));
+  });
+  const cnt=$("#bmCount");
+  if(cnt)cnt.textContent=bookmarks.size;
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".bookmark-btn");
+  if(b){toggleBookmark(parseInt(b.dataset.r,10));return;}
+});
+
 /* ══════════ 학습 카드 ══════════ */
 let fLv="all";
 /* 한자 카드용 ELI5 4단계 — 음독/훈독을 레고 부품 비유로 풀어 설명한다 */
@@ -1192,35 +1223,6 @@ function toast(msg){
   clearTimeout(toastTimer);
   toastTimer=setTimeout(()=>el.classList.remove("show"),2000);
 }
-
-/* 북마크 — 학습 카드에 별 표시. localStorage 에 저장 */
-let bookmarks=new Set(JSON.parse(localStorage.getItem("jpstudy:bookmarks")||"[]"));
-function saveBookmarks(){
-  localStorage.setItem("jpstudy:bookmarks",JSON.stringify([...bookmarks]));
-}
-function toggleBookmark(rank){
-  if(bookmarks.has(rank)){
-    bookmarks.delete(rank);
-    toast("북마크를 지웠어요");
-  }else{
-    bookmarks.add(rank);
-    toast("\u2605 북마크에 저장했어요");
-  }
-  saveBookmarks();
-  renderBookmarks();
-}
-function renderBookmarks(){
-  document.querySelectorAll(".bookmark-btn").forEach(btn=>{
-    const r=parseInt(btn.dataset.r,10);
-    btn.classList.toggle("active",bookmarks.has(r));
-  });
-  const cnt=$("#bmCount");
-  if(cnt)cnt.textContent=bookmarks.size;
-}
-document.addEventListener("click",e=>{
-  const b=e.target.closest(".bookmark-btn");
-  if(b){toggleBookmark(parseInt(b.dataset.r,10));return;}
-});
 
 /* ELI5 사이드바 토글 버튼 */
 (function(){
