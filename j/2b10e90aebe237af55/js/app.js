@@ -1189,15 +1189,6 @@ document.addEventListener("keydown",e=>{
   if(e.key==="e"||e.key==="E")toggleEli5();
 });
 
-/* 테마 토글 — 라이트/다크 */
-function initTheme(){
-  const saved=localStorage.getItem("jpstudy:theme");
-  /* it-2026-09-05 규격은 어두운 바탕 하나뿐이라 테마 버튼을 숨긴다 */
-  document.documentElement.setAttribute("data-theme","dark");
-  const btn=$("#themeToggle");
-  if(btn)btn.style.display="none";
-}
-
 /* it-2026-09-05 규격은 어두운 바탕 하나뿐이다. 테마 토글은 숨긴다 */
 document.documentElement.setAttribute("data-theme","dark");
 (function(){
@@ -1247,19 +1238,6 @@ function toast(msg){
   };
   nav.parentNode.insertBefore(btn,nav.nextSibling);
 })();
-
-/* 문법 항목에 ELI5 스타일 "쉽게 말하면" 라벨 추가 */
-function eli5GrammarHint(g){
-  const hints={
-    "동사":"동사는 '먹다','가다' 같이 움직임이나 상태를 나타내는 말이에요.",
-    "형용사":"형용사는 '크다','좋다' 같은 성질이나 느낌을 나타내는 말이에요.",
-    "조사":"조사는 뒤에 붙어서 문장에서 역할을 알려주는 말이에요. 이·가, 을·를 처럼요.",
-    "명사":"명사는 '사람','책' 같은 것의 이름이에요.",
-    "부사":"부사는 '빨리','매우' 처럼 동사나 형용사를 꾸며주는 말이에요."
-  };
-  return "";
-}
-/* 원본 renderGrammar 는 이미 ELI5 를 붙인다. 과거의 재정의 블록은 제거했다 */
 
 /* 학습 통계 대시보드 */
 (function(){
