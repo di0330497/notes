@@ -186,7 +186,9 @@ function cardHTML(e,rank,rankLabel){
   }).join("");
   const onTip = e.on ? '<div class="uCue" style="margin-top:8px;"><span class="uLabel">💡 음독 팁</span><span>'+esc(e.k)+'은(는) 혼자서는 안 읽히고 다른 한자와 합쳐진 낱말에서 "'+esc(e.on)+'"처럼 중국에서 온 음으로 읽어요.</span></div>' : '';
   const kunTip = e.kun ? '<div class="uCue" style="margin-top:8px;"><span class="uLabel">💡 훈독 팁</span><span>'+esc(e.k)+'은(는) 일본 고유어 낱말에서 "'+esc(e.kun)+'"처럼 홀로 읽어요.</span></div>' : '';
-  return '<div class="card" data-r="'+rank+'"><div class="kanjiCol">'
+  return '<div class="card" data-r="'+rank+'">'
+    +'<button class="bookmark-btn'+(bookmarks.has(rank)?' active':'')+'" data-r="'+rank+'" aria-label="북마크"></button>'
+    +'<div class="kanjiCol">'
     +'<span class="rank">'+(rankLabel||('#'+rank))+'</span><div class="bigK">'+esc(e.k)+'</div>'
     +'<div class="hun">'+esc(e.hun)+'</div>'+kor+'</div>'
     +'<div class="exCol"><div class="readRow">'
@@ -1014,14 +1016,6 @@ document.addEventListener("click",e=>{
   const b=e.target.closest(".bookmark-btn");
   if(b){toggleBookmark(parseInt(b.dataset.r,10));return;}
 });
-
-/* 학습 카드에 북마크 버튼 렌더링 */
-const _origCardHTML=cardHTML;
-cardHTML=function(e,rank,rankLabel){
-  const html=_origCardHTML(e,rank,rankLabel);
-  return html.replace('</div></div>','</div>')
-    .replace('<div class="exCol">','<button class="bookmark-btn'+(bookmarks.has(rank)?' active':'')+'" data-r="'+rank+'" aria-label="북마크"></button><div class="exCol">');
-};
 
 /* ELI5 사이드바 토글 버튼 */
 (function(){

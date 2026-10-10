@@ -675,6 +675,7 @@ html.w560 .pager .pgJump{width:100%;margin-left:0}
 
 /* 6. 카드 — Mintlify: 미묘한 그림자 + 깔끔한 테두리 */
 .card,.uCard{
+  position:relative;
   background:var(--surface);
   border:1px solid var(--line);
   border-radius:12px;
