@@ -159,6 +159,10 @@
     </nav>
   </aside>
 
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
   <main class="main">
     <div class="top">
       <button class="tbtn tocopen" id="navbtn">목차</button>
@@ -169,6 +173,7 @@
         <div class="gsPanel" id="gsPanel" hidden role="listbox"></div>
       </div>
       <span class="kbdhint"><kbd>1</kbd>–<kbd>7</kbd> 모드</span>
+      <button type="button" class="theme-toggle" id="themeToggle" title="라이트/다크 모드 전환">🌙</button>
       <button type="button" class="zoom" id="zoomBtn" title="화면 배율 — 100 → 125 → 150 → 175%">150%</button>
       <div class="rd">
         <button class="tbtn" id="rdbtn" aria-expanded="false">읽기 설정</button>
@@ -198,6 +203,14 @@
       </header>
 
       <hr class="divider">
+
+      <div class="note eli5" id="eli5Study"><span class="eli5-badge">💡 한 줄 요약</span><b>일본에서 가장 많이 쓰는 한자 2,647자를 빈도순으로 배운다.</b> 각 카드에 읽기·뜻·예문이 붙어 있고, N레벨별로 나눠서 볼 수 있다.</div>
+      <div class="note eli5 hidden" id="eli5Pat"><span class="eli5-badge">💡 한 줄 요약</span><b>문형 = 문장의 형식.</b> 「〜たい」「〜ばかり」 같은 문형을 뜻별로 묶어서 비교하며 외운다.</div>
+      <div class="note eli5 hidden" id="eli5Gram"><span class="eli5-badge">💡 한 줄 요약</span><b>문법 = 문장을 짜는 규칙.</b> 588개 항목을 N5~N1 순으로 정리했다. 활용이 필요한 곳은 표로 바로 연결된다.</div>
+      <div class="note eli5 hidden" id="eli5Conj"><span class="eli5-badge">💡 한 줄 요약</span><b>활용표 = 동사·형용사가 변하는 모양을 표로 본다.</b> て형, 조건형, 경어 등 외워야 할 변화가 한눈에 보인다.</div>
+      <div class="note eli5 hidden" id="eli5Pos"><span class="eli5-badge">💡 한 줄 요약</span><b>품사 = 단어의 직업.</b> 조사·동사·명사·부사 등 10가지 직업별로 단어를 분류해서 본다.</div>
+      <div class="note eli5 hidden" id="eli5Spoken"><span class="eli5-badge">💡 한 줄 요약</span><b>구어체 = 실제 일본인들이 말할 때 쓰는 줄임말 규칙.</b> 정식 문장 → 구어 문장으로 바뀌는 과정을 표로 본다.</div>
+      <div class="note eli5 hidden" id="eli5Expr"><span class="eli5-badge">💡 한 줄 요약</span><b>관용구 = 네가 아니라 우리가 아는 말.</b> 「猫の手も借りたい」 같은 표현은 단어만으로 못 외운다. 통째로 외운다.</div>
 
       <div class="note" id="noteStudy"><b>빈도순 2,600자 + 🍽식재료 47자</b>를 학습 카드로 제공합니다. 예문 속 <b>파란 표시</b>는 해당 한자, <span class="u">밑줄</span>은 그 한자가 쓰인 낱말입니다. N레벨 필터를 켜면 해당 수준의 상세 예문만 볼 수 있습니다.</div>
       <div class="note hidden" id="notePat">JLPT 문형을 <b>의미 분류 → 세부 클러스터</b> 순으로 묶어 정리했습니다. 뜻이 겹치는 문형이 한자리에 모이므로, 비슷한 것끼리 대조하며 외울 수 있습니다.</div>
@@ -241,6 +254,7 @@
 </div>
 
 <button id="toTop" aria-label="맨 위로">↑</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="data/kanji-list.js?v=20260907-elsewhere"></script>
 <script src="data/kanji-cards.js?v=20260907-elsewhere"></script>

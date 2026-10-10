@@ -507,3 +507,163 @@ html.w560 .pager .pgJump{width:100%;margin-left:0}
   .card,.uCard{break-inside:avoid;page-break-inside:avoid;border:1px solid #ccc}
   .uTip{background:none}
 }
+
+/* ══════════ ELI5 스타일 ══════════ */
+.note.eli5{
+  background:linear-gradient(135deg,rgba(122,162,247,.10),rgba(187,154,247,.06));
+  border:1px solid rgba(122,162,247,.25);
+  border-radius:12px;
+  padding:16px 20px;
+  margin:20px 0 8px;
+  font-size:calc(var(--ts) * .95);
+  line-height:1.75;
+  color:var(--fg-dim);
+}
+.note.eli5 b{color:var(--fg);font-weight:700}
+.eli5-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  font-family:var(--mono);color:var(--blue);
+  background:rgba(122,162,247,.14);
+  border:1px solid rgba(122,162,247,.3);
+  border-radius:6px;
+  padding:3px 9px;
+  margin-right:10px;
+  vertical-align:middle;
+}
+
+/* ══════════ 진행률 바 ══════════ */
+.progress-wrap{
+  position:sticky;top:44px;z-index:4;
+  background:var(--bg);
+  padding:0 var(--gut);
+  height:4px;
+}
+.progress-bar{
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),var(--magenta));
+  border-radius:0 3px 3px 0;
+  transition:width .3s ease;
+  width:0%;
+}
+
+/* ══════════ 북마크 버튼 ══════════ */
+.bookmark-btn{
+  position:absolute;top:12px;right:12px;
+  width:32px;height:32px;
+  border:1px solid var(--line-2);
+  background:var(--surface-2);
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  font-size:15px;
+  transition:all .15s;
+  opacity:.5;
+}
+.bookmark-btn:hover{opacity:1;border-color:var(--yellow)}
+.bookmark-btn.active{
+  opacity:1;
+  border-color:var(--yellow);
+  background:rgba(224,175,104,.12);
+}
+.bookmark-btn.active::before{content:"★";color:var(--yellow)}
+.bookmark-btn:not(.active)::before{content:"☆";color:var(--faint)}
+
+/* ══════════ 라이트/다크 모드 토글 ══════════ */
+.theme-toggle{
+  border:1px solid var(--line-2);
+  background:var(--surface-2);
+  color:var(--fg-dim);
+  border-radius:6px;
+  padding:4px 10px;
+  font-family:inherit;
+  font-size:12.5px;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:all .15s;
+}
+.theme-toggle:hover{border-color:var(--blue);color:var(--blue)}
+
+/* 라이트 모드 */
+:root[data-theme="light"]{
+  --bg:#f8f9fc;--bg-deep:#eef0f5;--surface:#ffffff;--surface-2:#f0f2f8;
+  --line:#dde1ec;--line-2:#c8cede;
+  --fg:#1a1b26;--fg-dim:#3d4358;--muted:#6b7394;--faint:#9aa0b8;
+  --blue:#3b6fd4;--cyan:#0e8fa8;--magenta:#8b5cf6;--green:#3d9a4e;
+  --orange:#d4782a;--yellow:#b8860b;--red:#d43d5e;
+  --n5:#3d9a4e;--n4:#0e8fa8;--n3:#b8860b;--n2:#d4782a;--n1:#8b5cf6;--n0:#3b6fd4;
+}
+:root[data-theme="light"] body{zoom:var(--zoom)}
+:root[data-theme="light"] .note.eli5{
+  background:linear-gradient(135deg,rgba(59,111,212,.08),rgba(139,92,246,.05));
+  border-color:rgba(59,111,212,.2);
+}
+:root[data-theme="light"] .eli5-badge{
+  color:var(--blue);
+  background:rgba(59,111,212,.1);
+  border-color:rgba(59,111,212,.25);
+}
+:root[data-theme="light"] .progress-bar{
+  background:linear-gradient(90deg,var(--blue),var(--magenta));
+}
+
+/* ══════════ 카드 플립 인터랙션 ══════════ */
+.card.flip-ready,.uCard.flip-ready{
+  cursor:pointer;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.card.flip-ready:hover,.uCard.flip-ready:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,.15);
+}
+
+/* ══════════ 학습 통계 대시보드 ══════════ */
+.stats-bar{
+  display:flex;gap:12px;flex-wrap:wrap;
+  padding:12px var(--gut);
+  background:var(--surface-2);
+  border-bottom:1px solid var(--line);
+  font-size:12px;
+  font-family:var(--mono);
+  color:var(--muted);
+}
+.stat-item{
+  display:flex;align-items:center;gap:5px;
+}
+.stat-item b{color:var(--fg);font-weight:700}
+.stat-item .stat-ic{font-size:14px}
+
+/* ══════════ 모바일 사이드바 개선 ══════════ */
+@media (max-width:1000px){
+  .side{
+    width:min(320px,calc(88vw / var(--zoom)));
+  }
+  .note.eli5{
+    padding:13px 16px;
+    font-size:calc(var(--ts) * .88);
+  }
+  .eli5-badge{
+    font-size:10px;
+    padding:2px 7px;
+  }
+}
+
+/* ══════════ 토스트 알림 ══════════ */
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--bg-deep);
+  border:1px solid var(--line-2);
+  border-radius:10px;
+  padding:10px 18px;
+  font-size:13px;
+  color:var(--fg);
+  z-index:100;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s,transform .25s;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}

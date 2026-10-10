@@ -905,3 +905,192 @@ $$(".pgRank").forEach(el=>el.setAttribute("max",String(ALL.length)));
 })();
 
 renderStudy();
+
+/* ══════════ ELI5 + UI/UX 개선 ══════════ */
+
+/* ELI5 노트 토글 — 각 모드의 "💡 한 줄 요약"을 접고 펼 수 있다 */
+const ELI5ID={study:"eli5Study",pat:"eli5Pat",gram:"eli5Gram",conj:"eli5Conj",
+  pos:"eli5Pos",spoken:"eli5Spoken",expr:"eli5Expr"};
+let eli5Visible=true;
+function toggleEli5(){
+  eli5Visible=!eli5Visible;
+  Object.keys(ELI5ID).forEach(k=>{
+    const el=$("#"+ELI5ID[k]);
+    if(el)el.classList.toggle("hidden",!eli5Visible);
+  });
+  toast(eli5Visible?"💡 한 줄 요약을 펼쳤어요":"💡 한 줄 요약을 접었어요");
+}
+document.addEventListener("keydown",e=>{
+  if(e.key==="e"||e.key==="E")toggleEli5();
+});
+
+/* 테마 토글 — 라이트/다크 */
+function initTheme(){
+  const saved=localStorage.getItem("jpstudy:theme");
+  if(saved==="light"||saved==="dark"){
+    document.documentElement.setAttribute("data-theme",saved);
+  }else{
+    document.documentElement.setAttribute("data-theme","dark");
+  }
+  updateThemeBtn();
+}
+function updateThemeBtn(){
+  const btn=$("#themeToggle");
+  const isLight=document.documentElement.getAttribute("data-theme")==="light";
+  if(btn)btn.textContent=isLight?"\u2600\ufe0f":"\ud83c\udf19";
+}
+function toggleTheme(){
+  const cur=document.documentElement.getAttribute("data-theme")==="light"?"light":"dark";
+  const next=cur==="light"?"dark":"light";
+  document.documentElement.setAttribute("data-theme",next);
+  localStorage.setItem("jpstudy:theme",next);
+  updateThemeBtn();
+  toast(next==="light"?"\u2600\ufe0f 라이트 모드":"\ud83c\udf19 다크 모드");
+}
+if($("#themeToggle"))$("#themeToggle").addEventListener("click",toggleTheme);
+initTheme();
+
+/* 진행률 바 — 학습 카드 모드에서 스크롤 진행률 */
+function updateProgress(){
+  const bar=$("#progressBar");
+  if(!bar)return;
+  const view=$("#view-study");
+  if(view&&!view.classList.contains("hidden")){
+    const scrollTop=window.scrollY;
+    const docHeight=document.documentElement.scrollHeight-window.innerHeight;
+    const pct=docHeight>0?Math.min(100,Math.max(0,(scrollTop/docHeight)*100)):0;
+    bar.style.width=pct.toFixed(1)+"%";
+    bar.parentElement.style.display="block";
+  }else{
+    bar.parentElement.style.display="none";
+  }
+}
+window.addEventListener("scroll",updateProgress,{passive:true});
+window.addEventListener("resize",updateProgress);
+
+/* 토스트 알림 */
+let toastTimer=null;
+function toast(msg){
+  const el=$("#toast");
+  if(!el)return;
+  el.textContent=msg;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>el.classList.remove("show"),2000);
+}
+
+/* 북마크 — 학습 카드에 별 표시. localStorage 에 저장 */
+let bookmarks=new Set(JSON.parse(localStorage.getItem("jpstudy:bookmarks")||"[]"));
+function saveBookmarks(){
+  localStorage.setItem("jpstudy:bookmarks",JSON.stringify([...bookmarks]));
+}
+function toggleBookmark(rank){
+  if(bookmarks.has(rank)){
+    bookmarks.delete(rank);
+    toast("북마크를 지웠어요");
+  }else{
+    bookmarks.add(rank);
+    toast("\u2605 북마크에 저장했어요");
+  }
+  saveBookmarks();
+  renderBookmarks();
+}
+function renderBookmarks(){
+  document.querySelectorAll(".bookmark-btn").forEach(btn=>{
+    const r=parseInt(btn.dataset.r,10);
+    btn.classList.toggle("active",bookmarks.has(r));
+  });
+  const cnt=$("#bmCount");
+  if(cnt)cnt.textContent=bookmarks.size;
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".bookmark-btn");
+  if(b){toggleBookmark(parseInt(b.dataset.r,10));return;}
+});
+
+/* 학습 카드에 북마크 버튼 렌더링 */
+const _origCardHTML=cardHTML;
+cardHTML=function(e,rank,rankLabel){
+  const html=_origCardHTML(e,rank,rankLabel);
+  return html.replace('</div></div>','</div>')
+    .replace('<div class="exCol">','<button class="bookmark-btn'+(bookmarks.has(rank)?' active':'')+'" data-r="'+rank+'" aria-label="북마크"></button><div class="exCol">');
+};
+
+/* ELI5 사이드바 토글 버튼 */
+(function(){
+  const nav=$(".nav-h");
+  if(!nav)return;
+  const btn=document.createElement("button");
+  btn.className="tab";
+  btn.style.cssText="font-size:11px;color:var(--faint);padding:6px 9px;";
+  btn.innerHTML="\ud83d\udca1 ELI5 <span style='font-size:10px;' id='eli5State'>ON</span>";
+  btn.onclick=()=>{
+    toggleEli5();
+    const s=$("#eli5State");
+    if(s)s.textContent=eli5Visible?"ON":"OFF";
+  };
+  nav.parentNode.insertBefore(btn,nav.nextSibling);
+})();
+
+/* 문법 항목에 ELI5 스타일 "쉽게 말하면" 라벨 추가 */
+function eli5GrammarHint(g){
+  const hints={
+    "동사":"동사는 '먹다','가다' 같이 움직임이나 상태를 나타내는 말이에요.",
+    "형용사":"형용사는 '크다','좋다' 같은 성질이나 느낌을 나타내는 말이에요.",
+    "조사":"조사는 뒤에 붙어서 문장에서 역할을 알려주는 말이에요. 이·가, 을·를 처럼요.",
+    "명사":"명사는 '사람','책' 같은 것의 이름이에요.",
+    "부사":"부사는 '빨리','매우' 처럼 동사나 형용사를 꾸며주는 말이에요."
+  };
+  for(const key in hints){
+    if(g.t&&g.t.includes(key))return labelBox("uTip","\ud83d\udca1 쉽게 말하면",esc(hints[key]));
+  }
+  return "";
+}
+const _origRenderGrammar=renderGrammar;
+renderGrammar=function(){
+  const q=$("#qGram").value.trim().toLowerCase();
+  const keep=GRAMMAR.filter(g=>{
+    if(gCh!=="all"&&g.ch!==gCh)return false;
+    if(gLv!=="all"&&g.lv!==gLv)return false;
+    return !q||hay(g.t,g.desc,g.cn,g.ex.map(x=>[x.s,x.ko])).includes(q);
+  });
+  const perCh={};keep.forEach(g=>{perCh[g.ch]=(perCh[g.ch]||0)+1;});
+  let h="",curCh="";
+  keep.forEach(g=>{
+    if(g.ch!==curCh){curCh=g.ch;h+=secHd(g.ch,g.cn,perCh[g.ch]+"항목");}
+    const cid=conjLinkFor(g.t), pid=posLinkFor(g.t);
+    const foot=[
+      cid?'<span class="jumpBadge" data-cj="'+cid+'">🧮 '+esc(CONJBYID[cid].t)+'</span>':"",
+      pid?'<span class="jumpBadge jbPos" data-ps="'+pid+'">🧩 '+esc(POSBYID[pid].t)+'</span>':"",
+      relBadges(g.rel)
+    ].filter(Boolean).join(" ");
+    h+='<div class="uCard">'
+      +uTop(lvBadge(g.lv),esc(g.t),g.cn)
+      +'<div class="uDesc">'+esc(g.desc)+'</div>'
+      +meanBox(grammarMeaningHint(g))
+      +eli5GrammarHint(g)
+      +exList(g.ex)
+      +(foot?'<div class="uFoot">'+foot+'</div>':"")
+      +'</div>';
+  });
+  $("#view-gram").innerHTML=h||emptyNote("gram");
+  setCount(MODE.gram+" "+num(keep.length)+"항목",Object.keys(perCh).length+"장");
+  bindJumps("#view-gram");
+};
+
+/* 학습 통계 대시보드 */
+(function(){
+  const view=$("#main");
+  if(!view)return;
+  const stats=document.createElement("div");
+  stats.className="stats-bar";
+  stats.innerHTML='<span class="stat-item"><span class="stat-ic">\ud83d\udcda</span> 한자 <b id="statKanji">\u2014</b></span>'
+    +'<span class="stat-item"><span class="stat-ic">\ud83d\udcd6</span> 문형 <b id="statPat">\u2014</b></span>'
+    +'<span class="stat-item"><span class="stat-ic">\ud83d\udcd0</span> 문법 <b id="statGram">\u2014</b></span>'
+    +'<span class="stat-item"><span class="stat-ic">\u2605</span> 북마크 <b id="bmCount">0</b></span>';
+  view.insertBefore(stats,view.firstChild);
+  $("#statKanji").textContent=num(ALL.length);
+  $("#statPat").textContent=num(typeof PATS!=="undefined"?PATS.length:0);
+  $("#statGram").textContent=num(typeof GRAMMAR!=="undefined"?GRAMMAR.length:0);
+  renderBookmarks();
+})();
