@@ -933,7 +933,7 @@ function initTheme(){
   if(saved==="light"||saved==="dark"){
     document.documentElement.setAttribute("data-theme",saved);
   }else{
-    document.documentElement.setAttribute("data-theme","dark");
+    document.documentElement.setAttribute("data-theme","light");
   }
   updateThemeBtn();
 }

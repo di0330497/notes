@@ -498,13 +498,491 @@ html.w560 .exCol{padding:13px 15px}
 html.w560 .uCard{padding:14px 15px}
 html.w560 .uMeta{margin-left:0}
 html.w560 .pager .pgJump{width:100%;margin-left:0}
+/* ══════════════════════════════════════════════════════════
+   ═══ Mintlify 스타일 오버라이드 ═══
+   문서 사이트의 정석: 밝은 배경 · 깔끔한 사이드바 · 중앙 검색 ·
+   미묘한 그림자의 카드 · 읽기 좋은 타이포그래피
+   ══════════════════════════════════════════════════════════ */
+
+/* 1. 라이트 모드를 Mintlify처럼 — 밝고 깔끔하게 */
+:root{
+  --bg:#ffffff;
+  --bg-deep:#fafafa;
+  --surface:#ffffff;
+  --surface-2:#f5f6f8;
+  --line:#e8eaed;
+  --line-2:#dadce0;
+  --fg:#1f2328;
+  --fg-dim:#424a53;
+  --muted:#6e7781;
+  --faint:#9aa1a9;
+
+  --blue:#0d6efd;
+  --cyan:#0ea5e9;
+  --magenta:#8b5cf6;
+  --green:#16a34a;
+  --orange:#ea580c;
+  --yellow:#ca8a04;
+  --red:#dc2626;
+
+  --n5:#16a34a; --n4:#0ea5e9; --n3:#ca8a04; --n2:#ea580c; --n1:#8b5cf6;
+  --n0:#0d6efd;
+
+  /* Mintlify 악센트 — 민트/블루 */
+  --c-study:#0ea5e9; --c-pat:#0d6efd; --c-gram:#8b5cf6;
+  --c-conj:#16a34a; --c-pos:#ca8a04;
+  --c-spoken:#ea580c; --c-expr:#dc2626;
+
+  --wrap:860px; --gut:48px; --sidew:272px;
+
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --shadow-lg:0 10px 24px rgba(0,0,0,.08),0 3px 8px rgba(0,0,0,.04);
+}
+
+/* 2. 다크 모드 — Mintlify 다크 */
+:root[data-theme="dark"]{
+  --bg:#0d1117;
+  --bg-deep:#010409;
+  --surface:#161b22;
+  --surface-2:#1c2129;
+  --line:#30363d;
+  --line-2:#3d444d;
+  --fg:#e6edf3;
+  --fg-dim:#c9d1d9;
+  --muted:#8b949e;
+  --faint:#6e7681;
+
+  --blue:#58a6ff;
+  --cyan:#39c5cf;
+  --magenta:#bc8cff;
+  --green:#3fb950;
+  --orange:#f0883e;
+  --yellow:#d29922;
+  --red:#f85149;
+
+  --n5:#3fb950; --n4:#39c5cf; --n3:#d29922; --n2:#f0883e; --n1:#bc8cff;
+  --n0:#58a6ff;
+
+  --c-study:#39c5cf; --c-pat:#58a6ff; --c-gram:#bc8cff;
+  --c-conj:#3fb950; --c-pos:#d29922;
+  --c-spoken:#f0883e; --c-expr:#f85149;
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.2);
+  --shadow-md:0 1px 3px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.2);
+  --shadow-lg:0 10px 24px rgba(0,0,0,.4),0 3px 8px rgba(0,0,0,.2);
+}
+
+/* 3. 사이드바 — Mintlify 문서 트리 */
+.side{
+  background:var(--bg-deep);
+  border-right:1px solid var(--line);
+  font-size:14px;
+}
+.side-top{
+  padding:14px 16px;
+  border-bottom:1px solid var(--line);
+  background:var(--bg-deep);
+}
+.brand{
+  font-size:11px;font-weight:700;letter-spacing:.08em;
+  color:var(--muted);font-family:var(--mono);margin-bottom:6px;
+}
+.brand::before{
+  background:linear-gradient(135deg,var(--blue),var(--magenta));
+  border-radius:5px;
+}
+.brand-t{
+  font-size:14px;font-weight:600;line-height:1.45;
+  letter-spacing:-.01em;color:var(--fg);
+}
+.nav-h{
+  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);font-family:var(--mono);
+  padding:16px 10px 6px;
+}
+
+/* 탭 = 문서 트리 항목 */
+.tab{
+  display:flex;align-items:center;gap:9px;
+  width:100%;padding:7px 10px;margin:1px 0;
+  border:0;background:none;border-radius:7px;
+  font-family:inherit;font-size:13.5px;line-height:1.4;
+  color:var(--fg-dim);text-align:left;cursor:pointer;
+  transition:background .12s,color .12s;
+}
+.tab:hover{background:var(--surface-2);color:var(--fg)}
+.tab.on{
+  background:color-mix(in srgb,var(--rail,var(--blue)) 12%,transparent);
+  color:var(--rail,var(--blue));font-weight:600;
+}
+.tab-ic{flex:none;font-size:13px;line-height:1;opacity:.9}
+.tab > span:last-child{
+  margin-left:auto;flex:none;
+  font-size:10.5px;font-weight:500;color:var(--faint);
+  font-family:var(--mono);font-variant-numeric:tabular-nums;
+}
+.tab.on > span:last-child{color:var(--rail,var(--blue));opacity:.85}
+
+/* 4. 상단바 — Mintlify: 블러 + 중앙 검색 */
+.top{
+  height:52px;
+  background:color-mix(in srgb,var(--bg) 85%,transparent);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.gs{
+  flex:0 1 420px;
+  max-width:420px;
+}
+.gs input{
+  height:34px;
+  border-radius:8px;
+  border:1px solid var(--line-2);
+  background:var(--surface-2);
+  font-size:13px;
+  transition:border-color .12s,box-shadow .12s;
+}
+.gs input:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--blue) 14%,transparent);
+}
+.gsPanel{
+  border-radius:12px;
+  box-shadow:var(--shadow-lg);
+  border:1px solid var(--line-2);
+}
+
+/* 5. 본문 타이포그래피 — Mintlify 읽기 최적화 */
+.hero{padding-top:40px}
+.hero h1{
+  font-size:clamp(28px,calc(3.8vw / var(--zoom)),40px);
+  line-height:1.2;letter-spacing:-.025em;font-weight:700;
+  color:var(--fg);
+}
+.hero p{
+  color:var(--fg-dim);
+  font-size:calc(var(--ts) * 1.02);
+  line-height:1.8;
+}
+.eyebrow{
+  color:var(--blue);font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;font-family:var(--mono);
+}
+
+/* 6. 카드 — Mintlify: 미묘한 그림자 + 깔끔한 테두리 */
+.card,.uCard{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:var(--shadow-sm);
+  margin:12px 0;
+  transition:box-shadow .15s,border-color .15s,transform .15s;
+}
+.card:hover,.uCard:hover{
+  box-shadow:var(--shadow-md);
+  border-color:var(--line-2);
+}
+.card.hl,.uCard.hl{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--blue) 16%,transparent);
+}
+.uCard{padding:18px 20px}
+
+/* 카드 머리 */
+.uT{font-size:calc(var(--ts) * 1.05);font-weight:650;color:var(--fg);letter-spacing:-.015em}
+.uT.jp{font-family:var(--jp);font-weight:600;letter-spacing:-.01em}
+.uMeta{color:var(--muted);font-family:var(--mono);font-size:10.5px}
+.uDesc{
+  font-size:calc(var(--ts) * .95);
+  line-height:1.8;
+  color:var(--fg-dim);
+}
+
+/* 뜻/팁 상자 */
+.uMean{
+  background:var(--surface-2);
+  border:1px solid var(--line);
+  border-radius:9px;
+  color:var(--fg-dim);
+}
+.uTip{
+  background:color-mix(in srgb,var(--yellow) 8%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--yellow) 24%,transparent);
+  border-radius:9px;
+  color:var(--fg-dim);
+}
+.uTip .uLabel{color:var(--yellow)}
+.uTip.warn{
+  background:color-mix(in srgb,var(--red) 8%,var(--surface));
+  border-color:color-mix(in srgb,var(--red) 24%,transparent);
+  color:var(--fg-dim);
+}
+.uTip.warn .uLabel{color:var(--red)}
+
+/* 7. 섹션 헤딩 — Mintlify: 깔끔하고 눈에 띄게 */
+.secHd{
+  font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  font-family:var(--mono);
+  color:var(--rail,var(--fg-dim));
+  margin:40px 0 14px;padding-top:24px;
+  border-top:1px solid var(--line);
+  display:flex;align-items:center;gap:10px;
+}
+.secHd:first-child{margin-top:12px;padding-top:0;border-top:0}
+.secHd .pn{
+  display:inline-grid;place-items:center;
+  min-width:20px;height:20px;padding:0 6px;
+  border-radius:6px;
+  background:color-mix(in srgb,var(--rail,var(--muted)) 14%,transparent);
+  color:var(--rail,var(--muted));
+  font-size:10px;font-weight:700;
+}
+.secHd .pn2{color:var(--muted);font-weight:500}
+
+/* 8. 버튼/칩 — Mintlify 느낌 */
+.tbtn,.chip,.furi,.zoom,.theme-toggle{
+  border-radius:7px;
+  transition:all .12s;
+}
+.tbtn:hover,.chip:hover,.furi:hover,.zoom:hover,.theme-toggle:hover{
+  background:var(--surface-2);
+  border-color:var(--line-2);
+}
+.chip.on{
+  background:color-mix(in srgb,var(--blue) 12%,transparent);
+  border-color:var(--blue);
+  color:var(--blue);
+  font-weight:600;
+}
+
+/* 9. 예문 블록 */
+.exBlock{
+  border-top:1px solid var(--line);
+  padding-top:14px;
+  margin-top:14px;
+}
+.exHead{margin-bottom:6px}
+.rBadge{
+  border-radius:6px;
+  font-family:var(--jp);
+  border:1px solid var(--line-2);
+  background:var(--surface-2);
+  color:var(--muted);
+}
+.sent{
+  font-size:calc(var(--jps) * 1.02);
+  line-height:2.2;
+  color:var(--fg);
+}
+.trans{color:var(--muted);line-height:1.75}
+
+/* 10. 표 */
+.tableWrap{
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surface);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+}
+th{
+  background:var(--surface-2);
+  font-size:11px;font-weight:600;
+  color:var(--muted);
+  font-family:var(--mono);
+  letter-spacing:.04em;
+}
+td{color:var(--fg-dim);line-height:1.75}
+th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:color-mix(in srgb,var(--blue) 4%,transparent)}
+
+/* 11. 안내문/콜아웃 */
+.note{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:var(--shadow-sm);
+  color:var(--fg-dim);
+}
+
+/* 12. 페이지네이션 */
+.pager{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:var(--shadow-sm);
+}
+
+/* 13. footer */
+footer{
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-family:var(--mono);
+  font-size:11px;
+}
+
+/* 14. 개수 줄 */
+.count{color:var(--muted);font-family:var(--mono);font-size:11.5px}
+
+/* 15. 토스트/진행률 */
+.toast{
+  background:var(--surface);
+  border:1px solid var(--line-2);
+  box-shadow:var(--shadow-lg);
+  color:var(--fg);
+}
+.progress-bar{
+  background:linear-gradient(90deg,var(--blue),var(--magenta));
+}
+.progress-wrap{
+  background:color-mix(in srgb,var(--bg) 85%,transparent);
+  backdrop-filter:blur(8px);
+}
+
+/* 16. ELI5 배지 */
+.eli5-badge{
+  background:color-mix(in srgb,var(--blue) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--blue) 28%,transparent);
+  color:var(--blue);
+}
+.note.eli5{
+  background:color-mix(in srgb,var(--blue) 6%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--blue) 20%,transparent);
+  box-shadow:var(--shadow-sm);
+  color:var(--fg-dim);
+}
+.eli5-tip{
+  background:color-mix(in srgb,var(--blue) 6%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--blue) 18%,transparent);
+  color:var(--fg-dim);
+}
+
+/* 17. 북마크 버튼 */
+.bookmark-btn{
+  background:var(--surface);
+  border:1px solid var(--line-2);
+  box-shadow:var(--shadow-sm);
+}
+.bookmark-btn.active{
+  border-color:var(--yellow);
+  background:color-mix(in srgb,var(--yellow) 12%,var(--surface));
+}
+.bookmark-btn.active::before{color:var(--yellow)}
+.bookmark-btn:not(.active)::before{color:var(--muted)}
+
+/* 18. 통계 바 */
+.stats-bar{
+  background:var(--bg-deep);
+  border-bottom:1px solid var(--line);
+  color:var(--muted);
+}
+
+/* 19. 맨 위로 */
+#toTop{
+  background:var(--surface);
+  border:1px solid var(--line-2);
+  box-shadow:var(--shadow-md);
+  color:var(--fg-dim);
+}
+
+/* 20. reads 설정 팝오버 */
+.rdpop{
+  background:var(--surface);
+  border:1px solid var(--line-2);
+  box-shadow:var(--shadow-lg);
+}
+.seg button[aria-pressed="true"]{
+  background:color-mix(in srgb,var(--blue) 12%,transparent);
+  border-color:var(--blue);
+  color:var(--blue);
+  font-weight:600;
+}
+
+/* 21. 루비/후리가나 색 */
+.sent ruby rt{color:var(--muted)}
+.sent em.g,.uCue em.g{
+  color:var(--yellow);
+  border-bottom:1px solid color-mix(in srgb,var(--yellow) 45%,transparent);
+}
+.sent .tg{
+  background:color-mix(in srgb,var(--cyan) 14%,transparent);
+  color:var(--cyan);
+}
+
+/* 22. 빵부스러기/안내문 */
+.crumb b{color:var(--fg);font-weight:600}
+.crumb{color:var(--muted)}
+
+/* 23. 한자 카드 칸 */
+.kanjiCol{
+  background:var(--surface-2);
+  border-right:1px solid var(--line);
+}
+.bigK{color:var(--fg)}
+.hun{color:var(--fg-dim)}
+.readTx{color:var(--fg-dim)}
+
+/* 24. breadcrumb/hint */
+.kbdhint{color:var(--muted)}
+.kbdhint kbd,.gsFoot kbd{
+  background:var(--surface-2);
+  border:1px solid var(--line-2);
+  color:var(--muted);
+}
+
+/* 25. 선택 영역 */
+::selection{background:color-mix(in srgb,var(--blue) 22%,transparent)}
+
+/* 26. 스크롤바 */
+::-webkit-scrollbar-thumb{background:var(--line-2);border:2px solid var(--bg);border-radius:6px}
+::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+
+/* 27. 고대비 유지 */
+:root[data-hc="1"]{
+  --bg:#ffffff;
+  --bg-deep:#f0f1f3;
+  --surface:#ffffff;
+  --surface-2:#eef0f2;
+  --line:#c9cdd4;
+  --line-2:#a8aeb8;
+  --fg:#000000;
+  --fg-dim:#1f2328;
+  --muted:#4a5158;
+  --faint:#5c6470;
+}
+:root[data-hc="1"][data-theme="dark"]{
+  --bg:#000000;
+  --bg-deep:#000000;
+  --surface:#0d1117;
+  --surface-2:#161b22;
+  --line:#484f58;
+  --line-2:#6e7681;
+  --fg:#ffffff;
+  --fg-dim:#e6edf3;
+  --muted:#b1bac4;
+  --faint:#8b949e;
+}
+
+/* 28. 줄바꿈/가독성 */
+body,p,h1,h2,h3,li,summary{
+  word-break:keep-all;
+  overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* 29. 인쇄 */
 @media print{
   :root{--bg:#fff;--bg-deep:#fff;--surface:#fff;--surface-2:#f6f6f8;--line:#ccc;--line-2:#bbb;
         --fg:#111;--fg-dim:#333;--muted:#555;--faint:#666}
   body{zoom:1}
-  .side,.top,#toTop,.pager,.zoom{display:none}
+  .side,.top,#toTop,.pager,.zoom,.progress-wrap{display:none}
   .layout{display:block}
-  .card,.uCard{break-inside:avoid;page-break-inside:avoid;border:1px solid #ccc}
+  .card,.uCard{break-inside:avoid;page-break-inside:avoid;border:1px solid #ccc;box-shadow:none}
   .uTip{background:none}
 }
 
