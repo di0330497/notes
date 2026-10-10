@@ -1013,26 +1013,21 @@ body,p,h1,h2,h3,li,summary{
 
 /* ══════════ 진행률 바 ══════════ */
 .progress-wrap{
-  position:sticky;top:44px;z-index:4;
-  background:var(--bg);
+  position:sticky;top:52px;z-index:4;
+  background:color-mix(in srgb,var(--bg) 85%,transparent);
+  backdrop-filter:blur(8px);
   padding:0 var(--gut);
-  height:4px;
+  height:3px;
 }
-.progress-bar{
-  height:100%;
-  background:linear-gradient(90deg,var(--blue),var(--magenta));
-  border-radius:0 3px 3px 0;
-  transition:width .3s ease;
-  width:0%;
-}
+/* progress-bar 는 위 진행률 바 섹션에서 함께 정의했다 */
 
 /* ══════════ 북마크 버튼 ══════════ */
 .bookmark-btn{
-  position:absolute;top:12px;right:12px;
-  width:32px;height:32px;
-  border:1px solid var(--line-2);
-  background:var(--surface-2);
-  border-radius:8px;
+  position:absolute;top:10px;right:10px;
+  width:28px;height:28px;
+  border:1px solid var(--line);
+  background:var(--surface);
+  border-radius:7px;
   display:flex;align-items:center;justify-content:center;
   cursor:pointer;
   font-size:15px;
