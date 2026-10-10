@@ -184,13 +184,15 @@ function cardHTML(e,rank,rankLabel){
          +(m?' — 문장 속 표현 '+fmt(m[1]):"")+'</span></div>'
     });
   }).join("");
+  const onTip = e.on ? '<div class="uCue" style="margin-top:8px;"><span class="uLabel">💡 음독 팁</span><span>'+esc(e.k)+'은(는) 한자 단독으로는 읽히지 않고, 다른 한자와 합쳐서 "'+esc(e.on)+'"으로 읽혀요. <b>漢字|한자</b>를 생각하면 돼요.</span></div>' : '';
+  const kunTip = e.kun ? '<div class="uCue" style="margin-top:8px;"><span class="uLabel">💡 훈독 팁</span><span>'+esc(e.k)+'은(는) 히라가나와 함께 "'+esc(e.kun)+'"으로 읽혀요. <b>固有語|고유어</b>를 생각하면 돼요.</span></div>' : '';
   return '<div class="card" data-r="'+rank+'"><div class="kanjiCol">'
     +'<span class="rank">'+(rankLabel||('#'+rank))+'</span><div class="bigK">'+esc(e.k)+'</div>'
     +'<div class="hun">'+esc(e.hun)+'</div>'+kor+'</div>'
     +'<div class="exCol"><div class="readRow">'
     +'<span class="rBadge on">音</span><span class="readTx">'+esc(e.on)+'</span>'
     +'<span class="rBadge kn">訓</span><span class="readTx">'+esc(e.kun)+'</span>'
-    +'</div>'+blocks+'</div></div>';
+    +'</div>'+blocks+onTip+kunTip+'</div></div>';
 }
 const STUDYBYK={};
 if(typeof STUDY_FULL!=='undefined')STUDY_FULL.forEach(e=>{STUDYBYK[e.k]=e;});
@@ -320,6 +322,7 @@ function renderPat(hlPat){
         h+='<div class="uCard'+(hlPat===p.pat?" hl":"")+'" data-p="'+esc(p.pat)+'">'
           +uTop(lvBadge(p.lv),esc(p.pat),CATNAME[p.cat]||p.cat,true)
           +meanBox(p.mean)
+          +(p.eli5?'<div class="uCue eli5-tip"><span class="uLabel">💡 ELI5</span><span>'+esc(p.eli5)+'</span></div>':"")
           +exList(p.ex)
           +'</div>';
       });
@@ -338,7 +341,7 @@ function gotoPat(p){
 }
 
 /* ══════════ 문법 ══════════ */
-const GRAM_CH=[["A","문자·발음"],["B","품사"],["C","명사·지시·수"],["D","동사총론"],["E","동사활용"],["F","형용사"],["G1","조사①"],["G2","조사②"],["H","조동사"],["I","상·보조"],["J","수수"],["K","경어"],["L","문장"],["M3","N3 고급"],["M2","N2 고급"],["M1","N1 고급"]];
+const GRAM_CH=[["A","발음 팁"],["B","품사"],["C","명사·지시·수"],["D","동사총론"],["E","동사활용"],["F","형용사"],["G1","조사①"],["G2","조사②"],["H","조동사"],["I","상·보조"],["J","수수"],["K","경어"],["L","문장"],["M3","N3 고급"],["M2","N2 고급"],["M1","N1 고급"],["Z","일본식 사고"]];
 /* 문법 항목 → 활용표 항목 연결. 위에서부터 먼저 걸리는 것을 쓴다 */
 const GRAM2CONJ=[
   [/3그룹|그룹 구별|동사의 특징과 활용|그룹 분류/,"v-grp"],

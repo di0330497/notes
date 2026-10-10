@@ -648,6 +648,19 @@ html.w560 .pager .pgJump{width:100%;margin-left:0}
   }
 }
 
+/* ══════════ ELI5 팁 (문형/한자 카드 안) ══════════ */
+.eli5-tip{
+  background:linear-gradient(135deg,rgba(122,162,247,.08),rgba(187,154,247,.05));
+  border:1px solid rgba(122,162,247,.2);
+  font-size:12.5px;
+  color:var(--fg-dim);
+  line-height:1.7;
+}
+.eli5-tip .uLabel{
+  border-color:rgba(122,162,247,.35);
+  color:var(--blue);
+}
+
 /* ══════════ 토스트 알림 ══════════ */
 .toast{
   position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
