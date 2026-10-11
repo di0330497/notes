@@ -24,7 +24,14 @@ function fmt(s,target){
 }
 /* 검색용 민무늬 문자열. 색인은 어느 화면에서든 이 규칙 하나만 쓴다 —
    「日課」로 쳐도 [日課|にっか] 가 걸리고, {…} 표시는 무시된다 */
-const stripM=s=>String(s==null?"":s).replace(/\{|\}/g,"").replace(/\[([^|\]]+)\|([^\]]+)\]/g,"$1$2");
+const stripM=s=>String(s==null?"":s)
+  .replace(/\{|\}/g,"")
+  .replace(/\[([^|\]]+)\|([^\]]+)\]/g,"$1$2")
+  /* ～(전각) / 〜(파입) 물결을 하나로 모은다.
+     patterns.js 는 전각 663개를 쓰고, 대화 태그는 파입을 써서
+     같은 문형을 두 글자로 만들어 검색이 0건이 났다 */
+  .replace(/\u301C/g,"\uFF5E")
+  .replace(/[\uFF1F\u003F]/g,"");
 /* 루비를 한자만 남기고 편다. 「[頑張|がんば]る」→「頑張る」 */
 const stripK=s=>String(s==null?"":s).replace(/\{|\}/g,"").replace(/\[([^|\]]+)\|([^\]]+)\]/g,"$1");
 /* 색인은 두 꼴을 함께 담는다 — 한자+읽기(日課にっか)와 한자만(頑張る).
@@ -243,7 +250,7 @@ function basicCardHTML(r,rank,rankLabel){
 }
 let studyItems=[],studyPage=0;const PAGE=100;
 function renderStudy(){
-  const q=$("#qStudy").value.trim().toLowerCase();
+  const q=$("#qStudy").value.trim().toLowerCase().replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F]/g,"");
   const filtered=fLv!=="all";
   studyItems=[];let exShown=0;
   ALL.forEach((r,i)=>{
@@ -330,7 +337,7 @@ function focusCard(sel){
 /* ══════════ 문형 사전 — 의미 분류 → 클러스터 2단 묶음 ══════════ */
 let pLv="all";
 function renderPat(hlPat){
-  const q=$("#qPat").value.trim().toLowerCase(),cat=$("#patCat").value;
+  const q=$("#qPat").value.trim().toLowerCase().replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F]/g,""),cat=$("#patCat").value;
   /* 원본 순서를 유지하면서 cat → clu 두 단계로 버킷에 담는다.
      정렬하지 않고 "처음 나온 순서"를 쓰므로 레벨 흐름이 흐트러지지 않는다 */
   const order=[],bucket={};
@@ -456,7 +463,7 @@ function grammarMeaningHint(g){
 }
 function renderGrammar(){
   if(typeof GRAMMAR==="undefined"){$("#view-gram").innerHTML=loadFail("gram");return;}
-  const q=$("#qGram").value.trim().toLowerCase();
+  const q=$("#qGram").value.trim().toLowerCase().replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F]/g,"");
   /* 장 헤딩에 그 장의 개수를 적으려면 먼저 걸러 놓고 세어야 한다 */
   const keep=GRAMMAR.filter(g=>{
     if(gCh!=="all"&&g.ch!==gCh)return false;
@@ -510,7 +517,7 @@ function tableHTML(head,rows){
 }
 function renderConj(hlId){
   if(!hasCONJ){$("#view-conj").innerHTML=loadFail("conj");return;}
-  const q=$("#qConj").value.trim().toLowerCase();
+  const q=$("#qConj").value.trim().toLowerCase().replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F]/g,"");
   const keep=CONJ.filter(c=>{
     if(cjG!=="all"&&c.g!==cjG)return false;
     return !q||hay(c.t,c.desc,c.tip,c.head,c.rows,c.ex.map(x=>[x.s,x.ko])).includes(q);
@@ -688,13 +695,32 @@ function bindTalk(){
     j.classList.add("on");
     speak(j.getAttribute("data-say"));
   });
-  /* 태그 → 해당 모드로 검색어를 넘겨 건너뛴다 */
-  $$("#view-talk .dlgTag").forEach(t=>t.onclick=()=>{
-    const k=t.dataset.go,q=t.dataset.q;
-    const gs=GS_TAB[k];if(!gs)return;
+  /* 태그 → 해당 모드로 검색어를 넘겨 건너뛴다.
+     대화 태그는 설명용 라벨이라 사전 표제어와 한 끗 차이다.
+     「〜ん／です」→「〜ん」, 「〜をお願いします」→「〜お願いします」. */
+  function tagQuery(q){
+    let t=String(q||"");
+    t=t.split("／")[0].split("/")[0];        // / 로 이어 붙인 여러 표제어 중 첫 덩어리
+    t=t.replace(/[をにでとはがも]/g,"");     // 조사는 사전 표제어에 없는 경우가 많다
+    t=t.replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F\uFF01\u0021]/g,"");
+    return t.trim();
+  }
+  /* 한 덩어리로 안 걸리면 / 로 갈라 둔 나머지 조각도 시도한다 */
+  function runTagQuery(k,q){
+    const gs=GS_TAB[k];if(!gs)return false;
     switchView(k);
-    const el=$(gs[0]);if(el)el.value=q;
-    gs[1]();scrollTop();
+    const el=$(gs[0]);if(!el)return false;
+    const parts=String(q).split("／").map(tagQuery).filter(Boolean);
+    for(const p of parts){
+      el.value=p;gs[1]();
+      const hit=$$("#view-"+k+" .uCard, #view-"+k+" .card").length;
+      if(hit)return true;
+    }
+    return false;
+  }
+  $$("#view-talk .dlgTag").forEach(t=>t.onclick=()=>{
+    runTagQuery(t.dataset.go,t.dataset.q);
+    scrollTop();
   });
 }
 
@@ -732,7 +758,7 @@ if(hasSPOKEN){(function(){
 })();
 function renderSpoken(){
   if(!hasSPOKEN){$("#view-spoken").innerHTML=loadFail("spoken");return;}
-  const q=$("#qSpoken").value.trim().toLowerCase();
+  const q=$("#qSpoken").value.trim().toLowerCase().replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F]/g,"");
   const keep=SPOKEN.filter(x=>{
     if(spSec!=="all"&&SPKEY(x)!==spSec)return false;
     return !q||hay(x.t,x.rule,x.warn,x.forms,x.ex.map(e=>[e.s,e.ko])).includes(q);
@@ -785,7 +811,7 @@ let posP="all",posMode="group";
 })();
 /* 묶음 보기 — "함께 외워야 하는 것"을 표로 세운다 */
 function renderPosGroup(hlId){
-  const q=$("#qPos").value.trim().toLowerCase();
+  const q=$("#qPos").value.trim().toLowerCase().replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F]/g,"");
   const keep=POS.filter(x=>{
     if(posP!=="all"&&x.p!==posP)return false;
     return !q||hay(x.t,x.w,x.mean,x.desc,x.tip,x.head,x.rows,x.ex.map(e=>[e.s,e.ko])).includes(q);
@@ -823,7 +849,7 @@ function wordCard(x){
     +'</div>';
 }
 function renderPosWord(){
-  const q=$("#qPos").value.trim().toLowerCase();
+  const q=$("#qPos").value.trim().toLowerCase().replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F]/g,"");
   const keep=WORDS.filter(x=>{
     if(posP!=="all"&&x.g!==posP)return false;
     return !q||hay(x.w,x.r,x.m,x.ex.map(e=>[e.s,e.ko]),x.n).includes(q);
@@ -867,7 +893,7 @@ const EXPR_CATNAME={"aizuchi":"아이즈치(相槌)","kimari":"상용구·정형
 let exCat="all";
 function renderExpr(){
   if(typeof EXPR==="undefined"){$("#view-expr").innerHTML=loadFail("expr");return;}
-  const q=$("#qExpr").value.trim().toLowerCase();
+  const q=$("#qExpr").value.trim().toLowerCase().replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F]/g,"");
   const keep=EXPR.filter(x=>{
     if(exCat!=="all"&&x.cat!==exCat)return false;
     return !q||hay(x.expr,x.reading,x.mean,x.ex.map(e=>[e.s,e.ko])).includes(q);
