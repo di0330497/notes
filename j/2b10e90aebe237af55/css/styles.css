@@ -755,3 +755,22 @@ body.noKo .line .ko{display:none}
 html.narrow .dlgTitle{font-size:17px}
 html.narrow .line .jp{font-size:17px}
 html.narrow .dlgMeta{margin-left:0;width:100%}
+
+/* ── 모드 탭 스트립 ─────────────────────────────────────────
+   사이드바가 접히는 좁은 화면에서도 모드를 하나 고를 수 있게
+   상단바 바로 아래에 잡아 둔다. 가로로 넘치면 스크롤. */
+.modebar{flex:0 0 auto;display:flex;align-items:stretch;gap:2px;
+  padding:0 22px;border-bottom:1px solid var(--line);
+  background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.modebar::-webkit-scrollbar{height:0}
+.modebar button{all:unset;cursor:pointer;flex:0 0 auto;display:flex;align-items:baseline;gap:6px;
+  padding:9px 12px;font-family:var(--sans);font-size:13px;color:var(--muted);
+  border-bottom:2px solid transparent;white-space:nowrap}
+.modebar button:hover{color:var(--fg)}
+.modebar button.on{color:var(--fg);font-weight:600;border-bottom-color:var(--primary)}
+.modebar button .mi{font-size:12px;opacity:.75}
+.modebar button .mc{font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+.modebar button.on .mc{color:var(--primary)}
+html.narrow .modebar{padding:0 14px}
+@media print{.modebar{display:none !important}}

@@ -74,9 +74,8 @@
   var navCover=document.getElementById('navCover');
   if(navCover) navCover.addEventListener('click',function(e){
     e.preventDefault();
-    if(typeof showPage==='function') showPage('page-cover');
-    [].slice.call(document.querySelectorAll('.tab')).forEach(function(t){t.classList.remove('on');t.setAttribute('aria-pressed','false');});
-    paintCrumb(); closeNav();
+    if(typeof showCover==='function') showCover(); else paintCrumb();
+    closeNav();
   });
 
   /* ── 해시 주소 ── (#cover / #study / #pat …) ── */

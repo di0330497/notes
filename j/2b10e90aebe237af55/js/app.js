@@ -1106,7 +1106,52 @@ function scrollTop(){const s=SCROLL();if(s&&s.scrollTo)s.scrollTo({top:0});else 
 function showPage(id){
   $$(".page").forEach(p=>p.classList.toggle("on",p.id===id));
   const nav=$("#navCover");if(nav)nav.classList.toggle("on",id==="page-cover");
+  if(window.paintModebar)paintModebar(id==="page-cover"?"cover":id.replace("page-",""));
 }
+/* 표지로 돌아가기 — 탭과 사이드바에서 같이 쓴다 */
+function showCover(){
+  showPage("page-cover");
+  $$(".tab").forEach(t=>{t.classList.remove("on");t.setAttribute("aria-pressed","false");});
+  setCrumb("cover");
+  scrollTop();
+}
+
+/* ══════════ 모드 탭 스트립 ══════════
+   사이드바가 접히는 좁은 화면에서도 모드를 하나 고를 수 있게
+   상단바 아래에 같은 목록을 가로 탭으로 세운다.
+   사이드바 버튼과 양방향 동기화한다. */
+(function(){
+  var bar=$("#modebar");
+  if(!bar)return;
+  var ICON={talk:"\uD83D\uDCAC",study:"\uD83D\uDCDA",pat:"\uD83D\uDCD6",gram:"\uD83D\uDD20",
+            conj:"\uD83E\uDDEE",pos:"\uD83E\uDDE9",spoken:"\uD83D\uDE3B",expr:"\uD83D\uDCAC"};
+  var LABEL={talk:"대화",study:"학습 카드",pat:"문형 사전",gram:"문법",conj:"활용표",
+             pos:"품사 사전",spoken:"구어체",expr:"표현·관용구"};
+  var items=[{v:"cover",t:"표지",ic:"\u2302"}].concat(
+    (typeof VIEWS!=="undefined"?VIEWS:[]).map(function(v){
+      return {v:v,t:LABEL[v]||v,ic:ICON[v]||""};
+    }));
+  bar.innerHTML=items.map(function(it){
+    return '<button type="button" data-v="'+it.v+'"><span class="mi">'+it.ic+'</span>'
+      +'<span>'+it.t+'</span><span class="mc" data-for="'+it.v+'"></span></button>';
+  }).join("");
+  bar.addEventListener("click",function(e){
+    var b=e.target.closest("button");if(!b)return;
+    var v=b.dataset.v;
+    if(v==="cover"){showCover();return;}
+    switchView(v);
+    var on=bar.querySelector('button[data-v="'+v+'"]');
+    if(on)on.scrollIntoView({block:"nearest",inline:"nearest"});
+  });
+  window.paintModebar=function(v){
+    $$("#modebar button").forEach(function(b){
+      b.classList.toggle("on",b.dataset.v===v);
+      b.setAttribute("aria-pressed",String(b.dataset.v===v));
+    });
+  };
+  paintModebar("cover");
+})();
+
 function switchView(v){
   if(VIEWS.indexOf(v)<0)v="study";
   $$(".tab").forEach(t=>{var on=t.dataset.v===v;t.classList.toggle("on",on);t.setAttribute("aria-pressed",on);});
@@ -1126,7 +1171,7 @@ function switchView(v){
 function setCrumb(v){
   const el=$("#crumb");if(!el)return;
   const FULL={study:"학습 카드",pat:"문형 사전",gram:"문법",conj:"활용표",
-              pos:"품사 사전",spoken:"구어체",expr:"표현·관용구",talk:"대화"};
+              pos:"품사 사전",spoken:"구어체",expr:"표현·관용구",talk:"대화",cover:""};
   const label=FULL[v]||"";
   el.innerHTML="<b>빈도순 일본어</b>"+(label?" · "+label:"");
   document.title=(label?label+" · ":"")+"빈도순 일본어";
@@ -1193,6 +1238,13 @@ $$(".pgRank").forEach(el=>el.setAttribute("max",String(ALL.length)));
   const set=(id,v)=>{const el=$("#"+id);if(el)el.textContent=num(v);};
   set("cntStudy",kanji);set("cntPat",pats);set("cntGram",gram);
   set("cntConj",conj);set("cntPos",pos+WORDS.length);set("cntSpoken",spoken);set("cntExpr",expr);
+  /* 상단 탭 스트립에도 같은 개수를 둔다 */
+  const COPY={talk:talk,study:kanji,pat:pats,gram:gram,conj:conj,
+              pos:pos+WORDS.length,spoken:spoken,expr:expr};
+  $$("#modebar .mc").forEach(function(el){
+    const v=el.dataset.for;
+    if(COPY[v]!=null){el.textContent=num(COPY[v]);el.style.display="";}
+  });
   set("cntTalk",talk);
   set("stnTalk",talk);set("stnStudy",kanji);set("stnPat",pats);set("stnGram",gram);
   set("stnConj",conj);set("stnPos",pos+WORDS.length);set("stnSpoken",spoken);set("stnExpr",expr);
