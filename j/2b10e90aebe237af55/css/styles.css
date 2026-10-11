@@ -99,8 +99,12 @@ body{zoom:var(--zoom)}
   color:var(--faint);letter-spacing:.06em;font-family:var(--mono)}
 .sn{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--faint)}
 .nav-group{padding:7px 8px 3px 12px;font-size:11px;font-weight:500;color:var(--faint)}
+/* /it 셸은 nav-item 를 <a> 로 쓴다. 이 사이트는 모드 전환이라 <button> 을 쓰므로
+   버 re btn UA 배경(회색 상자)이 그대로 보인다. 명시적으로 걷어 내고 /it 색을 따른다. */
 .nav-item{display:flex;align-items:baseline;gap:8px;padding:5px 8px 5px 12px;font-size:14px;
-  color:var(--fg-dim);text-decoration:none;border-radius:6px;line-height:1.5}
+  color:var(--fg-dim);text-decoration:none;border-radius:6px;line-height:1.5;
+  background:transparent;border:0;font:inherit;text-align:left;cursor:pointer;
+  -webkit-appearance:none;appearance:none;width:100%}
 .nav-item.sub{padding-left:26px}
 .nid{font-family:var(--mono);font-size:10px;color:var(--faint);flex:0 0 auto}
 .nav-item:hover{background:transparent;color:var(--fg)}
@@ -303,7 +307,7 @@ html.mid .cols{grid-template-columns:minmax(0,1fr)}
 html.mid .toc{display:none}
 /* ── Mintlify 테마 ── */
 .nav-item:hover{background:var(--surface-2);color:var(--fg)}
-.nav-item.on{background:var(--surface-2);color:var(--fg)}
+.nav-item.on{background:var(--surface-2);color:var(--fg);font-weight:600}
 .cover h1{font-weight:700}
 .phead h2{font-weight:700}
 .part p a,.part li a,.deft a,ol.steps span a{color:var(--primary);text-decoration:none}

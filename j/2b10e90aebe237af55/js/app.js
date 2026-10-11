@@ -1486,10 +1486,6 @@ document.addEventListener("keydown",e=>{
   });
   paint();
 })();
-(function(){
-  const btn=$("#themeToggle");
-  if(btn)btn.style.display="none";
-})();
 
 /* 진행률 바 — 학습 카드에서 "전체 한자 중 몇 번째까지 왔는지"를 보여 준다.
    스크롤이 아니라 페이징 기준이라 렌더링·이동 시점에만 갱신하면 된다 */
