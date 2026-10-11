@@ -1245,6 +1245,52 @@ function gsMove(d){
   document.addEventListener("click",e=>{if(!e.target.closest(".gs"))gsClose();});
 })();
 
+/* ── 통합 검색 — 명령 팔레트로 ─────────────────────────────
+   /it 규격: 상단 [검색 ⌘K] 버튼을 누르면 .pal-backdrop + .pal 이 뜨고,
+   입력하면 전 모드 색인에서 찾는다. 결과는 .pal-list 안에 나열한다. */
+(function(){
+  var box=$("#palbox"), lid=$("#gsPanel"), input=$("#qAll"), btn=$("#searchBtn"), back=$("#palBackdrop");
+  if(!box||!lid||!input||!btn||!back)return;
+
+  function open(){
+    box.classList.add("on"); back.classList.add("on");
+    document.body.classList.add("palOpen");
+    input.focus(); input.select();
+  }
+  function close(){
+    box.classList.remove("on"); back.classList.remove("on");
+    document.body.classList.remove("palOpen");
+  }
+  function isOn(){ return box.classList.contains("on"); }
+
+  btn.addEventListener("click",open);
+  back.addEventListener("click",close);
+  input.addEventListener("keydown",function(e){
+    if(e.key==="Escape"){close();btn.focus();}
+    else if(e.key==="Enter"){e.preventDefault();
+      var first=lid.querySelector(".gsRow,[data-i]");
+      if(first)first.click();
+    }
+  });
+  return {open:open,close:close,isOn:isOn};
+})();
+
+/* ── 사이드바 필터 — 학습 모드를 글자로 좁힌다 ── */
+(function(){
+  var f=$("#navFilter");
+  if(!f)return;
+  f.addEventListener("input",function(){
+    var q=f.value.trim().toLowerCase();
+    $$(".nav-item").forEach(function(n){
+      var on=!q||n.textContent.toLowerCase().indexOf(q)>-1;
+      n.classList.toggle("hide",!on);
+    });
+    $$(".nav-stage").forEach(function(st){
+      var any=st.querySelectorAll(".nav-item:not(.hide)").length;
+      st.classList.toggle("hide",any===0);
+    });
+  });
+})();
 /* ══════════ 탭/툴바 ══════════ */
 const VIEWS=GS_ORDER;
 const TBID={talk:"tbTalk",study:"tbStudy",pat:"tbPat",gram:"tbGram",conj:"tbConj",pos:"tbPos",spoken:"tbSpoken",expr:"tbExpr"};
@@ -1410,8 +1456,36 @@ document.addEventListener("keydown",e=>{
   if(e.key==="e"||e.key==="E")toggleEli5();
 });
 
-/* it-2026-09-05 규격은 어두운 바탕 하나뿐이다. 테마 토글은 숨긴다 */
-document.documentElement.setAttribute("data-theme","dark");
+/* ── 테마 — /it(it-2026-09-05) 와 같은 규격 ──
+   밝음/어둠 둘 다 같은 셸이다. 값은 localStorage 에 기억하고,
+   아무 것도 없으면 OS 설정을 따른다(prefers-color-scheme). */
+(function(){
+  var KEY='jpstudy:theme', root=document.documentElement;
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved!=="light"&&saved!=="dark"){
+    saved=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark";
+  }
+  root.setAttribute("data-theme",saved);
+  var btn=$("#themeToggle");
+  function paint(){
+    var dark=root.getAttribute("data-theme")==="dark";
+    if(btn){
+      btn.textContent=dark?"☾":"☀";
+      btn.title=dark?"밝은 테마로 전환":"어두운 테마로 전환";
+      btn.setAttribute("aria-pressed",String(dark));
+    }
+    var tc=document.querySelector('meta[name="theme-color"]');
+    if(tc)tc.setAttribute("content",dark?"#0d1117":"#ffffff");
+  }
+  if(btn)btn.addEventListener("click",function(){
+    var next=root.getAttribute("data-theme")==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+    paint();
+  });
+  paint();
+})();
 (function(){
   const btn=$("#themeToggle");
   if(btn)btn.style.display="none";

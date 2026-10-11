@@ -30,25 +30,15 @@
   });
   applyRD();
 
-  var rdbtn=document.getElementById('rdbtn'), rdpop=document.getElementById('rdpop');
-  function rdOpen(on){ rdpop.hidden=!on; rdbtn.setAttribute('aria-expanded', on?'true':'false'); }
-  rdbtn.addEventListener('click',function(e){ e.stopPropagation(); rdOpen(rdpop.hidden); });
-  rdpop.addEventListener('click',function(e){ e.stopPropagation(); });
-  document.addEventListener('click',function(){ rdOpen(false); });
+  /* 읽기 설정(글자 크기 등)은 상단바에서 각 모드의 툴바로 옮겼다.
+     이 파일에서는 세그먼트 동작과 적용만 남기고, 팝오버 관리는 하지 않는다. */
+  function rdOpen(){}
+  function set_pop_hidden(){}
 
-  /* ── 화면 배율 — 기본 150%.
-     <head> 인라인 스크립트가 이미 걸어 둔 값을 이어받아 버튼만 붙인다 ── */
-  var ZS=window.__zoomSteps||[1,1.25,1.5,1.75], z=window.__zoom||1.5;
-  var zb=document.getElementById('zoomBtn');
-  function applyZoom(){
-    root.style.setProperty('--zoom',z);
-    if(zb) zb.textContent=Math.round(z*100)+'%';
-    try{ localStorage.setItem(KEY+':zoom',z); }catch(e){}
-    if(window.__brk) window.__brk();
-  }
-  if(zb) zb.addEventListener('click',function(){ z=ZS[(ZS.indexOf(z)+1)%ZS.length]; applyZoom(); });
+  /* /it 셸은 확대 상수를 쓰지 않는다. 16px 기준 글자 크기만 남긴다. */
+  root.style.setProperty('--zoom',1);
+  if(window.__brk) window.__brk();
   addEventListener('resize',function(){ if(window.__brk) window.__brk(); });
-  applyZoom();
 
   /* ── ふりがな 상태도 기억한다. 켜고 끄는 빈도가 높은 설정이다 ── */
   try{
@@ -154,7 +144,6 @@
     if(e.key==='Escape'){
       if(document.activeElement&&document.activeElement.blur) document.activeElement.blur();
       closeNav();
-      rdOpen(false);
     }
   });
 })();

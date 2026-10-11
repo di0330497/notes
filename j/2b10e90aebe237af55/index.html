@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-theme="dark">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex,notranslate">
@@ -39,12 +39,8 @@
   <aside class="side" id="side">
     <div class="side-head">
       <a class="brand" href="#cover">JAPANESE</a>
-      <div class="meta">빈도순 한자 · JLPT N5–N1 · 1,947항목</div>
-      <div class="gs">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-        <input id="qAll" type="search" placeholder="전체 검색 (Ctrl+K)" autocomplete="off" aria-label="전체 검색">
-      </div>
-      <div class="gsPanel" id="gsPanel" hidden role="listbox" aria-label="전체 검색 결과"></div>
+      <div class="meta">빈도순 한자 · JLPT N5–N1</div>
+      <input class="filter" id="navFilter" type="text" placeholder="학습 모드 필터" spellcheck="false" aria-label="학습 모드 필터">
     </div>
 
     <nav class="tree" aria-label="학습 모드">
@@ -68,28 +64,9 @@
 
   <!-- ── 본문 ──────────────────────────────────────────── -->
   <div class="main">
-    <div class="topbar">
-      <button class="tbtn tocopen" id="navbtn" aria-label="목차 열기">☰</button>
-      <p class="crumb" id="crumb"><b>빈도순 일본어</b> · 표지</p>
-      <span class="pos keys kbdhint"><kbd>1</kbd>–<kbd>8</kbd> 모드</span>
-      <div class="rd">
-        <button class="tbtn" id="rdbtn" aria-expanded="false" aria-controls="rdpop">읽기 설정</button>
-        <div class="rdpop" id="rdpop" hidden>
-          <div class="rdrow"><span>글자 크기</span>
-            <div class="seg" data-seg="fs">
-              <button data-v="0">작게</button><button data-v="1">기본</button><button data-v="2">크게</button><button data-v="3">더 크게</button>
-            </div>
-          </div>
-          <div class="rdrow"><span>줄 간격</span>
-            <div class="seg" data-seg="lh"><button data-v="0">보통</button><button data-v="1">넓게</button></div>
-          </div>
-          <div class="rdrow"><span>고대비</span>
-            <div class="seg" data-seg="hc"><button data-v="0">끄기</button><button data-v="1">켜기</button></div>
-          </div>
-        </div>
-      </div>
-      <button type="button" class="zoom" id="zoomBtn" title="화면 배율 — 100 → 125 → 150 → 175%">150%</button>
-      <button type="button" class="theme-toggle" id="themeToggle" title="라이트/다크 모드 전환">🌙</button>
+    <div class="topbar"><span class="crumb" id="crumb"></span><span class="pos" id="posStat"></span>
+      <button type="button" class="search-btn" id="searchBtn" title="검색 (Ctrl/⌘+K)">검색 <kbd>⌘K</kbd></button>
+      <button type="button" class="theme" id="themeToggle" title="테마 전환 (다크/라이트)">☾</button>
       <div class="prog" id="topProg"></div>
     </div>
 
@@ -412,6 +389,8 @@
 
 <button class="burger" id="burger" aria-label="목차 열기">☰</button>
 <button id="toTop" aria-label="맨 위로">↑</button>
+<div class="pal-backdrop" id="palBackdrop"></div>
+<div class="pal" role="dialog" aria-label="통합 검색" id="palbox"><input class="pal-input" id="qAll" type="text" placeholder="한자·문형·문법·품사·구어체·표현·대화 통합 검색  (Esc 닫기)" spellcheck="false"><div class="pal-list" id="gsPanel" role="listbox"></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="data/dialogue-0.js?v=20261011-f"></script>

@@ -72,11 +72,14 @@ a{color:inherit}
 html{--zoom:1.5}
 body{zoom:var(--zoom)}
 .app{display:flex;height:calc(100vh / var(--zoom));overflow:hidden}
-.zoom{all:unset;cursor:pointer;margin-left:10px;padding:2px 8px;border:1px solid var(--line-2);border-radius:5px;
-  color:var(--muted);font-family:var(--mono);font-size:11px;white-space:nowrap}
-.zoom:hover{color:var(--fg);border-color:var(--blue)}
-.theme{all:unset;cursor:pointer;margin-left:8px;padding:2px 8px;border:1px solid var(--line-2);border-radius:5px;
-  color:var(--muted);font-family:var(--mono);font-size:12px;line-height:1.6;white-space:nowrap}
+.search-btn{all:unset;cursor:pointer;margin-left:auto;flex:0 0 auto;display:flex;align-items:center;gap:7px;
+  padding:4px 6px 4px 10px;border:1px solid var(--line-2);border-radius:7px;color:var(--muted);
+  font-family:var(--sans);font-size:12px;white-space:nowrap}
+.search-btn:hover{color:var(--fg);border-color:var(--blue)}
+.search-btn kbd{font-family:var(--mono);font-size:10.5px;background:var(--surface-2);border:1px solid var(--line-2);
+  border-bottom-width:2px;border-radius:4px;padding:1px 5px;color:var(--muted);margin:0}
+.theme{all:unset;cursor:pointer;flex:0 0 auto;margin-left:2px;padding:3px 9px;border:1px solid var(--line-2);
+  border-radius:7px;color:var(--muted);font-size:13px;line-height:1.4}
 .theme:hover{color:var(--fg);border-color:var(--blue)}
 
 /* ── 사이드바 : 프로젝트 트리 ── */
@@ -84,7 +87,7 @@ body{zoom:var(--zoom)}
   display:flex;flex-direction:column;min-height:0}
 .side-head{padding:16px 14px 12px;border-bottom:1px solid var(--line)}
 .brand{display:block;font-weight:600;font-size:14px;text-decoration:none;letter-spacing:-.01em;color:var(--fg)}
-.side-head .meta{margin:3px 0 10px;font-size:11.5px;color:var(--faint);font-family:var(--mono)}
+.side-head .meta{margin:3px 0 10px;font-size:11.5px;color:var(--faint);font-family:var(--sans)}
 .filter{width:100%;background:var(--surface-2);border:1px solid var(--line-2);border-radius:7px;
   color:var(--fg);font-family:var(--sans);font-size:13px;padding:7px 10px;outline:none}
 .filter::placeholder{color:var(--faint)}
@@ -110,15 +113,12 @@ body{zoom:var(--zoom)}
 
 /* ── 본문 ── */
 .main{flex:1;min-width:0;display:flex;flex-direction:column}
-.topbar{height:44px;flex:0 0 44px;display:flex;align-items:center;gap:12px;padding:0 22px;
+.topbar{height:44px;flex:0 0 44px;display:flex;align-items:center;gap:10px;padding:0 22px;
   border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(8px);
-  font-size:12.5px;color:var(--muted);font-family:var(--mono)}
-.topbar{position:relative}
+  font-size:12.5px;color:var(--muted);font-family:var(--sans);position:relative}
 .topbar .crumb{margin:0;font-weight:500;font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-.topbar .pos{margin-left:auto;color:var(--faint);flex:0 0 auto}
-.topbar .keys{flex:0 0 auto}
-/* 읽은 비율 — 상단바 밑선을 채운다 */
-.topbar .prog{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--blue);transition:width .25s ease}
+.topbar .pos{margin-left:auto;color:var(--faint);flex:0 0 auto;font-family:var(--sans);font-size:11px}
+.topbar .prog{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--primary);transition:width .25s ease}
 .topbar kbd{font-family:var(--mono);font-size:10.5px;background:var(--surface-2);border:1px solid var(--line-2);
   border-bottom-width:2px;border-radius:4px;padding:1px 5px;color:var(--muted)}
 .scroll{flex:1;overflow-y:auto;min-height:0;scroll-behavior:smooth}
@@ -333,7 +333,6 @@ body{zoom:1;font-size:16px}
 .app{height:100vh}
 .toc{max-height:calc(100vh - 120px)}
 html.narrow .side{height:100vh}
-.zoom{display:none}
 p.ask,.deft,.panel .lead,ol.steps span{font-size:15px}
 .cover .stage-grid{margin-top:22px}
 .clead{margin:14px 0 22px;font-size:16px;color:var(--fg-dim);line-height:1.7;text-wrap:pretty}
@@ -725,42 +724,6 @@ html.narrow .stats-bar{padding:10px 20px}
 .gsEmpty{padding:18px 12px;font-size:13px;color:var(--muted)}
 .gsFoot{padding:8px 10px 2px;font-size:10.5px;color:var(--faint);font-family:var(--mono);
   border-top:1px solid var(--line);margin-top:4px}
-
-/* ── 상단바 ── */
-.tbtn{all:unset;cursor:pointer;flex:0 0 auto;padding:4px 10px;border:1px solid var(--line-2);
-  border-radius:6px;color:var(--muted);font-family:var(--sans);font-size:12.5px;white-space:nowrap}
-.tbtn:hover{color:var(--fg);border-color:var(--blue)}
-.tocopen{display:none}
-html.narrow .tocopen{display:inline-block}
-.rd{position:relative;flex:0 0 auto}
-.rdpop{position:absolute;right:0;top:calc(100% + 6px);z-index:40;width:212px;padding:12px;
-  background:var(--surface);border:1px solid var(--line-2);border-radius:10px;
-  box-shadow:0 16px 40px rgba(0,0,0,.4)}
-.rdpop[hidden]{display:none}
-.rdrow{display:flex;flex-direction:column;gap:6px;margin-bottom:11px}
-.rdrow:last-child{margin-bottom:0}
-.rdrow>span{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--faint);font-family:var(--mono);padding:0 4px}
-.seg{display:flex;gap:3px}
-.seg button{flex:1;padding:6px 4px;border:1px solid var(--line);background:var(--surface-2);
-  color:var(--fg-dim);border-radius:6px;font-family:inherit;font-size:12.5px;cursor:pointer;white-space:nowrap}
-.seg button:hover{border-color:var(--line-2);color:var(--fg)}
-.seg button[aria-pressed="true"]{background:var(--surface-2);border-color:var(--blue);color:var(--blue);font-weight:700}
-.seg[data-seg="fs"] button:nth-child(1){font-size:11px}
-.seg[data-seg="fs"] button:nth-child(3){font-size:14px}
-.seg[data-seg="fs"] button:nth-child(4){font-size:15px}
-.kbdhint{flex:0 0 auto;color:var(--faint);font-size:11.5px}
-.kbdhint kbd{font-family:var(--mono);font-size:10.5px;background:var(--surface-2);border:1px solid var(--line-2);
-  border-radius:4px;padding:1px 5px;color:var(--muted);margin:0 1px}
-html.narrow .kbdhint{display:none}
-.topbar .rdpop{font-family:var(--sans)}
-
-/* 읽기 설정 — data-fs / data-lh / data-hc */
-html[data-fs="0"] .page{font-size:14px}
-html[data-fs="2"] .page{font-size:17px}
-html[data-fs="3"] .page{font-size:19px}
-html[data-lh="1"] .page{line-height:1.95}
-html[data-hc="1"]{--fg:#ffffff;--fg-dim:#f2f5f8;--muted:#d5dbe3;--faint:#c2cad4;--line:#4a5560;--line-2:#5d6874}
 
 /* ── 페이지 조각 ── */
 hr.divider{margin:30px 0 0;border:0;height:0;border-top:1px solid var(--line)}
