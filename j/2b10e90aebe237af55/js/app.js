@@ -145,7 +145,8 @@ document.addEventListener("click",e=>{
 });
 /* 개수 줄 — "모드명 N단위 · 부가정보" 한 형식으로 통일한다 */
 function setCount(){
-  $("#cnt").textContent=[].slice.call(arguments).filter(Boolean).join(" · ");
+  const txt=[].slice.call(arguments).filter(Boolean).join(" · ");
+  $$(".page.on .count").forEach(el=>{el.textContent=txt;});
 }
 /* 빈 화면 — 어느 탭에서든 같은 문장, 같은 다음 행동 안내 */
 function emptyNote(mode){
@@ -185,7 +186,7 @@ document.addEventListener("click",e=>{
     posMode=b.dataset.pos;
     const c=$('#posView .chip[data-m="'+posMode+'"]');
     if(c)setChips("#posView",c);
-    renderPos();window.scrollTo({top:0});
+    renderPos();scrollTop();
     return;
   }
   if(b.dataset.go)gsToTab(b.dataset.go,b.dataset.q||"");
@@ -342,7 +343,7 @@ function paintStudy(scroll){
   $("#view-study").innerHTML=studyItems.slice(studyPage,end).map(x=>x.html).join("");
   setPager(end);
   updateProgress();
-  if(scroll)window.scrollTo({top:0});
+  if(scroll)scrollTop();
 }
 function setPager(end){
   const n=studyItems.length;
@@ -1066,9 +1067,17 @@ const ELI5ID={study:"eli5Study",pat:"eli5Pat",gram:"eli5Gram",conj:"eli5Conj",po
 let eli5Visible=true;
 const RENDER={study:renderStudy,pat:renderPat,gram:renderGrammar,conj:renderConj,
               pos:renderPos,spoken:renderSpoken,expr:renderExpr};
+/* 스크롤 컨테이너 — 셸이 .scroll 을 엔진으로 쓰므로 창이 아니라 그쪽을 되감는다 */
+const SCROLL=function(){return document.getElementById("main")||document.scrollingElement;};
+function scrollTop(){const s=SCROLL();if(s&&s.scrollTo)s.scrollTo({top:0});else window.scrollTo({top:0});}
+function showPage(id){
+  $$(".page").forEach(p=>p.classList.toggle("on",p.id===id));
+  const nav=$("#navCover");if(nav)nav.classList.toggle("on",id==="page-cover");
+}
 function switchView(v){
   if(VIEWS.indexOf(v)<0)v="study";
   $$(".tab").forEach(t=>{var on=t.dataset.v===v;t.classList.toggle("on",on);t.setAttribute("aria-pressed",on);});
+  showPage("page-"+v);
   VIEWS.forEach(x=>{
     $("#view-"+x).classList.toggle("hidden",x!==v);
     const tb=$("#"+TBID[x]);if(tb)tb.classList.toggle("hidden",x!==v);
@@ -1079,9 +1088,24 @@ function switchView(v){
   $$(".pager").forEach(p=>{if(v!=="study")p.classList.add("hidden");});
   RENDER[v]();
   updateProgress();
-  window.scrollTo({top:0});
+  setCrumb(v);
+  scrollTop();
+}
+/* 상단바 빵부스러기 — 통합 검색으로 튀어 들어올 때도 같이 따라간다 */
+function setCrumb(v){
+  const el=$("#crumb");if(!el)return;
+  const FULL={study:"학습 카드",pat:"문형 사전",gram:"문법",conj:"활용표",
+              pos:"품사 사전",spoken:"구어체",expr:"표현·관용구"};
+  const label=FULL[v]||"";
+  el.innerHTML="<b>빈도순 일본어</b>"+(label?" · "+label:"");
+  document.title=(label?label+" · ":"")+"빈도순 일본어";
 }
 $$(".tab").forEach(t=>t.onclick=()=>switchView(t.dataset.v));
+
+/* 표지 카드 — 누르면 해당 모드로 바로 들어간다 */
+$$("#stageGrid .st-card").forEach(a=>a.addEventListener("click",e=>{
+  e.preventDefault();switchView(a.dataset.v);
+}));
 
 $("#lvChips").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   fLv=c.dataset.l;setChips("#lvChips",c);renderStudy();});
@@ -1091,17 +1115,21 @@ $("#qStudy").addEventListener("input",()=>renderStudy());
 $("#qPat").addEventListener("input",()=>renderPat());
 $("#patCat").addEventListener("change",()=>renderPat());
 
-document.body.classList.add("fltCollapsed");
-$("#fltToggle").onclick=()=>{
-  const col=document.body.classList.toggle("fltCollapsed");
-  $("#fltToggle").textContent=col?"☰ 필터":"✕ 닫기";
-  $("#fltToggle").setAttribute("aria-expanded",String(!col));
-};
+(function(){
+  const btn=$("#fltToggle"); if(!btn) return;
+  document.body.classList.add("fltCollapsed");
+  btn.onclick=()=>{
+    const col=document.body.classList.toggle("fltCollapsed");
+    btn.textContent=col?"☰ 필터":"✕ 닫기";
+    btn.setAttribute("aria-expanded",String(!col));
+  };
+})();
 
 /* 맨 위로 */
 (function(){var b=$("#toTop");if(!b)return;
-  addEventListener("scroll",function(){b.classList.toggle("show",scrollY>420);},{passive:true});
-  b.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};})();
+  var s=SCROLL();
+  if(s)s.addEventListener("scroll",function(){b.classList.toggle("show",s.scrollTop>420);},{passive:true});
+  b.onclick=function(){if(s&&s.scrollTo)s.scrollTo({top:0,behavior:"smooth"});else scrollTop();};})();
 
 /* ふりがな 토글 */
 function toggleFurigana(){
@@ -1209,6 +1237,8 @@ function updateProgress(){
   const lastRank=studyItems[end-1].rank;
   const pct=Math.min(100,(lastRank/ALL.length)*100);
   bar.style.width=pct.toFixed(1)+"%";
+  const rail=$("#topProg");
+  if(rail)rail.style.width=pct.toFixed(1)+"%";
   bar.title=num(lastRank)+" / "+num(ALL.length)+"자 ("+pct.toFixed(0)+"%)";
 }
 
@@ -1225,23 +1255,27 @@ function toast(msg){
 
 /* ELI5 사이드바 토글 버튼 */
 (function(){
-  const nav=$(".nav-h");
-  if(!nav)return;
+  const stage=$("#navStage");
+  if(!stage)return;
+  const wrap=document.createElement("div");
+  wrap.className="nav-stage";
+  wrap.innerHTML='<div class="nav-stage-t">표시</div>';
   const btn=document.createElement("button");
-  btn.className="tab";
-  btn.style.cssText="font-size:11px;color:var(--faint);padding:6px 9px;";
-  btn.innerHTML="\ud83d\udca1 ELI5 <span style='font-size:10px;' id='eli5State'>ON</span>";
+  btn.className="nav-item";
+  btn.style.marginLeft="8px";
+  btn.innerHTML='<span class="mi">\ud83d\udca1</span>ELI5 한 줄 요약<span class="mc" id="eli5State">ON</span>';
   btn.onclick=()=>{
     toggleEli5();
     const s=$("#eli5State");
     if(s)s.textContent=eli5Visible?"ON":"OFF";
   };
-  nav.parentNode.insertBefore(btn,nav.nextSibling);
+  wrap.appendChild(btn);
+  stage.parentNode.appendChild(wrap);
 })();
 
 /* 학습 통계 대시보드 */
 (function(){
-  const view=$("#main");
+  const view=$("#main")||$("#scroll");
   if(!view)return;
   const stats=document.createElement("div");
   stats.className="stats-bar";

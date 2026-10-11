@@ -70,26 +70,56 @@
   var ORDER=['study','pat','gram','conj','pos','spoken','expr'];
   function paintCrumb(){
     var on=document.querySelector('.tab.on');
-    var v=on?on.getAttribute('data-v'):'study';
-    crumb.innerHTML='<b>빈도순 일본어</b> · '+(LABEL[v]||'');
-    document.title=(LABEL[v]||'')+' · 빈도순 일본어';
+    var cover=document.querySelector('.page.on#page-cover');
+    var v=cover?'cover':(on?on.getAttribute('data-v'):'study');
+    var t=v==='cover'?'':LABEL[v];
+    crumb.innerHTML='<b>빈도순 일본어</b>'+(t?' · '+t:'');
+    document.title=(t?t+' · ':'')+'빈도순 일본어';
   }
   [].slice.call(document.querySelectorAll('.tab')).forEach(function(t){
-    t.addEventListener('click',function(){ paintCrumb(); document.body.classList.remove('nav-open'); });
+    t.addEventListener('click',function(){ paintCrumb(); closeNav(); });
   });
+
+  /* ── 표지로 돌아가기 ── */
+  var navCover=document.getElementById('navCover');
+  if(navCover) navCover.addEventListener('click',function(e){
+    e.preventDefault();
+    if(typeof showPage==='function') showPage('page-cover');
+    [].slice.call(document.querySelectorAll('.tab')).forEach(function(t){t.classList.remove('on');t.setAttribute('aria-pressed','false');});
+    paintCrumb(); closeNav();
+  });
+
+  /* ── 해시 주소 ── (#cover / #study / #pat …) ── */
+  function fromHash(){
+    var h=(location.hash||'').replace('#','');
+    if(h==='cover'){ if(navCover) navCover.click(); return true; }
+    if(ORDER.indexOf(h)<0) return false;
+    if(typeof switchView==='function') switchView(h);
+    paintCrumb();
+    return true;
+  }
+  addEventListener('hashchange',fromHash);
+
   paintCrumb();
 
   /* ── 모바일 목차(사이드바 서랍) ── */
-  var nb=document.getElementById('navbtn');
-  if(nb) nb.addEventListener('click',function(e){
-    e.stopPropagation();
-    document.body.classList.toggle('nav-open');
+  var side=document.getElementById('side'), scrim=document.getElementById('scrim');
+  function closeNav(){
+    if(side) side.classList.remove('open');
+    if(scrim) scrim.classList.remove('on');
+  }
+  function openNav(){
+    if(side) side.classList.add('open');
+    if(scrim) scrim.classList.add('on');
+  }
+  ['navbtn','burger'].forEach(function(id){
+    var b=document.getElementById(id);
+    if(b) b.addEventListener('click',function(e){ e.stopPropagation(); side&&side.classList.contains('open')?closeNav():openNav(); });
   });
-  document.addEventListener('click',function(e){
-    if(!document.body.classList.contains('nav-open')) return;
-    if(e.target.closest('.side')||e.target.closest('#navbtn')) return;
-    document.body.classList.remove('nav-open');
-  });
+  if(scrim) scrim.addEventListener('click',closeNav);
+
+  /* 해시가 처음부터 있으면 그 화면으로 바로 연다 */
+  fromHash();
 
   /* ── 단축키 ──
      /      지금 보이는 검색창으로
@@ -105,26 +135,25 @@
     /* Ctrl+K — 통합 검색으로. 브라우저 기본 동작(주소창 검색)을 가로챈다 */
     if((e.ctrlKey||e.metaKey)&&!e.altKey&&(e.key==='k'||e.key==='K')){
       var ga=document.getElementById('qAll');
-      if(ga){e.preventDefault();document.body.classList.remove('nav-open');ga.focus();ga.select();}
+      if(ga){e.preventDefault();closeNav();ga.focus();ga.select();}
       return;
     }
     if(e.metaKey||e.ctrlKey||e.altKey) return;
     if(e.key==='/'&&!typing){
       var el=activeSearch();
-      if(el){e.preventDefault();document.body.classList.remove('nav-open');el.focus();el.select();}
+      if(el){e.preventDefault();closeNav();el.focus();el.select();}
       return;
     }
     if(!typing&&/^[1-7]$/.test(e.key)){
       var v=ORDER[parseInt(e.key,10)-1];
       if(v&&typeof switchView==='function'){
-        e.preventDefault(); switchView(v); paintCrumb();
-        document.body.classList.remove('nav-open');
+        e.preventDefault(); switchView(v); paintCrumb(); closeNav();
       }
       return;
     }
     if(e.key==='Escape'){
       if(document.activeElement&&document.activeElement.blur) document.activeElement.blur();
-      document.body.classList.remove('nav-open');
+      closeNav();
       rdOpen(false);
     }
   });
