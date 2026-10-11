@@ -140,7 +140,6 @@ body{zoom:var(--zoom)}
   border:1px solid var(--line);border-radius:8px;font-size:12px;color:var(--muted)}
 .stat b{font-family:var(--mono);font-size:15px;color:var(--fg);font-weight:600}
 
-.panel{padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:26px}
 .panel .lead{margin:0 0 14px;font-size:14px;color:var(--fg-dim);line-height:1.55;text-wrap:pretty}
 .kv{display:flex;flex-wrap:wrap;gap:10px 26px;margin:0}
 .kv>div{display:flex;align-items:baseline;gap:8px}
@@ -193,38 +192,21 @@ table.chk code{font-family:var(--mono);font-size:11px;color:var(--green);backgro
   color:var(--muted);letter-spacing:.02em;font-family:var(--mono)}
 .pn{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--faint)}
 .part p{margin:0 0 16px;text-wrap:pretty}
-.part p a,.part li a,.deft a,ol.steps span a{color:var(--fg);text-decoration:underline;text-underline-offset:.25rem}
-.part ul{margin:0 0 14px;padding-left:20px}
+.part p a,.part li a,.deft a,.part ul{margin:0 0 14px;padding-left:20px}
 .part li{margin:0 0 8px;text-wrap:pretty}
 
 code{font-family:var(--mono);font-size:1em;background:none;border:0;padding:0;font-weight:600;color:var(--fg)}
 /* keep-all 로 못 끊는 긴 토큰(URL·명령행)만 예외적으로 넘겨 준다 */
-code,.part p,.part li,p.ask,p.essence,.deft,.panel .lead,ol.steps span,blockquote{overflow-wrap:anywhere}
-blockquote{margin:0 0 14px;padding:2px 0 2px 16px;border-left:2px solid var(--line-2);color:var(--muted)}
+code,.part p,.part li,blockquote{margin:0 0 14px;padding:2px 0 2px 16px;border-left:2px solid var(--line-2);color:var(--muted)}
 .arw{color:var(--blue);font-weight:600;padding:0 3px}
 
 /* 2. 핵심 질문 — 1번·3번과 같은 평문. 상자 없음. 굵은 색글자는 쓰지 않는다. */
-p.ask{margin:0 0 14px;padding:0;background:none;border:0;
-  font-size:14px;font-weight:400;line-height:1.55;color:var(--fg);text-wrap:pretty}
 
 /* 3. 동작 예시 — 1번과 같은 평문. 카드 상자 없음. */
 
 /* 4. 동작 과정 — OpenCode 식 리스트: 작은 모노 번호 + 이름/설명, 행 사이 헤어라인 */
-ol.steps{list-style:none;margin:0;padding:0 !important;counter-reset:s}
-ol.steps>li{position:relative;counter-increment:s;padding:10px 0 10px 30px;margin:0;border-bottom:1px solid var(--line)}
-ol.steps>li:last-child{border-bottom:0;padding-bottom:2px}
-ol.steps>li::before{content:counter(s);position:absolute;left:0;top:11px;width:20px;text-align:left;
-  font-family:var(--mono);font-size:11px;font-weight:500;color:var(--faint)}
-ol.steps b{display:block;font-size:14px;font-weight:500;margin-bottom:2px;color:var(--fg)}
-ol.steps span{color:var(--muted);font-size:14px;text-wrap:pretty}
 
 /* 5. 한 줄 요약 — 1번·3번과 같은 평문. 상자 없음. */
-.part-essence{margin-bottom:0}
-p.essence{margin:0;padding:0;background:none;border:0;
-  font-size:14px;font-weight:400;line-height:1.55;color:var(--fg);text-wrap:pretty}
-p.essence .ess-sub{display:block;margin-bottom:5px;font-size:11.5px;font-weight:600;letter-spacing:.04em;
-  color:var(--faint);font-family:var(--mono)}
-p.essence .ess-sub::after{content:"의 본질"}
 
 /* ── Mintlify식 2단 + 컴포넌트 ── */
 .wrap.wide{max-width:1020px}
@@ -251,22 +233,8 @@ p.essence .ess-sub::after{content:"의 본질"}
 :focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 
 /* 2. 핵심 질문 — Mintlify Info 콜아웃 */
-p.ask{position:relative;padding:12px 16px 12px 44px;background:var(--surface);border:1px solid var(--line);
-  border-left:3px solid var(--blue);border-radius:0 10px 10px 0}
-p.ask::before{content:"i";position:absolute;left:14px;top:12px;width:20px;height:20px;display:grid;
-  place-items:center;border:1px solid var(--line-2);border-radius:50%;background:var(--surface-2);
-  font-family:var(--mono);font-size:11px;font-style:normal;color:var(--fg)}
 /* 5. 한 줄 요약 — Mintlify Tip 카드 */
-p.essence{padding:14px 18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;
-  font-size:15px;line-height:1.6}
 /* 4. 동작 과정 — Mintlify Steps: 동그라미 번호 + 연결선 */
-ol.steps>li{padding:12px 0 12px 38px;border-bottom:0}
-ol.steps>li::before{top:13px;width:22px;height:22px;display:grid;place-items:center;
-  border:1px solid var(--line-2);border-radius:50%;background:var(--surface-2);
-  font-size:11px;color:var(--fg-dim)}
-ol.steps>li::after{content:"";position:absolute;left:11px;top:39px;bottom:-4px;width:1px;background:var(--line)}
-ol.steps>li:last-child::after{display:none}
-ol.steps b{font-weight:600}
 /* 참고 문서 카드 — 화살표 추가 */
 .ref .go{margin-left:auto;flex:0 0 auto;color:var(--faint)}
 .ref:hover .go{color:var(--fg)}
@@ -310,13 +278,8 @@ html.mid .toc{display:none}
 .nav-item.on{background:var(--surface-2);color:var(--fg);font-weight:600}
 .cover h1{font-weight:700}
 .phead h2{font-weight:700}
-.part p a,.part li a,.deft a,ol.steps span a{color:var(--primary);text-decoration:none}
-.part p a:hover,.part li a:hover,.deft a:hover,ol.steps span a:hover{text-decoration:underline}
-.prose p code,.prose li code,.deft code{background:var(--surface-2);border:1px solid var(--line);
+.part p a,.part li a,.deft a,.part p a:hover,.part li a:hover,.deft a:hover,.prose p code,.prose li code,.deft code{background:var(--surface-2);border:1px solid var(--line);
   border-radius:6px;padding:.1em .35em;font-size:.85em;font-weight:500;color:var(--fg)}
-p.ask{background:var(--info-bg);border:1px solid var(--info-bd);border-left:3px solid var(--blue)}
-p.ask::before{color:var(--blue);border-color:var(--info-bd);background:transparent}
-p.essence{background:var(--tip-bg);border:1px solid var(--tip-bd)}
 .toc a{position:relative}
 .toc a.on{color:var(--primary);background:color-mix(in srgb,var(--primary) 10%,transparent)}
 .toc a.on::before{content:"";position:absolute;left:-16px;top:6px;bottom:6px;width:2px;
@@ -337,7 +300,6 @@ body{zoom:1;font-size:16px}
 .app{height:100vh}
 .toc{max-height:calc(100vh - 120px)}
 html.narrow .side{height:100vh}
-p.ask,.deft,.panel .lead,ol.steps span{font-size:15px}
 .cover .stage-grid{margin-top:22px}
 .clead{margin:14px 0 22px;font-size:16px;color:var(--fg-dim);line-height:1.7;text-wrap:pretty}
 :root{--sans:"Inter","Pretendard Variable","Pretendard",-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic","맑은 고딕",system-ui,sans-serif}
@@ -402,9 +364,7 @@ html.narrow .burger{display:grid;place-items:center;position:fixed;z-index:31;ri
   .page{display:block !important;page-break-after:always}
   body{background:#fff;color:#111;zoom:1}
   .zoom{display:none}
-  .part-ask,.part-essence,.part-example,.panel,.st-card{background:none;border-color:#ccc}
-  p.ask,p.essence{color:#111}
-}
+    }
 
 
 /* ══════════════════════════════════════════════════════════
@@ -491,9 +451,7 @@ select:focus{border-color:var(--blue)}
 .uLabel{flex:none;display:inline-block;border-radius:5px;padding:1px 7px;border:1px solid var(--line-2);
   color:var(--muted);font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.03em;
   white-space:nowrap}
-.uMean,.uTip,.uCue,.eli5-box{display:flex;align-items:baseline;gap:9px;padding:10px 13px;
-  border-radius:8px;line-height:1.7}
-.uMean{margin:0 0 12px;background:var(--surface-2);border:1px solid var(--line);
+.uMean,.uTip,.uCue,.uMean{margin:0 0 12px;background:var(--surface-2);border:1px solid var(--line);
   font-size:14px;color:var(--fg-dim)}
 .uTip{margin:12px 0 0;font-size:13.5px;padding:11px 13px;
   background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--fg-dim)}
@@ -547,40 +505,11 @@ td:first-child{color:var(--fg-dim);font-weight:600;white-space:nowrap}
 .lvdot.n0{background:var(--cyan)} .lvdot.n5{background:var(--green)} .lvdot.n4{background:var(--cyan)}
 .lvdot.n3{background:var(--yellow)} .lvdot.n2{background:var(--orange)} .lvdot.n1{background:var(--magenta)}
 
-/* ── ELI5 4단계 ── */
-.eli5{margin:0}
-.eli5-sec{margin:13px 0 0}
-.eli5-sec:first-child{margin-top:0}
-.eli5-sec+.eli5-sec{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
-.eli5-h{display:flex;align-items:center;gap:7px;margin:0 0 5px;
-  font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--muted)}
-.eli5-b{font-size:14px;line-height:1.7;color:var(--fg-dim)}
-.eli5-b b{color:var(--fg);font-weight:600}
-.eli5-sec.one .eli5-b{font-size:15px;color:var(--fg);font-weight:500}
-.eli5-ol{margin:0;padding-left:20px;font-size:14px;line-height:1.7;color:var(--fg-dim)}
-.eli5-ol li{margin:3px 0}
-.eli5-ol li::marker{color:var(--faint);font-family:var(--mono);font-size:11px}
-.eli5-ol ul{margin:2px 0 0;padding-left:16px;list-style:none}
-.eli5-ol ul li{color:var(--muted);font-size:13px}
-.eli5-ol ul li::before{content:"— "}
-.eli5-fold{margin-top:13px;border-top:1px solid var(--line);padding-top:12px}
-.eli5-toggle{display:flex;align-items:center;gap:8px;width:100%;padding:0;border:0;background:none;
-  text-align:left;cursor:pointer;color:var(--muted);font-family:var(--mono);font-size:11.5px}
-.eli5-toggle:hover{color:var(--fg)}
-.eli5-toggle .fi{flex:none;display:inline-grid;place-items:center;width:17px;height:17px;
-  border:1px solid var(--line-2);border-radius:4px;font-size:10px;color:var(--faint)}
-.eli5-toggle[aria-expanded="true"] .fi{color:var(--blue);border-color:var(--blue)}
-.eli5-toggle .fh{margin-left:auto;font-size:10.5px;color:var(--faint)}
-.eli5-body[hidden]{display:none}
-
 /* ── 안내문 ── */
 .note{margin:0 0 22px;padding:15px 18px;background:var(--surface);border:1px solid var(--line);
   border-radius:10px;font-size:14px;color:var(--fg-dim);line-height:1.7}
 .note b{color:var(--fg);font-weight:600}
 .note.emptyNote{color:var(--muted);padding:26px 20px}
-.eli5-badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:10.5px;
-  font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--primary-ink);
-  background:var(--tip-bg);border:1px solid var(--tip-bd);border-radius:5px;padding:2px 8px;margin-right:9px}
 
 /* ── 통계 배지 (표지) ── */
 .props{display:flex;flex-wrap:wrap;gap:10px;margin:0}
@@ -740,7 +669,6 @@ hr.divider{margin:30px 0 0;border:0;height:0;border-top:1px solid var(--line)}
 .elseBtn:hover{border-color:var(--blue);color:var(--blue)}
 .cluHd{margin:22px 0 8px;font-size:12.5px;font-weight:700;color:var(--fg-dim);letter-spacing:-.01em}
 .cluHd em{font-style:normal;color:var(--faint);font-family:var(--mono);font-size:11px;font-weight:400;margin-left:8px}
-.eli5-toggle .fold-ic{font-family:var(--mono);font-size:11px;color:var(--faint)}
 
 /* ── 진행률 · 맨 위로 ── */
 .progress-wrap{position:sticky;top:0;z-index:4;padding:0;height:3px}

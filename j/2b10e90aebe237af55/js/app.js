@@ -97,52 +97,8 @@ function secHd(code,name,meta){
   return '<div class="secHd"><span class="pn">'+esc(code)+'</span>'+esc(name)
     +(meta?'<span class="pn2">'+esc(meta)+'</span>':"")+'</div>';
 }
-/* ══════════ ELI5 4단계 — it-2026-09-05 본문 규격 ══════════
-   💡 한 줄 요약(맨 위 · 한 문장) → 📚 핵심 정의(What+Why, 전문 용어 없이)
-   → 🔍 쉬운 비유(일상 대상) → 🛠️ 핵심 능력(번호 3~4개 + 세부 불렛).
-   색을 쓰지 않는다. 섹션 사이는 괘선, 구분은 제목과 모양으로만 한다. */
-function eli5Sec(cls,head,body){
-  return '<div class="eli5-sec'+(cls?' '+cls:'')+'">'
-    +'<div class="eli5-h">'+esc(head)+'</div>'
-    +'<div class="eli5-b">'+body+'</div></div>';
-}
-function eli5List(items){
-  /* items: [{t:"이름", d:["세부","세부"]}] — 번호 리스트 + 한 칸 들여쓴 불렛 */
-  let h='<ol class="eli5-ol">';
-  items.forEach(it=>{
-    h+='<li><b>'+esc(it.t)+'</b>';
-    if(it.d&&it.d.length)h+='<ul>'+it.d.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
-    h+='</li>';
-  });
-  return h+'</ol>';
-}
-function eli5Html(o){
-  return '<div class="eli5">'
-    +eli5Sec('one','💡 한 줄 요약',esc(o.one))
-    +eli5Sec('','📚 핵심 정의',esc(o.def))
-    +eli5Sec('','🔍 쉬운 비유',esc(o.an))
-    +'<div class="eli5-sec"><div class="eli5-h">🛠️ 핵심 능력과 동작 방식</div>'
-    +eli5List(o.feat)+'</div></div>';
-}
 /* 카드 안에 접개로 넣는 형태 — 카드가 너무 길어지지 않게 */
-function eli5Fold(o,label){
-  const n=o.feat?o.feat.length:0;
-  return '<div class="eli5-fold">'
-    +'<button class="eli5-toggle" aria-expanded="false">'
-    +'<span class="fold-ic">+</span>'+(label||'💡 ELI5 로 보기')
-    +'<span style="margin-left:auto;color:var(--muted);font-size:10.5px">요약 · 정의 · 비유 · 능력 '+n+'가지</span></button>'
-    +'<div class="eli5-body" hidden>'+eli5Html(o)+'</div></div>';
-}
-document.addEventListener("click",e=>{
-  const t=e.target.closest(".eli5-toggle");
-  if(!t)return;
-  const on=t.getAttribute("aria-expanded")==="true";
-  t.setAttribute("aria-expanded",String(!on));
-  const ic=t.querySelector(".fold-ic");
-  if(ic)ic.textContent=on?"+":"−";
-  const b=t.parentElement.querySelector(".eli5-body");
-  if(b)b.hidden=on;
-});
+
 /* 개수 줄 — "모드명 N단위 · 부가정보" 한 형식으로 통일한다 */
 function setCount(){
   const txt=[].slice.call(arguments).filter(Boolean).join(" · ");
@@ -250,29 +206,6 @@ document.addEventListener("click",e=>{
 
 /* ══════════ 학습 카드 ══════════ */
 let fLv="all";
-/* 한자 카드용 ELI5 4단계 — 음독/훈독을 레고 부품 비유로 풀어 설명한다 */
-function kanjiEli5(e){
-  const on=e.on||"", kun=e.kun||"";
-  const feat=[];
-  if(on)feat.push({t:"음독으로 읽기",d:[
-    '다른 한자와 합쳐진 낱말에서 "'+on+'"처럼 읽어요',
-    '중국에서 건너온 음이라 홀로는 잘 안 쓰여요',
-    '예문에서 '+on+'이 쓰인 자리를 찾아 보세요']});
-  if(kun)feat.push({t:"훈독으로 읽기",d:[
-    '일본 고유어 낱말에서 "'+kun+'"처럼 홀로 읽어요',
-    '히라가나와 함께 붙어 써요',
-    '예문에서 '+kun+'이 쓰인 자리를 찾아 보세요']});
-  feat.push({t:"뜻 하나로 묶기",d:[
-    '"'+e.hun+'" 라는 뜻을 먼저 떠올리고 카드를 보세요',
-    '읽기는 두 가지지만 뜻은 하나로 통한다는 점이 핵심이에요',
-    '예문을 소리 내어 읽으면 외워져요']});
-  return {
-    one:'「'+e.k+'」는 '+(e.hun||"")+' — '+(on?'음독 '+on:'')+((on&&kun)?' · ':'')+(kun?'훈독 '+kun:''),
-    def:e.k+'은(는) '+(e.hun||"")+' 라는 뜻을 가진 한자예요. '+(on?'합성어에서 '+on+', ':'')+(kun?'고유어 낱말에서 '+kun+'로 읽어요.':''),
-    an:'한자는 레고 블록 같아요. 하나만으로도 뜻이 있지만, 다른 한자와 붙이면 전혀 새로운 낱말이 되죠. 음독은 중국에서 들여온 부품, 훈독은 일본 토종 부품이라고 생각하면 구분이 쉬워요.',
-    feat:feat
-  };
-}
 function cardHTML(e,rank,rankLabel){
   const kor=e.kor?'<div class="korSnd">한국음 '+esc(e.kor)+'</div>':'';
   /* 「문장 속 표현」은 예문에 {…} 로 표시해 둔 낱말이다. 데이터에 따로 싣지 않고 여기서 꺼낸다 */
@@ -285,7 +218,6 @@ function cardHTML(e,rank,rankLabel){
          +(m?' — 문장 속 표현 '+fmt(m[1]):"")+'</span></div>'
     });
   }).join("");
-  const eli5=eli5Fold(kanjiEli5(e));
   return '<div class="card" data-r="'+rank+'">'
     +'<button class="bookmark-btn'+(bookmarks.has(rank)?' active':'')+'" data-r="'+rank+'" aria-label="북마크"></button>'
     +'<div class="kanjiCol">'
@@ -294,7 +226,7 @@ function cardHTML(e,rank,rankLabel){
     +'<div class="exCol"><div class="readRow">'
     +'<span class="rBadge on">音</span><span class="readTx">'+esc(e.on)+'</span>'
     +'<span class="rBadge kn">訓</span><span class="readTx">'+esc(e.kun)+'</span>'
-    +'</div>'+blocks+eli5+'</div></div>';
+    +'</div>'+blocks+'</div></div>';
 }
 const STUDYBYK={};
 if(typeof STUDY_FULL!=='undefined')STUDY_FULL.forEach(e=>{STUDYBYK[e.k]=e;});
@@ -396,28 +328,6 @@ function focusCard(sel){
 }
 
 /* ══════════ 문형 사전 — 의미 분류 → 클러스터 2단 묶음 ══════════ */
-/* 문형용 ELI5 4단계 — "문장의 틀" 비유로 설명한다 */
-function patEli5(p){
-  const cluster=p.clu||"";
-  const cat=CATNAME[p.cat]||p.cat;
-  const feat=[
-    {t:"어디에 끼우나",d:[
-      '빈칸 '+p.pat+' 안에 알맞은 말을 끼워 넣어요',
-      '끼운 뒤 문장 끝까지 말해야 뜻이 완성돼요']},
-    {t:"뜻이 겹치는 것끼리",d:[
-      '비슷한 문형은 같은 묶음에 모여 있어요',
-      '겹치는 문형은 예문을 나란히 놓고 비교하세요']},
-    {t:"예문으로 굳히기",d:[
-      '예문을 소리 내어 두 번 읽어 보세요',
-      '끝 부분 '+p.pat.replace(/^～/,"")+' 이 자연스럽게 나올 때까지 반복하세요']}
-  ];
-  return {
-    one:esc(p.pat)+' = '+esc(p.mean),
-    def:p.pat+'은(는) '+p.mean+' 라는 뜻으로 쓰는 문장의 틀이에요. '+cat+' 자리에 속하고, '+cluster+' 상황에서 씁니다.',
-    an:'문형은 문장의 틀(주형) 같아요. 붕어빵 틀에 어떤 재료를 넣느냐에 따라 맛은 달라지지만, 모양은 틀이 정하죠. '+p.pat+' 도 마찬가지로, 안에 무슨 말을 넣든 문장의 결말은 이 틀이 결정해요.',
-    feat:feat
-  };
-}
 let pLv="all";
 function renderPat(hlPat){
   const q=$("#qPat").value.trim().toLowerCase(),cat=$("#patCat").value;
@@ -447,7 +357,6 @@ function renderPat(hlPat){
         h+='<div class="uCard'+(hlPat===p.pat?" hl":"")+'" data-p="'+esc(p.pat)+'">'
           +uTop(lvBadge(p.lv),esc(p.pat),CATNAME[p.cat]||p.cat,true)
           +meanBox(p.mean)
-          +eli5Fold(patEli5(p))
           +exList(p.ex)
           +'</div>';
       });
@@ -467,29 +376,7 @@ function gotoPat(p){
 
 /* ══════════ 문법 ══════════ */
 const GRAM_CH=[["A","발음 팁"],["B","품사"],["C","명사·지시·수"],["D","동사총론"],["E","동사활용"],["F","형용사"],["G1","조사①"],["G2","조사②"],["H","조동사"],["I","상·보조"],["J","수수"],["K","경어"],["L","문장"],["M3","N3 고급"],["M2","N2 고급"],["M1","N1 고급"],["Z","일본식 사고"]];
-/* 문법용 ELI5 4단계 — 문장 설계도 비유로 설명한다 */
 const GRAM_BY_CH={"A":"발음","B":"품사","C":"명사","D":"동사","E":"동사 활용","F":"형용사","G1":"조사","G2":"조사","H":"조동사","I":"상·보조","J":"수수","K":"경어","L":"문장","M3":"고급","M2":"고급","M1":"고급","Z":"사고"};
-function gramEli5(g){
-  const what=GRAM_BY_CH[g.ch]||g.ch;
-  const feat=[
-    {t:"무엇을 하나",d:[
-      what+' 자리를 다루는 규칙이에요',
-      '규칙을 알면 문장이 왜 그렇게 되는지 보여요']},
-    {t:"어디서 쓰이나",d:[
-      '예문에서 이 문법이 쓰인 자리를 찾아 보세요',
-      '밑줄('+(g.t||"")+')이 그 자리예요']},
-    {t:"헷갈리는 것과 구분",d:[
-      '비슷한 문법은 관련 문형 배지로 건너뛰어 비교하세요',
-      '차이는 예문의 끝부분에서 가장 크게 드러나요']}
-  ];
-  const an="문법은 문장의 설계도 같아요. 재료(단어)만으로는 집이 안 서듯, 단어를 어떤 순서로 놓고 어떤 표시를 붙일지 정하는 게 문법이에요. "+g.t+" 은(는) 그 설계도에서 "+what+" 부분을 담당합니다.";
-  return {
-    one:esc(g.t),
-    def:(g.desc||"").split(". ")[0]+".",
-    an:an,
-    feat:feat
-  };
-}
 /* 문법 항목 → 활용표 항목 연결. 위에서부터 먼저 걸리는 것을 쓴다 */
 const GRAM2CONJ=[
   [/3그룹|그룹 구별|동사의 특징과 활용|그룹 분류/,"v-grp"],
@@ -590,7 +477,6 @@ function renderGrammar(){
       +uTop(lvBadge(g.lv),esc(g.t),g.cn)
       +'<div class="uDesc">'+esc(g.desc)+'</div>'
       +meanBox(grammarMeaningHint(g))
-      +eli5Fold(gramEli5(g))
       +exList(g.ex)
       +(foot?'<div class="uFoot">'+foot+'</div>':"")
       +'</div>';
@@ -606,27 +492,6 @@ $("#gramLv").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!
 $("#qGram").addEventListener("input",()=>renderGrammar());
 
 /* ══════════ 활용표 ══════════ */
-/* 활용표용 ELI5 — "옷을 갈아입힌다" 비유 */
-function conjEli5(c){
-  const rows=c.rows?c.rows.length:0;
-  const feat=[
-    {t:"표를 세로로 읽기",d:[
-      '한 행이 한 가지 자리에요',
-      '윗행(원형)에서 아랫행으로 갈수록 자리가 바뀌어요']},
-    {t:"패턴 찾기",d:[
-      '행마다 바뀌는 부분과 안 바뀌는 부분을 표시해 보세요',
-      '규칙이 보이면 새 동사에도 같은 방식으로 적용할 수 있어요']},
-    {t:"읽으며 확인",d:[
-      '한 행을 고른 뒤 소리 내어 세 번 읽어 보세요',
-      '예문에서 그 형태가 쓰인 자리를 찾아 보세요']}
-  ];
-  return {
-    one:esc(c.t)+' — '+(c.gn||"활용")+'의 변화를 표로 본다',
-    def:c.t+'은(는) '+(c.desc||"").split(". ")[0]+'. 표 '+(c.rows?c.rows.length:0)+'행으로 정리했다.',
-    an:'활용은 옷 갈아입히기랑 같아요. 같은 사람(동사)이라도 학교 갈 때, 운동할 때, 잠잘 때 입는 옷이 다르죠. 일본어 동사도 어른 앞에서, 친구에게, 과거를 말할 때 모양을 바꿉니다. 이 표는 그 옷장이에요.',
-    feat:feat
-  };
-}
 let cjG="all";
 (function(){
   if(!hasCONJ)return;
@@ -658,7 +523,6 @@ function renderConj(hlId){
     h+='<div class="uCard'+(hlId===c.id?" hl":"")+'" id="cj-'+esc(c.id)+'">'
       +uTop(lvBadge(c.lv),esc(c.t),c.id)
       +'<div class="uDesc">'+esc(c.desc)+'</div>'
-      +eli5Fold(conjEli5(c))
       +tableHTML(c.head,c.rows)
       +(c.tip?tipBox(fmt(c.tip)):"")
       +exList(c.ex)
@@ -848,27 +712,6 @@ if($("#talkKo"))$("#talkKo").onclick=()=>{tkKo=!tkKo;applyKo();
 if($("#talkStop"))$("#talkStop").onclick=()=>{try{window.speechSynthesis.cancel();}catch(e){}
   $$("#view-talk .line").forEach(x=>x.classList.remove("playing"));toast("읽기를 멈췄어요");};
 /* ══════════ 구어체 ══════════ */
-/* 구어체용 ELI5 — "줄임말" 비유 */
-function spokenEli5(x){
-  const n=x.forms?x.forms.length:0;
-  const feat=[
-    {t:"원형 먼저 짚기",d:[
-      '표 왼쪽이 정식(원형)이에요',
-      '원형을 먼저 읽은 뒤 오른쪽 구어형을 읽으세요']},
-    {t:"어디가 줄었나",d:[
-      '원형과 구어형을 겹쳐 보고 빠진 부분을 찾아 보세요',
-      '줄어드는 자리는 대부분 정해져 있어요']},
-    {t:"소리 내어 연결",d:[
-      '원형 → 구어형 순으로 두 번 읽어 보세요',
-      '예문에서 구어형이 쓰인 자리를 찾아 보세요']}
-  ];
-  return {
-    one:fmt(x.t)+' — 정식 말을 줄이면 이렇게 된다',
-    def:(x.rule||"").split(". ")[0]+'. 변환 '+n+'쌍을 표로 정리했다.',
-    an:'구어체는 줄임말 같아요. "안녕하세요"를 "안녕"으로 줄이듯, 일본어도 발음을 편하게 줄입니다. 줄이는 규칙이 정해져 있어서 그 규칙만 알면 처음 듣는 말도 귀에 들어와요.',
-    feat:feat
-  };
-}
 let spSec="all";
 /* 묶음 기준은 sec 가 아니라 sn 이다.
    dialect.js 는 sec 하나("dialect")에 関東·関西·語尾·音変化·語彙 다섯 묶음을
@@ -909,7 +752,6 @@ function renderSpoken(){
     h+='<div class="uCard">'
       +uTop(lvBadge(x.lv),fmt(x.t),x.sn,true)
       +'<div class="uDesc">'+esc(x.rule)+'</div>'
-      +eli5Fold(spokenEli5(x))
       +tableHTML(["정식·원형","구어형","메모"],x.forms)
       +(x.warn?warnBox(fmt(x.warn)):"")
       +exList(x.ex)
@@ -942,26 +784,6 @@ let posP="all",posMode="group";
   }
 })();
 /* 묶음 보기 — "함께 외워야 하는 것"을 표로 세운다 */
-/* 품사 묶음용 ELI5 — "직업" 비유 */
-function posEli5(x){
-  const feat=[
-    {t:"어떤 직업인가",d:[
-      (x.pn||"이 품사")+'는 문장에서 '+(x.gn||"")+' 역할을 해요',
-      '같은 직업끼리 한 자리에 모여 있어요']},
-    {t:"어떤 자리에 서나",d:[
-      '표의 윗행이 기본 자리예요',
-      '아랫행으로 갈수록 자리가 조금씩 달라져요']},
-    {t:"반대말과 짝짓기",d:[
-      '반대말끼리 붙어 있으면 둘 다 외워져요',
-      '예문에서 이 낱말이 쓰인 자리를 찾아 보세요']}
-  ];
-  return {
-    one:esc(x.t),
-    def:(x.desc||"").split(". ")[0]+'.',
-    an:'품사는 단어의 직업이에요. 회사에서 기획·개발·디자인으로 나뉘듯, 문장에서도 명사·동사·형용사가 각자 할 일이 다릅니다. '+(x.pn||"이 품사")+'는 그중 '+(x.gn||"")+' 역할을 맡은 부서예요.',
-    feat:feat
-  };
-}
 function renderPosGroup(hlId){
   const q=$("#qPos").value.trim().toLowerCase();
   const keep=POS.filter(x=>{
@@ -981,7 +803,6 @@ function renderPosGroup(hlId){
       +uTop(lvBadge(x.lv),title,x.pn)   /* 낱말은 .posW 가 세리프를 쓰고, 뒤따르는 설명은 UI 서체다 */
       +(x.mean?meanBox(x.mean):"")
       +'<div class="uDesc">'+esc(x.desc)+'</div>'
-      +eli5Fold(posEli5(x))
       +tableHTML(x.head,x.rows)
       +(x.tip?tipBox(fmt(x.tip)):"")
       +exList(x.ex)
@@ -992,33 +813,11 @@ function renderPosGroup(hlId){
   if(hlId)focusCard("#ps-"+hlId);
 }
 /* 낱말 보기 — 낱말 하나에 카드 하나. 다른 화면과 같은 예문 블록을 쓴다 */
-/* 낱말용 ELI5 — 개별 단어를 일상어와 연결해 설명한다 */
-function wordEli5(x){
-  const m=x.m||"";
-  const feat=[
-    {t:"뜻과 읽기",d:[
-      '읽기 '+stripM(x.w)+' 를 먼저 소리 내어 보세요',
-      '뜻은 "'+m+'" 라고 한 단어로 기억하세요']},
-    {t:"어떤 자리에 서나",d:[
-      (WCAT[x.c]||x.c||"")+' 자리에서 써요',
-      '예문에서 이 낱말이 쓰인 자리를 찾아 보세요']},
-    {t:"따라 붙이는 낱말",d:[
-      '같은 분류의 낱말을 나란히 보세요',
-      '반대말이 있으면 함께 외우세요']}
-  ];
-  return {
-    one:esc(stripM(x.w))+' = '+esc(m),
-    def:stripM(x.w)+'은(는) '+m+' 라는 뜻의 '+(PNAME[x.g]||x.g)+' 예요.',
-    an:'낱말 외우기는 전화번호 외우기와 같아요. 뜻(이름)과 소리(번호)를 한 번에 묶어 기억해야 나중에 꺼내 쓸 수 있어요. 예문은 그 낱말이 실제로 걸린 장면이에요.',
-    feat:feat
-  };
-}
 function wordCard(x){
   const r=stripM(x.w)===x.r?"":x.r;          /* 가나 낱말은 읽기를 겹쳐 적지 않는다 */
   return '<div class="uCard" data-w="'+esc(stripM(x.w))+'">'
     +uTop(lvBadge(x.lv),'<span class="posW">'+fmt(x.w)+'</span>',r)
     +meanBox(x.m)
-    +eli5Fold(wordEli5(x))
     +exList(x.ex)
     +(x.n?labelBox("uTip","쓰임",fmt(x.n)):"")
     +'</div>';
@@ -1064,27 +863,6 @@ if($("#posView"))$("#posView").addEventListener("click",e=>{const c=e.target.clo
 if($("#qPos"))$("#qPos").addEventListener("input",()=>renderPos());
 
 /* ══════════ 표현·관용구 ══════════ */
-/* 표현·관용구용 ELI5 — "우리끼리 아는 말" 비유 */
-function exprEli5(x){
-  const cat=EXPR_CATNAME[x.cat]||x.cat;
-  const feat=[
-    {t:"언제 꺼내나",d:[
-      cat+' 자리에서 써요',
-      '상황을 먼저 정하고 표현을 고르세요']},
-    {t:"낱낱이 해석하지 않기",d:[
-      '단어 하나하나 뜻을 풀면 오히려 이상해져요',
-      '덩어리째 한 덩어리로 기억하세요']},
-    {t:"예문에서 듣기",d:[
-      '예문을 소리 내어 읽어 보세요',
-      '밑줄이 이 표현이 쓰인 자리예요']}
-  ];
-  return {
-    one:esc(x.expr)+' = '+esc(x.mean),
-    def:x.expr+'은(는) '+x.mean+' 라는 뜻의 '+cat+' 표현이에요. 낱말을 풀어 해석하는 게 아니라 통째로 외웁니다.',
-    an:'관용구는 오래된 농담 같아요. 처음 듣는 사람은 웃지 않지만, 아는 사람은 바로 통하죠. 「猫の手も借りたい」처럼 바쁘다는 뜻인데 글자를 풀면 이상합니다. 뜻이 아니라 덩어리로 외우는 거예요.',
-    feat:feat
-  };
-}
 const EXPR_CATNAME={"aizuchi":"아이즈치(相槌)","kimari":"상용구·정형구(決まり文句)","spoken":"구어 표현(口語表現)","kanyou":"관용구·숙어(慣用句)"};
 let exCat="all";
 function renderExpr(){
@@ -1102,7 +880,6 @@ function renderExpr(){
     h+='<div class="uCard" data-c="'+esc(x.cat)+'">'
       +uTop("",esc(x.expr),x.reading||"",true)
       +meanBox(x.mean)
-      +eli5Fold(exprEli5(x))
       +exList(x.ex)
       +'</div>';
   });
@@ -1295,9 +1072,6 @@ function gsMove(d){
 const VIEWS=GS_ORDER;
 const TBID={talk:"tbTalk",study:"tbStudy",pat:"tbPat",gram:"tbGram",conj:"tbConj",pos:"tbPos",spoken:"tbSpoken",expr:"tbExpr"};
 const NOTEID={talk:"noteTalk",study:"noteStudy",pat:"notePat",gram:"noteGram",conj:"noteConj",pos:"notePos",spoken:"noteSpoken",expr:"noteExpr"};
-/* ELI5 요약 노드 ID — 각 학습 모드의 "💡 한 줄 요약" */
-const ELI5ID={talk:"eli5Talk",study:"eli5Study",pat:"eli5Pat",gram:"eli5Gram",conj:"eli5Conj",pos:"eli5Pos",spoken:"eli5Spoken",expr:"eli5Expr"};
-let eli5Visible=true;
 const RENDER={study:renderStudy,pat:renderPat,gram:renderGrammar,conj:renderConj,
               pos:renderPos,spoken:renderSpoken,expr:renderExpr,talk:renderTalk};
 /* 스크롤 컨테이너 — 셸이 .scroll 을 엔진으로 쓰므로 창이 아니라 그쪽을 되감는다 */
@@ -1315,8 +1089,6 @@ function switchView(v){
     $("#view-"+x).classList.toggle("hidden",x!==v);
     const tb=$("#"+TBID[x]);if(tb)tb.classList.toggle("hidden",x!==v);
     const nt=$("#"+NOTEID[x]);if(nt)nt.classList.toggle("hidden",x!==v);
-    const el5=$("#"+ELI5ID[x]);
-    if(el5)el5.classList.toggle("hidden",x!==v||!eli5Visible);
   });
   $$(".pager").forEach(p=>{if(v!=="study")p.classList.add("hidden");});
   RENDER[v]();
@@ -1439,22 +1211,6 @@ $$(".pgRank").forEach(el=>el.setAttribute("max",String(ALL.length)));
 
 renderStudy();
 
-/* ══════════ ELI5 + UI/UX 개선 ══════════ */
-
-/* ELI5 노트 토글 — 각 모드의 "💡 한 줄 요약"을 접고 펼 수 있다 */
-function toggleEli5(){
-  eli5Visible=!eli5Visible;
-  const cur=$$(".tab.on")[0];
-  const v=cur?cur.dataset.v:"study";
-  VIEWS.forEach(x=>{
-    const el=$("#"+ELI5ID[x]);
-    if(el)el.classList.toggle("hidden",x!==v||!eli5Visible);
-  });
-  toast(eli5Visible?"💡 한 줄 요약을 펼쳤어요":"💡 한 줄 요약을 접었어요");
-}
-document.addEventListener("keydown",e=>{
-  if(e.key==="e"||e.key==="E")toggleEli5();
-});
 
 /* ── 테마 — /it(it-2026-09-05) 와 같은 규격 ──
    밝음/어둠 둘 다 같은 셸이다. 값은 localStorage 에 기억하고,
@@ -1516,25 +1272,6 @@ function toast(msg){
   toastTimer=setTimeout(()=>el.classList.remove("show"),2000);
 }
 
-/* ELI5 사이드바 토글 버튼 */
-(function(){
-  const stage=$("#navStage");
-  if(!stage)return;
-  const wrap=document.createElement("div");
-  wrap.className="nav-stage";
-  wrap.innerHTML='<div class="nav-stage-t">표시</div>';
-  const btn=document.createElement("button");
-  btn.className="nav-item";
-  btn.style.marginLeft="8px";
-  btn.innerHTML='<span class="mi">\ud83d\udca1</span>ELI5 한 줄 요약<span class="mc" id="eli5State">ON</span>';
-  btn.onclick=()=>{
-    toggleEli5();
-    const s=$("#eli5State");
-    if(s)s.textContent=eli5Visible?"ON":"OFF";
-  };
-  wrap.appendChild(btn);
-  stage.parentNode.appendChild(wrap);
-})();
 
 /* 학습 통계 대시보드 */
 (function(){
