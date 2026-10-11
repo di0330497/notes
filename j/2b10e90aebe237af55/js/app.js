@@ -565,7 +565,7 @@ const CHARBY={};CHARS.forEach(c=>CHARBY[c.id]=c);
 /* 이름 → 첫 글자(두 글자까지). 아바타용 */
 function initial(n){return n?String(n).slice(0,1):"?";}
 
-let tkScene="all", tkWho="all", tkLv="all", tkKo=false;
+let tkScene="all", tkWho="all", tkLv="all", tkKo=false, tkKind="all";
 
 function whoList(){
   if(!$("#talkWho"))return;
@@ -591,10 +591,15 @@ function sceneList(){
     h+='<button class="chip" data-sc="'+esc(s)+'">'+esc(s)+' <span class="chipN">'+n+'</span></button>';});
   $("#talkScene").innerHTML=h;
 }
+/* 서사 대화(d01~) 와 연습 대화(p001~) 를 가르는 기준.
+   연습 대화는 id 가 p 로 시작하고 scene 이 「연습 · 」으로 시작한다. */
+const isPractice = d => /^p\d+$/.test(String(d.id || '')) || /^연습[ ·]/.test(String(d.scene || ''));
 function talkMatch(d){
   if(tkLv!=="all"&&d.lv!==tkLv)return false;
   if(tkScene!=="all"&&d.scene!==tkScene)return false;
   if(tkWho!=="all"&&(d.chars||[]).indexOf(tkWho)<0)return false;
+  if(tkKind==="story"&&isPractice(d))return false;
+  if(tkKind==="prac"&&!isPractice(d))return false;
   return true;
 }
 /* 한 줄 — 화자 · 일본어 · ▶ */
@@ -619,7 +624,8 @@ function tagsHTML(t){
     +t.map(x=>{
         const kind=x[0],val=x[1];
         const go=kind==="문형"?"pat":kind==="문법"?"gram":kind==="한자"?"study"
-                :kind==="구어체"?"spoken":"expr";
+                :kind==="구어체"?"spoken":kind==="conj"?"conj"
+                :kind==="표현"?"expr":"expr";
         return '<span class="dlgTag '+(CLS[kind]||"")+'" data-go="'+go+'" data-q="'+esc(val)+'">'
           +'<i>'+esc(kind)+'</i>'+esc(val)+'</span>';
       }).join(" ")+'</div>';
@@ -696,25 +702,45 @@ function bindTalk(){
     speak(j.getAttribute("data-say"));
   });
   /* 태그 → 해당 모드로 검색어를 넘겨 건너뛴다.
-     대화 태그는 설명용 라벨이라 사전 표제어와 한 끗 차이다.
-     「〜ん／です」→「〜ん」, 「〜をお願いします」→「〜お願いします」. */
-  function tagQuery(q){
-    let t=String(q||"");
-    t=t.split("／")[0].split("/")[0];        // / 로 이어 붙인 여러 표제어 중 첫 덩어리
-    t=t.replace(/[をにでとはがも]/g,"");     // 조사는 사전 표제어에 없는 경우가 많다
-    t=t.replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F\uFF01\u0021]/g,"");
-    return t.trim();
+     대화 태그는 사전 표제어와 한 끗 차이가 난다.
+     예) 「〜なりに／〜なりの」「〜じゃない？」「尊敬語」
+     한 가지 후보만 던지면 걸리는 것이 걸리지 않는다.
+     후보를 여러 개 만들어 순서대로 시도하고, 처음 걸리는 것을 쓴다. */
+  const TILDE_A = "\u301C", TILDE_B = "\uFF5E";   /* 〜 / ～ */
+  function normTilde(t){
+    return String(t).replace(/\u301C/g,"\uFF5E");
   }
-  /* 한 덩어리로 안 걸리면 / 로 갈라 둔 나머지 조각도 시도한다 */
-  function runTagQuery(k,q){
-    const gs=GS_TAB[k];if(!gs)return false;
+  /* 후보 목록을 만든다.
+     「〜なりに／〜なりの」 -> [〜なりに, なりに, 〜なりの, なり]
+     조사 제거는 맨 마지막에만 한다. 「〜なりに」에서 に 를 빼면
+     「〜なり」이 되어 오히려 안 걸린다. */
+  function tagCandidates(q){
+    const raw = String(q || "").replace(/[\uFF1F\u003F\uFF01\u0021]/g, "");
+    const segs = raw.split("\uFF0F").concat(raw.split("/"));
+    const out = [];
+    segs.forEach(function (s) {
+      s = s.trim();
+      if (!s) return;
+      const t = normTilde(s);
+      [t, t.replace(/\uFF5E/g, "")].forEach(function (v) {
+        if (v && v.length >= 2 && out.indexOf(v) < 0) out.push(v);
+      });
+    });
+    /* 마지막 수단: 조사를 뺀 형태 */
+    const last = normTilde(segs[0] || "").replace(/[\u3092\u306B\u3067\u306F\u3068\u304C\u3082]/g, "");
+    if (last && last.length >= 2 && out.indexOf(last) < 0) out.push(last);
+    return out;
+  }
+  function runTagQuery(k, q){
+    const gs = GS_TAB[k]; if (!gs) return false;
     switchView(k);
-    const el=$(gs[0]);if(!el)return false;
-    const parts=String(q).split("／").map(tagQuery).filter(Boolean);
-    for(const p of parts){
-      el.value=p;gs[1]();
-      const hit=$$("#view-"+k+" .uCard, #view-"+k+" .card").length;
-      if(hit)return true;
+    const el = $(gs[0]); if (!el) return false;
+    const cands = tagCandidates(q);
+    for (let i = 0; i < cands.length; i++) {
+      el.value = cands[i];
+      gs[1]();
+      const hit = $$("#view-" + k + " .uCard, #view-" + k + " .card").length;
+      if (hit) return true;
     }
     return false;
   }
@@ -726,6 +752,11 @@ function bindTalk(){
 
 /* ── 배선 ── */
 if(hasTALK){sceneList();whoList();}
+if($("#talkKind"))$("#talkKind").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+  tkKind=c.dataset.k;setChips("#talkKind",c);renderTalk();});
+else {
+  /* talkKind 칩이 없으면(구 index.html) p 태그만 검색에서 제외한다 */
+}
 if($("#qTalk"))$("#qTalk").addEventListener("input",()=>renderTalk());
 if($("#talkScene"))$("#talkScene").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkScene=c.dataset.sc;setChips("#talkScene",c);renderTalk();});
