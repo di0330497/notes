@@ -66,8 +66,8 @@
   /* ── 빵부스러기: 지금 보고 있는 학습 모드를 위에 적는다 ── */
   var crumb=document.getElementById('crumb');
   var LABEL={study:'학습 카드',pat:'문형 사전',gram:'문법',conj:'활용표',
-             pos:'품사 사전',spoken:'구어체',expr:'표현·관용구'};
-  var ORDER=['study','pat','gram','conj','pos','spoken','expr'];
+             pos:'품사 사전',spoken:'구어체',expr:'표현·관용구',talk:'대화'};
+  var ORDER=['talk','study','pat','gram','conj','pos','spoken','expr'];
   function paintCrumb(){
     var on=document.querySelector('.tab.on');
     var cover=document.querySelector('.page.on#page-cover');
@@ -144,7 +144,7 @@
       if(el){e.preventDefault();closeNav();el.focus();el.select();}
       return;
     }
-    if(!typing&&/^[1-7]$/.test(e.key)){
+    if(!typing&&/^[1-8]$/.test(e.key)){
       var v=ORDER[parseInt(e.key,10)-1];
       if(v&&typeof switchView==='function'){
         e.preventDefault(); switchView(v); paintCrumb(); closeNav();

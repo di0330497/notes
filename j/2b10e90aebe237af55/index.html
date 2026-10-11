@@ -51,7 +51,8 @@
       <a class="nav-item home" id="navCover" href="#cover"><span class="nid">⌂</span>표지</a>
 
       <div class="nav-stage" id="navStage">
-        <div class="nav-stage-t">학습 모드 <span class="sn">7</span></div>
+        <div class="nav-stage-t">학습 모드 <span class="sn">8</span></div>
+        <button class="nav-item tab" data-v="talk"><span class="mi">💬</span>대화 <span class="mc" id="cntTalk">—</span></button>
         <button class="nav-item tab on" data-v="study"><span class="mi">📚</span>학습 카드 <span class="mc" id="cntStudy">—</span></button>
         <button class="nav-item tab" data-v="pat"><span class="mi">📖</span>문형 사전 <span class="mc" id="cntPat">—</span></button>
         <button class="nav-item tab" data-v="gram"><span class="mi">📐</span>문법 <span class="mc" id="cntGram">—</span></button>
@@ -70,7 +71,7 @@
     <div class="topbar">
       <button class="tbtn tocopen" id="navbtn" aria-label="목차 열기">☰</button>
       <p class="crumb" id="crumb"><b>빈도순 일본어</b> · 표지</p>
-      <span class="pos keys kbdhint"><kbd>1</kbd>–<kbd>7</kbd> 모드</span>
+      <span class="pos keys kbdhint"><kbd>1</kbd>–<kbd>8</kbd> 모드</span>
       <div class="rd">
         <button class="tbtn" id="rdbtn" aria-expanded="false" aria-controls="rdpop">읽기 설정</button>
         <div class="rdpop" id="rdpop" hidden>
@@ -116,13 +117,14 @@
             <div class="stats" id="props"></div>
 
             <div class="stage-grid" id="stageGrid">
-              <a class="st-card" href="#study" data-v="study"><span class="sn">01</span><span class="st-body"><b>📚 학습 카드</b><em>빈도순 한자 카드 — 읽기·뜻·예문, N레벨별 필터</em></span><span class="st-n" id="stnStudy">—</span></a>
-              <a class="st-card" href="#pat" data-v="pat"><span class="sn">02</span><span class="st-body"><b>📖 문형 사전</b><em>「〜たい」「〜ばかり」 — 의미 분류로 묶어 대조</em></span><span class="st-n" id="stnPat">—</span></a>
-              <a class="st-card" href="#gram" data-v="gram"><span class="sn">03</span><span class="st-body"><b>📐 문법</b><em>588항목 · N5부터 N1까지 장별로</em></span><span class="st-n" id="stnGram">—</span></a>
-              <a class="st-card" href="#conj" data-v="conj"><span class="sn">04</span><span class="st-body"><b>🧮 활용표</b><em>3그룹 · て형 음편 · 조건 4형 · 경어 대응</em></span><span class="st-n" id="stnConj">—</span></a>
-              <a class="st-card" href="#pos" data-v="pos"><span class="sn">05</span><span class="st-body"><b>🧩 품사 사전</b><em>묶음 보기 · 낱말 보기 두 층</em></span><span class="st-n" id="stnPos">—</span></a>
-              <a class="st-card" href="#spoken" data-v="spoken"><span class="sn">06</span><span class="st-body"><b>🗣 구어체</b><em>축약 · 종조사 · 반말 · 유행어 · 칸사이벤</em></span><span class="st-n" id="stnSpoken">—</span></a>
-              <a class="st-card" href="#expr" data-v="expr"><span class="sn">07</span><span class="st-body"><b>💬 표현·관용구</b><em>아이즈치 · 상용구 · 구어 표현 · 관용구</em></span><span class="st-n" id="stnExpr">—</span></a>
+              <a class="st-card" href="#talk" data-v="talk"><span class="sn">01</span><span class="st-body"><b>💬 대화</b><em>장면으로 익히기 — 처음엔 일본어만, ▶ 로 따라읽기</em></span><span class="st-n" id="stnTalk">—</span></a>
+              <a class="st-card" href="#study" data-v="study"><span class="sn">02</span><span class="st-body"><b>📚 학습 카드</b><em>빈도순 한자 카드 — 읽기·뜻·예문, N레벨별 필터</em></span><span class="st-n" id="stnStudy">—</span></a>
+              <a class="st-card" href="#pat" data-v="pat"><span class="sn">03</span><span class="st-body"><b>📖 문형 사전</b><em>「〜たい」「〜ばかり」 — 의미 분류로 묶어 대조</em></span><span class="st-n" id="stnPat">—</span></a>
+              <a class="st-card" href="#gram" data-v="gram"><span class="sn">04</span><span class="st-body"><b>📐 문법</b><em>588항목 · N5부터 N1까지 장별로</em></span><span class="st-n" id="stnGram">—</span></a>
+              <a class="st-card" href="#conj" data-v="conj"><span class="sn">05</span><span class="st-body"><b>🧮 활용표</b><em>3그룹 · て형 음편 · 조건 4형 · 경어 대응</em></span><span class="st-n" id="stnConj">—</span></a>
+              <a class="st-card" href="#pos" data-v="pos"><span class="sn">06</span><span class="st-body"><b>🧩 품사 사전</b><em>묶음 보기 · 낱말 보기 두 층</em></span><span class="st-n" id="stnPos">—</span></a>
+              <a class="st-card" href="#spoken" data-v="spoken"><span class="sn">07</span><span class="st-body"><b>🗣 구어체</b><em>축약 · 종조사 · 반말 · 방언 · 비속어</em></span><span class="st-n" id="stnSpoken">—</span></a>
+              <a class="st-card" href="#expr" data-v="expr"><span class="sn">08</span><span class="st-body"><b>💬 표현·관용구</b><em>아이즈치 · 상용구 · 구어 표현 · 관용구</em></span><span class="st-n" id="stnExpr">—</span></a>
             </div>
 
             <details class="fold info">
@@ -138,11 +140,53 @@
         </div>
       </section>
 
+      <!-- ══ 대화 ═══════════════════════════════════════ -->
+      <section class="page" id="page-talk">
+        <div class="wrap wide">
+          <header class="phead">
+            <div class="crumb"><span class="pn">01</span> 대화 <span class="pid">장면으로 익히기</span></div>
+            <h2>💬 대화</h2>
+            <p class="deft">교과서가 아니라 <b>장면</b>으로 배운다. 처음엔 일본어만 보인다 — 모르는 게 있어도 괜찮다. 「한국어 번역」을 누르면 그때 한국어가 붙고, ▶ 를 누르면 그 한 줄만 읽어 준다. 60편이 하나의 이야기로 이어진다.</p>
+          </header>
+
+          <div class="note eli5 hidden" id="eli5Talk"><span class="eli5-badge">💡 한 줄 요약</span><b>배우는 순서는 사전이 아니라 장면이다.</b> 문법을 다 외운 다음 쓰는 게 아니라, 그 말이 필요해서 듣는 순간에 외워진다.</div>
+          <div class="note hidden" id="noteTalk">같은 표현이 여러 대화에 다시 나옵니다. 세 번째 만나면 입에 붙습니다.</div>
+
+          <div class="whoRow" id="talkWhoRow"></div>
+
+          <div class="toolbar" id="tbTalk">
+            <div class="search">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+              <input id="qTalk" type="search" placeholder="대화 제목 · 장면 · 대사  ( / )" autocomplete="off">
+            </div>
+            <div class="chips" id="talkScene"></div>
+            <div class="chips" id="talkWho"></div>
+            <div class="chips lvchips" id="talkLv">
+              <button class="chip on" data-l="all">N 전체</button>
+              <button class="chip lv5" data-l="5">N5</button>
+              <button class="chip lv4" data-l="4">N4</button>
+              <button class="chip lv3" data-l="3">N3</button>
+              <button class="chip lv2" data-l="2">N2</button>
+              <button class="chip lv1" data-l="1">N1</button>
+            </div>
+          </div>
+
+          <div class="dlgBar">
+            <button class="chip" id="talkKo">한국어 번역 켜기</button>
+            <button class="chip" id="talkStop">읽기 멈춤</button>
+            <span class="sp">처음엔 일본어만 · 모르면 넘어가고 다시 오면 된다</span>
+          </div>
+
+          <div class="count"></div>
+          <div id="view-talk"></div>
+        </div>
+      </section>
+
       <!-- ══ 학습 카드 ═══════════════════════════════════ -->
       <section class="page" id="page-study">
         <div class="wrap wide">
           <header class="phead">
-            <div class="crumb"><span class="pn">01</span> 학습 카드 <span class="pid">2,647자</span></div>
+            <div class="crumb"><span class="pn">02</span> 학습 카드 <span class="pid">2,647자</span></div>
             <h2>📚 빈도순 한자</h2>
             <p class="deft">신문 코퍼스 빈도순으로 놓은 한자 카드. 예문 속 <span class="u">파란 표시</span>는 해당 한자, 밑줄은 그 한자가 쓰인 낱말입니다. N레벨 필터를 켜면 그 수준의 상세 예문만 봅니다.</p>
           </header>
@@ -190,7 +234,7 @@
       <section class="page" id="page-pat">
         <div class="wrap wide">
           <header class="phead">
-            <div class="crumb"><span class="pn">02</span> 문형 사전 <span class="pid">698개</span></div>
+            <div class="crumb"><span class="pn">03</span> 문형 사전 <span class="pid">698개</span></div>
             <h2>📖 문형 사전</h2>
             <p class="deft">JLPT 문형을 <b>의미 분류 → 세부 클러스터</b> 순으로 묶었습니다. 뜻이 겹치는 문형이 한자리에 모이므로 비슷한 것끼리 대조하며 외웁니다.</p>
           </header>
@@ -223,7 +267,7 @@
       <section class="page" id="page-gram">
         <div class="wrap wide">
           <header class="phead">
-            <div class="crumb"><span class="pn">03</span> 문법 <span class="pid">588항목</span></div>
+            <div class="crumb"><span class="pn">04</span> 문법 <span class="pid">588항목</span></div>
             <h2>📐 문법</h2>
             <p class="deft">기초·JLPT 문법 588항목을 N5부터 N1까지 정리했습니다. 활용을 설명하는 항목에는 <b>활용표로 건너뛰는 배지</b>가 붙고, 관련 문형 배지를 누르면 문형 사전으로 이동합니다.</p>
           </header>
@@ -256,7 +300,7 @@
       <section class="page" id="page-conj">
         <div class="wrap wide">
           <header class="phead">
-            <div class="crumb"><span class="pn">04</span> 활용표 <span class="pid">표 대조</span></div>
+            <div class="crumb"><span class="pn">05</span> 활용표 <span class="pid">표 대조</span></div>
             <h2>🧮 활용표</h2>
             <p class="deft">문법 설명은 산문이지만, 동사 3그룹·て형 음편·조건 4형·경어 대응·조수사는 <b>표로 대조해야</b> 외워집니다. 규칙이 눈으로 맞춰지는 항목만 골라 표로 세웠습니다.</p>
           </header>
@@ -281,7 +325,7 @@
       <section class="page" id="page-pos">
         <div class="wrap wide">
           <header class="phead">
-            <div class="crumb"><span class="pn">05</span> 품사 사전 <span class="pid">묶음 + 낱말</span></div>
+            <div class="crumb"><span class="pn">06</span> 품사 사전 <span class="pid">묶음 + 낱말</span></div>
             <h2>🧩 품사 사전</h2>
             <p class="deft"><b>묶음 보기</b>는 조사 · 동사 · 명사 · 부사 · 의성의태어 · 감탄사 · 형용사 · 수사 · 접속사 · 연체사 · 접두접미사를 기능별로 묶은 표입니다. <b>낱말 보기</b>는 낱말 하나에 카드 하나로, 읽기 · 뜻 · 예문 · 쓰임 메모가 붙습니다.</p>
           </header>
@@ -310,7 +354,7 @@
       <section class="page" id="page-spoken">
         <div class="wrap wide">
           <header class="phead">
-            <div class="crumb"><span class="pn">06</span> 구어체 <span class="pid">정식 → 구어</span></div>
+            <div class="crumb"><span class="pn">07</span> 구어체 <span class="pid">정식 → 구어</span></div>
             <h2>🗣 구어체</h2>
             <p class="deft">표현 낱개가 아니라 <b>규칙</b>입니다. 축약이 어떻게 만들어지는지, 종조사가 무엇을 바꾸는지, 어느 자리에서 반말로 내려가는지를 정식형 → 구어형 변환표로 정리했습니다.</p>
           </header>
@@ -335,7 +379,7 @@
       <section class="page" id="page-expr">
         <div class="wrap wide">
           <header class="phead">
-            <div class="crumb"><span class="pn">07</span> 표현·관용구 <span class="pid">4분류</span></div>
+            <div class="crumb"><span class="pn">08</span> 표현·관용구 <span class="pid">4분류</span></div>
             <h2>💬 표현·관용구</h2>
             <p class="deft">아이즈치(相槌) · 상용구·정형구(決まり文句) · 구어 표현(口語表現) · 관용구·숙어(慣用句) 네 갈래입니다. 예문 속 밑줄은 해당 표현이 쓰인 자리입니다.</p>
           </header>
@@ -370,6 +414,11 @@
 <button id="toTop" aria-label="맨 위로">↑</button>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="data/dialogue-0.js?v=20261011-e"></script>
+<script src="data/characters.js?v=20261011-e"></script>
+<script src="data/dialogue-1.js?v=20261011-e"></script>
+<script src="data/dialogue-2.js?v=20261011-e"></script>
+<script src="data/dialogue-3.js?v=20261011-e"></script>
 <script src="data/kanji-list.js?v=20261011-e"></script>
 <script src="data/kanji-cards.js?v=20261011-e"></script>
 <script src="data/patterns.js?v=20261011-e"></script>
@@ -378,12 +427,15 @@
 <script src="data/conjugation.js?v=20261011-e"></script>
 <script src="data/colloquial.js?v=20261011-e"></script>
 <script src="data/colloquial-2.js?v=20261011-e"></script>
+<script src="data/dialect.js?v=20261011-e"></script>
+<script src="data/slang.js?v=20261011-e"></script>
 <script src="data/pos-josa.js?v=20261011-e"></script>
 <script src="data/pos-fukushi.js?v=20261011-e"></script>
 <script src="data/pos-other.js?v=20261011-e"></script>
 <script src="data/pos-verb.js?v=20261011-e"></script>
 <script src="data/pos-noun.js?v=20261011-e"></script>
 <script src="data/pos-words.js?v=20261011-e"></script>
+<script src="data/pos-keiyou-2.js?v=20261011-e"></script>
 <script src="js/app.js?v=20261011-e"></script>
 <script src="js/ui.js?v=20261011-e"></script>
 </body>

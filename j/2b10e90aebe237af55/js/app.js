@@ -60,9 +60,9 @@ const PORDER=Object.keys(PNAME);
 
 /* 학습 모드 이름 — 탭·개수 줄·빈 화면·통합 검색이 같은 말을 쓴다 */
 const QSEL={study:"#qStudy",pat:"#qPat",gram:"#qGram",conj:"#qConj",
-  pos:"#qPos",spoken:"#qSpoken",expr:"#qExpr"};
+  pos:"#qPos",spoken:"#qSpoken",expr:"#qExpr",talk:"#qTalk"};
 const MODE={study:"학습 카드",pat:"문형",gram:"문법",conj:"활용표",
-            pos:"품사",spoken:"구어체",expr:"표현·관용구"};
+            pos:"품사",spoken:"구어체",expr:"표현·관용구",talk:"대화"};
 
 /* ══════════ 공통 부품 ══════════ */
 
@@ -678,6 +678,175 @@ if($("#conjG"))$("#conjG").addEventListener("click",e=>{const c=e.target.closest
   cjG=c.dataset.g;setChips("#conjG",c);renderConj();});
 if($("#qConj"))$("#qConj").addEventListener("input",()=>renderConj());
 
+/* ══════════════════════════════════════════════════════════
+   대화 모드 — "교과서"가 아니라 "장면에 들어가는" 화면
+   ──────────────────────────────────────────────────────────
+   다른 여섯 모드가 "사전"이라면 여기는 "회화"다.
+   조회창이 아니라 장면이 먼저이고, 설명은 말 뒤에 붙는다.
+   1. 처음엔 일본어만 보인다 (본문.noKo)
+   2. 번역을 누르면 그때 한국어가 붙는다
+   3. ▶ 를 누르면 그 한 줄만 읽어 준다 (Web Speech, 나fallback 없음)
+   4. 태그를 누르면 그 표현이 있는 모드로 건너뛴다
+   ══════════════════════════════════════════════════════════ */
+const hasTALK=(typeof DIALOGS!=="undefined")&&DIALOGS.length>0;
+const CHARS=(typeof CHARACTERS!=="undefined")?CHARACTERS:[];
+const CHARBY={};CHARS.forEach(c=>CHARBY[c.id]=c);
+/* 이름 → 첫 글자(두 글자까지). 아바타용 */
+function initial(n){return n?String(n).slice(0,1):"?";}
+
+let tkScene="all", tkWho="all", tkLv="all", tkKo=false;
+
+function whoList(){
+  if(!$("#talkWho"))return;
+  const used={};DIALOGS.forEach(d=>(d.chars||[]).forEach(w=>used[w]=1));
+  const list=CHARS.filter(c=>used[c.id]);
+  let h='<button class="chip on" data-w="all">전체 화자</button>';
+  list.forEach(c=>{h+='<button class="chip" data-w="'+c.id+'" data-rail="'+c.color+'">'
+    +'<span class="av" style="display:inline-grid;place-items:center;width:16px;height:16px;'
+    +'border-radius:50%;background:'+c.color+';color:#fff;font-size:9px;font-weight:700;'
+    +'vertical-align:-3px;margin-right:5px">'+esc(initial(c.name))+'</span>'+esc(c.name)+'</button>';});
+  $("#talkWho").innerHTML=h;
+  /* 출연진 카드 — 60편을 관통하는 다섯 사람 */
+  const row=$("#talkWhoRow");
+  if(row)row.innerHTML=list.map(c=>
+     '<span class="who"><span class="wd" style="background:'+c.color+'"></span>'
+    +'<b>'+esc(c.name)+'</b><span>'+esc(c.role)+'</span></span>').join("");
+}
+function sceneList(){
+  if(!$("#talkScene"))return;
+  const seen=[];DIALOGS.forEach(d=>{if(d.scene&&seen.indexOf(d.scene)<0)seen.push(d.scene);});
+  let h='<button class="chip on" data-sc="all">전체 장면</button>';
+  seen.forEach(s=>{const n=DIALOGS.filter(d=>d.scene===s).length;
+    h+='<button class="chip" data-sc="'+esc(s)+'">'+esc(s)+' <span class="chipN">'+n+'</span></button>';});
+  $("#talkScene").innerHTML=h;
+}
+function talkMatch(d){
+  if(tkLv!=="all"&&d.lv!==tkLv)return false;
+  if(tkScene!=="all"&&d.scene!==tkScene)return false;
+  if(tkWho!=="all"&&(d.chars||[]).indexOf(tkWho)<0)return false;
+  return true;
+}
+/* 한 줄 — 화자 · 일본어 · ▶ */
+function lineHTML(d,l,i){
+  const c=CHARBY[l.who]||{name:l.who,color:"#667085"};
+  return '<div class="line" data-l="'+i+'" data-who="'+esc(l.who)+'">'
+    +'<span class="av" style="background:'+c.color+'">'+esc(initial(c.name))+'</span>'
+    +'<span class="lb"><span class="whoName" style="color:'+c.color+'">'+esc(c.name)+'</span>'
+    +'<span class="jp" data-say="'+esc(l.s)+'">'+fmt(l.s)+'</span>'
+    +(l.ko?'<span class="ko">'+esc(l.ko)+'</span>':"")+'</span>'
+    +'<button class="speak" title="이 줄 읽어주기">▶</button></div>';
+}
+function pointsHTML(p){
+  if(!p||!p.length)return "";
+  return '<div class="dlgPoints"><span class="uLabel">이 장면의 포인트</span><ol>'
+    +p.map(x=>'<li><b>'+esc(x.t)+'</b>'+esc(x.d)+'</li>').join("")+'</ol></div>';
+}
+function tagsHTML(t){
+  if(!t||!t.length)return "";
+  const CLS={"문형":"patBadge","문법":"patBadge","한자":"jumpBadge","구어체":"jumpBadge","표현":"jumpBadge"};
+  return '<div class="dlgTags"><span class="uFootLabel">등장 표현</span>'
+    +t.map(x=>{
+        const kind=x[0],val=x[1];
+        const go=kind==="문형"?"pat":kind==="문법"?"gram":kind==="한자"?"study"
+                :kind==="구어체"?"spoken":"expr";
+        return '<span class="dlgTag '+(CLS[kind]||"")+'" data-go="'+go+'" data-q="'+esc(val)+'">'
+          +'<i>'+esc(kind)+'</i>'+esc(val)+'</span>';
+      }).join(" ")+'</div>';
+}
+function renderTalk(){
+  const view=$("#view-talk");
+  if(!view)return;
+  if(!hasTALK){view.innerHTML=emptyNote("talk");setCount("대화 — 데이터 없음");return;}
+  const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
+  const keep=DIALOGS.filter(d=>{
+    if(!talkMatch(d))return false;
+    if(!q)return true;
+    return hay(d.title,d.scene,d.place,(d.lines||[]).map(l=>[l.s,l.ko]),
+               (d.points||[]).map(p=>[p.t,p.d]),(d.tags||[]).map(t=>[t[0],t[1]])).includes(q);
+  });
+  /* 장면별로 모아서 보여 준다 — 같은 장소의 대화가 붙어 있어야 "현장"이 된다 */
+  const order=[];DIALOGS.forEach(d=>{if(keep.indexOf(d)>=0&&order.indexOf(d.scene)<0)order.push(d.scene);});
+  let h="",lines=0;
+  order.forEach(sc=>{
+    const ds=keep.filter(d=>d.scene===sc);
+    h+=secHd(String(order.indexOf(sc)+1).padStart(2,"0"),sc,ds.length+"대화");
+    ds.forEach((d,i)=>{
+      const n=(d.lines||[]).length;lines+=n;
+      h+='<div class="uCard dlg">'
+        +'<div class="dlgHead"><span class="dlgScene">'+(d.id||"")+'</span>'
+        +'<span class="dlgTitle">'+fmt(d.title)+'</span>'
+        +lvBadge(d.lv)
+        +'<span class="dlgMeta">'+(d.place||"")+'</span></div>'
+        +'<div class="dlgLines">'+d.lines.map((l,j)=>lineHTML(d,l,j)).join("")+'</div>'
+        +pointsHTML(d.points)
+        +tagsHTML(d.tags)
+        +'</div>';
+    });
+  });
+  view.innerHTML=h||emptyNote("talk");
+  setCount("대화 "+num(keep.length)+"편",num(lines)+"줄");
+  bindTalk();
+  applyKo();
+}
+
+/* ── 한국어 숨김/보임 ── */
+function applyKo(){
+  document.body.classList.toggle("noKo",!tkKo);
+  const b=$("#talkKo");if(b){b.classList.toggle("on",tkKo);b.setAttribute("aria-pressed",String(tkKo));}
+}
+
+/* ── 따라읽기 — Web Speech API ──
+   일본어 TTS 는 브라우저·OS 마다 voices 가 비어 있다. 없으면 조용히 넘긴다 */
+function speak(text){
+  try{
+    if(!window.speechSynthesis)return false;
+    window.speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text.replace(/\[([^\]|]+)\|[^\]]+\]/g,"$1").replace(/[{}]/g,""));
+    u.lang="ja-JP";u.rate=0.92;
+    const vs=window.speechSynthesis.getVoices()||[];
+    const v=vs.find(x=>/ja/i.test(x.lang));
+    if(v)u.voice=v;
+    window.speechSynthesis.speak(u);
+    return true;
+  }catch(e){return false;}
+}
+function bindTalk(){
+  $$("#view-talk .speak").forEach(b=>b.onclick=()=>{
+    const ln=b.closest(".line");
+    $$("#view-talk .line").forEach(x=>x.classList.remove("playing"));
+    ln.classList.add("playing");
+    speak(ln.querySelector(".jp").getAttribute("data-say"));
+    setTimeout(()=>ln.classList.remove("playing"),2200);
+  });
+  /* 문장 자체를 눌러도 읽어 준다 — 배지를 찾느라 헤매지 않게 */
+  $$("#view-talk .jp").forEach(j=>j.onclick=()=>{
+    $$("#view-talk .jp").forEach(x=>x.classList.remove("on"));
+    j.classList.add("on");
+    speak(j.getAttribute("data-say"));
+  });
+  /* 태그 → 해당 모드로 검색어를 넘겨 건너뛴다 */
+  $$("#view-talk .dlgTag").forEach(t=>t.onclick=()=>{
+    const k=t.dataset.go,q=t.dataset.q;
+    const gs=GS_TAB[k];if(!gs)return;
+    switchView(k);
+    const el=$(gs[0]);if(el)el.value=q;
+    gs[1]();scrollTop();
+  });
+}
+
+/* ── 배선 ── */
+if(hasTALK){sceneList();whoList();}
+if($("#qTalk"))$("#qTalk").addEventListener("input",()=>renderTalk());
+if($("#talkScene"))$("#talkScene").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+  tkScene=c.dataset.sc;setChips("#talkScene",c);renderTalk();});
+if($("#talkWho"))$("#talkWho").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+  tkWho=c.dataset.w;setChips("#talkWho",c);renderTalk();});
+if($("#talkLv"))$("#talkLv").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+  tkLv=c.dataset.l;setChips("#talkLv",c);renderTalk();});
+if($("#talkKo"))$("#talkKo").onclick=()=>{tkKo=!tkKo;applyKo();
+  toast(tkKo?"한국어 번역을 켰어요":"한국어 번역을 껐어요 — 일본어만");};
+if($("#talkStop"))$("#talkStop").onclick=()=>{try{window.speechSynthesis.cancel();}catch(e){}
+  $$("#view-talk .line").forEach(x=>x.classList.remove("playing"));toast("읽기를 멈췄어요");};
 /* ══════════ 구어체 ══════════ */
 /* 구어체용 ELI5 — "줄임말" 비유 */
 function spokenEli5(x){
@@ -701,32 +870,41 @@ function spokenEli5(x){
   };
 }
 let spSec="all";
-/* colloquial-2.js 가 같은 sec 를 뒤에 덧붙이므로, 첫 등장 순서로 다시 모은다.
-   이렇게 하지 않으면 같은 섹션 헤딩이 두 번 찍힌다 */
+/* 묶음 기준은 sec 가 아니라 sn 이다.
+   dialect.js 는 sec 하나("dialect")에 関東·関西·語尾·音変化·語彙 다섯 묶음을
+   sn 으로 갈라 넣었다. sec 로 묶으면 48개가 「関東弁 — 語尾」 하나에 통째로 사라진다.
+   기존 파일은 sec 와 sn 이 1:1 이었으므로 sn 으로 바꿔도 결과가 같다 */
+const SPKEY=x=>x.sn||x.sec;
 if(hasSPOKEN){(function(){
-  const order=[];SPOKEN.forEach(x=>{if(order.indexOf(x.sec)<0)order.push(x.sec);});
-  SPOKEN.sort((a,b)=>order.indexOf(a.sec)-order.indexOf(b.sec));
+  const order=[];SPOKEN.forEach(x=>{const k=SPKEY(x);if(order.indexOf(k)<0)order.push(k);});
+  SPOKEN.sort((a,b)=>order.indexOf(SPKEY(a))-order.indexOf(SPKEY(b)));
 })();}
 (function(){
   if(!hasSPOKEN)return;
   const seen=[],name={};
-  SPOKEN.forEach(x=>{if(!name[x.sec]){name[x.sec]=x.sn;seen.push(x.sec);}});
+  SPOKEN.forEach(x=>{const k=SPKEY(x);if(!name[k]){name[k]=k;seen.push(k);}});
   let h='<button class="chip on" data-s="all">전체</button>';
-  seen.forEach(s=>{h+='<button class="chip" data-s="'+s+'">'+esc(name[s])+'</button>';});
+  seen.forEach(s=>{h+='<button class="chip" data-s="'+esc(s)+'">'+esc(s)+'</button>';});
   const el=$("#spokenSec");if(el)el.innerHTML=h;
 })();
 function renderSpoken(){
   if(!hasSPOKEN){$("#view-spoken").innerHTML=loadFail("spoken");return;}
   const q=$("#qSpoken").value.trim().toLowerCase();
   const keep=SPOKEN.filter(x=>{
-    if(spSec!=="all"&&x.sec!==spSec)return false;
+    if(spSec!=="all"&&SPKEY(x)!==spSec)return false;
     return !q||hay(x.t,x.rule,x.warn,x.forms,x.ex.map(e=>[e.s,e.ko])).includes(q);
   });
-  const perSec={};keep.forEach(x=>{perSec[x.sec]=(perSec[x.sec]||0)+1;});
+  const perSec={};keep.forEach(x=>{const k=SPKEY(x);perSec[k]=(perSec[k]||0)+1;});
+  /* 묶음 순서 = 화면에 뜨는 순서. 머리에 붙이는 번호도 이 순서를 따른다 */
+  const gorder=[];keep.forEach(x=>{const k=SPKEY(x);if(gorder.indexOf(k)<0)gorder.push(k);});
   let h="",curSec="",pairs=0;
   keep.forEach(x=>{
     pairs+=x.forms.length;
-    if(x.sec!==curSec){curSec=x.sec;h+=secHd(x.sec,x.sn,perSec[x.sec]+"항목");}
+    const k=SPKEY(x);
+    if(k!==curSec){
+      curSec=k;
+      h+=secHd(String(gorder.indexOf(k)+1).padStart(2,"0"),k,perSec[k]+"항목");
+    }
     const rel=relBadges(x.rel);
     h+='<div class="uCard">'
       +uTop(lvBadge(x.lv),fmt(x.t),x.sn,true)
@@ -936,7 +1114,7 @@ $("#exprCat").addEventListener("click",e=>{const c=e.target.closest(".chip");if(
 $("#qExpr").addEventListener("input",()=>renderExpr());
 
 /* ══════════ 통합 검색 — 일곱 모드를 한 번에 훑는다 ══════════ */
-const GS_ORDER=["study","pat","gram","conj","pos","spoken","expr"];
+const GS_ORDER=["talk","study","pat","gram","conj","pos","spoken","expr"];
 let GS_INDEX=null,GS_FLAT=[],gsCursor=-1;
 function chipAll(sel,attr){const c=$(sel+' .chip[data-'+attr+'="all"]');if(c)setChips(sel,c);}
 /* 인덱스는 처음 검색할 때 한 번만 만든다. 한자 2,647자의 예문까지 실으므로
@@ -944,6 +1122,14 @@ function chipAll(sel,attr){const c=$(sel+' .chip[data-'+attr+'="all"]');if(c)set
    색인 문자열은 탭 검색과 똑같은 hay() 규칙을 쓴다 */
 function buildGsIndex(){
   const I=[];
+  if(typeof DIALOGS!=="undefined")DIALOGS.forEach(d=>{
+    I.push({k:"talk",label:d.title,sub:(d.scene||"")+" · "+(d.place||""),
+      hay:hay(d.title,d.scene,d.place,(d.lines||[]).map(l=>[l.s,l.ko]),
+              (d.points||[]).map(p=>[p.t,p.d]),(d.tags||[]).map(t=>[t[0],t[1]])),
+      go:()=>{switchView("talk");$("#qTalk").value="";tkScene="all";tkWho="all";
+        chipAll("#talkScene","sc");chipAll("#talkWho","w");renderTalk();
+        const card=$('#view-talk .dlg');if(card)card.scrollIntoView({block:"start"});}});
+  });
   ALL.forEach((r,i)=>{const e=STUDYBYK[r[0]],rank=i+1;
     const sub=(e?e.hun+" · ":"")+(r[1]||"—")+" / "+(r[2]||"—")+(r[5]?" · "+r[5]:"");
     I.push({k:"study",label:r[0],sub,
@@ -1023,7 +1209,8 @@ function gsRender(){
   panel.innerHTML=h;panel.hidden=false;
 }
 /* 탭별 검색창·렌더러 대응. "외 N개" 와 검색어 넘기기에 쓴다 */
-const GS_TAB={study:["#qStudy",()=>{fLv="all";chipAll("#lvChips","l");renderStudy();}],
+const GS_TAB={talk:["#qTalk",()=>{tkScene="all";chipAll("#talkScene","sc");tkWho="all";chipAll("#talkWho","w");renderTalk();}],
+  study:["#qStudy",()=>{fLv="all";chipAll("#lvChips","l");renderStudy();}],
   pat:["#qPat",()=>{pLv="all";chipAll("#patLv","l");$("#patCat").value="all";renderPat();}],
   gram:["#qGram",()=>{gCh="all";gLv="all";chipAll("#gramCh","c");chipAll("#gramLv","l");renderGrammar();}],
   conj:["#qConj",()=>{cjG="all";chipAll("#conjG","g");renderConj();}],
@@ -1060,13 +1247,13 @@ function gsMove(d){
 
 /* ══════════ 탭/툴바 ══════════ */
 const VIEWS=GS_ORDER;
-const TBID={study:"tbStudy",pat:"tbPat",gram:"tbGram",conj:"tbConj",pos:"tbPos",spoken:"tbSpoken",expr:"tbExpr"};
-const NOTEID={study:"noteStudy",pat:"notePat",gram:"noteGram",conj:"noteConj",pos:"notePos",spoken:"noteSpoken",expr:"noteExpr"};
+const TBID={talk:"tbTalk",study:"tbStudy",pat:"tbPat",gram:"tbGram",conj:"tbConj",pos:"tbPos",spoken:"tbSpoken",expr:"tbExpr"};
+const NOTEID={talk:"noteTalk",study:"noteStudy",pat:"notePat",gram:"noteGram",conj:"noteConj",pos:"notePos",spoken:"noteSpoken",expr:"noteExpr"};
 /* ELI5 요약 노드 ID — 각 학습 모드의 "💡 한 줄 요약" */
-const ELI5ID={study:"eli5Study",pat:"eli5Pat",gram:"eli5Gram",conj:"eli5Conj",pos:"eli5Pos",spoken:"eli5Spoken",expr:"eli5Expr"};
+const ELI5ID={talk:"eli5Talk",study:"eli5Study",pat:"eli5Pat",gram:"eli5Gram",conj:"eli5Conj",pos:"eli5Pos",spoken:"eli5Spoken",expr:"eli5Expr"};
 let eli5Visible=true;
 const RENDER={study:renderStudy,pat:renderPat,gram:renderGrammar,conj:renderConj,
-              pos:renderPos,spoken:renderSpoken,expr:renderExpr};
+              pos:renderPos,spoken:renderSpoken,expr:renderExpr,talk:renderTalk};
 /* 스크롤 컨테이너 — 셸이 .scroll 을 엔진으로 쓰므로 창이 아니라 그쪽을 되감는다 */
 const SCROLL=function(){return document.getElementById("main")||document.scrollingElement;};
 function scrollTop(){const s=SCROLL();if(s&&s.scrollTo)s.scrollTo({top:0});else window.scrollTo({top:0});}
@@ -1095,7 +1282,7 @@ function switchView(v){
 function setCrumb(v){
   const el=$("#crumb");if(!el)return;
   const FULL={study:"학습 카드",pat:"문형 사전",gram:"문법",conj:"활용표",
-              pos:"품사 사전",spoken:"구어체",expr:"표현·관용구"};
+              pos:"품사 사전",spoken:"구어체",expr:"표현·관용구",talk:"대화"};
   const label=FULL[v]||"";
   el.innerHTML="<b>빈도순 일본어</b>"+(label?" · "+label:"");
   document.title=(label?label+" · ":"")+"빈도순 일본어";
@@ -1157,15 +1344,21 @@ $$(".pgRank").forEach(el=>el.setAttribute("max",String(ALL.length)));
         expr=(typeof EXPR!=="undefined")?EXPR.length:0,
         conj=hasCONJ?CONJ.length:0, spoken=hasSPOKEN?SPOKEN.length:0,
         pos=hasPOS?POS.length:0;
+  const talk=(typeof DIALOGS!=="undefined")?DIALOGS.length:0;
+  const talkLines=(typeof DIALOGS!=="undefined")?DIALOGS.reduce((a,d)=>a+(d.lines||[]).length,0):0;
   const set=(id,v)=>{const el=$("#"+id);if(el)el.textContent=num(v);};
   set("cntStudy",kanji);set("cntPat",pats);set("cntGram",gram);
   set("cntConj",conj);set("cntPos",pos+WORDS.length);set("cntSpoken",spoken);set("cntExpr",expr);
+  set("cntTalk",talk);
+  set("stnTalk",talk);set("stnStudy",kanji);set("stnPat",pats);set("stnGram",gram);
+  set("stnConj",conj);set("stnPos",pos+WORDS.length);set("stnSpoken",spoken);set("stnExpr",expr);
   const conjRows=hasCONJ?CONJ.reduce((a,c)=>a+c.rows.length,0):0;
   const posRows=hasPOS?POS.reduce((a,x)=>a+x.rows.length,0):0;
   const spRows=hasSPOKEN?SPOKEN.reduce((a,x)=>a+x.forms.length,0):0;
   const gramCh=(typeof GRAMMAR!=="undefined")?new Set(GRAMMAR.map(g=>g.ch)).size:0;
   const exprCat=(typeof EXPR!=="undefined")?new Set(EXPR.map(x=>x.cat)).size:0;
   const props=[
+    ["대화",num(talk)+"편","장면 "+num(new Set(DIALOGS.map(d=>d.scene)).size)+" · "+num(talkLines)+"줄"],
     ["학습 카드",num(kanji)+"자","상용 2,136 · 상용 외 464 · 식재료 47"],
     ["문형 사전",num(pats)+"개","N5~N1 · 의미 분류 "+new Set(PATS.map(p=>p.cat)).size+"갈래"],
     ["문법",num(gram)+"항목",gramCh+"장"],

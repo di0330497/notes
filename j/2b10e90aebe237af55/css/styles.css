@@ -794,3 +794,69 @@ html.narrow #toTop{bottom:80px;right:16px}
 .phead .crumb{color:var(--faint)}
 .phead .crumb .pn{color:var(--primary)}
 .wrap.wide .card,.wrap.wide .uCard,.wrap.wide .tableWrap{max-width:none}
+
+/* ══════════════════════════════════════════════════════════
+   대화 모드 — 교과서가 아니라 "장면에 들어가는" 화면
+   ══════════════════════════════════════════════════════════ */
+
+/* ── 출연진 ── */
+.whoRow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+.who{display:flex;align-items:baseline;gap:8px;padding:9px 13px;background:var(--surface);
+  border:1px solid var(--line);border-radius:10px;font-size:13px}
+.who .wd{width:9px;height:9px;border-radius:50%;flex:0 0 auto;align-self:center}
+.who b{color:var(--fg);font-weight:600}
+.who span{color:var(--faint);font-size:12px}
+
+/* ── 대화 카드 ── */
+.dlg{margin:0 0 22px}
+.dlgHead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.dlgTitle{font-size:19px;font-weight:700;letter-spacing:-.01em;color:var(--fg)}
+.dlgMeta{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap}
+.dlgPlace{font-size:12.5px;color:var(--muted);margin:0 0 16px;font-family:var(--mono)}
+.dlgScene{display:inline-flex;align-items:center;border:1px solid var(--line-2);border-radius:6px;
+  padding:2px 9px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.03em;color:var(--muted)}
+
+/* ── 한 줄 ── */
+.line{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--line)}
+.line:last-child{border-bottom:0}
+.line .av{flex:0 0 30px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  font-size:12px;font-weight:700;color:#fff;letter-spacing:-.02em}
+.line .lb{flex:1;min-width:0}
+.line .whoName{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;margin-bottom:3px}
+.line .jp{font-family:var(--jp);font-size:19px;line-height:1.85;color:var(--fg);cursor:pointer;word-break:keep-all}
+.line .jp:hover{color:var(--blue)}
+.line .jp.on{background:color-mix(in srgb,var(--blue) 14%,transparent);border-radius:5px}
+.line .ko{font-size:13px;line-height:1.6;color:var(--muted);margin-top:3px}
+body.noKo .line .ko{display:none}
+.line .speak{all:unset;cursor:pointer;flex:0 0 auto;width:24px;height:24px;display:grid;place-items:center;
+  border:1px solid var(--line-2);border-radius:6px;color:var(--faint);font-size:11px}
+.line .speak:hover{color:var(--blue);border-color:var(--blue)}
+.line.playing{background:color-mix(in srgb,var(--primary) 7%,transparent)}
+.line.playing .jp{color:var(--primary)}
+
+/* ── 포인트 · 태그 ── */
+.dlgPoints{margin:16px 0 0;padding:14px 16px;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:10px}
+.dlgPoints .uLabel{border-color:var(--line-2);color:var(--muted)}
+.dlgPoints ol{margin:8px 0 0;padding-left:18px;font-size:13.5px;line-height:1.7;color:var(--fg-dim)}
+.dlgPoints li{margin:4px 0}
+.dlgPoints b{display:block;color:var(--fg);font-weight:600}
+.dlgTags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:12px;padding-top:11px;
+  border-top:1px solid var(--line);font-size:11.5px;color:var(--faint)}
+.dlgTag{display:inline-flex;align-items:center;gap:5px;cursor:pointer;border:1px solid var(--line-2);
+  background:var(--surface-2);color:var(--fg-dim);border-radius:6px;padding:3px 9px;
+  font-family:var(--jp);font-size:12px}
+.dlgTag:hover{border-color:var(--blue);color:var(--blue)}
+.dlgTag i{font-style:normal;font-family:var(--sans);font-size:10.5px;color:var(--faint)}
+.dlgTag:hover i{color:var(--blue)}
+
+/* ── 따라읽기 도구 ── */
+.dlgBar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 22px;padding:11px 14px;
+  background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.dlgBar .sp{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint)}
+
+/* ── 모바일 ── */
+html.narrow .dlgTitle{font-size:17px}
+html.narrow .line .jp{font-size:17px}
+html.narrow .dlgMeta{margin-left:0;width:100%}
