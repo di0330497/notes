@@ -477,8 +477,8 @@ select:focus{border-color:var(--blue)}
 .sent{font-family:var(--jp);color:var(--fg);word-break:keep-all;overflow-wrap:anywhere;
   font-size:20px;line-height:2.1}
 .sent ruby rt{font-size:.46em;color:var(--faint);font-weight:400}
-body.noFuri .sent ruby rt,body.noFuri .cellJP rt,body.noFuri .uCue rt{display:none}
-.sent em.g,.uCue em.g,.cellJP em.g{font-style:normal;font-weight:600;
+body.noFuri .sent ruby rt,body.noFuri .cellJP rt,body.noFuri .uCue rt,body.noFuri .line .jp rt{display:none}
+.sent em.g,.uCue em.g,.cellJP em.g,.line .jp em.g{font-style:normal;font-weight:600;
   border-bottom:1px solid color-mix(in srgb,var(--yellow) 55%,transparent);color:var(--fg)}
 .sent .tg{color:var(--blue);font-weight:600}
 .sent .tg+rt,.sent ruby:has(.tg) rt{color:var(--blue)}
@@ -705,7 +705,7 @@ html.narrow #toTop{bottom:80px;right:16px}
 /* ── 대화 카드 ── */
 .dlg{margin:0 0 22px}
 .dlgHead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
-.dlgTitle{font-size:19px;font-weight:700;letter-spacing:-.01em;color:var(--fg)}
+.dlgTitle{font-family:var(--jp);font-size:19px;font-weight:700;letter-spacing:-.01em;color:var(--fg)}
 .dlgMeta{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap}
 .dlgPlace{font-size:12.5px;color:var(--muted);margin:0 0 16px;font-family:var(--mono)}
 .dlgScene{display:inline-flex;align-items:center;border:1px solid var(--line-2);border-radius:6px;
@@ -717,12 +717,16 @@ html.narrow #toTop{bottom:80px;right:16px}
 .line .av{flex:0 0 30px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
   font-size:12px;font-weight:700;color:#fff;letter-spacing:-.02em}
 .line .lb{flex:1;min-width:0}
-.line .whoName{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.05em;
+.line .whoName{display:block;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.05em;
   text-transform:uppercase;margin-bottom:3px}
-.line .jp{font-family:var(--jp);font-size:19px;line-height:1.85;color:var(--fg);cursor:pointer;word-break:keep-all}
+.line .jp{display:block;font-family:var(--jp);font-size:20px;line-height:2.1;color:var(--fg);
+  cursor:pointer;word-break:keep-all;overflow-wrap:anywhere}
 .line .jp:hover{color:var(--blue)}
 .line .jp.on{background:color-mix(in srgb,var(--blue) 14%,transparent);border-radius:5px}
-.line .ko{font-size:13px;line-height:1.6;color:var(--muted);margin-top:3px}
+/* 후리가나는 한자 뒤로 물러난다 — 학습 카드 .sent ruby rt 와 같은 값 */
+.line .jp ruby rt{font-size:.46em;color:var(--faint);font-weight:400}
+.line .jp .tg{color:var(--blue);font-weight:600}
+.line .ko{display:block;font-size:13.5px;line-height:1.7;color:var(--muted);margin-top:5px}
 body.noKo .line .ko{display:none}
 .line .speak{all:unset;cursor:pointer;flex:0 0 auto;width:24px;height:24px;display:grid;place-items:center;
   border:1px solid var(--line-2);border-radius:6px;color:var(--faint);font-size:11px}
@@ -753,7 +757,7 @@ body.noKo .line .ko{display:none}
 
 /* ── 모바일 ── */
 html.narrow .dlgTitle{font-size:17px}
-html.narrow .line .jp{font-size:17px}
+html.narrow .line .jp{font-size:18px}
 html.narrow .dlgMeta{margin-left:0;width:100%}
 
 /* ── 모드 탭 스트립 ─────────────────────────────────────────

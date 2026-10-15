@@ -14,9 +14,24 @@ const CATNAME={"basic":"기본 문형·명사문","josa":"조사","conj":"동사
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 function setChips(sel,el){$$(sel+" .chip").forEach(function(x){var on=x===el;x.classList.toggle("on",on);x.setAttribute("aria-pressed",on);});}
 
+/* 루비 표기를 바로잡는다. 데이터에 세 꼴이 섞여 들어와 있다 —
+     [漢字|よみ]   루비
+     {표제어}      표제어 밑줄
+     {漢字|よみ}   표제어 밑줄 + 루비
+   그리고 짝이 어긋난 것도 있다 ({漢字|よみ] · [漢字|よみ}).
+   fmt() 는 셋 다 같은 뜻으로 읽고, 검색·발음도 이 규칙 하나만 쓴다 */
+const fixM=s=>String(s==null?"":s)
+  .replace(/\{([^|{}\[\]]+)\|([^}{\[\]]+)\]/g,'{$1|$2}')
+  .replace(/\[([^|{}\[\]]+)\|([^}{\[\]]+)\}/g,'[$1|$2]');
+
 /* [漢字|よみ] → ruby, {…} → 표제어 밑줄, 대상 한자 → 형광 */
 function fmt(s,target){
-  s=esc(s);
+  s=esc(fixM(s));
+  /* 한자와 읽기가 같으면 루비를 만들지 않는다 — 「[ぜ|ぜ]」는 「ぜ」로.
+     중괄호였다면 표제어 밑줄은 남긴다 */
+  s=s.replace(/([\[{])([^|{}\[\]]+)\|\2([\]}])/g,function(m,o,w){return o==="{"?"{"+w+"}":w;});
+  /* {漢字|よみ} → {[漢字|よみ]}. 아래 두 규칙이 차례로 밑줄과 루비를 붙인다 */
+  s=s.replace(/\{([^|{}\[\]]+)\|([^}{\[\]]+)\}/g,'{[$1|$2]}');
   s=s.replace(/\{([^}]*)\}/g,'<em class="g">$1</em>');
   if(target)s=s.split(target).join('<span class="tg">'+target+'</span>');
   s=s.replace(/\[([^|\]]+)\|([^\]]+)\]/g,'<ruby>$1<rt>$2</rt></ruby>');
@@ -24,16 +39,21 @@ function fmt(s,target){
 }
 /* 검색용 민무늬 문자열. 색인은 어느 화면에서든 이 규칙 하나만 쓴다 —
    「日課」로 쳐도 [日課|にっか] 가 걸리고, {…} 표시는 무시된다 */
-const stripM=s=>String(s==null?"":s)
+const dup=(m,a,b)=>a===b?a:a+b;
+const stripM=s=>fixM(s)
+  .replace(/\{([^|{}\[\]]+)\|([^}{\[\]]+)\}/g,function(m,a,b){return "{"+dup(m,a,b)+"}"})
   .replace(/\{|\}/g,"")
-  .replace(/\[([^|\]]+)\|([^\]]+)\]/g,"$1$2")
+  .replace(/\[([^|\]]+)\|([^\]]+)\]/g,dup)
   /* ～(전각) / 〜(파입) 물결을 하나로 모은다.
      patterns.js 는 전각 663개를 쓰고, 대화 태그는 파입을 써서
      같은 문형을 두 글자로 만들어 검색이 0건이 났다 */
   .replace(/\u301C/g,"\uFF5E")
   .replace(/[\uFF1F\u003F]/g,"");
 /* 루비를 한자만 남기고 편다. 「[頑張|がんば]る」→「頑張る」 */
-const stripK=s=>String(s==null?"":s).replace(/\{|\}/g,"").replace(/\[([^|\]]+)\|([^\]]+)\]/g,"$1");
+const stripK=s=>fixM(s)
+  .replace(/\{([^|{}\[\]]+)\|([^}{\[\]]+)\}/g,"{$1}")
+  .replace(/\{|\}/g,"")
+  .replace(/\[([^|\]]+)\|([^\]]+)\]/g,"$1");
 /* 색인은 두 꼴을 함께 담는다 — 한자+읽기(日課にっか)와 한자만(頑張る).
    오쿠리가나가 붙는 동사·형용사는 뒤쪽 꼴로만 걸린다 */
 const hay=(...xs)=>{
@@ -689,7 +709,8 @@ function speak(text){
   try{
     if(!window.speechSynthesis)return false;
     window.speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(text.replace(/\[([^\]|]+)\|[^\]]+\]/g,"$1").replace(/[{}]/g,""));
+    /* 읽기가 아니라 본문을 읽는다 — {漢字|よみ} 도 한자만 남는다 */
+    const u=new SpeechSynthesisUtterance(stripK(text));
     u.lang="ja-JP";u.rate=0.92;
     const vs=window.speechSynthesis.getVoices()||[];
     const v=vs.find(x=>/ja/i.test(x.lang));
