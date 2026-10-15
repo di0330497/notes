@@ -677,11 +677,15 @@ if($("#qConj"))$("#qConj").addEventListener("input",()=>renderConj());
 /* 이름 → 첫 글자(두 글자까지). 아바타용 */
 function initial(n){return n?String(n).slice(0,1):"?";}
 
-let tkScene="all", tkWho="all", tkLv="all", tkKo=true, tkKind="all", tkDay="all", tkCloze=false;
-/* 각 대화에 요일 루틴(Day 1~7) 배정 — 7일이면 전체 대화를 1회독하도록 균등 분배 */
+let tkScene="all", tkWho="all", tkLv="all", tkKo=true, tkKind="story", tkDay="all", tkCloze=false;
+/* 각 대화에 요일 루틴(Day 1~7) 배정 — 서사 대화(d01~d80)와 예문 뱅크(p001~) 각각 7일 균등 분배 */
 const DLG_DAY={};
 if(hasTALK){
-  DIALOGS.forEach((d,idx)=>{DLG_DAY[d.id]=String((idx%7)+1);});
+  let si=0, pi=0;
+  DIALOGS.forEach(d=>{
+    const prac=/^p\d+$/.test(String(d.id||""));
+    DLG_DAY[d.id]=String(((prac?pi++:si++)%7)+1);
+  });
 }
 
 function whoList(){
@@ -734,9 +738,10 @@ function talkMatch(d){
 /* 한 줄 — 화자 · 일본어 · ▶ */
 function lineHTML(d,l,i){
   const c=CHARBY[l.who]||{name:l.who,color:"#667085"};
+  const itemBadge=l.item?'<span class="lineItemTag">'+fmt(l.item)+'</span>':'';
   return '<div class="line" id="dlg-'+esc(d.id)+'-'+i+'" data-l="'+i+'" data-who="'+esc(l.who)+'">'
     +'<span class="av" style="background:'+c.color+'">'+esc(initial(c.name))+'</span>'
-    +'<span class="lb"><span class="whoName" style="color:'+c.color+'">'+esc(c.name)+'</span>'
+    +'<span class="lb"><span class="whoName" style="color:'+c.color+'">'+esc(c.name)+'</span>'+itemBadge
     +'<span class="jp" data-say="'+esc(l.s)+'">'+fmt(l.s)+'</span>'
     +(l.ko?'<span class="ko">'+esc(l.ko)+'</span>':"")+'</span>'
     +'<button class="speak" title="이 줄 읽어주기">▶</button></div>';
@@ -944,11 +949,13 @@ function playDialogAll(dlgId){
 }
 function gotoDlgLine(dlgId,lineIdx){
   stopDialogPlay();
-  tkScene="all";tkWho="all";tkLv="all";tkKind="all";tkDay="all";
+  tkScene="all";tkWho="all";tkLv="all";tkDay="all";
+  tkKind=/^p\d+$/.test(String(dlgId||""))?"prac":"story";
   if($("#qTalk"))$("#qTalk").value="";
   if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
   if($("#talkWho")&&$("#talkWho").tagName==="SELECT")$("#talkWho").value="all";
-  chipAll("#talkKind","k");chipAll("#talkLv","l");chipAll("#talkDay","day");
+  const kc=$('#talkKind .chip[data-k="'+tkKind+'"]');if(kc)setChips("#talkKind",kc);
+  chipAll("#talkLv","l");chipAll("#talkDay","day");
   switchView("talk");
   const ln=$("#dlg-"+dlgId+"-"+lineIdx)||$("#dlg-"+dlgId);
   const card=$("#dlg-"+dlgId);

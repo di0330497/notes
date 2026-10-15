@@ -153,7 +153,7 @@ Object.keys(byGenre).forEach(gid => {
     const lines = [];
     chunk.forEach((it, k) => {
       const e = it.ex[k % it.ex.length];
-      lines.push({ who: gen.chars[k % gen.chars.length], s: e.s, ko: e.ko });
+      lines.push({ who: gen.chars[k % gen.chars.length], item: KIND_LABEL[it.kind] + ' · ' + it.title, s: e.s, ko: e.ko });
     });
     const tags = chunk.map(it => [TAG_KIND[it.kind], it.title]);
     const lv = [...new Set(chunk.map(c => c.lv))].sort()[0] || '4';
@@ -179,7 +179,7 @@ if (leftovers.length) {
     const lines = [];
     chunk.forEach((it, k) => {
       const e = it.ex[k % it.ex.length];
-      lines.push({ who: mixed.chars[k % mixed.chars.length], s: e.s, ko: e.ko });
+      lines.push({ who: mixed.chars[k % mixed.chars.length], item: KIND_LABEL[it.kind] + ' · ' + it.title, s: e.s, ko: e.ko });
     });
     out.push({
       id: 'p' + String(++n).padStart(3, '0'),
@@ -267,6 +267,7 @@ for (let i = 0; i < pickedKanjiLines.length; i += PER) {
   const g = KANJI_SCENES[0];
   const lines = chunk.map((it, k) => ({
     who: g.chars[k % g.chars.length],
+    item: '한자 · ' + it.k + ' (' + it.hun + ')',
     s: it.s,
     ko: it.ko
   }));
