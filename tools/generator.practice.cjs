@@ -121,12 +121,16 @@ const TAG_KIND = { pat: '문형', gram: '문법', expr: '표현', spoken: '구�
 const PER = 8;
 const out = [];
 let n = 0, skipped = 0;
+/* 장르 끝에서 4개 미만으로 남는 항목을 버리면 기본 N5 문형이 빠진다.
+   (실제로 11개가 날아갔다: ～前に / ～てから / ～とき / ～でしょう …)
+   남는 조각은 장르를 넘어 모아서 종합 연습 대화로 만든다. */
+const leftovers = [];
 Object.keys(byGenre).forEach(gid => {
   const { gen, items: its } = byGenre[gid];
   its.sort((a, b) => (a.kind + a.lv).localeCompare(b.kind + b.lv));
   for (let i = 0; i < its.length; i += PER) {
     const chunk = its.slice(i, i + PER);
-    if (chunk.length < 4) { skipped += chunk.length; continue; }
+    if (chunk.length < 4) { leftovers.push.apply(leftovers, chunk); skipped += chunk.length; continue; }
     const lines = [];
     chunk.forEach((it, k) => {
       const e = it.ex[k % it.ex.length];
@@ -147,6 +151,30 @@ Object.keys(byGenre).forEach(gid => {
     });
   }
 });
+
+if (leftovers.length) {
+  const mixed = { id: 'mix', name: '종합 연습', place: '여기저기에서 난 문장들', chars: ['jihu', 'hana', 'ken', 'aki'] };
+  for (let i = 0; i < leftovers.length; i += 8) {
+    const chunk = leftovers.slice(i, i + 8);
+    if (chunk.length < 2) continue;
+    const lines = [];
+    chunk.forEach((it, k) => {
+      const e = it.ex[k % it.ex.length];
+      lines.push({ who: mixed.chars[k % mixed.chars.length], s: e.s, ko: e.ko });
+    });
+    out.push({
+      id: 'm' + String(out.filter(d => d.id[0] === 'm').length + 1).padStart(3, '0'),
+      title: '종합 연습 · 장르에 남은 항목',
+      scene: '연습 · 종합',
+      place: mixed.place,
+      lv: [...new Set(chunk.map(c => c.lv))].sort()[0] || '4',
+      chars: [...new Set(lines.map(l => l.who))],
+      lines,
+      points: [{ t: '장르에 들어 가지 못해 남은 항목', d: chunk.map(c => KIND_LABEL[c.kind] + ' ' + c.title).join(' / ') }],
+      tags: chunk.map(it => [TAG_KIND[it.kind], it.title])
+    });
+  }
+}
 
 const buf = [];
 buf.push('/* ==========================================================================');

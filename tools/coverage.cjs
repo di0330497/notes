@@ -66,9 +66,14 @@ function hitsFor(sentences) {
   const out = [];
   (sentences || []).forEach(s => {
     const t = strip(s);
-    if (!t || t.length < 8) return;
+    if (!t) return;
+    /* 짧은 예문("そうなんほな。" 처럼 8자 미만)은 부분 일치로 세면
+       「はい」「そう」 같은 조각이 아무 줄에나 걸려 과대 집계된다.
+       그래서 8자 미만은 **줄 전체가 그 예문과 똑같을 때만** 센다.
+       (전체 일치라 오탐이 생길 수 없다.) */
+    const exact = t.length < 8;
     for (let i = 0; i < plainIdx.length; i++) {
-      if (plainIdx[i].indexOf(t) >= 0 || t.indexOf(plainIdx[i]) >= 0) out.push(lines[i]);
+      if (exact ? plainIdx[i] === t : (plainIdx[i].indexOf(t) >= 0 || t.indexOf(plainIdx[i]) >= 0)) out.push(lines[i]);
     }
   });
   // 중복 제거
