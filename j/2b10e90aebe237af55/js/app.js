@@ -213,6 +213,11 @@ document.addEventListener("click",e=>{
 
 /* ══════════ 학습 카드 ══════════ */
 let fLv="all";
+/* 常用漢字 2,136자 경계. 데이터의 등급값이 곧 그 경계다 —
+   등급 1~6(교육한자 1,026) + 등급 8(중학 이후 1,110) = 2,136.
+   등급 0(인명용) · 9(표외) · 10(추가) · 20(식재료) 511자가 범위 밖. */
+let fJoyo="all";
+const isJoyo=g=>(g>=1&&g<=6)||g===8;
 function cardHTML(e,rank,rankLabel){
   const kor=e.kor?'<div class="korSnd">한국음 '+esc(e.kor)+'</div>':'';
   /* 「문장 속 표현」은 예문에 {…} 로 표시해 둔 낱말이다. 데이터에 따로 싣지 않고 여기서 꺼낸다 */
@@ -257,6 +262,8 @@ function renderStudy(){
     const rank=i+1, e=STUDYBYK[r[0]];
     const rankLabel=r[4]===20?'🍽 식재료':('#'+rank);
     if(filtered&&gradeToLv(r[4])!==fLv)return;
+    if(fJoyo==="joyo"&&!isJoyo(r[4]))return;   /* 상용한자 2,136 안 */
+    if(fJoyo==="out"&&isJoyo(r[4]))return;     /* 그 밖(인명용·표외·추가·식재료) */
     if(e){
       if(q&&!hay(e.k,e.hun,e.on,e.kun,e.kor,e.ex.map(x=>[x.s,x.ko])).includes(q))return;
       exShown+=e.ex.length;
@@ -269,7 +276,11 @@ function renderStudy(){
   });
   studyPage=0;
   paintStudy(false);
-  setCount(MODE.study+" "+num(studyItems.length)+"자", filtered?"예문 "+num(exShown)+"개":"");
+  const bits=[];
+  if(fJoyo==="joyo")bits.push("상용한자 2,136 안");
+  if(fJoyo==="out")bits.push("상용한자 밖 511");
+  if(filtered)bits.push("예문 "+num(exShown)+"개");
+  setCount(MODE.study+" "+num(studyItems.length)+"자", bits.join(" · "));
 }
 function paintStudy(scroll){
   if(!studyItems.length){
@@ -971,7 +982,8 @@ function buildGsIndex(){
       hay:e?hay(r[0],e.hun,e.on,e.kun,e.kor,e.ex.map(x=>[x.s,x.ko]))
            :hay(r[0],r[1],r[2],r[3],r[5]),
       go:()=>{
-        switchView("study");$("#qStudy").value="";fLv="all";chipAll("#lvChips","l");renderStudy();
+        switchView("study");$("#qStudy").value="";fLv="all";chipAll("#lvChips","l");
+        fJoyo="all";chipAll("#joyoChips","j");renderStudy();
         studyPager("go",rank);
         focusCard('.card[data-r="'+rank+'"]');
       }});
@@ -1044,7 +1056,7 @@ function gsRender(){
 }
 /* 탭별 검색창·렌더러 대응. "외 N개" 와 검색어 넘기기에 쓴다 */
 const GS_TAB={talk:["#qTalk",()=>{tkScene="all";chipAll("#talkScene","sc");tkWho="all";chipAll("#talkWho","w");renderTalk();}],
-  study:["#qStudy",()=>{fLv="all";chipAll("#lvChips","l");renderStudy();}],
+  study:["#qStudy",()=>{fLv="all";chipAll("#lvChips","l");fJoyo="all";chipAll("#joyoChips","j");renderStudy();}],
   pat:["#qPat",()=>{pLv="all";chipAll("#patLv","l");$("#patCat").value="all";renderPat();}],
   gram:["#qGram",()=>{gCh="all";gLv="all";chipAll("#gramCh","c");chipAll("#gramLv","l");renderGrammar();}],
   conj:["#qConj",()=>{cjG="all";chipAll("#conjG","g");renderConj();}],
@@ -1216,6 +1228,8 @@ $$("#stageGrid .st-card").forEach(a=>a.addEventListener("click",e=>{
 
 $("#lvChips").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   fLv=c.dataset.l;setChips("#lvChips",c);renderStudy();});
+if($("#joyoChips"))$("#joyoChips").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+  fJoyo=c.dataset.j;setChips("#joyoChips",c);renderStudy();});
 $("#patLv").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   pLv=c.dataset.l;setChips("#patLv",c);renderPat();});
 $("#qStudy").addEventListener("input",()=>renderStudy());
