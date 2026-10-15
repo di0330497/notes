@@ -580,8 +580,8 @@ td:first-child{color:var(--fg-dim);font-weight:600;white-space:nowrap}
   color:var(--fg);margin-right:8px;vertical-align:-.06em}
 .uT > .posW:only-child{margin-right:0}
 
-/* ── 일본어 본문 폰트 ── */
-:root{--jp:"Inter","Pretendard Variable","Pretendard","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho","Malgun Gothic","맑은 고딕",serif}
+/* ── 일본어 본문 폰트 — Noto Sans JP 를 맨 앞에 두어 가나·한자 전 글리프를 단일 일본어 서체로 통일 ── */
+:root{--jp:"Noto Sans JP","Pretendard Variable","Pretendard","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Malgun Gothic","맑은 고딕",sans-serif}
 
 /* ── 모바일 보정 ── */
 html.narrow .card{display:block}
@@ -603,9 +603,10 @@ html.narrow .stats-bar{padding:10px 20px}
 /* JLPT 레벨 색 · 모드 레일 — 셸 팔레트에 맞춰 다시 정의 */
 :root{
   --n5:#16a34a; --n4:#3b82f6; --n3:#b54708; --n2:#d29922; --n1:#d92d20; --n0:#667085;
-  --c-study:#16a34a; --c-pat:#2563eb; --c-gram:#7c3aed;
+  --c-talk:#10b981; --c-study:#16a34a; --c-pat:#2563eb; --c-gram:#7c3aed;
   --c-conj:#b54708; --c-pos:#0e7490; --c-spoken:#be185d; --c-expr:#4d7c0f;
 }
+.tab[data-v="talk"]{--rail:var(--c-talk)}
 .tab[data-v="study"]{--rail:var(--c-study)}
 .tab[data-v="pat"]{--rail:var(--c-pat)}
 .tab[data-v="gram"]{--rail:var(--c-gram)}
@@ -691,72 +692,104 @@ html.narrow #toTop{bottom:80px;right:16px}
 .wrap.wide .card,.wrap.wide .uCard,.wrap.wide .tableWrap{max-width:none}
 
 /* ══════════════════════════════════════════════════════════
-   대화 모드 — 교과서가 아니라 "장면에 들어가는" 화면
+   대화 모드 — 학습 카드·문형·문법과 완전히 통일된 카드 규격
    ══════════════════════════════════════════════════════════ */
 
+/* ── 대화 툴바 컨트롤 행 ── */
+.talkDayChips{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.talkDayChips .chip{text-align:center;font-family:var(--mono);font-size:12px;padding:5px 6px}
+.talkCtrlRow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.talkCtrlRow select{flex:1 1 180px;min-width:140px}
+
 /* ── 출연진 ── */
-.whoRow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
-.who{display:flex;align-items:baseline;gap:8px;padding:9px 13px;background:var(--surface);
-  border:1px solid var(--line);border-radius:10px;font-size:13px}
-.who .wd{width:9px;height:9px;border-radius:50%;flex:0 0 auto;align-self:center}
+.whoRow{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+.who{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:var(--surface);
+  border:1px solid var(--line);border-radius:8px;font-size:12px}
+.who .wd{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
 .who b{color:var(--fg);font-weight:600}
-.who span{color:var(--faint);font-size:12px}
+.who span{color:var(--faint);font-size:11.5px}
 
-/* ── 대화 카드 ── */
-.dlg{margin:0 0 22px}
-.dlgHead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
-.dlgTitle{font-family:var(--jp);font-size:19px;font-weight:700;letter-spacing:-.01em;color:var(--fg)}
-.dlgMeta{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap}
-.dlgPlace{font-size:12.5px;color:var(--muted);margin:0 0 16px;font-family:var(--mono)}
-.dlgScene{display:inline-flex;align-items:center;border:1px solid var(--line-2);border-radius:6px;
-  padding:2px 9px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.03em;color:var(--muted)}
+/* ── 대화 카드 (uCard 와 동일한 머리·여백) ── */
+.dlg{margin:0 0 14px}
+.dlgHead{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:12px;
+  padding-bottom:11px;border-bottom:1px solid var(--line)}
+.dlgScene{display:inline-flex;align-items:center;border:1px solid var(--line-2);border-radius:5px;
+  background:var(--surface-2);padding:2px 8px;font-family:var(--mono);font-size:10.5px;
+  font-weight:600;letter-spacing:.03em;color:var(--muted)}
+.dlgTitle{font-family:var(--jp);font-size:15.5px;font-weight:600;letter-spacing:-.01em;color:var(--fg)}
+.dlgMeta{margin-left:auto;display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap}
+.dlgPlayAll{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;
+  padding:2px 9px;border:1px solid var(--line-2);border-radius:6px;background:var(--surface-2);
+  color:var(--fg-dim);font-family:var(--sans);font-size:11.5px;font-weight:500}
+.dlgPlayAll:hover{border-color:var(--primary);color:var(--primary)}
+.dlgPlayAll.playing{border-color:var(--primary);color:var(--primary);background:color-mix(in srgb,var(--primary) 12%,transparent)}
 
-/* ── 한 줄 ── */
-.line{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--line)}
-.line:last-child{border-bottom:0}
-.line .av{flex:0 0 30px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
-  font-size:12px;font-weight:700;color:#fff;letter-spacing:-.02em}
+/* ── 대사 한 줄 (.exBlock 과 동일한 타이포그래피·간격) ── */
+.line{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line)}
+.line:first-child{padding-top:2px}
+.line:last-child{border-bottom:0;padding-bottom:2px}
+.line .av{flex:0 0 26px;width:26px;height:26px;margin-top:4px;border-radius:7px;display:grid;place-items:center;
+  font-size:11.5px;font-weight:700;color:#fff;letter-spacing:-.02em}
 .line .lb{flex:1;min-width:0}
-.line .whoName{display:block;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.05em;
-  text-transform:uppercase;margin-bottom:3px}
+.line .whoName{display:inline-block;font-family:var(--sans);font-size:11.5px;font-weight:600;
+  margin-bottom:2px}
 .line .jp{display:block;font-family:var(--jp);font-size:20px;line-height:2.1;color:var(--fg);
   cursor:pointer;word-break:keep-all;overflow-wrap:anywhere}
 .line .jp:hover{color:var(--blue)}
 .line .jp.on{background:color-mix(in srgb,var(--blue) 14%,transparent);border-radius:5px}
-/* 후리가나는 한자 뒤로 물러난다 — 학습 카드 .sent ruby rt 와 같은 값 */
 .line .jp ruby rt{font-size:.46em;color:var(--faint);font-weight:400}
 .line .jp .tg{color:var(--blue);font-weight:600}
 .line .ko{display:block;font-size:13.5px;line-height:1.7;color:var(--muted);margin-top:5px}
 body.noKo .line .ko{display:none}
-.line .speak{all:unset;cursor:pointer;flex:0 0 auto;width:24px;height:24px;display:grid;place-items:center;
-  border:1px solid var(--line-2);border-radius:6px;color:var(--faint);font-size:11px}
-.line .speak:hover{color:var(--blue);border-color:var(--blue)}
-.line.playing{background:color-mix(in srgb,var(--primary) 7%,transparent)}
+.line .speak,.exSpeakBtn{all:unset;cursor:pointer;flex:0 0 auto;width:25px;height:25px;margin-top:4px;
+  display:inline-grid;place-items:center;border:1px solid var(--line-2);border-radius:6px;
+  background:var(--surface-2);color:var(--muted);font-size:10.5px}
+.line .speak:hover,.exSpeakBtn:hover{color:var(--blue);border-color:var(--blue)}
+.exSpeakBtn{margin-top:0;width:22px;height:22px;font-size:10px}
+.line.playing,.line.hlLine{background:color-mix(in srgb,var(--primary) 8%,transparent);
+  border-radius:8px;padding-left:8px;padding-right:8px;margin-left:-8px;margin-right:-8px}
 .line.playing .jp{color:var(--primary)}
 
-/* ── 포인트 · 태그 ── */
-.dlgPoints{margin:16px 0 0;padding:14px 16px;background:var(--surface-2);border:1px solid var(--line);
-  border-radius:10px}
-.dlgPoints .uLabel{border-color:var(--line-2);color:var(--muted)}
+/* ── 표제어 빈칸 암기 모드 (Cloze) ── */
+body.clozeOn .line .jp em.g,body.clozeOn .sent em.g{
+  background:var(--surface-2);color:transparent;border-radius:4px;padding:0 4px;
+  border-bottom:2px dashed var(--yellow);cursor:pointer;user-select:none;transition:color .12s,background .12s}
+body.clozeOn .line .jp em.g rt,body.clozeOn .sent em.g rt{visibility:hidden}
+body.clozeOn .line .jp em.g:hover,body.clozeOn .line .jp em.g.peek,
+body.clozeOn .sent em.g:hover,body.clozeOn .sent em.g.peek{
+  color:var(--fg);background:color-mix(in srgb,var(--yellow) 16%,transparent)}
+body.clozeOn .line .jp em.g:hover rt,body.clozeOn .line .jp em.g.peek rt,
+body.clozeOn .sent em.g:hover rt,body.clozeOn .sent em.g.peek rt{visibility:visible}
+
+/* ── 카드 예문 ↔ 대화 장면 양방향 연결 배지 ── */
+.dlgLinkBadge{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:5px;
+  padding:2px 8px;border-radius:5px;border:1px solid color-mix(in srgb,var(--primary) 38%,var(--line-2));
+  background:color-mix(in srgb,var(--primary) 8%,var(--surface-2));color:var(--primary);
+  font-family:var(--sans);font-size:11.5px;font-weight:500;line-height:1.35}
+.dlgLinkBadge:hover{border-color:var(--primary);background:color-mix(in srgb,var(--primary) 15%,var(--surface-2))}
+.dlgLinkBadge .dlId{font-family:var(--mono);font-size:10.5px;font-weight:600;opacity:.85}
+
+/* ── 포인트 · 태그 (.uTip / .uFoot 규격과 통일) ── */
+.dlgPoints{margin:12px 0 0;padding:11px 13px;background:var(--tip-bg);border:1px solid var(--tip-bd);
+  border-radius:8px}
+.dlgPoints .uLabel{border-color:var(--tip-bd);color:var(--primary-ink)}
 .dlgPoints ol{margin:8px 0 0;padding-left:18px;font-size:13.5px;line-height:1.7;color:var(--fg-dim)}
 .dlgPoints li{margin:4px 0}
-.dlgPoints b{display:block;color:var(--fg);font-weight:600}
+.dlgPoints b{display:inline;color:var(--fg);font-weight:600;margin-right:6px}
 .dlgTags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:12px;padding-top:11px;
   border-top:1px solid var(--line);font-size:11.5px;color:var(--faint)}
 .dlgTag{display:inline-flex;align-items:center;gap:5px;cursor:pointer;border:1px solid var(--line-2);
   background:var(--surface-2);color:var(--fg-dim);border-radius:6px;padding:3px 9px;
   font-family:var(--jp);font-size:12px}
 .dlgTag:hover{border-color:var(--blue);color:var(--blue)}
-.dlgTag i{font-style:normal;font-family:var(--sans);font-size:10.5px;color:var(--faint)}
+.dlgTag i{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--faint);
+  padding-right:4px;border-right:1px solid var(--line-2)}
 .dlgTag:hover i{color:var(--blue)}
 
-/* ── 따라읽기 도구 ── */
-.dlgBar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 22px;padding:11px 14px;
-  background:var(--surface);border:1px solid var(--line);border-radius:10px}
-.dlgBar .sp{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint)}
-
 /* ── 모바일 ── */
-html.narrow .dlgTitle{font-size:17px}
+html.narrow .talkDayChips{grid-template-columns:repeat(4,1fr)}
+html.narrow .dlgTitle{font-size:14.5px}
 html.narrow .line .jp{font-size:18px}
 html.narrow .dlgMeta{margin-left:0;width:100%}
 

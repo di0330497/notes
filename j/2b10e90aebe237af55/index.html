@@ -10,8 +10,8 @@
 <meta name="theme-color" content="#0d1117">
 <title>빈도순 일본어 — 한자 · 문형 · 문법 · 활용 · 품사 · 구어체</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="css/styles.css?v=20261015-k">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css?v=20261016-a">
 <script>
 /* 화면 배율을 그리기 전에 먼저 건다. 여기서 안 걸면 100% 로 한 번 그렸다가 튄다. */
 /* /it 셸은 150% 브라우저 확대를 CSS zoom 대신 16px 기준 글자로 흡수했다.
@@ -113,27 +113,21 @@
       <section class="page" id="page-talk">
         <div class="wrap wide">
           <header class="phead">
-            <div class="crumb"><span class="pn">01</span> 대화 <span class="pid">장면으로 익히기</span></div>
-            <h2>💬 대화</h2>
-            <p class="deft">교과서가 아니라 <b>장면</b>으로 배운다. 처음엔 일본어만 보인다 — 모르는 게 있어도 괜찮다. 「한국어 번역」을 누르면 그때 한국어가 붙고, ▶ 를 누르면 그 한 줄만 읽어 준다. 60편이 하나의 이야기로 이어진다.</p>
+            <div class="crumb"><span class="pn">01</span> 대화 <span class="pid">전 범위 100% 연동</span></div>
+            <h2>💬 실전 대화</h2>
+            <p class="deft">문형 698 · 문법 589 · 활용표 21 · 표현 599 · 구어체 179 · 상용한자 2,136자까지 <b>모든 학습 항목이 대화 대사와 1:1로 연결</b>되어 있습니다. 대화를 반복해서 입에 붙이면 모든 사전·한자 카드의 예문이 함께 외워집니다.</p>
           </header>
-
-                    <div class="note hidden" id="noteTalk">같은 표현이 여러 대화에 다시 나옵니다. 세 번째 만나면 입에 붙습니다.</div>
-
-          <div class="whoRow" id="talkWhoRow"></div>
 
           <div class="toolbar" id="tbTalk">
             <div class="search">
               <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-              <input id="qTalk" type="search" placeholder="대화 제목 · 장면 · 대사  ( / )" autocomplete="off">
+              <input id="qTalk" type="search" placeholder="대화 제목 · 장면 · 대사 · 한국어 검색  ( / )" autocomplete="off">
             </div>
-            <div class="chips" id="talkScene"></div>
-            <div class="chips" id="talkKind">
+            <div class="chips lvchips" id="talkKind">
               <button class="chip on" data-k="all">전체 대화</button>
-              <button class="chip" data-k="story">서사 대화 d01~</button>
-              <button class="chip" data-k="prac">연습 대화 p001~</button>
+              <button class="chip" data-k="story">서사 대화 60</button>
+              <button class="chip" data-k="prac">문형·한자 마스터</button>
             </div>
-            <div class="chips" id="talkWho"></div>
             <div class="chips lvchips" id="talkLv">
               <button class="chip on" data-l="all">N 전체</button>
               <button class="chip lv5" data-l="5">N5</button>
@@ -142,13 +136,27 @@
               <button class="chip lv2" data-l="2">N2</button>
               <button class="chip lv1" data-l="1">N1</button>
             </div>
+            <div class="chips talkDayChips" id="talkDay">
+              <button class="chip on" data-day="all">전체 루틴</button>
+              <button class="chip" data-day="1">Day 1</button>
+              <button class="chip" data-day="2">Day 2</button>
+              <button class="chip" data-day="3">Day 3</button>
+              <button class="chip" data-day="4">Day 4</button>
+              <button class="chip" data-day="5">Day 5</button>
+              <button class="chip" data-day="6">Day 6</button>
+              <button class="chip" data-day="7">Day 7</button>
+            </div>
+            <div class="talkCtrlRow">
+              <select id="talkScene" aria-label="장면 선택"><option value="all">장면: 전체</option></select>
+              <select id="talkWho" aria-label="화자 선택"><option value="all">화자: 전체</option></select>
+              <button class="furi" data-furi>ふりがな ON</button>
+              <button class="furi" id="talkKo">한국어 ON</button>
+              <button class="furi off" id="talkCloze">빈칸 암기 OFF</button>
+              <button class="furi" id="talkStop">⏹ 멈춤</button>
+            </div>
           </div>
 
-          <div class="dlgBar">
-            <button class="chip" id="talkKo">한국어 번역 켜기</button>
-            <button class="chip" id="talkStop">읽기 멈춤</button>
-            <span class="sp">처음엔 일본어만 · 모르면 넘어가고 다시 오면 된다</span>
-          </div>
+          <div class="whoRow" id="talkWhoRow"></div>
 
           <div class="count"></div>
           <div id="view-talk"></div>
@@ -387,46 +395,46 @@
 <div class="pal" role="dialog" aria-label="통합 검색" id="palbox"><input class="pal-input" id="qAll" type="text" placeholder="한자·문형·문법·품사·구어체·표현·대화 통합 검색  (Esc 닫기)" spellcheck="false"><div class="pal-list" id="gsPanel" role="listbox"></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="data/dialogue-0.js?v=20261015-k"></script>
-<script src="data/characters.js?v=20261015-k"></script>
-<script src="data/dialogue-1.js?v=20261015-k"></script>
-<script src="data/dialogue-2.js?v=20261015-k"></script>
-<script src="data/dialogue-3.js?v=20261015-k"></script>
-<script src="data/dialogue-4.js?v=20261015-k"></script>
-<script src="data/dialogue-5.js?v=20261015-k"></script>
-<script src="data/dialogue-6.js?v=20261015-k"></script>
-<script src="data/dialogue-7.js?v=20261015-k"></script>
-<script src="data/dialogue-8.js?v=20261015-k"></script>
-<script src="data/dialogue-9.js?v=20261015-k"></script>
-<script src="data/dialogue-10.js?v=20261015-k"></script>
-<script src="data/dialogue-11.js?v=20261015-k"></script>
-<script src="data/dialogue-12.js?v=20261015-k"></script>
-<script src="data/dialogue-13.js?v=20261015-k"></script>
-<script src="data/dialogue-14.js?v=20261015-k"></script>
-<script src="data/dialogue-15.js?v=20261015-k"></script>
-<script src="data/dialogue-16.js?v=20261015-k"></script>
-<script src="data/dialogue-17.js?v=20261015-k"></script>
-<script src="data/dialogue-18.js?v=20261015-k"></script>
-<script src="data/dialogue-19.js?v=20261015-k"></script>
-<script src="data/dialogue-practice.js?v=20261015-k"></script>
-<script src="data/colloquial.js?v=20261015-k"></script>
-<script src="data/colloquial-2.js?v=20261015-k"></script>
-<script src="data/dialect.js?v=20261015-k"></script>
-<script src="data/slang.js?v=20261015-k"></script>
-<script src="data/pos-josa.js?v=20261015-k"></script>
-<script src="data/pos-fukushi.js?v=20261015-k"></script>
-<script src="data/pos-other.js?v=20261015-k"></script>
-<script src="data/pos-verb.js?v=20261015-k"></script>
-<script src="data/pos-noun.js?v=20261015-k"></script>
-<script src="data/pos-words.js?v=20261015-k"></script>
-<script src="data/pos-keiyou-2.js?v=20261015-k"></script>
-<script src="data/kanji-list.js?v=20261015-k"></script>
-<script src="data/kanji-cards.js?v=20261015-k"></script>
-<script src="data/patterns.js?v=20261015-k"></script>
-<script src="data/grammar.js?v=20261015-k"></script>
-<script src="data/expressions.js?v=20261015-k"></script>
-<script src="data/conjugation.js?v=20261015-k"></script>
-<script src="js/app.js?v=20261015-k"></script>
-<script src="js/ui.js?v=20261015-k"></script>
+<script src="data/dialogue-0.js?v=20261016-a"></script>
+<script src="data/characters.js?v=20261016-a"></script>
+<script src="data/dialogue-1.js?v=20261016-a"></script>
+<script src="data/dialogue-2.js?v=20261016-a"></script>
+<script src="data/dialogue-3.js?v=20261016-a"></script>
+<script src="data/dialogue-4.js?v=20261016-a"></script>
+<script src="data/dialogue-5.js?v=20261016-a"></script>
+<script src="data/dialogue-6.js?v=20261016-a"></script>
+<script src="data/dialogue-7.js?v=20261016-a"></script>
+<script src="data/dialogue-8.js?v=20261016-a"></script>
+<script src="data/dialogue-9.js?v=20261016-a"></script>
+<script src="data/dialogue-10.js?v=20261016-a"></script>
+<script src="data/dialogue-11.js?v=20261016-a"></script>
+<script src="data/dialogue-12.js?v=20261016-a"></script>
+<script src="data/dialogue-13.js?v=20261016-a"></script>
+<script src="data/dialogue-14.js?v=20261016-a"></script>
+<script src="data/dialogue-15.js?v=20261016-a"></script>
+<script src="data/dialogue-16.js?v=20261016-a"></script>
+<script src="data/dialogue-17.js?v=20261016-a"></script>
+<script src="data/dialogue-18.js?v=20261016-a"></script>
+<script src="data/dialogue-19.js?v=20261016-a"></script>
+<script src="data/dialogue-practice.js?v=20261016-a"></script>
+<script src="data/colloquial.js?v=20261016-a"></script>
+<script src="data/colloquial-2.js?v=20261016-a"></script>
+<script src="data/dialect.js?v=20261016-a"></script>
+<script src="data/slang.js?v=20261016-a"></script>
+<script src="data/pos-josa.js?v=20261016-a"></script>
+<script src="data/pos-fukushi.js?v=20261016-a"></script>
+<script src="data/pos-other.js?v=20261016-a"></script>
+<script src="data/pos-verb.js?v=20261016-a"></script>
+<script src="data/pos-noun.js?v=20261016-a"></script>
+<script src="data/pos-words.js?v=20261016-a"></script>
+<script src="data/pos-keiyou-2.js?v=20261016-a"></script>
+<script src="data/kanji-list.js?v=20261016-a"></script>
+<script src="data/kanji-cards.js?v=20261016-a"></script>
+<script src="data/patterns.js?v=20261016-a"></script>
+<script src="data/grammar.js?v=20261016-a"></script>
+<script src="data/expressions.js?v=20261016-a"></script>
+<script src="data/conjugation.js?v=20261016-a"></script>
+<script src="js/app.js?v=20261016-a"></script>
+<script src="js/ui.js?v=20261016-a"></script>
 </body>
 </html>
