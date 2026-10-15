@@ -14,17 +14,18 @@ const CATNAME={"basic":"기본 문형·명사문","josa":"조사","conj":"동사
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 function setChips(sel,el){$$(sel+" .chip").forEach(function(x){var on=x===el;x.classList.toggle("on",on);x.setAttribute("aria-pressed",on);});}
 
-/* 루비 표기를 바로잡는다. 데이터에 세 꼴이 섞여 들어와 있다 —
+/* 루비 표기를 바로잡는다. 데이터에 네 꼴이 섞여 들어와 있다 —
      [漢字|よみ]   루비
+     [かな]        가나 표제어 밑줄
      {표제어}      표제어 밑줄
      {漢字|よみ}   표제어 밑줄 + 루비
    그리고 짝이 어긋난 것도 있다 ({漢字|よみ] · [漢字|よみ}).
-   fmt() 는 셋 다 같은 뜻으로 읽고, 검색·발음도 이 규칙 하나만 쓴다 */
+   fmt() 는 넷 다 같은 뜻으로 읽고, 검색·발음도 이 규칙 하나만 쓴다 */
 const fixM=s=>String(s==null?"":s)
   .replace(/\{([^|{}\[\]]+)\|([^}{\[\]]+)\]/g,'{$1|$2}')
   .replace(/\[([^|{}\[\]]+)\|([^}{\[\]]+)\}/g,'[$1|$2]');
 
-/* [漢字|よみ] → ruby, {…} → 표제어 밑줄, 대상 한자 → 형광 */
+/* [漢字|よみ] → ruby, [かな]·{…} → 표제어 밑줄, 대상 한자 → 형광 */
 function fmt(s,target){
   s=esc(fixM(s));
   /* 한자와 읽기가 같으면 루비를 만들지 않는다 — 「[ぜ|ぜ]」는 「ぜ」로.
@@ -35,6 +36,9 @@ function fmt(s,target){
   s=s.replace(/\{([^}]*)\}/g,'<em class="g">$1</em>');
   if(target)s=s.split(target).join('<span class="tg">'+target+'</span>');
   s=s.replace(/\[([^|\]]+)\|([^\]]+)\]/g,'<ruby>$1<rt>$2</rt></ruby>');
+  /* [でも]·[えっと]·[うん] 처럼 가나만 든 대괄호는 표제어 밑줄이다.
+     루비를 만들 수 없는 말이라 저자가 강조 표시로 쓴 것 — {…} 와 같은 뜻으로 읽는다 */
+  s=s.replace(/\[([\u3040-\u30FF\u30FC]{1,14})\]/g,'<em class="g">$1</em>');
   return s;
 }
 /* 검색용 민무늬 문자열. 색인은 어느 화면에서든 이 규칙 하나만 쓴다 —
@@ -44,6 +48,7 @@ const stripM=s=>fixM(s)
   .replace(/\{([^|{}\[\]]+)\|([^}{\[\]]+)\}/g,function(m,a,b){return "{"+dup(m,a,b)+"}"})
   .replace(/\{|\}/g,"")
   .replace(/\[([^|\]]+)\|([^\]]+)\]/g,dup)
+  .replace(/\[([\u3040-\u30FF\u30FC]{1,14})\]/g,"$1")
   /* ～(전각) / 〜(파입) 물결을 하나로 모은다.
      patterns.js 는 전각 663개를 쓰고, 대화 태그는 파입을 써서
      같은 문형을 두 글자로 만들어 검색이 0건이 났다 */
@@ -53,7 +58,8 @@ const stripM=s=>fixM(s)
 const stripK=s=>fixM(s)
   .replace(/\{([^|{}\[\]]+)\|([^}{\[\]]+)\}/g,"{$1}")
   .replace(/\{|\}/g,"")
-  .replace(/\[([^|\]]+)\|([^\]]+)\]/g,"$1");
+  .replace(/\[([^|\]]+)\|([^\]]+)\]/g,"$1")
+  .replace(/\[([\u3040-\u30FF\u30FC]{1,14})\]/g,"$1");
 /* 색인은 두 꼴을 함께 담는다 — 한자+읽기(日課にっか)와 한자만(頑張る).
    오쿠리가나가 붙는 동사·형용사는 뒤쪽 꼴로만 걸린다 */
 const hay=(...xs)=>{
@@ -393,7 +399,7 @@ function renderPat(hlPat){
       h+='<div class="cluHd">'+esc(k)+'<em>'+list.length+'</em></div>';
       list.forEach(p=>{
         h+='<div class="uCard'+(hlPat===p.pat?" hl":"")+'" data-p="'+esc(p.pat)+'">'
-          +uTop(lvBadge(p.lv),esc(p.pat),CATNAME[p.cat]||p.cat,true)
+          +uTop(lvBadge(p.lv),fmt(p.pat),CATNAME[p.cat]||p.cat,true)
           +meanBox(p.mean)
           +exList(p.ex)
           +'</div>';
@@ -507,13 +513,13 @@ function renderGrammar(){
     if(g.ch!==curCh){curCh=g.ch;h+=secHd(g.ch,g.cn,perCh[g.ch]+"항목");}
     const cid=conjLinkFor(g.t), pid=posLinkFor(g.t);
     const foot=[
-      cid?'<span class="jumpBadge" data-cj="'+cid+'">🧮 '+esc(CONJBYID[cid].t)+'</span>':"",
-      pid?'<span class="jumpBadge jbPos" data-ps="'+pid+'">🧩 '+esc(POSBYID[pid].t)+'</span>':"",
+      cid?'<span class="jumpBadge" data-cj="'+cid+'">🧮 '+fmt(CONJBYID[cid].t)+'</span>':"",
+      pid?'<span class="jumpBadge jbPos" data-ps="'+pid+'">🧩 '+fmt(POSBYID[pid].t)+'</span>':"",
       relBadges(g.rel)
     ].filter(Boolean).join(" ");
     h+='<div class="uCard">'
-      +uTop(lvBadge(g.lv),esc(g.t),g.cn)
-      +'<div class="uDesc">'+esc(g.desc)+'</div>'
+      +uTop(lvBadge(g.lv),fmt(g.t),g.cn)
+      +'<div class="uDesc">'+fmt(g.desc)+'</div>'
       +meanBox(grammarMeaningHint(g))
       +exList(g.ex)
       +(foot?'<div class="uFoot">'+foot+'</div>':"")
@@ -559,8 +565,8 @@ function renderConj(hlId){
     rows+=c.rows.length;
     if(c.g!==curG){curG=c.g;h+=secHd(c.g,c.gn,perG[c.g]+"표");}
     h+='<div class="uCard'+(hlId===c.id?" hl":"")+'" id="cj-'+esc(c.id)+'">'
-      +uTop(lvBadge(c.lv),esc(c.t),c.id)
-      +'<div class="uDesc">'+esc(c.desc)+'</div>'
+      +uTop(lvBadge(c.lv),fmt(c.t),c.id)
+      +'<div class="uDesc">'+fmt(c.desc)+'</div>'
       +tableHTML(c.head,c.rows)
       +(c.tip?tipBox(fmt(c.tip)):"")
       +exList(c.ex)
@@ -646,11 +652,14 @@ function lineHTML(d,l,i){
 function pointsHTML(p){
   if(!p||!p.length)return "";
   return '<div class="dlgPoints"><span class="uLabel">이 장면의 포인트</span><ol>'
-    +p.map(x=>'<li><b>'+esc(x.t)+'</b>'+esc(x.d)+'</li>').join("")+'</ol></div>';
+    +p.map(x=>'<li><b>'+fmt(x.t)+'</b>'+fmt(x.d)+'</li>').join("")+'</ol></div>';
 }
 function tagsHTML(t){
   if(!t||!t.length)return "";
   const CLS={"문형":"patBadge","문법":"patBadge","한자":"jumpBadge","구어체":"jumpBadge","표현":"jumpBadge"};
+  /* 배지 글자 — 〜だ|だ 처럼 표준형|구어형을 파이프로 적은 데이터가 있어 ／ 로 보여 준다.
+     검색어(data-q)는 원문 그대로 둔다 */
+  const tagText=v=>fmt(v).replace(/\|/g,"／");
   return '<div class="dlgTags"><span class="uFootLabel">등장 표현</span>'
     +t.map(x=>{
         const kind=x[0],val=x[1];
@@ -658,7 +667,7 @@ function tagsHTML(t){
                 :kind==="구어체"?"spoken":kind==="conj"?"conj"
                 :kind==="표현"?"expr":"expr";
         return '<span class="dlgTag '+(CLS[kind]||"")+'" data-go="'+go+'" data-q="'+esc(val)+'">'
-          +'<i>'+esc(kind)+'</i>'+esc(val)+'</span>';
+          +'<i>'+esc(kind)+'</i>'+tagText(val)+'</span>';
       }).join(" ")+'</div>';
 }
 function renderTalk(){
@@ -761,6 +770,13 @@ function bindTalk(){
     /* 마지막 수단: 조사를 뺀 형태 */
     const last = normTilde(segs[0] || "").replace(/[\u3092\u306B\u3067\u306F\u3068\u304C\u3082]/g, "");
     if (last && last.length >= 2 && out.indexOf(last) < 0) out.push(last);
+    /* 마지막 수단 2: 표기 기호를 벗긴 형태.
+       태그 값이 [お前|おまえ]·{おあずかり} 처럼 사전 표기를 그대로 담고 있어도 걸린다.
+       앞의 후보가 이미 걸렸으면 쓰이지 않으므로 결과가 달라지지 않는다 */
+    [stripK(raw), stripM(raw)].forEach(function (v) {
+      v = normTilde(v);
+      if (v && v.length >= 2 && out.indexOf(v) < 0) out.push(v);
+    });
     return out;
   }
   function runTagQuery(k, q){
@@ -840,7 +856,7 @@ function renderSpoken(){
     const rel=relBadges(x.rel);
     h+='<div class="uCard">'
       +uTop(lvBadge(x.lv),fmt(x.t),x.sn,true)
-      +'<div class="uDesc">'+esc(x.rule)+'</div>'
+      +'<div class="uDesc">'+fmt(x.rule)+'</div>'
       +tableHTML(["정식·원형","구어형","메모"],x.forms)
       +(x.warn?warnBox(fmt(x.warn)):"")
       +exList(x.ex)
@@ -886,12 +902,12 @@ function renderPosGroup(hlId){
     if(x.gn!==curG){curG=x.gn;h+=secHd(x.g,x.gn,perG[x.g]+"항목");}
     /* 표제어가 있는 항목은 낱말을 앞세우고, 묶음 항목은 제목만 세운다 */
     const title=x.w
-      ? '<span class="posW">'+fmt(x.w)+'</span>'+esc(x.t.replace(/^.*?—\s*/,""))
-      : esc(x.t);
+      ? '<span class="posW">'+fmt(x.w)+'</span>'+fmt(x.t.replace(/^.*?—\s*/,""))
+      : fmt(x.t);
     h+='<div class="uCard'+(hlId===x.id?" hl":"")+'" id="ps-'+esc(x.id)+'">'
       +uTop(lvBadge(x.lv),title,x.pn)   /* 낱말은 .posW 가 세리프를 쓰고, 뒤따르는 설명은 UI 서체다 */
       +(x.mean?meanBox(x.mean):"")
-      +'<div class="uDesc">'+esc(x.desc)+'</div>'
+      +'<div class="uDesc">'+fmt(x.desc)+'</div>'
       +tableHTML(x.head,x.rows)
       +(x.tip?tipBox(fmt(x.tip)):"")
       +exList(x.ex)
@@ -967,7 +983,7 @@ function renderExpr(){
     if(x.cat!==curCat){curCat=x.cat;
       h+=secHd(x.cat,EXPR_CATNAME[x.cat]||x.cat,perCat[x.cat]+"개");}
     h+='<div class="uCard" data-c="'+esc(x.cat)+'">'
-      +uTop("",esc(x.expr),x.reading||"",true)
+      +uTop("",fmt(x.expr),x.reading||"",true)
       +meanBox(x.mean)
       +exList(x.ex)
       +'</div>';
