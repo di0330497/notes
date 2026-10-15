@@ -617,6 +617,8 @@ html.narrow .stats-bar{padding:10px 20px}
 
 /* ── 레벨 칩 ── */
 .lvchips{display:grid;grid-template-columns:repeat(3,1fr)}
+#joyoChips{grid-template-columns:repeat(4,1fr)}
+html.narrow #joyoChips{grid-template-columns:repeat(2,1fr)}
 .lvchips .chip{text-align:center;font-family:var(--mono)}
 .lvchips .chip.on.lv5{background:color-mix(in srgb,var(--n5) 14%,transparent);border-color:var(--n5);color:var(--n5)}
 .lvchips .chip.on.lv4{background:color-mix(in srgb,var(--n4) 14%,transparent);border-color:var(--n4);color:var(--n4)}

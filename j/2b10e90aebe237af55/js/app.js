@@ -1477,6 +1477,12 @@ $$("#stageGrid .st-card").forEach(a=>a.addEventListener("click",e=>{
 $("#lvChips").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   fLv=c.dataset.l;setChips("#lvChips",c);renderStudy();});
 if($("#joyoChips"))$("#joyoChips").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+  if(c.dataset.j==="juku"){
+    switchView("pos");posP="suushi";posMode="word";$("#qPos").value="숙자훈";
+    const pc=$('#posP .chip[data-p="suushi"]');if(pc)setChips("#posP",pc);
+    const mc=$('#posView .chip[data-m="word"]');if(mc)setChips("#posView",mc);
+    renderPos();scrollTop();return;
+  }
   fJoyo=c.dataset.j;setChips("#joyoChips",c);renderStudy();});
 $("#patLv").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   pLv=c.dataset.l;setChips("#patLv",c);renderPat();});

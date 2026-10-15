@@ -12,6 +12,7 @@ const SPOKEN = load(['colloquial.js', 'colloquial-2.js', 'dialect.js', 'slang.js
 const CONJ = load(['conjugation.js'], 'CONJ');
 const POS = load(['pos-josa.js', 'pos-fukushi.js', 'pos-other.js', 'pos-verb.js', 'pos-noun.js', 'pos-words.js', 'pos-keiyou-2.js'],
   '[].concat(typeof POS_JOSA!=="undefined"?POS_JOSA:[],typeof POS_ADV!=="undefined"?POS_ADV:[],typeof POS_OTHER!=="undefined"?POS_OTHER:[],typeof POS_VERB!=="undefined"?POS_VERB:[],typeof POS_NOUN!=="undefined"?POS_NOUN:[])');
+const JUKU_WORDS = load(['pos-fukushi.js', 'pos-other.js', 'pos-words.js', 'pos-keiyou-2.js'], '(typeof POS_WORDS!=="undefined"?POS_WORDS:[]).filter(w=>/^jk_/.test(w.c))');
 const KANJI_DATA = load(['kanji-list.js', 'kanji-cards.js'], '{ALL, FOOD, STUDY, STUDY_FULL}');
 
 // Load story dialogues d01~d60
@@ -121,6 +122,7 @@ EXPR.forEach(x => { const ex = (x.ex || []).filter(e => e && e.s && e.ko); if (e
 SPOKEN.forEach(x => { const ex = (x.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'spoken', title: x.t, cat: x.sec, lv: String(x.lv || '3'), ex, sub: x.sn || '', sn: x.sn || '' }); });
 CONJ.forEach(x => { const ex = (x.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'conj', title: x.t, cat: x.g, lv: String(x.lv || '3'), ex, sub: x.gn || '' }); });
 POS.forEach(x => { const ex = (x.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'pos', title: x.t, cat: 'pos', lv: String(x.lv || '4'), ex, sub: x.gn || x.pn || '' }); });
+JUKU_WORDS.forEach(w => { const ex = (w.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'pos', title: w.w + ' (' + w.m.replace('[숙자훈·아테지] ', '') + ')', cat: 'pos', lv: String(w.lv || '3'), ex, sub: '숙자훈·아테지 150' }); });
 
 const POS_GENRE = { id:'grammar', name:'문법 강의', place:'어학원 교실', chars:['ken','jihu'] };
 
