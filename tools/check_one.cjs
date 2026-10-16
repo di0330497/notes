@@ -89,6 +89,17 @@ arr.forEach(d => {
         else if (!NORMSET[kind].has(norm(key))) E(n + ': 사전에 없는 키 → ' + key);
         if (used[kind + '\u0000' + key]) W(n + ': 이 대화에서 같은 항목 중복 → ' + key);
         used[kind + '\u0000' + key] = 1;
+        /* item 키에 한자가 있으면 그 한자가 그 줄에 실제로 나와야 한다.
+           품사(숙자훈·아테지 단어)와 표현(정형 문구)에만 적용한다 —
+           문법·문형·구어체 키는 「引用」「逆接」처럼 갈래 이름이라 그 한자가 대사에 나올 필요가 없다. */
+        if (kind === '품사' || kind === '표현') {
+          const bare = key
+            .replace(/\[([^|\]]+)\|([^\]]+)\]/g, '$1').replace(/[{}]/g, '')
+            .replace(/[～〜~]/g, '').replace(/（[^）]*）/g, '').replace(/\([^)]*\)/g, '')
+            .replace(/[가-힣]/g, '');
+          const lack = [...new Set([...bare].filter(ch => /[\u4E00-\u9FFF]/.test(ch)))].filter(ch => s.indexOf(ch) < 0);
+          if (lack.length) E(n + ': item 키의 한자가 줄에 없음 → ' + lack.join('') + '  (' + key + ')');
+        }
       }
     }
   });
