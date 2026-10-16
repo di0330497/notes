@@ -8,10 +8,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0d1117">
+<link rel="icon" href="data:,">
 <title>빈도순 일본어 — 한자 · 문형 · 문법 · 활용 · 품사 · 구어체</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="css/styles.css?v=20261016-e">
+<link rel="stylesheet" href="css/styles.css?v=20261016-f">
 <script>
 /* 화면 배율을 그리기 전에 먼저 건다. 여기서 안 걸면 100% 로 한 번 그렸다가 튄다. */
 /* /it 셸은 150% 브라우저 확대를 CSS zoom 대신 16px 기준 글자로 흡수했다.
@@ -89,7 +90,7 @@
               <a class="st-card" href="#talk" data-v="talk"><span class="sn">01</span><span class="st-body"><b>💬 대화</b><em>장면으로 익히기 — 처음엔 일본어만, ▶ 로 따라읽기</em></span><span class="st-n" id="stnTalk">—</span></a>
               <a class="st-card" href="#study" data-v="study"><span class="sn">02</span><span class="st-body"><b>📚 학습 카드</b><em>빈도순 한자 카드 — 읽기·뜻·예문, N레벨별 필터</em></span><span class="st-n" id="stnStudy">—</span></a>
               <a class="st-card" href="#pat" data-v="pat"><span class="sn">03</span><span class="st-body"><b>📖 문형 사전</b><em>「〜たい」「〜ばかり」 — 의미 분류로 묶어 대조</em></span><span class="st-n" id="stnPat">—</span></a>
-              <a class="st-card" href="#gram" data-v="gram"><span class="sn">04</span><span class="st-body"><b>📐 문법</b><em>588항목 · N5부터 N1까지 장별로</em></span><span class="st-n" id="stnGram">—</span></a>
+              <a class="st-card" href="#gram" data-v="gram"><span class="sn">04</span><span class="st-body"><b>📐 문법</b><em>552항목 · N5부터 N1까지 장별로</em></span><span class="st-n" id="stnGram">—</span></a>
               <a class="st-card" href="#conj" data-v="conj"><span class="sn">05</span><span class="st-body"><b>🧮 활용표</b><em>3그룹 · て형 음편 · 조건 4형 · 경어 대응</em></span><span class="st-n" id="stnConj">—</span></a>
               <a class="st-card" href="#pos" data-v="pos"><span class="sn">06</span><span class="st-body"><b>🧩 품사 사전</b><em>묶음 보기 · 낱말 보기 두 층</em></span><span class="st-n" id="stnPos">—</span></a>
               <a class="st-card" href="#spoken" data-v="spoken"><span class="sn">07</span><span class="st-body"><b>🗣 구어체</b><em>축약 · 종조사 · 반말 · 방언 · 비속어</em></span><span class="st-n" id="stnSpoken">—</span></a>
@@ -115,7 +116,7 @@
           <header class="phead">
             <div class="crumb"><span class="pn">01</span> 대화 <span class="pid">전 범위 100% 연동</span></div>
             <h2>💬 실전 대화</h2>
-            <p class="deft">문형 698 · 문법 589 · 활용표 21 · 표현 599 · 구어체 179 · 상용한자 2,136자까지 <b>모든 학습 항목이 대화 대사와 1:1로 연결</b>되어 있습니다. 대화를 반복해서 입에 붙이면 모든 사전·한자 카드의 예문이 함께 외워집니다.</p>
+            <p class="deft">문형 698 · 문법 552 · 활용표 25 · 표현 599 · 구어체 114 · 상용한자 2,136자까지 <b>모든 학습 항목이 대화 대사와 1:1로 연결</b>되어 있습니다. 아래 <b>출처</b> 칩으로 어느 사전에서 온 대화인지 골라 볼 수 있습니다. 대화를 반복해서 입에 붙이면 모든 사전·한자 카드의 예문이 함께 외워집니다.</p>
           </header>
 
           <div class="toolbar" id="tbTalk">
@@ -125,8 +126,8 @@
             </div>
             <div class="chips lvchips" id="talkKind">
               <button class="chip on" data-k="story">실전 서사 대화 80</button>
-              <button class="chip" data-k="prac">문형·한자 예문 뱅크</button>
-              <button class="chip" data-k="all">전체 통합 보기</button>
+              <button class="chip" data-k="prac">연습 뱅크 191</button>
+              <button class="chip" data-k="all">전체 통합 271</button>
             </div>
             <div class="chips lvchips" id="talkLv">
               <button class="chip on" data-l="all">N 전체</button>
@@ -136,6 +137,7 @@
               <button class="chip lv2" data-l="2">N2</button>
               <button class="chip lv1" data-l="1">N1</button>
             </div>
+            <div class="chips lvchips srcChips" id="talkSrc"></div>
             <div class="chips talkDayChips" id="talkDay">
               <button class="chip on" data-day="all">전체 루틴</button>
               <button class="chip" data-day="1">Day 1</button>
@@ -157,6 +159,7 @@
           </div>
 
           <div class="whoRow" id="talkWhoRow"></div>
+          <div class="talkLegend" id="talkLegend"></div>
 
           <div class="count"></div>
           <div id="view-talk"></div>
@@ -252,9 +255,9 @@
       <section class="page" id="page-gram">
         <div class="wrap wide">
           <header class="phead">
-            <div class="crumb"><span class="pn">04</span> 문법 <span class="pid">588항목</span></div>
+            <div class="crumb"><span class="pn">04</span> 문법 <span class="pid">552항목</span></div>
             <h2>📐 문법</h2>
-            <p class="deft">기초·JLPT 문법 588항목을 N5부터 N1까지 정리했습니다. 활용을 설명하는 항목에는 <b>활용표로 건너뛰는 배지</b>가 붙고, 관련 문형 배지를 누르면 문형 사전으로 이동합니다.</p>
+            <p class="deft">기초·JLPT 문법 552항목을 N5부터 N1까지 정리했습니다. 활용을 설명하는 항목에는 <b>활용표로 건너뛰는 배지</b>가 붙고, 관련 문형 배지를 누르면 문형 사전으로 이동합니다.</p>
           </header>
 
           <div class="toolbar hidden" id="tbGram">
@@ -274,7 +277,7 @@
             <button class="furi" data-furi>ふりがな ON</button>
           </div>
 
-                    <div class="note hidden" id="noteGram">기초·JLPT 문법 588항목을 N5부터 N1까지 정리했습니다.</div>
+                    <div class="note hidden" id="noteGram">기초·JLPT 문법 552항목을 N5부터 N1까지 정리했습니다.</div>
           <div class="count"></div>
           <div id="view-gram" class="hidden"></div>
         </div>
@@ -396,46 +399,46 @@
 <div class="pal" role="dialog" aria-label="통합 검색" id="palbox"><input class="pal-input" id="qAll" type="text" placeholder="한자·문형·문법·품사·구어체·표현·대화 통합 검색  (Esc 닫기)" spellcheck="false"><div class="pal-list" id="gsPanel" role="listbox"></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="data/dialogue-0.js?v=20261016-e"></script>
-<script src="data/characters.js?v=20261016-e"></script>
-<script src="data/dialogue-1.js?v=20261016-e"></script>
-<script src="data/dialogue-2.js?v=20261016-e"></script>
-<script src="data/dialogue-3.js?v=20261016-e"></script>
-<script src="data/dialogue-4.js?v=20261016-e"></script>
-<script src="data/dialogue-5.js?v=20261016-e"></script>
-<script src="data/dialogue-6.js?v=20261016-e"></script>
-<script src="data/dialogue-7.js?v=20261016-e"></script>
-<script src="data/dialogue-8.js?v=20261016-e"></script>
-<script src="data/dialogue-9.js?v=20261016-e"></script>
-<script src="data/dialogue-10.js?v=20261016-e"></script>
-<script src="data/dialogue-11.js?v=20261016-e"></script>
-<script src="data/dialogue-12.js?v=20261016-e"></script>
-<script src="data/dialogue-13.js?v=20261016-e"></script>
-<script src="data/dialogue-14.js?v=20261016-e"></script>
-<script src="data/dialogue-15.js?v=20261016-e"></script>
-<script src="data/dialogue-16.js?v=20261016-e"></script>
-<script src="data/dialogue-17.js?v=20261016-e"></script>
-<script src="data/dialogue-18.js?v=20261016-e"></script>
-<script src="data/dialogue-19.js?v=20261016-e"></script>
-<script src="data/dialogue-practice.js?v=20261016-e"></script>
-<script src="data/colloquial.js?v=20261016-e"></script>
-<script src="data/colloquial-2.js?v=20261016-e"></script>
-<script src="data/dialect.js?v=20261016-e"></script>
-<script src="data/slang.js?v=20261016-e"></script>
-<script src="data/pos-josa.js?v=20261016-e"></script>
-<script src="data/pos-fukushi.js?v=20261016-e"></script>
-<script src="data/pos-other.js?v=20261016-e"></script>
-<script src="data/pos-verb.js?v=20261016-e"></script>
-<script src="data/pos-noun.js?v=20261016-e"></script>
-<script src="data/pos-words.js?v=20261016-e"></script>
-<script src="data/pos-keiyou-2.js?v=20261016-e"></script>
-<script src="data/kanji-list.js?v=20261016-e"></script>
-<script src="data/kanji-cards.js?v=20261016-e"></script>
-<script src="data/patterns.js?v=20261016-e"></script>
-<script src="data/grammar.js?v=20261016-e"></script>
-<script src="data/expressions.js?v=20261016-e"></script>
-<script src="data/conjugation.js?v=20261016-e"></script>
-<script src="js/app.js?v=20261016-e"></script>
-<script src="js/ui.js?v=20261016-e"></script>
+<script src="data/dialogue-0.js?v=20261016-f"></script>
+<script src="data/characters.js?v=20261016-f"></script>
+<script src="data/dialogue-1.js?v=20261016-f"></script>
+<script src="data/dialogue-2.js?v=20261016-f"></script>
+<script src="data/dialogue-3.js?v=20261016-f"></script>
+<script src="data/dialogue-4.js?v=20261016-f"></script>
+<script src="data/dialogue-5.js?v=20261016-f"></script>
+<script src="data/dialogue-6.js?v=20261016-f"></script>
+<script src="data/dialogue-7.js?v=20261016-f"></script>
+<script src="data/dialogue-8.js?v=20261016-f"></script>
+<script src="data/dialogue-9.js?v=20261016-f"></script>
+<script src="data/dialogue-10.js?v=20261016-f"></script>
+<script src="data/dialogue-11.js?v=20261016-f"></script>
+<script src="data/dialogue-12.js?v=20261016-f"></script>
+<script src="data/dialogue-13.js?v=20261016-f"></script>
+<script src="data/dialogue-14.js?v=20261016-f"></script>
+<script src="data/dialogue-15.js?v=20261016-f"></script>
+<script src="data/dialogue-16.js?v=20261016-f"></script>
+<script src="data/dialogue-17.js?v=20261016-f"></script>
+<script src="data/dialogue-18.js?v=20261016-f"></script>
+<script src="data/dialogue-19.js?v=20261016-f"></script>
+<script src="data/dialogue-practice.js?v=20261016-f"></script>
+<script src="data/colloquial.js?v=20261016-f"></script>
+<script src="data/colloquial-2.js?v=20261016-f"></script>
+<script src="data/dialect.js?v=20261016-f"></script>
+<script src="data/slang.js?v=20261016-f"></script>
+<script src="data/pos-josa.js?v=20261016-f"></script>
+<script src="data/pos-fukushi.js?v=20261016-f"></script>
+<script src="data/pos-other.js?v=20261016-f"></script>
+<script src="data/pos-verb.js?v=20261016-f"></script>
+<script src="data/pos-noun.js?v=20261016-f"></script>
+<script src="data/pos-words.js?v=20261016-f"></script>
+<script src="data/pos-keiyou-2.js?v=20261016-f"></script>
+<script src="data/kanji-list.js?v=20261016-f"></script>
+<script src="data/kanji-cards.js?v=20261016-f"></script>
+<script src="data/patterns.js?v=20261016-f"></script>
+<script src="data/grammar.js?v=20261016-f"></script>
+<script src="data/expressions.js?v=20261016-f"></script>
+<script src="data/conjugation.js?v=20261016-f"></script>
+<script src="js/app.js?v=20261016-f"></script>
+<script src="js/ui.js?v=20261016-f"></script>
 </body>
 </html>

@@ -136,17 +136,23 @@ const DLG_INDEX=(function(){
       });
     });
   }
+  /* 같은 예문이 카드마다 되풀이 조회된다. 정규화 문자열 → 조회 결과를 기억해
+     대화 3,500줄 선형 탐색을 예문마다 딱 한 번만 하게 한다. */
+  const sentCache=new Map();
   function findSent(s){
     const t=normS(s);
     if(!t)return null;
-    if(bySent.has(t))return bySent.get(t);
-    if(t.length>=8){
+    if(sentCache.has(t))return sentCache.get(t);
+    let r=null;
+    if(bySent.has(t))r=bySent.get(t);
+    else if(t.length>=8){
       for(let i=0;i<allLines.length;i++){
         const p=allLines[i].plain;
-        if(p&&(p.indexOf(t)>=0||t.indexOf(p)>=0))return allLines[i];
+        if(p&&(p.indexOf(t)>=0||t.indexOf(p)>=0)){r=allLines[i];break;}
       }
     }
-    return null;
+    sentCache.set(t,r);
+    return r;
   }
   return {bySent,byKanji,allLines,findSent,normS};
 })();
@@ -358,6 +364,13 @@ function basicCardHTML(r,rank,rankLabel){
     +'<div class="basicMeta">'+gradeBadge(r[4])+'</div>'+extraDlg+'</div></div>';
 }
 let studyItems=[],studyPage=0;const PAGE=100;
+/* 카드 HTML 은 지금 보이는 페이지 분량만 만든다.
+   예전에는 2,647장을 통째로 문자열로 만들어 둔 뒤 100장만 붙였다 —
+   탭을 누를 때마다 1초 넘게 걸리던 주된 원인.
+   이제 목록에는 가벼운 참조({e} 또는 {r})만 담고 그릴 때 만든다. */
+function studyItemHTML(x){
+  return x.e?cardHTML(x.e,x.rank,x.rankLabel):basicCardHTML(x.r,x.rank,x.rankLabel);
+}
 function renderStudy(){
   const q=$("#qStudy").value.trim().toLowerCase().replace(/\u301C/g,"\uFF5E").replace(/[\uFF1F\u003F]/g,"");
   const filtered=fLv!=="all";
@@ -371,11 +384,11 @@ function renderStudy(){
     if(e){
       if(q&&!hay(e.k,e.hun,e.on,e.kun,e.kor,e.ex.map(x=>[x.s,x.ko])).includes(q))return;
       exShown+=e.ex.length;
-      studyItems.push({rank:rank,html:cardHTML(e,rank,rankLabel)});
+      studyItems.push({rank:rank,rankLabel:rankLabel,e:e,r:null});
     }else{
       if(filtered)return;
       if(q&&!hay(r[0],r[1],r[2],r[3],r[5]).includes(q))return;
-      studyItems.push({rank:rank,html:basicCardHTML(r,rank,rankLabel)});
+      studyItems.push({rank:rank,rankLabel:rankLabel,e:null,r:r});
     }
   });
   studyPage=0;
@@ -394,7 +407,7 @@ function paintStudy(scroll){
   if(studyPage>studyItems.length-1)studyPage=Math.floor((studyItems.length-1)/PAGE)*PAGE;
   if(studyPage<0)studyPage=0;
   const end=Math.min(studyPage+PAGE,studyItems.length);
-  $("#view-study").innerHTML=studyItems.slice(studyPage,end).map(x=>x.html).join("");
+  $("#view-study").innerHTML=studyItems.slice(studyPage,end).map(studyItemHTML).join("");
   setPager(end);
   updateProgress();
   if(scroll)scrollTop();
@@ -443,10 +456,30 @@ function bindJumps(sel){
   $$(sel+" .jumpBadge[data-cj]").forEach(b=>b.onclick=()=>gotoConj(b.dataset.cj));
   $$(sel+" .jumpBadge[data-ps]").forEach(b=>b.onclick=()=>gotoPos(b.dataset.ps));
 }
+/* content-visibility 로 접힌 카드는 실제 크기를 알기 전까지 추정 높이로 배치된다.
+   그래서 먼 곳으로 한 번에 부드럽게 굴러가면 목표에 못 미치거나 지나친다.
+   즉시 한 번 옮겨 대상을 화면 안에 들이고(그새 앞 카드들이 실제 크기로 자리를
+   잡는다), 레이아웃이 확정된 다음 두어 번 더 맞춘다. */
+function scrollToTarget(el,block){
+  if(!el)return;
+  const sc=SCROLL();
+  const prev=sc?sc.style.scrollBehavior:"";
+  if(sc)sc.style.scrollBehavior="auto";
+  const blk=block||"center";
+  const snap=()=>el.scrollIntoView({block:blk});
+  snap();
+  requestAnimationFrame(function(){
+    snap();
+    requestAnimationFrame(function(){
+      snap();
+      if(sc)sc.style.scrollBehavior=prev;
+    });
+  });
+}
 /* 건너뛴 뒤 그 카드를 짚어 준다. 네 화면이 같은 강조(.hl)와 같은 스크롤을 쓴다 */
 function focusCard(sel){
   const el=$(sel);if(!el)return;
-  setTimeout(()=>el.scrollIntoView({behavior:"smooth",block:"start"}),60);
+  setTimeout(()=>scrollToTarget(el,"start"),60);
 }
 
 /* ══════════ 문형 사전 — 의미 분류 → 클러스터 2단 묶음 ══════════ */
@@ -677,7 +710,7 @@ if($("#qConj"))$("#qConj").addEventListener("input",()=>renderConj());
 /* 이름 → 첫 글자(두 글자까지). 아바타용 */
 function initial(n){return n?String(n).slice(0,1):"?";}
 
-let tkScene="all", tkWho="all", tkLv="all", tkKo=true, tkKind="story", tkDay="all", tkCloze=false;
+let tkScene="all", tkWho="all", tkLv="all", tkSrc="all", tkKo=true, tkKind="story", tkDay="all", tkCloze=false;
 /* 각 대화에 요일 루틴(Day 1~7) 배정 — 서사 대화(d01~d80)와 예문 뱅크(p001~) 각각 7일 균등 분배 */
 const DLG_DAY={};
 if(hasTALK){
@@ -685,6 +718,29 @@ if(hasTALK){
   DIALOGS.forEach(d=>{
     const prac=/^p\d+$/.test(String(d.id||""));
     DLG_DAY[d.id]=String(((prac?pi++:si++)%7)+1);
+  });
+}
+
+/* ══════════ 대화의 출처(어느 사전 탭에서 왔는가) ══════════
+   271편은 두 갈래다.
+     · 서사 대화 d01~d80 — 실제 상황을 이어 붙인 이야기 (출처 = 서사)
+     · 연습 뱅크 p001~   — 사전 항목의 예문을 모아 만든 대사. 줄마다 item 이
+       「문형 · 〜たい」「한자 · 郁 (우울할 울)」처럼 붙어 있고 그 앞머리가 곧 출처다.
+   한 편이 문형과 활용표를 함께 다루기도 하므로 "포함" 기준으로 센다(중복 허용).
+   줄 단위 합계는 SRC_LINE 에 정확히 나뉜다. */
+const SRC_ORDER=["서사","문형","문법","활용표","품사","구어체","표현","한자"];
+const DLG_SRC=new Map(), SRC_DLG={}, SRC_LINE={};
+if(hasTALK){
+  DIALOGS.forEach(d=>{
+    const set=new Set();
+    (d.lines||[]).forEach(l=>{
+      const m=l.item?String(l.item).match(/^([^ ·]+)/):null;
+      const k=m?m[1]:"";
+      if(k){set.add(k);SRC_LINE[k]=(SRC_LINE[k]||0)+1;}
+    });
+    if(!set.size)set.add(/^p\d+$/.test(String(d.id))?"기타":"서사");
+    DLG_SRC.set(d.id,set);
+    set.forEach(k=>{SRC_DLG[k]=(SRC_DLG[k]||0)+1;});
   });
 }
 
@@ -728,6 +784,7 @@ function sceneList(){
 const isPractice = d => /^p\d+$/.test(String(d.id || '')) || /^연습[ ·]/.test(String(d.scene || ''));
 function talkMatch(d){
   if(tkLv!=="all"&&d.lv!==tkLv)return false;
+  if(tkSrc!=="all"){const s=DLG_SRC.get(d.id);if(!s||!s.has(tkSrc))return false;}
   if(tkScene!=="all"&&d.scene!==tkScene)return false;
   if(tkWho!=="all"&&(d.chars||[]).indexOf(tkWho)<0)return false;
   if(tkKind==="story"&&isPractice(d))return false;
@@ -787,7 +844,7 @@ function renderTalk(){
     ds.forEach((d,i)=>{
       const n=(d.lines||[]).length;lines+=n;
       const dayLabel=DLG_DAY[d.id]?'Day '+DLG_DAY[d.id]:'';
-      h+='<div class="uCard dlg" id="dlg-'+esc(d.id)+'">'
+      h+='<div class="uCard dlg'+(isPractice(d)?" dlgP":"")+'" id="dlg-'+esc(d.id)+'">'
         +'<div class="dlgHead">'+lvBadge(d.lv)+'<span class="dlgScene">'+esc(d.id||"")+(dayLabel?' · '+dayLabel:'')+'</span>'
         +'<span class="dlgTitle">'+fmt(d.title)+'</span>'
         +'<span class="dlgMeta">'+esc(d.place||"")+' · '+n+'줄 '
@@ -949,13 +1006,13 @@ function playDialogAll(dlgId){
 }
 function gotoDlgLine(dlgId,lineIdx){
   stopDialogPlay();
-  tkScene="all";tkWho="all";tkLv="all";tkDay="all";
+  tkScene="all";tkWho="all";tkLv="all";tkSrc="all";tkDay="all";
   tkKind=/^p\d+$/.test(String(dlgId||""))?"prac":"story";
   if($("#qTalk"))$("#qTalk").value="";
   if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
   if($("#talkWho")&&$("#talkWho").tagName==="SELECT")$("#talkWho").value="all";
   const kc=$('#talkKind .chip[data-k="'+tkKind+'"]');if(kc)setChips("#talkKind",kc);
-  chipAll("#talkLv","l");chipAll("#talkDay","day");
+  chipAll("#talkLv","l");chipAll("#talkSrc","s");chipAll("#talkDay","day");
   switchView("talk");
   const ln=$("#dlg-"+dlgId+"-"+lineIdx)||$("#dlg-"+dlgId);
   const card=$("#dlg-"+dlgId);
@@ -964,7 +1021,7 @@ function gotoDlgLine(dlgId,lineIdx){
   if(card)card.classList.add("hl");
   if(ln){
     if(ln.classList.contains("line"))ln.classList.add("hlLine");
-    setTimeout(()=>ln.scrollIntoView({behavior:"smooth",block:"center"}),40);
+    setTimeout(()=>scrollToTarget(ln,"center"),40);
     const jp=ln.querySelector?ln.querySelector(".jp"):null;
     if(jp&&jp.getAttribute("data-say"))speak(jp.getAttribute("data-say"));
   }
@@ -995,9 +1052,42 @@ document.addEventListener("click",e=>{
 });
 
 /* ── 배선 ── */
-if(hasTALK){sceneList();whoList();applyKo();applyCloze();}
+/* 대화 출처 칩 — 각 사전 탭에서 온 대화가 몇 편인지 함께 보여 준다 */
+function srcChips(){
+  const el=$("#talkSrc");if(!el)return;
+  let h='<button class="chip on" data-s="all">출처 전체 <span class="chipN">'+DLG_SRC.size+'</span></button>';
+  SRC_ORDER.forEach(k=>{const n=SRC_DLG[k]||0;if(!n)return;
+    h+='<button class="chip" data-s="'+esc(k)+'">'+esc(k)+' <span class="chipN">'+n+'</span></button>';});
+  el.innerHTML=h;
+}
+/* 대화 분포 — 271편이 어느 탭에서 왔고 어느 N레벨이며 줄이 어떻게 짜였는지 한눈에 */
+function talkLegend(){
+  const el=$("#talkLegend");if(!el)return;
+  const lv={};DIALOGS.forEach(d=>{const k='N'+(d.lv||'?');lv[k]=(lv[k]||0)+1;});
+  const lvOrder=['N5','N4','N3','N2','N1','N0'].filter(k=>lv[k]);
+  const story=DIALOGS.filter(d=>!/^p\d+$/.test(String(d.id))).length;
+  const prac=DIALOGS.length-story;
+  const lineTot=Object.values(SRC_LINE).reduce((a,b)=>a+b,0);
+  const row=(k,inner)=>'<div class="tlgRow"><span class="tlgK">'+k+'</span><span class="tlgI">'+inner+'</span></div>';
+  const srcs=SRC_ORDER.filter(k=>SRC_DLG[k]).map(k=>'<span class="tlgChip">'+esc(k)+' <b>'+SRC_DLG[k]+'</b></span>').join("");
+  const lvs=lvOrder.map(k=>'<span class="tlgChip">'+k+' <b>'+lv[k]+'</b></span>').join("");
+  const lines=SRC_ORDER.filter(k=>SRC_LINE[k]).map(k=>esc(k)+' <b>'+num(SRC_LINE[k])+'</b>').join(" · ");
+  el.innerHTML=
+    row('구성','실전 서사 <b>'+story+'</b>편 + 연습 뱅크 <b>'+prac+'</b>편 = <b>'+DIALOGS.length+'</b>편 · <b>'+num(lineTot)+'</b>줄')
+    +row('출처',srcs+' <span class="tlgNote">(한 편이 여러 탭을 겸하면 중복 집계)</span>')
+    +row('N레벨',lvs)
+    +row('줄 구성',lines);
+}
+if(hasTALK){sceneList();whoList();srcChips();talkLegend();applyKo();applyCloze();}
+if($("#talkSrc"))$("#talkSrc").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+  tkSrc=c.dataset.s;setChips("#talkSrc",c);
+  /* 출처를 고르면 종류도 맞춘다 — 서사면 서사, 사전 출처면 연습 뱅크, 전체면 전체 */
+  tkKind=tkSrc==="all"?"all":(tkSrc==="서사"?"story":"prac");
+  chipAll("#talkKind","k");renderTalk();});
 if($("#talkKind"))$("#talkKind").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
-  tkKind=c.dataset.k;setChips("#talkKind",c);renderTalk();});
+  tkKind=c.dataset.k;setChips("#talkKind",c);
+  /* 종류(서사/연습/전체)를 고르면 출처는 초기화한다 — 두 축이 같은 것을 가리킨다 */
+  tkSrc="all";chipAll("#talkSrc","s");renderTalk();});
 if($("#talkDay"))$("#talkDay").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkDay=c.dataset.day;setChips("#talkDay",c);renderTalk();});
 if($("#qTalk"))$("#qTalk").addEventListener("input",()=>renderTalk());
@@ -1300,10 +1390,10 @@ function gsRender(){
   panel.innerHTML=h;panel.hidden=false;
 }
 /* 탭별 검색창·렌더러 대응. "외 N개" 와 검색어 넘기기에 쓴다 */
-const GS_TAB={talk:["#qTalk",()=>{tkScene="all";tkWho="all";tkLv="all";tkKind="all";tkDay="all";
+const GS_TAB={talk:["#qTalk",()=>{tkScene="all";tkWho="all";tkLv="all";tkKind="all";tkSrc="all";tkDay="all";
     if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";else chipAll("#talkScene","sc");
     if($("#talkWho")&&$("#talkWho").tagName==="SELECT")$("#talkWho").value="all";else chipAll("#talkWho","w");
-    chipAll("#talkKind","k");chipAll("#talkLv","l");chipAll("#talkDay","day");renderTalk();}],
+    chipAll("#talkKind","k");chipAll("#talkLv","l");chipAll("#talkSrc","s");chipAll("#talkDay","day");renderTalk();}],
   study:["#qStudy",()=>{fLv="all";chipAll("#lvChips","l");fJoyo="all";chipAll("#joyoChips","j");renderStudy();}],
   pat:["#qPat",()=>{pLv="all";chipAll("#patLv","l");$("#patCat").value="all";renderPat();}],
   gram:["#qGram",()=>{gCh="all";gLv="all";chipAll("#gramCh","c");chipAll("#gramLv","l");renderGrammar();}],
