@@ -810,7 +810,7 @@ function pointsHTML(p){
 }
 function tagsHTML(t){
   if(!t||!t.length)return "";
-  const CLS={"문형":"patBadge","문법":"patBadge","한자":"jumpBadge","구어체":"jumpBadge","표현":"jumpBadge"};
+  const CLS={"문형":"patBadge","문법":"patBadge","한자":"jumpBadge","구어체":"jumpBadge","표현":"jumpBadge","품사":"jumpBadge"};
   /* 배지 글자 — 〜だ|だ 처럼 표준형|구어형을 파이프로 적은 데이터가 있어 ／ 로 보여 준다.
      검색어(data-q)는 원문 그대로 둔다 */
   const tagText=v=>fmt(v).replace(/\|/g,"／");
@@ -818,7 +818,7 @@ function tagsHTML(t){
     +t.map(x=>{
         const kind=x[0],val=x[1];
         const go=kind==="문형"?"pat":kind==="문법"?"gram":kind==="한자"?"study"
-                :kind==="구어체"?"spoken":kind==="conj"?"conj"
+                :kind==="구어체"?"spoken":kind==="conj"?"conj":kind==="품사"?"pos"
                 :kind==="표현"?"expr":"expr";
         return '<span class="dlgTag '+(CLS[kind]||"")+'" data-go="'+go+'" data-q="'+esc(val)+'">'
           +'<i>'+esc(kind)+'</i>'+tagText(val)+'</span>';
@@ -958,11 +958,16 @@ function bindTalk(){
     switchView(k);
     const el = $(gs[0]); if (!el) return false;
     const cands = tagCandidates(q);
-    for (let i = 0; i < cands.length; i++) {
-      el.value = cands[i];
-      gs[1]();
-      const hit = $$("#view-" + k + " .uCard, #view-" + k + " .card").length;
-      if (hit) return true;
+    /* 품사 탭은 '묶음 표'와 '낱말 보기' 두 화면이라 양쪽을 다 시도한다 */
+    const modes = (k === "pos" && hasWORDS) ? ["group", "word"] : [null];
+    for (let m = 0; m < modes.length; m++) {
+      for (let i = 0; i < cands.length; i++) {
+        el.value = cands[i];
+        gs[1]();
+        if (modes[m]) { posMode = modes[m]; renderPos(); }
+        const hit = $$("#view-" + k + " .uCard, #view-" + k + " .card").length;
+        if (hit) return true;
+      }
     }
     return false;
   }

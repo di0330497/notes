@@ -121,8 +121,8 @@ GRAMMAR.forEach(x => { const ex = (x.ex || []).filter(e => e && e.s && e.ko); if
 EXPR.forEach(x => { const ex = (x.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'expr', title: x.expr, cat: x.cat, lv: String(x.lv || '4'), ex, sub: x.mean || '' }); });
 SPOKEN.forEach(x => { const ex = (x.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'spoken', title: x.t, cat: x.sec, lv: String(x.lv || '3'), ex, sub: x.sn || '', sn: x.sn || '' }); });
 CONJ.forEach(x => { const ex = (x.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'conj', title: x.t, cat: x.g, lv: String(x.lv || '3'), ex, sub: x.gn || '' }); });
-POS.forEach(x => { const ex = (x.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'pos', title: x.t, cat: 'pos', lv: String(x.lv || '4'), ex, sub: x.gn || x.pn || '' }); });
-JUKU_WORDS.forEach(w => { const ex = (w.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'pos', title: w.w + ' (' + w.m.replace('[숙자훈·아테지] ', '') + ')', cat: 'pos', lv: String(w.lv || '3'), ex, sub: '숙자훈·아테지 150' }); });
+POS.forEach(x => { const ex = (x.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'pos', title: x.t, tag: x.t, cat: 'pos', lv: String(x.lv || '4'), ex, sub: x.gn || x.pn || '' }); });
+JUKU_WORDS.forEach(w => { const ex = (w.ex || []).filter(e => e && e.s && e.ko); if (ex.length) items.push({ kind: 'pos', title: w.w + ' (' + w.m.replace('[숙자훈·아테지] ', '') + ')', tag: w.w, cat: 'pos', lv: String(w.lv || '3'), ex, sub: '숙자훈·아테지 150' }); });
 
 const POS_GENRE = { id:'grammar', name:'문법 강의', place:'어학원 교실', chars:['ken','jihu'] };
 
@@ -139,7 +139,7 @@ items.forEach(it => {
 });
 
 const KIND_LABEL = { pat: '문형', gram: '문법', expr: '표현', spoken: '구어체', conj: '활용표', pos: '품사', kanji: '한자' };
-const TAG_KIND = { pat: '문형', gram: '문법', expr: '표현', spoken: '구어체', conj: 'conj', pos: '문법', kanji: '한자' };
+const TAG_KIND = { pat: '문형', gram: '문법', expr: '표현', spoken: '구어체', conj: 'conj', pos: '품사', kanji: '한자' };
 
 const PER = 16;
 const out = [];
@@ -157,7 +157,7 @@ Object.keys(byGenre).forEach(gid => {
       const e = it.ex[k % it.ex.length];
       lines.push({ who: gen.chars[k % gen.chars.length], item: KIND_LABEL[it.kind] + ' · ' + it.title, s: e.s, ko: e.ko });
     });
-    const tags = chunk.map(it => [TAG_KIND[it.kind], it.title]);
+    const tags = chunk.map(it => [TAG_KIND[it.kind], it.tag || it.title]);
     const lv = [...new Set(chunk.map(c => c.lv))].sort()[0] || '4';
     out.push({
       id: 'p' + String(++n).padStart(3, '0'),
@@ -192,7 +192,7 @@ if (leftovers.length) {
       chars: [...new Set(lines.map(l => l.who))],
       lines,
       points: [{ t: '이 대화의 문형·문법·표현', d: chunk.map(c => KIND_LABEL[c.kind] + ' ' + c.title).join(' / ') }],
-      tags: chunk.map(it => [TAG_KIND[it.kind], it.title])
+      tags: chunk.map(it => [TAG_KIND[it.kind], it.tag || it.title])
     });
   }
 }
