@@ -736,9 +736,10 @@ if(hasTALK){
     const set=new Set();
     (d.lines||[]).forEach(l=>{
       const m=l.item?String(l.item).match(/^([^ ·]+)/):null;
-      const k=m?m[1]:"";
+      const k=m?m[1]:"서사";
       if(k){set.add(k);SRC_LINE[k]=(SRC_LINE[k]||0)+1;}
     });
+    (d.tags||[]).forEach(t=>{if(t&&t[0])set.add(t[0]);});
     /* id 로 서사/연습을 가른다 — 항목 태그가 붙어도 서사 대화는 서사로 남는다 */
     if(/^p\d+$/.test(String(d.id))){if(!set.size)set.add("기타");}
     else set.add("서사");
