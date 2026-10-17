@@ -13,7 +13,8 @@ const CONJ = load(['conjugation.js'], 'CONJ');
 const KC = load(['kanji-list.js', 'kanji-cards.js'], '({study:STUDY,full:STUDY_FULL})');
 const POS = load(['pos-josa.js', 'pos-fukushi.js', 'pos-other.js', 'pos-verb.js', 'pos-noun.js', 'pos-words.js', 'pos-keiyou-2.js'],
   '[].concat(typeof POS_JOSA!=="undefined"?POS_JOSA:[],typeof POS_ADV!=="undefined"?POS_ADV:[],typeof POS_OTHER!=="undefined"?POS_OTHER:[],typeof POS_VERB!=="undefined"?POS_VERB:[],typeof POS_NOUN!=="undefined"?POS_NOUN:[])');
-const JUKU = load(['pos-fukushi.js', 'pos-other.js', 'pos-words.js', 'pos-keiyou-2.js'], '(typeof POS_WORDS!=="undefined"?POS_WORDS:[]).filter(w=>/^jk_/.test(w.c))');
+const ALLWORDS = load(['pos-fukushi.js', 'pos-other.js', 'pos-words.js', 'pos-keiyou-2.js'], '(typeof POS_WORDS!=="undefined"?POS_WORDS:[])');
+const JUKU = ALLWORDS.filter(w => /^jk_/.test(w.c));
 
 const norm = t => String(t)
   .replace(/\{([^|{}\[\]]+)\|([^}{\[\]]+)\}/g, '$1').replace(/[{}]/g, '')
@@ -23,7 +24,7 @@ const norm = t => String(t)
 const POOL = {
   '문형': PATS.map(x => x.pat), '문법': GRAMMAR.map(x => x.t), '표현': EXPR.map(x => x.expr),
   '구어체': SPOKEN.map(x => x.t), '활용표': CONJ.map(x => x.t),
-  '품사': [].concat(POS.map(x => x.t), JUKU.map(w => w.w)),
+  '품사': [].concat(POS.map(x => x.t), ALLWORDS.map(w => w.w)),
 };
 const NORMSET = {};
 Object.entries(POOL).forEach(([k, arr]) => { NORMSET[k] = new Set(arr.map(norm)); });

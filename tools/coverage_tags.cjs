@@ -22,7 +22,7 @@ const CONJ = load(['conjugation.js'], 'CONJ');
 const KC = load(['kanji-list.js', 'kanji-cards.js'], '({study:STUDY,full:STUDY_FULL,all:ALL,food:FOOD})');
 const POS = load(['pos-josa.js', 'pos-fukushi.js', 'pos-other.js', 'pos-verb.js', 'pos-noun.js', 'pos-words.js', 'pos-keiyou-2.js'],
   '[].concat(typeof POS_JOSA!=="undefined"?POS_JOSA:[],typeof POS_ADV!=="undefined"?POS_ADV:[],typeof POS_OTHER!=="undefined"?POS_OTHER:[],typeof POS_VERB!=="undefined"?POS_VERB:[],typeof POS_NOUN!=="undefined"?POS_NOUN:[])');
-const JUKU = load(['pos-fukushi.js', 'pos-other.js', 'pos-words.js', 'pos-keiyou-2.js'], '(typeof POS_WORDS!=="undefined"?POS_WORDS:[]).filter(w=>/^jk_/.test(w.c))');
+const ALLWORDS = load(['pos-fukushi.js', 'pos-other.js', 'pos-words.js', 'pos-keiyou-2.js'], '(typeof POS_WORDS!=="undefined"?POS_WORDS:[])');
 
 const dlgFiles = fs.readdirSync(D).filter(f => /^dialogue-[\w-]*\.js$/.test(f) && f !== 'dialogue-0.js')
   .sort((a, b) => parseInt(a.match(/\d+/)) - parseInt(b.match(/\d+/)));
@@ -42,7 +42,7 @@ addItems('문법', GRAMMAR.map(x => x.t));
 addItems('표현', EXPR.map(x => x.expr));
 addItems('구어체', SPOKEN.map(x => x.t));
 addItems('활용표', CONJ.map(x => x.t));
-addItems('품사', [].concat(POS.map(x => x.t), JUKU.map(w => w.w)));
+addItems('품사', [].concat(POS.map(x => x.t), ALLWORDS.map(w => w.w)));
 const KANJI = [...new Set([].concat(
   (KC.study || []).map(x => x.k), (KC.full || []).map(x => x.k),
   (KC.all || []).map(x => Array.isArray(x) ? x[0] : x.k),
