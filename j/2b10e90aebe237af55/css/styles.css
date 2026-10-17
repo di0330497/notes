@@ -734,6 +734,9 @@ html.narrow #toTop{bottom:80px;right:16px}
 
 /* ── 대화 출처 칩 · 분포 요약 ── */
 .srcChips{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))}
+/* 연습 뱅크가 비면 대화 보기 칩은 하나뿐 — 폭을 나누지 않고 한 줄로 둔다 */
+#talkKind.single{grid-template-columns:1fr}
+#talkKind.single .chip{font-family:var(--sans);font-weight:600}
 .talkLegend{margin:0 0 18px;border:1px solid var(--line);border-radius:10px;
   background:var(--surface-2);padding:12px 14px;display:flex;flex-direction:column;gap:7px}
 .tlgRow{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;font-size:12.5px;line-height:1.7}

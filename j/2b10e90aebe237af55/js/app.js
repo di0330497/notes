@@ -1100,12 +1100,39 @@ function talkLegend(){
   const lvs=lvOrder.map(k=>'<span class="tlgChip">'+k+' <b>'+lv[k]+'</b></span>').join("");
   const lines=SRC_ORDER.filter(k=>SRC_LINE[k]).map(k=>esc(k)+' <b>'+num(SRC_LINE[k])+'</b>').join(" · ");
   el.innerHTML=
-    row('구성','실전 서사 <b>'+story+'</b>편 + 연습 뱅크 <b>'+prac+'</b>편 = <b>'+DIALOGS.length+'</b>편 · <b>'+num(lineTot)+'</b>줄')
+    row('구성',(prac>0
+      ? '실전 서사 <b>'+story+'</b>편 + 연습 뱅크 <b>'+prac+'</b>편 = <b>'+DIALOGS.length+'</b>편 · <b>'+num(lineTot)+'</b>줄'
+      : '실전 서사 대화 <b>'+story+'</b>편 · <b>'+num(lineTot)+'</b>줄'))
     +row('출처',srcs+' <span class="tlgNote">(한 편이 여러 탭을 겸하면 중복 집계)</span>')
     +row('N레벨',lvs)
     +row('줄 구성',lines);
 }
-if(hasTALK){sceneList();whoList();srcChips();talkLegend();applyKo();applyCloze();}
+/* 대화 탭 머리말 — 실제 집계로 채운다(하드코딩 금지) */
+function talkDeft(){
+  const el=$("#talkDeft");if(!el)return;
+  const gram=(typeof GRAMMAR!=="undefined")?GRAMMAR.length:0;
+  const expr=(typeof EXPR!=="undefined")?EXPR.length:0;
+  const conj=hasCONJ?CONJ.length:0, spoken=hasSPOKEN?SPOKEN.length:0;
+  const pos=(hasPOS?POS.length:0)+WORDS.length;
+  el.innerHTML='문형 <b>'+num(PATS.length)+'</b> · 문법 <b>'+num(gram)+'</b> · 활용표 <b>'+num(conj)+'</b>'
+    +' · 표현 <b>'+num(expr)+'</b> · 구어체 <b>'+num(spoken)+'</b> · 품사 <b>'+num(pos)+'</b>'
+    +' · 한자 <b>'+num(ALL.length)+'</b>자까지 — <b>모든 학습 항목이 대화 대사와 1:1로 연결</b>되어 있습니다.'
+    +' 아래 <b>출처</b> 칩으로 어느 사전에서 온 대화인지 골라 볼 수 있습니다. 대화를 반복해서 입에 붙이면 모든 사전·한자 카드의 예문이 함께 외워집니다.';
+}
+/* 대화 보기 칩 — 연습 뱅크가 비면 서사 칩 하나만 남긴다 */
+function talkKindChips(){
+  const el=$("#talkKind");if(!el)return;
+  const story=DIALOGS.filter(d=>!/^p\d+$/.test(String(d.id))).length;
+  const prac=DIALOGS.length-story;
+  let h='<button class="chip on" data-k="story">실전 서사 대화 '+num(story)+'</button>';
+  if(prac>0){
+    h+='<button class="chip" data-k="prac">연습 뱅크 '+num(prac)+'</button>';
+    h+='<button class="chip" data-k="all">전체 통합 '+num(DIALOGS.length)+'</button>';
+  }
+  el.innerHTML=h;
+  el.classList.toggle("single",prac===0);
+}
+if(hasTALK){sceneList();whoList();srcChips();talkLegend();talkDeft();talkKindChips();applyKo();applyCloze();}
 if($("#talkSrc"))$("#talkSrc").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkSrc=c.dataset.s;setChips("#talkSrc",c);
   /* 출처를 고르면 종류도 맞춘다 — 서사면 서사, 사전 출처면 연습 뱅크, 전체면 전체 */
