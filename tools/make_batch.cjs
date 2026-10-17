@@ -82,6 +82,20 @@ DIALOGS.push(
 `;
 
 const existing = fs.existsSync('dlg_titles.txt') ? fs.readFileSync('dlg_titles.txt', 'utf8').split(/\r?\n/).filter(Boolean) : [];
+const kMissAll = fs.existsSync('missing_한자.txt') ? [...fs.readFileSync('missing_한자.txt', 'utf8').trim()] : [];
+const kWordMap = new Map();
+if (kMissAll.length) {
+  const D = path.join(ROOT, 'j/2b10e90aebe237af55/data/');
+  new Function(fs.readFileSync(D + 'kanji-list.js', 'utf8') + '\n;\n' + fs.readFileSync(D + 'kanji-cards.js', 'utf8') + ';globalThis.__KF=STUDY_FULL;')();
+  (globalThis.__KF || []).forEach(c => {
+    const ws = [];
+    (c.ex || []).forEach(e => {
+      const m = /\{\[([^|\]]+)\|([^\]]+)\]\}/.exec(e.s || '');
+      if (m) ws.push('[' + m[1] + '|' + m[2] + '](' + (e.ko || '').slice(0, 18) + ')');
+    });
+    kWordMap.set(c.k, [...new Set(ws)]);
+  });
+}
 
 const made = [];
 spec.forEach(d => {
@@ -120,6 +134,16 @@ spec.forEach(d => {
     out.push('```');
     out.push('');
   });
+  if (d.kanji && kMissAll.length) {
+    const kSlice = kMissAll.slice((d.kanji.from || 1) - 1, d.kanji.to || kMissAll.length);
+    out.push('## 함께 대사 본문(s)에 녹여 쓸 한자 (' + kSlice.length + '자)');
+    out.push('- 아래 한자들은 item 배지로 붙일 필요 없이 **대사 본문(s) 안의 단어·역 이름·동네/지명·성씨·메뉴**에 `[漢字|よみ]` 후리가나를 달아 자연스럽게 등장시키기만 하면 한자 커버리지로 자동 집계된다.');
+    out.push('- 억지 한자숙어를 만들지 말고, 옆에 적힌 **실제 일상어 예시**를 쓰거나 그 한자가 들어간 **실제 일본 역 이름·지명·성씨**로 자연스럽게 녹여라 (목표: 70% 이상 포함).');
+    out.push('```');
+    kSlice.forEach(k => out.push(k + '  →  ' + ((kWordMap.get(k) || []).join('  /  ') || k)));
+    out.push('```');
+    out.push('');
+  }
   out.push('## 참고: 기존 대화 80편 (겹치지 않게)');
   out.push('```');
   existing.forEach(x => out.push(x));
