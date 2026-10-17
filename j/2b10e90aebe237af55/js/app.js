@@ -112,8 +112,10 @@ if(hasTALK){
   });
 }
 const DLG_INDEX=(function(){
-  const bySent=new Map(), byKanji=new Map(), allLines=[];
+  const bySent=new Map(), byKanji=new Map(), byItem=new Map(), allLines=[];
   const normS=s=>stripM(s).replace(/\s+/g,"").toLowerCase();
+  /* 「종류 · 키」 item 태그를 정규화해 그 줄을 찾을 수 있게 한다 */
+  const normKey=s=>String(s||"").replace(/[～〜~]/g,"").replace(/（[^）]*）/g,"").replace(/\([^)]*\)/g,"").replace(/[\s·・・、。]/g,"");
   if(hasTALK){
     DIALOGS.forEach(d=>{
       (d.lines||[]).forEach((l,li)=>{
@@ -125,6 +127,14 @@ const DLG_INDEX=(function(){
         };
         allLines.push(rec);
         if(plain&&!bySent.has(plain))bySent.set(plain,rec);
+        /* item 태그가 있으면 「종류\0정규화키」 로 그 줄을 기억한다(먼저 나온 줄 우선) */
+        if(l.item){
+          const mm=String(l.item).match(/^([^ ·]+)\s*·\s*(.+)$/);
+          if(mm){
+            const ik=mm[1]+"\u0000"+normKey(mm[2]);
+            if(!byItem.has(ik))byItem.set(ik,rec);
+          }
+        }
         const seenK=new Set();
         for(const ch of kOnly){
           if(ch>="\u4E00"&&ch<="\u9FFF"&&!seenK.has(ch)){
@@ -154,7 +164,13 @@ const DLG_INDEX=(function(){
     sentCache.set(t,r);
     return r;
   }
-  return {bySent,byKanji,allLines,findSent,normS};
+  /* item 태그로 대화 줄 찾기 — 품사 낱말처럼 예문이 대화에 그대로 나오지 않는 카드도
+     "이 표현이 실제로 쓰인 대화 장면"으로 바로 갈 수 있게 한다 */
+  function findItem(kind,key){
+    if(!key)return null;
+    return byItem.get(kind+"\u0000"+normKey(key))||null;
+  }
+  return {bySent,byKanji,byItem,allLines,findSent,findItem,normS,normKey};
 })();
 
 /* ══════════ 공통 부품 ══════════ */
@@ -165,7 +181,9 @@ function exBlock(s,ko,o){
   o=o||{};
   const b=o.badge||"例";
   const cls=b==="音"?"on":b==="訓"?"kn":b==="対話"?"on":"ex";
-  const hit=o.dlgHit||(hasTALK?DLG_INDEX.findSent(s):null);
+  const hit=o.dlgHit
+    ||(o.itemKind&&hasTALK?DLG_INDEX.findItem(o.itemKind,o.itemKey):null)
+    ||(hasTALK?DLG_INDEX.findSent(s):null);
   const dlgBtn=hit
     ?'<button type="button" class="dlgLinkBadge" data-goto-dlg="'+esc(hit.dlgId)+'" data-goto-line="'+hit.lineIdx+'" title="이 문장이 쓰인 대화 장면으로 이동">'
       +'💬 <span class="dlId">'+esc(hit.dlgId)+'</span> '+esc(hit.scene)+' · '+esc(hit.whoName)+' #'+(hit.lineIdx+1)+' →</button>'
@@ -512,7 +530,7 @@ function renderPat(hlPat){
         h+='<div class="uCard'+(hlPat===p.pat?" hl":"")+'" data-p="'+esc(p.pat)+'">'
           +uTop(lvBadge(p.lv),fmt(p.pat),CATNAME[p.cat]||p.cat,true)
           +meanBox(p.mean)
-          +exList(p.ex)
+          +exList(p.ex,{itemKind:"문형",itemKey:p.pat})
           +'</div>';
       });
     });
@@ -632,7 +650,7 @@ function renderGrammar(){
       +uTop(lvBadge(g.lv),fmt(g.t),g.cn)
       +'<div class="uDesc">'+fmt(g.desc)+'</div>'
       +meanBox(grammarMeaningHint(g))
-      +exList(g.ex)
+      +exList(g.ex,{itemKind:"문법",itemKey:g.t})
       +(foot?'<div class="uFoot">'+foot+'</div>':"")
       +'</div>';
   });
@@ -680,7 +698,7 @@ function renderConj(hlId){
       +'<div class="uDesc">'+fmt(c.desc)+'</div>'
       +tableHTML(c.head,c.rows)
       +(c.tip?tipBox(fmt(c.tip)):"")
-      +exList(c.ex)
+      +exList(c.ex,{itemKind:"활용표",itemKey:c.t})
       +'</div>';
   });
   $("#view-conj").innerHTML=h||emptyNote("conj");
@@ -1166,7 +1184,7 @@ function renderSpoken(){
       +'<div class="uDesc">'+fmt(x.rule)+'</div>'
       +tableHTML(["정식·원형","구어형","메모"],x.forms)
       +(x.warn?warnBox(fmt(x.warn)):"")
-      +exList(x.ex)
+      +exList(x.ex,{itemKind:"구어체",itemKey:x.t})
       +(rel?'<div class="uFoot">'+rel+'</div>':"")
       +'</div>';
   });
@@ -1217,7 +1235,7 @@ function renderPosGroup(hlId){
       +'<div class="uDesc">'+fmt(x.desc)+'</div>'
       +tableHTML(x.head,x.rows)
       +(x.tip?tipBox(fmt(x.tip)):"")
-      +exList(x.ex)
+      +exList(x.ex,{itemKind:"품사",itemKey:x.t})
       +'</div>';
   });
   $("#view-pos").innerHTML=h||emptyNote("pos");
@@ -1230,7 +1248,7 @@ function wordCard(x){
   return '<div class="uCard" data-w="'+esc(stripM(x.w))+'">'
     +uTop(lvBadge(x.lv),'<span class="posW">'+fmt(x.w)+'</span>',r)
     +meanBox(x.m)
-    +exList(x.ex)
+    +exList(x.ex,{itemKind:"품사",itemKey:x.w})
     +(x.n?labelBox("uTip","쓰임",fmt(x.n)):"")
     +'</div>';
 }
@@ -1292,7 +1310,7 @@ function renderExpr(){
     h+='<div class="uCard" data-c="'+esc(x.cat)+'">'
       +uTop("",fmt(x.expr),x.reading||"",true)
       +meanBox(x.mean)
-      +exList(x.ex)
+      +exList(x.ex,{itemKind:"표현",itemKey:x.expr})
       +'</div>';
   });
   $("#view-expr").innerHTML=h||emptyNote("expr");
