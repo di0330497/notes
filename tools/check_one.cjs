@@ -8,7 +8,7 @@ const load = (files, name) => { new Function(files.map(f => fs.readFileSync(D + 
 const PATS = load(['patterns.js'], 'PATS');
 const GRAMMAR = load(['grammar.js'], 'GRAMMAR');
 const EXPR = load(['expressions.js'], 'EXPR');
-const SPOKEN = load(['colloquial.js', 'colloquial-2.js', 'dialect.js', 'slang.js'], 'SPOKEN');
+const SPOKEN = load(['colloquial.js', 'colloquial-2.js', 'dialect.js', 'slang.js', 'slang-2026.js'], 'SPOKEN');
 const CONJ = load(['conjugation.js'], 'CONJ');
 const KC = load(['kanji-list.js', 'kanji-cards.js'], '({study:STUDY,full:STUDY_FULL})');
 const POS = load(['pos-josa.js', 'pos-fukushi.js', 'pos-other.js', 'pos-verb.js', 'pos-noun.js', 'pos-words.js', 'pos-keiyou-2.js'],

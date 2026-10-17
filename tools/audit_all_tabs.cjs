@@ -11,7 +11,7 @@ const load = (files, name) => { new Function(files.map(f => fs.readFileSync(path
 const PATS = load(['patterns.js'], 'PATS');
 const GRAMMAR = load(['grammar.js'], 'GRAMMAR');
 const EXPR = load(['expressions.js'], 'EXPR');
-const SPOKEN = load(['colloquial.js', 'colloquial-2.js', 'dialect.js', 'slang.js'], 'SPOKEN');
+const SPOKEN = load(['colloquial.js', 'colloquial-2.js', 'dialect.js', 'slang.js', 'slang-2026.js'], 'SPOKEN');
 const CONJ = load(['conjugation.js'], 'CONJ');
 const POS = load(['pos-josa.js', 'pos-fukushi.js', 'pos-other.js', 'pos-verb.js', 'pos-noun.js', 'pos-words.js', 'pos-keiyou-2.js'],
   '[].concat(typeof POS_JOSA!=="undefined"?POS_JOSA:[],typeof POS_ADV!=="undefined"?POS_ADV:[],typeof POS_OTHER!=="undefined"?POS_OTHER:[],typeof POS_VERB!=="undefined"?POS_VERB:[],typeof POS_NOUN!=="undefined"?POS_NOUN:[],typeof POS_WORDS!=="undefined"?POS_WORDS:[])');
