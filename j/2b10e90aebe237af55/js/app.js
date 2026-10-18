@@ -1732,10 +1732,17 @@ function toast(msg){
   if(!view)return;
   const stats=document.createElement("div");
   stats.className="stats-bar";
-  stats.innerHTML='<span class="stat-item"><span class="stat-ic">\ud83d\udcda</span> 한자 <b id="statKanji">\u2014</b></span>'
-    +'<span class="stat-item"><span class="stat-ic">\ud83d\udcd6</span> 문형 <b id="statPat">\u2014</b></span>'
-    +'<span class="stat-item"><span class="stat-ic">\ud83d\udcd0</span> 문법 <b id="statGram">\u2014</b></span>'
-    +'<span class="stat-item"><span class="stat-ic">\u2605</span> 북마크 <b id="bmCount">0</b></span>';
+  const SI=function(k){const P={
+    study:'<path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>',
+    pat:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
+    gram:'<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
+    mark:'<path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>'};
+    return '<span class="stat-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">'
+      +(P[k]||'')+'</svg></span>';};
+  stats.innerHTML='<span class="stat-item">'+SI('study')+' 한자 <b id="statKanji">\u2014</b></span>'
+    +'<span class="stat-item">'+SI('pat')+' 문형 <b id="statPat">\u2014</b></span>'
+    +'<span class="stat-item">'+SI('gram')+' 문법 <b id="statGram">\u2014</b></span>'
+    +'<span class="stat-item">'+SI('mark')+' 북마크 <b id="bmCount">0</b></span>';
   view.insertBefore(stats,view.firstChild);
   $("#statKanji").textContent=num(ALL.length);
   $("#statPat").textContent=num(typeof PATS!=="undefined"?PATS.length:0);
