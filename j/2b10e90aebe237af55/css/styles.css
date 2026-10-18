@@ -556,6 +556,9 @@ td:first-child{color:var(--fg-dim);font-weight:600;white-space:nowrap}
 /* ── 화면별 페이저 — 카드가 많은 화면을 끊어 세운다 ── */
 .pgFoot{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:var(--surface);
   border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin:34px 0 6px}
+/* 목록 위 막대는 스크롤에 붙어 있다 — 스크롤을 끝까지 내리지 않고도 페이지를 넘긴다 */
+.pgFoot.top{position:sticky;top:0;z-index:3;margin:0 0 20px;
+  background:var(--bg);box-shadow:0 6px 14px -10px rgba(0,0,0,.35)}
 .pgFoot .pgJump{margin-left:auto}
 .pgNo{width:64px;border:1px solid var(--line-2);border-radius:6px;padding:5px 8px;
   background:var(--surface);color:var(--fg);font-family:var(--mono);font-size:12.5px;outline:none}

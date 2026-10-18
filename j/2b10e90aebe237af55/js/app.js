@@ -380,7 +380,7 @@ function basicCardHTML(r,rank,rankLabel){
     +'<div class="basicMean"><span class="en">'+esc(r[5]||"")+'</span></div>'
     +'<div class="basicMeta">'+gradeBadge(r[4])+'</div>'+extraDlg+'</div></div>';
 }
-let studyItems=[],studyPage=0;const PAGE=100;
+let studyItems=[],studyPage=0;const PAGE=6;
 /* 카드 HTML 은 지금 보이는 페이지 분량만 만든다.
    예전에는 2,647장을 통째로 문자열로 만들어 둔 뒤 100장만 붙였다 —
    탭을 누를 때마다 1초 넘게 걸리던 주된 원인.
@@ -433,7 +433,7 @@ function setPager(end){
   const n=studyItems.length;
   end=end||Math.min(studyPage+PAGE,n);
   const info=n?((studyPage+1)+"–"+end+" / "+num(n)+"자 · 순위 "+studyItems[studyPage].rank+"~"+studyItems[end-1].rank):"0자";
-  $$(".pgInfo").forEach(el=>el.textContent=info);
+  $$(".pager .pgInfo").forEach(el=>el.textContent=info);
   $$(".pager").forEach(p=>p.classList.toggle("hidden",n<=PAGE));
   $$('.pgBtn[data-a="prev"]').forEach(b=>b.disabled=studyPage<=0);
   $$('.pgBtn[data-a="next"]').forEach(b=>b.disabled=end>=n);
@@ -506,7 +506,9 @@ function focusCard(sel){
    여기서 한 번에 PGPER 개만 무어 놓는다 — 나머지는 아래 페이저로 넘긴다.
    장 헤더는 그 자리에 드러나는 소속 카드가 있을 때만 세운다.
    검색·필터를 바꾸면 서명(sig)이 달라지고, 달라진 때에만 첫 페이지로 돌아간다. */
-const PGPER={talk:20,pat:60,gram:50,pos:60,posW:100,expr:50,spoken:60};
+/* 한 페이지 = 대략 4~5화면. 카드 한 장이 1,000px 를 넘는 화면(대화·품사)은
+   장수를 확 줄여야 스크롤이 짧아진다. 목록 위 페이저는 스크롤에 붙어 있다. */
+const PGPER={talk:3,pat:14,gram:10,conj:5,pos:4,posW:6,expr:14,spoken:5};
 const PG={},PGFN={};
 function pgSig(){let s="";for(let i=0;i<arguments.length;i++)s+=String(arguments[i])+"\u0001";return s;}
 function pgFlush(key,sig,blocks,mount,emptyMode){
@@ -537,14 +539,15 @@ function pgFlush(key,sig,blocks,mount,emptyMode){
     const my=++i;
     if(my>=from&&my<to)h+=b.html;
   });
-  $(mount).innerHTML=h+pgBar(key,t,from,to,per);
+  $(mount).innerHTML=pgBar(key,t,from,to,per,true)+h+pgBar(key,t,from,to,per);
 }
-/* 페이저 막대 — 한 페이지에 다 들어가는 화면은 두지 않는다 */
-function pgBar(key,t,from,to,per){
+/* 페이저 막대 — 한 페이지에 다 들어가는 화면은 두지 않는다.
+   목록 위 막대(top)는 스크롤에 붙어 있어, 끝까지 굴러 내려가지 않아도 페이지를 넘길 수 있다 */
+function pgBar(key,t,from,to,per,top){
   const st=PG[key];
   if(t<=per){st.page=0;return "";}
   const pages=Math.ceil(t/per);
-  return '<div class="pgFoot" data-key="'+key+'">'
+  return '<div class="pgFoot'+(top?" top":"")+'" data-key="'+key+'">'
     +'<button type="button" class="pgBtn" data-pga="prev" data-pg="'+key+'"'+(from<=0?" disabled":"")+'>\u2039 이전</button>'
     +'<span class="pgInfo">'+num(from+1)+"\u2013"+num(to)+" / "+num(t)+'</span>'
     +'<span class="pgJump"><span class="pgJumpLabel">페이지</span>'
@@ -785,21 +788,22 @@ function renderConj(hlId){
     return !q||hay(c.t,c.desc,c.tip,c.head,c.rows,c.ex.map(x=>[x.s,x.ko])).includes(q);
   });
   const perG={};keep.forEach(c=>{perG[c.g]=(perG[c.g]||0)+1;});
-  let h="",curG="",rows=0;
+  const blk=[];let curG="",rows=0;
   keep.forEach(c=>{
     rows+=c.rows.length;
-    if(c.g!==curG){curG=c.g;h+=secHd(c.g,c.gn,perG[c.g]+"표");}
-    h+='<div class="uCard'+(hlId===c.id?" hl":"")+'" id="cj-'+esc(c.id)+'">'
+    if(c.g!==curG){curG=c.g;blk.push({t:"h",lv:0,html:secHd(c.g,c.gn,perG[c.g]+"표")});}
+    blk.push({t:"c",k:c.id,html:'<div class="uCard'+(hlId===c.id?" hl":"")+'" id="cj-'+esc(c.id)+'">'
       +uTop(lvBadge(c.lv),fmt(c.t),c.id)
       +'<div class="uDesc">'+fmt(c.desc)+'</div>'
       +tableHTML(c.head,c.rows)
       +(c.tip?tipBox(fmt(c.tip)):"")
       +exList(c.ex,{itemKind:"활용표",itemKey:c.t})
-      +'</div>';
+      +'</div>'});
   });
-  $("#view-conj").innerHTML=h||emptyNote("conj");
+  PGFN.conj=()=>renderConj(hlId);
+  pgFlush("conj",pgSig(cjG,q),blk,"#view-conj","conj");
   setCount(MODE.conj+" "+num(keep.length)+"표","표 "+num(rows)+"행");
-  if(hlId)focusCard("#cj-"+hlId);
+  if(hlId){pgGoto("conj",hlId);focusCard("#cj-"+hlId);}
 }
 function gotoConj(id){
   switchView("conj");
