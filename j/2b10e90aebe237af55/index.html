@@ -12,7 +12,7 @@
 <title>빈도순 일본어 — 한자 · 문형 · 문법 · 활용 · 품사 · 구어체</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="css/styles.css?v=20261018-f">
+<link rel="stylesheet" href="css/styles.css?v=20261018-h">
 <script>
 /* 화면 배율을 그리기 전에 먼저 건다. 여기서 안 걸면 100% 로 한 번 그렸다가 튄다. */
 /* /it 셸은 150% 브라우저 확대를 CSS zoom 대신 16px 기준 글자로 흡수했다.
@@ -45,18 +45,18 @@
     </div>
 
     <nav class="tree" aria-label="학습 모드">
-      <a class="nav-item home" id="navCover" href="#cover"><span class="nid">⌂</span>표지</a>
+      <a class="nav-item home" id="navCover" href="#cover"><span class="nid"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>표지</a>
 
       <div class="nav-stage" id="navStage">
         <div class="nav-stage-t">학습 모드 <span class="sn">8</span></div>
-        <button class="nav-item tab" data-v="talk"><span class="mi">💬</span>대화 <span class="mc" id="cntTalk">—</span></button>
-        <button class="nav-item tab on" data-v="study"><span class="mi">📚</span>학습 카드 <span class="mc" id="cntStudy">—</span></button>
-        <button class="nav-item tab" data-v="pat"><span class="mi">📖</span>문형 사전 <span class="mc" id="cntPat">—</span></button>
-        <button class="nav-item tab" data-v="gram"><span class="mi">📐</span>문법 <span class="mc" id="cntGram">—</span></button>
-        <button class="nav-item tab" data-v="conj"><span class="mi">🧮</span>활용표 <span class="mc" id="cntConj">—</span></button>
-        <button class="nav-item tab" data-v="pos"><span class="mi">🧩</span>품사 사전 <span class="mc" id="cntPos">—</span></button>
-        <button class="nav-item tab" data-v="spoken"><span class="mi">🗣</span>구어체 <span class="mc" id="cntSpoken">—</span></button>
-        <button class="nav-item tab" data-v="expr"><span class="mi">💬</span>표현·관용구 <span class="mc" id="cntExpr">—</span></button>
+        <button class="nav-item tab" data-v="talk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>대화 <span class="mc" id="cntTalk">—</span></button>
+        <button class="nav-item tab on" data-v="study"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>학습 카드 <span class="mc" id="cntStudy">—</span></button>
+        <button class="nav-item tab" data-v="pat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>문형 사전 <span class="mc" id="cntPat">—</span></button>
+        <button class="nav-item tab" data-v="gram"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>문법 <span class="mc" id="cntGram">—</span></button>
+        <button class="nav-item tab" data-v="conj"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M12 3v18"/></svg>활용표 <span class="mc" id="cntConj">—</span></button>
+        <button class="nav-item tab" data-v="pos"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>품사 사전 <span class="mc" id="cntPos">—</span></button>
+        <button class="nav-item tab" data-v="spoken"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg>구어체 <span class="mc" id="cntSpoken">—</span></button>
+        <button class="nav-item tab" data-v="expr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 11H6a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5a4 4 0 0 0-4-4"/><path d="M20 11h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5a4 4 0 0 0-4-4"/></svg>표현·관용구 <span class="mc" id="cntExpr">—</span></button>
       </div>
     </nav>
   </aside>
@@ -67,7 +67,7 @@
   <div class="main">
     <div class="topbar"><span class="crumb" id="crumb"></span><span class="pos" id="posStat"></span>
       <button type="button" class="search-btn" id="searchBtn" title="검색 (Ctrl/⌘+K)">검색 <kbd>⌘K</kbd></button>
-      <button type="button" class="theme" id="themeToggle" title="테마 전환 (다크/라이트)">☾</button>
+      <button type="button" class="theme" id="themeToggle" title="테마 전환 (다크/라이트)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
       <div class="prog" id="topProg"></div>
     </div>
 
@@ -87,14 +87,14 @@
             <div class="stats" id="props"></div>
 
             <div class="stage-grid" id="stageGrid">
-              <a class="st-card" href="#talk" data-v="talk"><span class="sn">01</span><span class="st-body"><b>💬 대화</b><em>장면으로 익히기 — 처음엔 일본어만, ▶ 로 따라읽기</em></span><span class="st-n" id="stnTalk">—</span></a>
-              <a class="st-card" href="#study" data-v="study"><span class="sn">02</span><span class="st-body"><b>📚 학습 카드</b><em>빈도순 한자 카드 — 읽기·뜻·예문, N레벨별 필터</em></span><span class="st-n" id="stnStudy">—</span></a>
-              <a class="st-card" href="#pat" data-v="pat"><span class="sn">03</span><span class="st-body"><b>📖 문형 사전</b><em>「〜たい」「〜ばかり」 — 의미 분류로 묶어 대조</em></span><span class="st-n" id="stnPat">—</span></a>
-              <a class="st-card" href="#gram" data-v="gram"><span class="sn">04</span><span class="st-body"><b>📐 문법</b><em>552항목 · N5부터 N1까지 장별로</em></span><span class="st-n" id="stnGram">—</span></a>
-              <a class="st-card" href="#conj" data-v="conj"><span class="sn">05</span><span class="st-body"><b>🧮 활용표</b><em>3그룹 · て형 음편 · 조건 4형 · 경어 대응</em></span><span class="st-n" id="stnConj">—</span></a>
-              <a class="st-card" href="#pos" data-v="pos"><span class="sn">06</span><span class="st-body"><b>🧩 품사 사전</b><em>묶음 보기 · 낱말 보기 두 층</em></span><span class="st-n" id="stnPos">—</span></a>
-              <a class="st-card" href="#spoken" data-v="spoken"><span class="sn">07</span><span class="st-body"><b>🗣 구어체</b><em>축약 · 종조사 · 반말 · 방언 · 비속어</em></span><span class="st-n" id="stnSpoken">—</span></a>
-              <a class="st-card" href="#expr" data-v="expr"><span class="sn">08</span><span class="st-body"><b>💬 표현·관용구</b><em>아이즈치 · 상용구 · 구어 표현 · 관용구</em></span><span class="st-n" id="stnExpr">—</span></a>
+              <a class="st-card" href="#talk" data-v="talk"><span class="sn">01</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>대화</b><em>장면으로 익히기 — 일본어·한국어 대역, 후리가나 켜고 끄기</em></span><span class="st-n" id="stnTalk">—</span></a>
+              <a class="st-card" href="#study" data-v="study"><span class="sn">02</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>학습 카드</b><em>빈도순 한자 카드 — 읽기·뜻·예문, N레벨별 필터</em></span><span class="st-n" id="stnStudy">—</span></a>
+              <a class="st-card" href="#pat" data-v="pat"><span class="sn">03</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>문형 사전</b><em>「〜たい」「〜ばかり」 — 의미 분류로 묶어 대조</em></span><span class="st-n" id="stnPat">—</span></a>
+              <a class="st-card" href="#gram" data-v="gram"><span class="sn">04</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>문법</b><em>552항목 · N5부터 N1까지 장별로</em></span><span class="st-n" id="stnGram">—</span></a>
+              <a class="st-card" href="#conj" data-v="conj"><span class="sn">05</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M12 3v18"/></svg>활용표</b><em>3그룹 · て형 음편 · 조건 4형 · 경어 대응</em></span><span class="st-n" id="stnConj">—</span></a>
+              <a class="st-card" href="#pos" data-v="pos"><span class="sn">06</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>품사 사전</b><em>묶음 보기 · 낱말 보기 두 층</em></span><span class="st-n" id="stnPos">—</span></a>
+              <a class="st-card" href="#spoken" data-v="spoken"><span class="sn">07</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg>구어체</b><em>축약 · 종조사 · 반말 · 방언 · 비속어</em></span><span class="st-n" id="stnSpoken">—</span></a>
+              <a class="st-card" href="#expr" data-v="expr"><span class="sn">08</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 11H6a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5a4 4 0 0 0-4-4"/><path d="M20 11h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5a4 4 0 0 0-4-4"/></svg>표현·관용구</b><em>아이즈치 · 상용구 · 구어 표현 · 관용구</em></span><span class="st-n" id="stnExpr">—</span></a>
             </div>
 
             <details class="fold info">
@@ -115,7 +115,7 @@
         <div class="wrap wide">
           <header class="phead">
             <div class="crumb"><span class="pn">01</span> 대화 <span class="pid">전 범위 100% 연동</span></div>
-            <h2>💬 실전 대화</h2>
+            <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>실전 대화</h2>
             <p class="deft" id="talkDeft">모든 학습 항목이 실제 대화 대사와 1:1로 연결되어 있습니다. 아래 <b>출처</b> 칩으로 어느 사전에서 온 대화인지 골라 볼 수 있습니다. 대화를 반복해서 입에 붙이면 모든 사전·한자 카드의 예문이 함께 외워집니다.</p>
           </header>
 
@@ -150,7 +150,6 @@
               <button class="furi" data-furi>ふりがな ON</button>
               <button class="furi" id="talkKo">한국어 ON</button>
               <button class="furi off" id="talkCloze">빈칸 암기 OFF</button>
-              <button class="furi" id="talkStop">⏹ 멈춤</button>
             </div>
           </div>
 
@@ -167,7 +166,7 @@
         <div class="wrap wide">
           <header class="phead">
             <div class="crumb"><span class="pn">02</span> 학습 카드 <span class="pid">2,647자</span></div>
-            <h2>📚 빈도순 한자</h2>
+            <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>빈도순 한자</h2>
             <p class="deft">신문 코퍼스 빈도순으로 놓은 한자 카드. 예문 속 <span class="u">파란 표시</span>는 해당 한자, 밑줄은 그 한자가 쓰인 낱말입니다. N레벨 필터를 켜면 그 수준의 상세 예문만 봅니다. 상용 2,136 필터로 常用漢字表 밖의 글자를 걷어낼 수 있습니다.</p>
           </header>
 
@@ -180,7 +179,7 @@
               <button class="chip on" data-j="all">한자 전체 2,647</button>
               <button class="chip" data-j="joyo">상용 2,136</button>
               <button class="chip" data-j="out">범위 밖 511</button>
-              <button class="chip" data-j="juku">🌟 숙자훈·아테지 150 →</button>
+              <button class="chip" data-j="juku">숙자훈·아테지 150</button>
             </div>
             <div class="chips lvchips" id="lvChips">
               <button class="chip on" data-l="all">N 전체</button>
@@ -193,23 +192,23 @@
             <button class="furi" data-furi>ふりがな ON</button>
           </div>
 
-                    <div class="note" id="noteStudy"><b>빈도순 2,600자 + 🍽식재료 47자</b>를 학습 카드로 제공합니다. <b>상용 2,136</b> 칩을 켜면 常用漢字表 안의 글자만 남습니다 — 교육한자 1,026자(1~6학년) + 중학 이후 1,110자. 나머지 <b>511자</b>는 인명용 126 · 표외 327 · 추가 11 · 식재료 47입니다.</div>
+                    <div class="note" id="noteStudy"><b>빈도순 2,600자 + 식재료 47자</b>를 학습 카드로 제공합니다. <b>상용 2,136</b> 칩을 켜면 常用漢字表 안의 글자만 남습니다 — 교육한자 1,026자(1~6학년) + 중학 이후 1,110자. 나머지 <b>511자</b>는 인명용 126 · 표외 327 · 추가 11 · 식재료 47입니다.</div>
 
           <div class="count" id="cnt"></div>
 
           <div class="pager hidden" id="pagerTop">
-            <button class="pgBtn" data-a="prev">◀ 이전</button>
+            <button class="pgBtn" data-a="prev">‹ 이전</button>
             <span class="pgInfo"></span>
-            <button class="pgBtn" data-a="next">다음 ▶</button>
+            <button class="pgBtn" data-a="next">다음 ›</button>
             <span class="pgJump"><span class="pgJumpLabel">순위로 바로 이동</span><input class="pgRank" type="number" min="1" placeholder="예: 500"><button class="pgBtn" data-a="go">이동</button></span>
           </div>
 
           <div id="view-study"></div>
 
           <div class="pager hidden" id="pagerBot">
-            <button class="pgBtn" data-a="prev">◀ 이전</button>
+            <button class="pgBtn" data-a="prev">‹ 이전</button>
             <span class="pgInfo"></span>
-            <button class="pgBtn" data-a="next">다음 ▶</button>
+            <button class="pgBtn" data-a="next">다음 ›</button>
             <span class="pgJump"><span class="pgJumpLabel">순위로 바로 이동</span><input class="pgRank" type="number" min="1" placeholder="예: 500"><button class="pgBtn" data-a="go">이동</button></span>
           </div>
         </div>
@@ -220,7 +219,7 @@
         <div class="wrap wide">
           <header class="phead">
             <div class="crumb"><span class="pn">03</span> 문형 사전 <span class="pid">698개</span></div>
-            <h2>📖 문형 사전</h2>
+            <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>문형 사전</h2>
             <p class="deft">JLPT 문형을 <b>의미 분류 → 세부 클러스터</b> 순으로 묶었습니다. 뜻이 겹치는 문형이 한자리에 모이므로 비슷한 것끼리 대조하며 외웁니다.</p>
           </header>
 
@@ -252,7 +251,7 @@
         <div class="wrap wide">
           <header class="phead">
             <div class="crumb"><span class="pn">04</span> 문법 <span class="pid">552항목</span></div>
-            <h2>📐 문법</h2>
+            <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>문법</h2>
             <p class="deft">기초·JLPT 문법 552항목을 N5부터 N1까지 정리했습니다. 활용을 설명하는 항목에는 <b>활용표로 건너뛰는 배지</b>가 붙고, 관련 문형 배지를 누르면 문형 사전으로 이동합니다.</p>
           </header>
 
@@ -284,7 +283,7 @@
         <div class="wrap wide">
           <header class="phead">
             <div class="crumb"><span class="pn">05</span> 활용표 <span class="pid">표 대조</span></div>
-            <h2>🧮 활용표</h2>
+            <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M12 3v18"/></svg>활용표</h2>
             <p class="deft">문법 설명은 산문이지만, 동사 3그룹·て형 음편·조건 4형·경어 대응·조수사는 <b>표로 대조해야</b> 외워집니다. 규칙이 눈으로 맞춰지는 항목만 골라 표로 세웠습니다.</p>
           </header>
 
@@ -308,7 +307,7 @@
         <div class="wrap wide">
           <header class="phead">
             <div class="crumb"><span class="pn">06</span> 품사 사전 <span class="pid">묶음 + 낱말</span></div>
-            <h2>🧩 품사 사전</h2>
+            <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>품사 사전</h2>
             <p class="deft"><b>묶음 보기</b>는 조사 · 동사 · 명사 · 부사 · 의성의태어 · 감탄사 · 형용사 · 수사 · 접속사 · 연체사 · 접두접미사를 기능별로 묶은 표입니다. <b>낱말 보기</b>는 낱말 하나에 카드 하나로, 읽기 · 뜻 · 예문 · 쓰임 메모가 붙습니다.</p>
           </header>
 
@@ -336,7 +335,7 @@
         <div class="wrap wide">
           <header class="phead">
             <div class="crumb"><span class="pn">07</span> 구어체 <span class="pid">정식 → 구어</span></div>
-            <h2>🗣 구어체</h2>
+            <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg>구어체</h2>
             <p class="deft">표현 낱개가 아니라 <b>규칙</b>입니다. 축약이 어떻게 만들어지는지, 종조사가 무엇을 바꾸는지, 어느 자리에서 반말로 내려가는지를 정식형 → 구어형 변환표로 정리했습니다.</p>
           </header>
 
@@ -360,7 +359,7 @@
         <div class="wrap wide">
           <header class="phead">
             <div class="crumb"><span class="pn">08</span> 표현·관용구 <span class="pid">4분류</span></div>
-            <h2>💬 표현·관용구</h2>
+            <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 11H6a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5a4 4 0 0 0-4-4"/><path d="M20 11h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5a4 4 0 0 0-4-4"/></svg>표현·관용구</h2>
             <p class="deft">아이즈치(相槌) · 상용구·정형구(決まり文句) · 구어 표현(口語表現) · 관용구·숙어(慣用句) 네 갈래입니다. 예문 속 밑줄은 해당 표현이 쓰인 자리입니다.</p>
           </header>
 
@@ -395,47 +394,47 @@
 <div class="pal" role="dialog" aria-label="통합 검색" id="palbox"><input class="pal-input" id="qAll" type="text" placeholder="한자·문형·문법·품사·구어체·표현·대화 통합 검색  (Esc 닫기)" spellcheck="false"><div class="pal-list" id="gsPanel" role="listbox"></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="data/dialogue-0.js?v=20261018-f"></script>
-<script src="data/characters.js?v=20261018-f"></script>
-<script src="data/dialogue-1.js?v=20261018-f"></script>
-<script src="data/dialogue-2.js?v=20261018-f"></script>
-<script src="data/dialogue-3.js?v=20261018-f"></script>
-<script src="data/dialogue-4.js?v=20261018-f"></script>
-<script src="data/dialogue-5.js?v=20261018-f"></script>
-<script src="data/dialogue-6.js?v=20261018-f"></script>
-<script src="data/dialogue-7.js?v=20261018-f"></script>
-<script src="data/dialogue-8.js?v=20261018-f"></script>
-<script src="data/dialogue-9.js?v=20261018-f"></script>
-<script src="data/dialogue-10.js?v=20261018-f"></script>
-<script src="data/dialogue-11.js?v=20261018-f"></script>
-<script src="data/dialogue-12.js?v=20261018-f"></script>
-<script src="data/dialogue-13.js?v=20261018-f"></script>
-<script src="data/dialogue-14.js?v=20261018-f"></script>
-<script src="data/dialogue-15.js?v=20261018-f"></script>
-<script src="data/dialogue-16.js?v=20261018-f"></script>
-<script src="data/dialogue-17.js?v=20261018-f"></script>
-<script src="data/dialogue-18.js?v=20261018-f"></script>
-<script src="data/dialogue-19.js?v=20261018-f"></script>
-<script src="data/dialogue-practice.js?v=20261018-f"></script>
-<script src="data/colloquial.js?v=20261018-f"></script>
-<script src="data/colloquial-2.js?v=20261018-f"></script>
-<script src="data/dialect.js?v=20261018-f"></script>
-<script src="data/slang.js?v=20261018-f"></script>
-<script src="data/slang-2026.js?v=20261018-f"></script>
-<script src="data/pos-josa.js?v=20261018-f"></script>
-<script src="data/pos-fukushi.js?v=20261018-f"></script>
-<script src="data/pos-other.js?v=20261018-f"></script>
-<script src="data/pos-verb.js?v=20261018-f"></script>
-<script src="data/pos-noun.js?v=20261018-f"></script>
-<script src="data/pos-words.js?v=20261018-f"></script>
-<script src="data/pos-keiyou-2.js?v=20261018-f"></script>
-<script src="data/kanji-list.js?v=20261018-f"></script>
-<script src="data/kanji-cards.js?v=20261018-f"></script>
-<script src="data/patterns.js?v=20261018-f"></script>
-<script src="data/grammar.js?v=20261018-f"></script>
-<script src="data/expressions.js?v=20261018-f"></script>
-<script src="data/conjugation.js?v=20261018-f"></script>
-<script src="js/app.js?v=20261018-f"></script>
-<script src="js/ui.js?v=20261018-f"></script>
+<script src="data/dialogue-0.js?v=20261018-h"></script>
+<script src="data/characters.js?v=20261018-h"></script>
+<script src="data/dialogue-1.js?v=20261018-h"></script>
+<script src="data/dialogue-2.js?v=20261018-h"></script>
+<script src="data/dialogue-3.js?v=20261018-h"></script>
+<script src="data/dialogue-4.js?v=20261018-h"></script>
+<script src="data/dialogue-5.js?v=20261018-h"></script>
+<script src="data/dialogue-6.js?v=20261018-h"></script>
+<script src="data/dialogue-7.js?v=20261018-h"></script>
+<script src="data/dialogue-8.js?v=20261018-h"></script>
+<script src="data/dialogue-9.js?v=20261018-h"></script>
+<script src="data/dialogue-10.js?v=20261018-h"></script>
+<script src="data/dialogue-11.js?v=20261018-h"></script>
+<script src="data/dialogue-12.js?v=20261018-h"></script>
+<script src="data/dialogue-13.js?v=20261018-h"></script>
+<script src="data/dialogue-14.js?v=20261018-h"></script>
+<script src="data/dialogue-15.js?v=20261018-h"></script>
+<script src="data/dialogue-16.js?v=20261018-h"></script>
+<script src="data/dialogue-17.js?v=20261018-h"></script>
+<script src="data/dialogue-18.js?v=20261018-h"></script>
+<script src="data/dialogue-19.js?v=20261018-h"></script>
+<script src="data/dialogue-practice.js?v=20261018-h"></script>
+<script src="data/colloquial.js?v=20261018-h"></script>
+<script src="data/colloquial-2.js?v=20261018-h"></script>
+<script src="data/dialect.js?v=20261018-h"></script>
+<script src="data/slang.js?v=20261018-h"></script>
+<script src="data/slang-2026.js?v=20261018-h"></script>
+<script src="data/pos-josa.js?v=20261018-h"></script>
+<script src="data/pos-fukushi.js?v=20261018-h"></script>
+<script src="data/pos-other.js?v=20261018-h"></script>
+<script src="data/pos-verb.js?v=20261018-h"></script>
+<script src="data/pos-noun.js?v=20261018-h"></script>
+<script src="data/pos-words.js?v=20261018-h"></script>
+<script src="data/pos-keiyou-2.js?v=20261018-h"></script>
+<script src="data/kanji-list.js?v=20261018-h"></script>
+<script src="data/kanji-cards.js?v=20261018-h"></script>
+<script src="data/patterns.js?v=20261018-h"></script>
+<script src="data/grammar.js?v=20261018-h"></script>
+<script src="data/expressions.js?v=20261018-h"></script>
+<script src="data/conjugation.js?v=20261018-h"></script>
+<script src="js/app.js?v=20261018-h"></script>
+<script src="js/ui.js?v=20261018-h"></script>
 </body>
 </html>

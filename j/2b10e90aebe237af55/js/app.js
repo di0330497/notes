@@ -176,7 +176,7 @@ const DLG_INDEX=(function(){
 /* ══════════ 공통 부품 ══════════ */
 
 /* 예문 블록 — 학습 카드가 기준이다. 일곱 화면이 이 함수 하나를 쓴다.
-   배지 한 줄(음/훈/예 + 대화 장면 바로가기 + 발음 듣기) → 일본어 예문 → 번역 */
+   배지 한 줄(음/훈/예 + 대화 장면 바로가기) → 일본어 예문 → 번역 */
 function exBlock(s,ko,o){
   o=o||{};
   const b=o.badge||"例";
@@ -186,11 +186,10 @@ function exBlock(s,ko,o){
     ||(hasTALK?DLG_INDEX.findSent(s):null);
   const dlgBtn=hit
     ?'<button type="button" class="dlgLinkBadge" data-goto-dlg="'+esc(hit.dlgId)+'" data-goto-line="'+hit.lineIdx+'" title="이 문장이 쓰인 대화 장면으로 이동">'
-      +'💬 <span class="dlId">'+esc(hit.dlgId)+'</span> '+esc(hit.scene)+' · '+esc(hit.whoName)+' #'+(hit.lineIdx+1)+' →</button>'
+      +'<span class="dlId">'+esc(hit.dlgId)+'</span> '+esc(hit.scene)+' · '+esc(hit.whoName)+' #'+(hit.lineIdx+1)+' →</button>'
     :'';
-  const spkBtn='<button type="button" class="exSpeakBtn" data-say="'+esc(s)+'" title="이 문장 발음 듣기">▶</button>';
   return '<div class="exBlock">'
-    +'<div class="exHead"><span class="rBadge '+cls+'">'+esc(b)+'</span>'+dlgBtn+spkBtn+'</div>'
+    +'<div class="exHead"><span class="rBadge '+cls+'">'+esc(b)+'</span>'+dlgBtn+'</div>'
     +'<div class="sent">'+fmt(s,o.target)+'</div>'
     +'<div class="trans">'+esc(ko||"")+'</div>'
     +(o.cue||"")+'</div>';
@@ -395,7 +394,7 @@ function renderStudy(){
   studyItems=[];let exShown=0;
   ALL.forEach((r,i)=>{
     const rank=i+1, e=STUDYBYK[r[0]];
-    const rankLabel=r[4]===20?'🍽 식재료':('#'+rank);
+    const rankLabel=r[4]===20?'식재료':('#'+rank);
     if(filtered&&gradeToLv(r[4])!==fLv)return;
     if(fJoyo==="joyo"&&!isJoyo(r[4]))return;   /* 상용한자 2,136 안 */
     if(fJoyo==="out"&&isJoyo(r[4]))return;     /* 그 밖(인명용·표외·추가·식재료) */
@@ -642,8 +641,8 @@ function renderGrammar(){
     if(g.ch!==curCh){curCh=g.ch;h+=secHd(g.ch,g.cn,perCh[g.ch]+"항목");}
     const cid=conjLinkFor(g.t), pid=posLinkFor(g.t);
     const foot=[
-      cid?'<span class="jumpBadge" data-cj="'+cid+'">🧮 '+fmt(CONJBYID[cid].t)+'</span>':"",
-      pid?'<span class="jumpBadge jbPos" data-ps="'+pid+'">🧩 '+fmt(POSBYID[pid].t)+'</span>':"",
+      cid?'<span class="jumpBadge" data-cj="'+cid+'">'+fmt(CONJBYID[cid].t)+'</span>':"",
+      pid?'<span class="jumpBadge jbPos" data-ps="'+pid+'">'+fmt(POSBYID[pid].t)+'</span>':"",
       relBadges(g.rel)
     ].filter(Boolean).join(" ");
     h+='<div class="uCard">'
@@ -722,8 +721,7 @@ if($("#qConj"))$("#qConj").addEventListener("input",()=>renderConj());
    조회창이 아니라 장면이 먼저이고, 설명은 말 뒤에 붙는다.
    1. 처음엔 일본어만 보인다 (본문.noKo)
    2. 번역을 누르면 그때 한국어가 붙는다
-   3. ▶ 를 누르면 그 한 줄만 읽어 준다 (Web Speech, 나fallback 없음)
-   4. 태그를 누르면 그 표현이 있는 모드로 건너뛴다
+   3. 태그를 누르면 그 표현이 있는 모드로 건너뛴다
    ══════════════════════════════════════════════════════════ */
 /* 이름 → 첫 글자(두 글자까지). 아바타용 */
 function initial(n){return n?String(n).slice(0,1):"?";}
@@ -814,16 +812,16 @@ function talkMatch(d){
   if(tkDay!=="all"&&DLG_DAY[d.id]!==tkDay)return false;
   return true;
 }
-/* 한 줄 — 화자 · 일본어 · ▶ */
+/* 한 줄 — 화자 · 일본어 · 한국어 */
 function lineHTML(d,l,i){
   const c=CHARBY[l.who]||{name:l.who,color:"#667085"};
   const itemBadge=l.item?'<span class="lineItemTag">'+fmt(l.item)+'</span>':'';
   return '<div class="line" id="dlg-'+esc(d.id)+'-'+i+'" data-l="'+i+'" data-who="'+esc(l.who)+'">'
     +'<span class="av" style="background:'+c.color+'">'+esc(initial(c.name))+'</span>'
     +'<span class="lb"><span class="whoName" style="color:'+c.color+'">'+esc(c.name)+'</span>'+itemBadge
-    +'<span class="jp" data-say="'+esc(l.s)+'">'+fmt(l.s)+'</span>'
+    +'<span class="jp">'+fmt(l.s)+'</span>'
     +(l.ko?'<span class="ko">'+esc(l.ko)+'</span>':"")+'</span>'
-    +'<button class="speak" title="이 줄 읽어주기">▶</button></div>';
+    +'</div>';
 }
 function pointsHTML(p){
   if(!p||!p.length)return "";
@@ -870,7 +868,6 @@ function renderTalk(){
         +'<div class="dlgHead">'+lvBadge(d.lv)+'<span class="dlgScene">'+esc(d.id||"")+(dayLabel?' · '+dayLabel:'')+'</span>'
         +'<span class="dlgTitle">'+fmt(d.title)+'</span>'
         +'<span class="dlgMeta">'+esc(d.place||"")+' · '+n+'줄 '
-        +'<button type="button" class="dlgPlayAll" data-did="'+esc(d.id)+'" title="이 대화 전체 연속 듣기 (쉐도잉)">▶ 전체 듣기</button>'
         +'</span></div>'
         +'<div class="dlgLines">'+d.lines.map((l,j)=>lineHTML(d,l,j)).join("")+'</div>'
         +pointsHTML(d.points)
@@ -904,36 +901,7 @@ function applyCloze(){
   }
 }
 
-/* ── 따라읽기 — Web Speech API ──
-   일본어 TTS 는 브라우저·OS 마다 voices 가 비어 있다. 없으면 조용히 넘긴다 */
-function speak(text){
-  try{
-    if(!window.speechSynthesis)return false;
-    window.speechSynthesis.cancel();
-    /* 읽기가 아니라 본문을 읽는다 — {漢字|よみ} 도 한자만 남는다 */
-    const u=new SpeechSynthesisUtterance(stripK(text));
-    u.lang="ja-JP";u.rate=0.92;
-    const vs=window.speechSynthesis.getVoices()||[];
-    const v=vs.find(x=>/ja/i.test(x.lang));
-    if(v)u.voice=v;
-    window.speechSynthesis.speak(u);
-    return true;
-  }catch(e){return false;}
-}
 function bindTalk(){
-  $$("#view-talk .speak").forEach(b=>b.onclick=()=>{
-    const ln=b.closest(".line");
-    $$("#view-talk .line").forEach(x=>x.classList.remove("playing"));
-    ln.classList.add("playing");
-    speak(ln.querySelector(".jp").getAttribute("data-say"));
-    setTimeout(()=>ln.classList.remove("playing"),2200);
-  });
-  /* 문장 자체를 눌러도 읽어 준다 — 배지를 찾느라 헤매지 않게 */
-  $$("#view-talk .jp").forEach(j=>j.onclick=()=>{
-    $$("#view-talk .jp").forEach(x=>x.classList.remove("on"));
-    j.classList.add("on");
-    speak(j.getAttribute("data-say"));
-  });
   /* 태그 → 해당 모드로 검색어를 넘겨 건너뛴다.
      대화 태그는 사전 표제어와 한 끗 차이가 난다.
      예) 「〜なりに／〜なりの」「〜じゃない？」「尊敬語」
@@ -999,40 +967,8 @@ function bindTalk(){
   });
 }
 
-/* ── 대화 전체 연속 듣기(쉐도잉) & 카드↔대화 양방향 점프 ── */
-let dlgSeqTimer=null;
-function stopDialogPlay(){
-  if(dlgSeqTimer){clearTimeout(dlgSeqTimer);dlgSeqTimer=null;}
-  try{if(window.speechSynthesis)window.speechSynthesis.cancel();}catch(e){}
-  $$("#view-talk .line").forEach(x=>x.classList.remove("playing"));
-  $$("#view-talk .dlgPlayAll").forEach(b=>{b.classList.remove("playing");b.textContent="▶ 전체 듣기";});
-}
-function playDialogAll(dlgId){
-  const card=$("#dlg-"+dlgId);
-  if(!card)return;
-  const btn=card.querySelector(".dlgPlayAll");
-  if(btn&&btn.classList.contains("playing")){stopDialogPlay();return;}
-  stopDialogPlay();
-  const lns=[...card.querySelectorAll(".line")];
-  if(!lns.length)return;
-  if(btn){btn.classList.add("playing");btn.textContent="⏹ 연속 재생 중";}
-  let idx=0;
-  function step(){
-    if(idx>=lns.length){stopDialogPlay();return;}
-    lns.forEach(x=>x.classList.remove("playing"));
-    const ln=lns[idx++];
-    ln.classList.add("playing");
-    ln.scrollIntoView({behavior:"smooth",block:"nearest"});
-    const jp=ln.querySelector(".jp");
-    const txt=jp?jp.getAttribute("data-say"):"";
-    speak(txt);
-    const wait=Math.max(2200,Math.min(5500,stripK(txt).length*185));
-    dlgSeqTimer=setTimeout(step,wait);
-  }
-  step();
-}
+/* ── 카드↔대화 양방향 점프 ── */
 function gotoDlgLine(dlgId,lineIdx){
-  stopDialogPlay();
   tkScene="all";tkWho="all";tkLv="all";tkSrc="all";tkDay="all";
   tkKind=/^p\d+$/.test(String(dlgId||""))?"prac":"story";
   if($("#qTalk"))$("#qTalk").value="";
@@ -1050,7 +986,7 @@ function gotoDlgLine(dlgId,lineIdx){
     if(ln.classList.contains("line"))ln.classList.add("hlLine");
     setTimeout(()=>scrollToTarget(ln,"center"),40);
     const jp=ln.querySelector?ln.querySelector(".jp"):null;
-    if(jp&&jp.getAttribute("data-say"))speak(jp.getAttribute("data-say"));
+    if(jp)jp.classList.add("on");
   }
 }
 document.addEventListener("click",e=>{
@@ -1058,18 +994,6 @@ document.addEventListener("click",e=>{
   if(lb){
     e.preventDefault();
     gotoDlgLine(lb.getAttribute("data-goto-dlg"),parseInt(lb.getAttribute("data-goto-line")||"0",10));
-    return;
-  }
-  const sb=e.target.closest(".exSpeakBtn");
-  if(sb){
-    e.preventDefault();
-    speak(sb.getAttribute("data-say")||"");
-    return;
-  }
-  const pa=e.target.closest(".dlgPlayAll");
-  if(pa){
-    e.preventDefault();
-    playDialogAll(pa.getAttribute("data-did")||"");
     return;
   }
   if(document.body.classList.contains("clozeOn")){
@@ -1167,7 +1091,6 @@ if($("#talkKo"))$("#talkKo").onclick=()=>{tkKo=!tkKo;applyKo();
   toast(tkKo?"한국어 번역을 켰어요":"한국어 번역을 껐어요 — 일본어만");};
 if($("#talkCloze"))$("#talkCloze").onclick=()=>{tkCloze=!tkCloze;applyCloze();
   toast(tkCloze?"빈칸 암기 모드 ON — 밑줄 표현에 마우스를 올리거나 눌러 확인하세요":"빈칸 암기 모드 OFF");};
-if($("#talkStop"))$("#talkStop").onclick=()=>{stopDialogPlay();toast("읽기를 멈췄어요");};
 /* ══════════ 구어체 ══════════ */
 let spSec="all";
 /* 묶음 기준은 sec 가 아니라 sn 이다.
@@ -1558,11 +1481,20 @@ function showCover(){
 (function(){
   var bar=$("#modebar");
   if(!bar)return;
-  var ICON={talk:"\uD83D\uDCAC",study:"\uD83D\uDCDA",pat:"\uD83D\uDCD6",gram:"\uD83D\uDD20",
-            conj:"\uD83E\uDDEE",pos:"\uD83E\uDDE9",spoken:"\uD83D\uDE3B",expr:"\uD83D\uDCAC"};
+  var ICON={
+    cover:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><path d=\"M9 22V12h6v10\"/></svg>",
+    talk:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7.9 20A9 9 0 1 0 4 16.1L2 22Z\"/></svg>",
+    study:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 7v14\"/><path d=\"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z\"/></svg>",
+    pat:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01\"/></svg>",
+    gram:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m16 18 6-6-6-6M8 6l-6 6 6 6\"/></svg>",
+    conj:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M3 9h18M3 15h18M12 3v18\"/></svg>",
+    pos:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect width=\"7\" height=\"7\" x=\"3\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"14\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"3\" y=\"14\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"14\" y=\"14\" rx=\"1\"/></svg>",
+    spoken:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z\"/><path d=\"M19 10v1a7 7 0 0 1-14 0v-1\"/><path d=\"M12 18v4\"/></svg>",
+    expr:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M10 11H6a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5a4 4 0 0 0-4-4\"/><path d=\"M20 11h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5a4 4 0 0 0-4-4\"/></svg>"
+  };
   var LABEL={talk:"대화",study:"학습 카드",pat:"문형 사전",gram:"문법",conj:"활용표",
              pos:"품사 사전",spoken:"구어체",expr:"표현·관용구"};
-  var items=[{v:"cover",t:"표지",ic:"\u2302"}].concat(
+  var items=[{v:"cover",t:"표지",ic:ICON.cover}].concat(
     (typeof VIEWS!=="undefined"?VIEWS:[]).map(function(v){
       return {v:v,t:LABEL[v]||v,ic:ICON[v]||""};
     }));
@@ -1748,7 +1680,7 @@ renderStudy();
   function paint(){
     var dark=root.getAttribute("data-theme")==="dark";
     if(btn){
-      btn.textContent=dark?"☾":"☀";
+      btn.innerHTML=dark?'<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/></svg>':'<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
       btn.title=dark?"밝은 테마로 전환":"어두운 테마로 전환";
       btn.setAttribute("aria-pressed",String(dark));
     }
