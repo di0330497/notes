@@ -553,6 +553,14 @@ td:first-child{color:var(--fg-dim);font-weight:600;white-space:nowrap}
   background:var(--surface);color:var(--fg);font-family:var(--mono);font-size:12.5px;outline:none}
 .pgRank:focus{border-color:var(--blue)}
 
+/* ── 화면별 페이저 — 카드가 많은 화면을 끊어 세운다 ── */
+.pgFoot{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:var(--surface);
+  border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin:34px 0 6px}
+.pgFoot .pgJump{margin-left:auto}
+.pgNo{width:64px;border:1px solid var(--line-2);border-radius:6px;padding:5px 8px;
+  background:var(--surface);color:var(--fg);font-family:var(--mono);font-size:12.5px;outline:none}
+.pgNo:focus{border-color:var(--blue)}
+
 /* ── 진행률 바 ── */
 .progress-wrap{position:sticky;top:44px;z-index:4;
   background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);

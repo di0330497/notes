@@ -499,6 +499,101 @@ function focusCard(sel){
   setTimeout(()=>scrollToTarget(el,"start"),60);
 }
 
+/* ══════════ 화면별 페이징 ══════════
+   문형 698 · 품사 1,003 · 대화 4,724줄 같은 화면은 한 번에 모두 무어 놓으면
+   스크롤이 끝없어지고 DOM 이 무거워진다. 그래서 각 화면은
+   「블록(장 헤더 · 카드)」을 배열로 만들어 여기로 넘기고,
+   여기서 한 번에 PGPER 개만 무어 놓는다 — 나머지는 아래 페이저로 넘긴다.
+   장 헤더는 그 자리에 드러나는 소속 카드가 있을 때만 세운다.
+   검색·필터를 바꾸면 서명(sig)이 달라지고, 달라진 때에만 첫 페이지로 돌아간다. */
+const PGPER={talk:20,pat:60,gram:50,pos:60,posW:100,expr:50,spoken:60};
+const PG={},PGFN={};
+function pgSig(){let s="";for(let i=0;i<arguments.length;i++)s+=String(arguments[i])+"\u0001";return s;}
+function pgFlush(key,sig,blocks,mount,emptyMode){
+  const per=PGPER[key]||50;
+  const t=blocks.reduce((a,b)=>a+(b.t==="c"?1:0),0);
+  const st=PG[key]||(PG[key]={sig:"",page:0,total:0,end:0,keys:[]});
+  if(st.sig!==sig){st.sig=sig;st.page=0;}
+  st.total=t;
+  if(!t){st.keys=[];st.end=0;st.page=0;$(mount).innerHTML=emptyNote(emptyMode);return;}
+  if(st.page>Math.floor((t-1)/per))st.page=Math.floor((t-1)/per);
+  if(st.page<0)st.page=0;
+  const from=st.page*per,to=Math.min(from+per,t),keys=[];
+  /* 헤더에는 그 헤더가 감싼 카드 중 이 페이지에 드러나는 수를 세운다 */
+  const info=new Map();let ci=0;const stack=[];
+  blocks.forEach(b=>{
+    if(b.t==="h"){
+      while(stack.length&&stack[stack.length-1].lv>=b.lv)stack.pop();
+      const o={n:0};stack.push(o);info.set(b,o);return;
+    }
+    keys.push(b.k||"");
+    if(ci>=from&&ci<to){stack.forEach(o=>o.n++);info.set(b,ci);}
+    ci++;
+  });
+  st.keys=keys;st.end=to;
+  let h="",i=-1;
+  blocks.forEach(b=>{
+    if(b.t==="h"){const o=info.get(b);if(o&&o.n>0)h+=b.html;return;}
+    const my=++i;
+    if(my>=from&&my<to)h+=b.html;
+  });
+  $(mount).innerHTML=h+pgBar(key,t,from,to,per);
+}
+/* 페이저 막대 — 한 페이지에 다 들어가는 화면은 두지 않는다 */
+function pgBar(key,t,from,to,per){
+  const st=PG[key];
+  if(t<=per){st.page=0;return "";}
+  const pages=Math.ceil(t/per);
+  return '<div class="pgFoot" data-key="'+key+'">'
+    +'<button type="button" class="pgBtn" data-pga="prev" data-pg="'+key+'"'+(from<=0?" disabled":"")+'>\u2039 이전</button>'
+    +'<span class="pgInfo">'+num(from+1)+"\u2013"+num(to)+" / "+num(t)+'</span>'
+    +'<span class="pgJump"><span class="pgJumpLabel">페이지</span>'
+      +'<input class="pgNo" type="number" min="1" max="'+pages+'" placeholder="예: 3">'
+      +'<button type="button" class="pgBtn" data-pga="go" data-pg="'+key+'">이동</button></span>'
+    +'<button type="button" class="pgBtn" data-pga="next" data-pg="'+key+'"'+(to>=t?" disabled":"")+'>다음 \u203A</button>'
+    +'</div>';
+}
+/* 페이지를 옮긴 뒤 — 필터는 그대로 두고 그 화면만 다시 그린다 */
+function pgPaint(key){const f=PGFN[key];if(f)f();}
+/* 점퍼 대상 카드가 드러나는 페이지로 넘어간 다음 그 카드를 짚는다 */
+function pgGoto(key,k){
+  const st=PG[key];
+  if(!st||!st.keys||!st.keys.length||k==null)return;
+  const i=st.keys.indexOf(String(k));
+  if(i<0)return;
+  const per=PGPER[key]||50;
+  if(i>=st.page*per&&i<(st.page+1)*per)return;
+  st.page=Math.floor(i/per);
+  pgPaint(key);
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".pgFoot .pgBtn");
+  if(!b)return;
+  const foot=b.closest(".pgFoot"),key=foot.getAttribute("data-key"),st=PG[key];
+  if(!st)return;
+  const per=PGPER[key]||50;
+  if(b.dataset.pga==="prev")st.page=Math.max(0,st.page-1);
+  else if(b.dataset.pga==="next")st.page=st.page+1;
+  else if(b.dataset.pga==="go"){
+    const inp=foot.querySelector(".pgNo"),n=parseInt(inp&&inp.value,10);
+    if(!n)return;
+    st.page=Math.min(Math.max(1,n),Math.ceil(st.total/per))-1;
+  }
+  pgPaint(key);scrollTop();
+});
+document.addEventListener("keydown",e=>{
+  if(e.key!=="Enter")return;
+  if(!e.target||!e.target.classList||!e.target.classList.contains("pgNo"))return;
+  const foot=e.target.closest(".pgFoot"),key=foot?foot.getAttribute("data-key"):null;
+  const st=key?PG[key]:null;
+  if(!st)return;
+  const per=PGPER[key]||50,n=parseInt(e.target.value,10);
+  if(!n)return;
+  st.page=Math.min(Math.max(1,n),Math.ceil(st.total/per))-1;
+  e.target.value="";
+  pgPaint(key);scrollTop();
+});
+
 /* ══════════ 문형 사전 — 의미 분류 → 클러스터 2단 묶음 ══════════ */
 let pLv="all";
 function renderPat(hlPat){
@@ -518,25 +613,26 @@ function renderPat(hlPat){
     if(!b.clu[key]){b.clu[key]=[];b.order.push(key);}
     b.clu[key].push(p);
   });
-  let h="";
+  const blk=[];
   order.forEach(c=>{
     const b=bucket[c],cnt=b.order.reduce((a,k)=>a+b.clu[k].length,0);
-    h+=secHd(c,CATNAME[c]||c,cnt+"개 · "+b.order.length+"묶음");
+    blk.push({t:"h",lv:0,html:secHd(c,CATNAME[c]||c,cnt+"개 · "+b.order.length+"묶음")});
     b.order.forEach(k=>{
       const list=b.clu[k];
-      h+='<div class="cluHd">'+esc(k)+'<em>'+list.length+'</em></div>';
+      blk.push({t:"h",lv:1,html:'<div class="cluHd">'+esc(k)+'<em>'+list.length+'</em></div>'});
       list.forEach(p=>{
-        h+='<div class="uCard'+(hlPat===p.pat?" hl":"")+'" data-p="'+esc(p.pat)+'">'
+        blk.push({t:"c",k:p.pat,html:'<div class="uCard'+(hlPat===p.pat?" hl":"")+'" data-p="'+esc(p.pat)+'">'
           +uTop(lvBadge(p.lv),fmt(p.pat),CATNAME[p.cat]||p.cat,true)
           +meanBox(p.mean)
           +exList(p.ex,{itemKind:"문형",itemKey:p.pat})
-          +'</div>';
+          +'</div>'});
       });
     });
   });
-  $("#view-pat").innerHTML=h||emptyNote("pat");
+  PGFN.pat=()=>renderPat(hlPat);
+  pgFlush("pat",pgSig(pLv,cat,q),blk,"#view-pat","pat");
   setCount(MODE.pat+" "+num(n)+"개","의미 분류 "+order.length+"갈래");
-  if(hlPat)focusCard("#view-pat .uCard.hl");
+  if(hlPat){pgGoto("pat",hlPat);focusCard("#view-pat .uCard.hl");}
 }
 function gotoPat(p){
   switchView("pat");
@@ -636,24 +732,25 @@ function renderGrammar(){
     return !q||hay(g.t,g.desc,g.cn,g.ex.map(x=>[x.s,x.ko])).includes(q);
   });
   const perCh={};keep.forEach(g=>{perCh[g.ch]=(perCh[g.ch]||0)+1;});
-  let h="",curCh="";
+  const blk=[];let curCh="";
   keep.forEach(g=>{
-    if(g.ch!==curCh){curCh=g.ch;h+=secHd(g.ch,g.cn,perCh[g.ch]+"항목");}
+    if(g.ch!==curCh){curCh=g.ch;blk.push({t:"h",lv:0,html:secHd(g.ch,g.cn,perCh[g.ch]+"항목")});}
     const cid=conjLinkFor(g.t), pid=posLinkFor(g.t);
     const foot=[
       cid?'<span class="jumpBadge" data-cj="'+cid+'">'+fmt(CONJBYID[cid].t)+'</span>':"",
       pid?'<span class="jumpBadge jbPos" data-ps="'+pid+'">'+fmt(POSBYID[pid].t)+'</span>':"",
       relBadges(g.rel)
     ].filter(Boolean).join(" ");
-    h+='<div class="uCard">'
+    blk.push({t:"c",k:g.t,html:'<div class="uCard">'
       +uTop(lvBadge(g.lv),fmt(g.t),g.cn)
       +'<div class="uDesc">'+fmt(g.desc)+'</div>'
       +meanBox(grammarMeaningHint(g))
       +exList(g.ex,{itemKind:"문법",itemKey:g.t})
       +(foot?'<div class="uFoot">'+foot+'</div>':"")
-      +'</div>';
+      +'</div>'});
   });
-  $("#view-gram").innerHTML=h||emptyNote("gram");
+  PGFN.gram=()=>renderGrammar();
+  pgFlush("gram",pgSig(gCh,gLv,q),blk,"#view-gram","gram");
   setCount(MODE.gram+" "+num(keep.length)+"항목",Object.keys(perCh).length+"장");
   bindJumps("#view-gram");
 }
@@ -855,16 +952,18 @@ function renderTalk(){
     return hay(d.title,d.scene,d.place,(d.lines||[]).map(l=>[l.s,l.ko]),
                (d.points||[]).map(p=>[p.t,p.d]),(d.tags||[]).map(t=>[t[0],t[1]])).includes(q);
   });
+  let lines=0;
+  keep.forEach(d=>{(d.lines||[]).forEach(()=>lines++);});
   /* 장면별로 모아서 보여 준다 — 같은 장소의 대화가 붙어 있어야 "현장"이 된다 */
   const order=[];DIALOGS.forEach(d=>{if(keep.indexOf(d)>=0&&order.indexOf(d.scene)<0)order.push(d.scene);});
-  let h="",lines=0;
+  const blk=[];
   order.forEach(sc=>{
     const ds=keep.filter(d=>d.scene===sc);
-    h+=secHd(String(order.indexOf(sc)+1).padStart(2,"0"),sc,ds.length+"대화");
-    ds.forEach((d,i)=>{
-      const n=(d.lines||[]).length;lines+=n;
+    blk.push({t:"h",lv:0,html:secHd(String(order.indexOf(sc)+1).padStart(2,"0"),sc,ds.length+"대화 · "+ds.reduce((a,d)=>a+(d.lines||[]).length,0)+"줄")});
+    ds.forEach(d=>{
+      const n=(d.lines||[]).length;
       const dayLabel=DLG_DAY[d.id]?'Day '+DLG_DAY[d.id]:'';
-      h+='<div class="uCard dlg'+(isPractice(d)?" dlgP":"")+'" id="dlg-'+esc(d.id)+'">'
+      blk.push({t:"c",k:d.id,html:'<div class="uCard dlg'+(isPractice(d)?" dlgP":"")+'" id="dlg-'+esc(d.id)+'">'
         +'<div class="dlgHead">'+lvBadge(d.lv)+'<span class="dlgScene">'+esc(d.id||"")+(dayLabel?' · '+dayLabel:'')+'</span>'
         +'<span class="dlgTitle">'+fmt(d.title)+'</span>'
         +'<span class="dlgMeta">'+esc(d.place||"")+' · '+n+'줄 '
@@ -872,10 +971,11 @@ function renderTalk(){
         +'<div class="dlgLines">'+d.lines.map((l,j)=>lineHTML(d,l,j)).join("")+'</div>'
         +pointsHTML(d.points)
         +tagsHTML(d.tags)
-        +'</div>';
+        +'</div>'});
     });
   });
-  view.innerHTML=h||emptyNote("talk");
+  PGFN.talk=()=>renderTalk();
+  pgFlush("talk",pgSig(tkScene,tkWho,tkLv,tkSrc,tkDay,tkKind,q),blk,"#view-talk","talk");
   setCount("대화 "+num(keep.length)+"편",num(lines)+"줄");
   bindTalk();
   applyKo();
@@ -977,6 +1077,7 @@ function gotoDlgLine(dlgId,lineIdx){
   const kc=$('#talkKind .chip[data-k="'+tkKind+'"]');if(kc)setChips("#talkKind",kc);
   chipAll("#talkLv","l");chipAll("#talkSrc","s");chipAll("#talkDay","day");
   switchView("talk");
+  pgGoto("talk",dlgId);   /* 대상 대화가 다른 페이지에 있으면 그 페이지로 옮겨 논다 */
   const ln=$("#dlg-"+dlgId+"-"+lineIdx)||$("#dlg-"+dlgId);
   const card=$("#dlg-"+dlgId);
   $$("#view-talk .uCard").forEach(x=>x.classList.remove("hl"));
@@ -1120,25 +1221,26 @@ function renderSpoken(){
   const perSec={};keep.forEach(x=>{const k=SPKEY(x);perSec[k]=(perSec[k]||0)+1;});
   /* 묶음 순서 = 화면에 뜨는 순서. 머리에 붙이는 번호도 이 순서를 따른다 */
   const gorder=[];keep.forEach(x=>{const k=SPKEY(x);if(gorder.indexOf(k)<0)gorder.push(k);});
-  let h="",curSec="",pairs=0;
+  const blk=[];let curSec="",pairs=0;
   keep.forEach(x=>{
     pairs+=x.forms.length;
     const k=SPKEY(x);
     if(k!==curSec){
       curSec=k;
-      h+=secHd(String(gorder.indexOf(k)+1).padStart(2,"0"),k,perSec[k]+"항목");
+      blk.push({t:"h",lv:0,html:secHd(String(gorder.indexOf(k)+1).padStart(2,"0"),k,perSec[k]+"항목")});
     }
     const rel=relBadges(x.rel);
-    h+='<div class="uCard">'
+    blk.push({t:"c",k:x.t,html:'<div class="uCard">'
       +uTop(lvBadge(x.lv),fmt(x.t),x.sn,true)
       +'<div class="uDesc">'+fmt(x.rule)+'</div>'
       +tableHTML(["정식·원형","구어형","메모"],x.forms)
       +(x.warn?warnBox(fmt(x.warn)):"")
       +exList(x.ex,{itemKind:"구어체",itemKey:x.t})
       +(rel?'<div class="uFoot">'+rel+'</div>':"")
-      +'</div>';
+      +'</div>'});
   });
-  $("#view-spoken").innerHTML=h||emptyNote("spoken");
+  PGFN.spoken=()=>renderSpoken();
+  pgFlush("spoken",pgSig(spSec,q),blk,"#view-spoken","spoken");
   setCount(MODE.spoken+" "+num(keep.length)+"항목","변환 "+num(pairs)+"쌍");
   bindJumps("#view-spoken");
 }
@@ -1171,26 +1273,27 @@ function renderPosGroup(hlId){
     return !q||hay(x.t,x.w,x.mean,x.desc,x.tip,x.head,x.rows,x.ex.map(e=>[e.s,e.ko])).includes(q);
   });
   const perG={};keep.forEach(x=>{perG[x.g]=(perG[x.g]||0)+1;});
-  let h="",curG="",rows=0;
+  const blk=[];let curG="",rows=0;
   keep.forEach(x=>{
     rows+=x.rows.length;
-    if(x.gn!==curG){curG=x.gn;h+=secHd(x.g,x.gn,perG[x.g]+"항목");}
+    if(x.gn!==curG){curG=x.gn;blk.push({t:"h",lv:0,html:secHd(x.g,x.gn,perG[x.g]+"항목")});}
     /* 표제어가 있는 항목은 낱말을 앞세우고, 묶음 항목은 제목만 세운다 */
     const title=x.w
       ? '<span class="posW">'+fmt(x.w)+'</span>'+fmt(x.t.replace(/^.*?—\s*/,""))
       : fmt(x.t);
-    h+='<div class="uCard'+(hlId===x.id?" hl":"")+'" id="ps-'+esc(x.id)+'">'
+    blk.push({t:"c",k:x.id,html:'<div class="uCard'+(hlId===x.id?" hl":"")+'" id="ps-'+esc(x.id)+'">'
       +uTop(lvBadge(x.lv),title,x.pn)   /* 낱말은 .posW 가 세리프를 쓰고, 뒤따르는 설명은 UI 서체다 */
       +(x.mean?meanBox(x.mean):"")
       +'<div class="uDesc">'+fmt(x.desc)+'</div>'
       +tableHTML(x.head,x.rows)
       +(x.tip?tipBox(fmt(x.tip)):"")
       +exList(x.ex,{itemKind:"품사",itemKey:x.t})
-      +'</div>';
+      +'</div>'});
   });
-  $("#view-pos").innerHTML=h||emptyNote("pos");
+  PGFN.pos=()=>renderPosGroup(hlId);
+  pgFlush("pos",pgSig(posP,posMode,q),blk,"#view-pos","pos");
   setCount(MODE.pos+" "+num(keep.length)+"항목","표 "+num(rows)+"행");
-  if(hlId)focusCard("#ps-"+hlId);
+  if(hlId){pgGoto("pos",hlId);focusCard("#ps-"+hlId);}
 }
 /* 낱말 보기 — 낱말 하나에 카드 하나. 다른 화면과 같은 예문 블록을 쓴다 */
 function wordCard(x){
@@ -1216,13 +1319,14 @@ function renderPosWord(){
     bucket[k].push(x);
   });
   order.sort((a,b)=>PORDER.indexOf(a.split("\u0001")[0])-PORDER.indexOf(b.split("\u0001")[0]));
-  let h="";
+  const blk=[];
   order.forEach(k=>{
     const [g,c]=k.split("\u0001");
-    h+=secHd(c,(PNAME[g]||g)+" · "+(WCAT[c]||c),bucket[k].length+"낱말");
-    h+=bucket[k].map(wordCard).join("");
+    blk.push({t:"h",lv:0,html:secHd(c,(PNAME[g]||g)+" · "+(WCAT[c]||c),bucket[k].length+"낱말")});
+    bucket[k].forEach(x=>{blk.push({t:"c",k:stripM(x.w),html:wordCard(x)});});
   });
-  $("#view-pos").innerHTML=h||emptyNote("pos");
+  PGFN.posW=()=>renderPosWord();
+  pgFlush("posW",pgSig(posP,posMode,q),blk,"#view-pos","pos");
   setCount(MODE.pos+" 낱말 "+num(keep.length)+"개","분류 "+order.length+"갈래");
 }
 function renderPos(hlId){
@@ -1253,17 +1357,18 @@ function renderExpr(){
     return !q||hay(x.expr,x.reading,x.mean,x.ex.map(e=>[e.s,e.ko])).includes(q);
   });
   const perCat={};keep.forEach(x=>{perCat[x.cat]=(perCat[x.cat]||0)+1;});
-  let h="",curCat="";
+  const blk=[];let curCat="";
   keep.forEach(x=>{
     if(x.cat!==curCat){curCat=x.cat;
-      h+=secHd(x.cat,EXPR_CATNAME[x.cat]||x.cat,perCat[x.cat]+"개");}
-    h+='<div class="uCard" data-c="'+esc(x.cat)+'">'
+      blk.push({t:"h",lv:0,html:secHd(x.cat,EXPR_CATNAME[x.cat]||x.cat,perCat[x.cat]+"개")});}
+    blk.push({t:"c",k:x.expr,html:'<div class="uCard" data-c="'+esc(x.cat)+'">'
       +uTop("",fmt(x.expr),x.reading||"",true)
       +meanBox(x.mean)
       +exList(x.ex,{itemKind:"표현",itemKey:x.expr})
-      +'</div>';
+      +'</div>'});
   });
-  $("#view-expr").innerHTML=h||emptyNote("expr");
+  PGFN.expr=()=>renderExpr();
+  pgFlush("expr",pgSig(exCat,q),blk,"#view-expr","expr");
   setCount(MODE.expr+" "+num(keep.length)+"개",Object.keys(perCat).length+"분류");
 }
 $("#exprCat").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
@@ -1285,7 +1390,8 @@ function buildGsIndex(){
               (d.points||[]).map(p=>[p.t,p.d]),(d.tags||[]).map(t=>[t[0],t[1]])),
       go:()=>{switchView("talk");$("#qTalk").value="";tkScene="all";tkWho="all";
         chipAll("#talkScene","sc");chipAll("#talkWho","w");renderTalk();
-        const card=$('#view-talk .dlg');if(card)card.scrollIntoView({block:"start"});}});
+        pgGoto("talk",d.id);   /* 찾은 대화가 있는 페이지로 */
+        const card=$("#dlg-"+d.id);if(card)card.scrollIntoView({block:"start"});}});
   });
   ALL.forEach((r,i)=>{const e=STUDYBYK[r[0]],rank=i+1;
     const sub=(e?e.hun+" · ":"")+(r[1]||"—")+" / "+(r[2]||"—")+(r[5]?" · "+r[5]:"");
