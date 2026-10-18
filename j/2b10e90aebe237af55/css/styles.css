@@ -497,7 +497,7 @@ select:focus{border-color:var(--blue)}
 .rBadge.ex{color:var(--muted)}
 .sent{font-family:var(--jp);color:var(--fg);word-break:keep-all;overflow-wrap:anywhere;
   font-size:20px;line-height:2.1}
-.sent ruby rt{font-size:.5em;color:var(--muted);font-weight:400}
+.sent ruby rt{font-size:.46em;color:var(--faint);font-weight:400}
 body.noFuri .sent ruby rt,body.noFuri .cellJP rt,body.noFuri .uCue rt,body.noFuri .line .jp rt{display:none}
 .sent em.g,.uCue em.g,.cellJP em.g,.line .jp em.g{font-style:normal;font-weight:600;
   border-bottom:1px solid color-mix(in srgb,var(--yellow) 55%,transparent);color:var(--fg)}
@@ -602,7 +602,7 @@ td:first-child{color:var(--fg-dim);font-weight:600;white-space:nowrap}
 .uT > .posW:only-child{margin-right:0}
 
 /* ── 일본어 본문 폰트 — Noto Sans JP 를 맨 앞에 두어 가나·한자 전 글리프를 단일 일본어 서체로 통일 ── */
-:root{--jp:"M PLUS 1p","Noto Sans JP","Pretendard Variable","Pretendard","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Malgun Gothic","맑은 고딕",sans-serif}
+:root{--jp:"Noto Sans JP","Pretendard Variable","Pretendard","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Malgun Gothic","맑은 고딕",sans-serif}
 
 /* ── 모바일 보정 ── */
 html.narrow .card{display:block}
@@ -671,7 +671,7 @@ html.narrow #joyoChips{grid-template-columns:repeat(2,1fr)}
 .gsRow:hover,.gsRow.on{background:var(--surface-2);color:var(--fg)}
 .gsLabel{flex:none;font-family:var(--jp);font-size:15px;font-weight:600;color:var(--fg);
   max-width:48%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.gsLabel rt{font-size:.5em;color:var(--muted)}
+.gsLabel rt{font-size:.5em;color:var(--faint)}
 .gsLabel mark{background:none;color:var(--rail,var(--blue));text-decoration:underline;
   text-decoration-color:color-mix(in srgb,var(--rail,var(--blue)) 50%,transparent);text-underline-offset:2px}
 .gsSub{flex:1;min-width:0;font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -773,7 +773,7 @@ html.narrow #toTop{bottom:80px;right:16px}
 .line .jp{display:block;font-family:var(--jp);font-size:20px;line-height:2.1;color:var(--fg);
   word-break:keep-all;overflow-wrap:anywhere}
 .line .jp.on{background:color-mix(in srgb,var(--blue) 10%,transparent);border-radius:5px}
-.line .jp ruby rt{font-size:.5em;color:var(--muted);font-weight:400}
+.line .jp ruby rt{font-size:.46em;color:var(--faint);font-weight:400}
 .line .jp .tg{color:var(--blue);font-weight:600}
 .line .ko{display:block;font-size:13.5px;line-height:1.7;color:var(--muted);margin-top:5px}
 body.noKo .line .ko{display:none}
