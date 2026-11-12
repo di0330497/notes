@@ -14,6 +14,7 @@ const files = fs.readdirSync(DATA).filter(f => /^dialogue-[0-9]+\.js$/.test(f))
 const code = files.map(f => fs.readFileSync(path.join(DATA, f), 'utf8')).join('\n')
   + '\n' + fs.readFileSync(path.join(DATA, 'dialogue-daily.js'), 'utf8')
   + '\n' + fs.readFileSync(path.join(DATA, 'daily-overrides.js'), 'utf8')
+  + '\n' + fs.readFileSync(path.join(DATA, 'scene-reskin.js'), 'utf8')
   + '\n;globalThis.D=DIALOGS;';
 vm.runInContext(code, ctx, { timeout: 30000 });
 const D = ctx.D;
