@@ -12,7 +12,7 @@
 <title>빈도순 일본어 — 한자 · 문형 · 문법 · 활용 · 품사 · 구어체</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="css/styles.css?v=20261112-daily2">
+<link rel="stylesheet" href="css/styles.css?v=20261112-daily3">
 <script>
 /* 화면 배율을 그리기 전에 먼저 건다. 여기서 안 걸면 100% 로 한 번 그렸다가 튄다. */
 /* /it 셸은 150% 브라우저 확대를 CSS zoom 대신 16px 기준 글자로 흡수했다.
@@ -117,6 +117,10 @@
             <div class="crumb"><span class="pn">01</span> 대화 <span class="pid">전 범위 100% 연동</span></div>
             <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>실전 대화</h2>
             <p class="deft" id="talkDeft">모든 학습 항목이 실제 대화 대사와 1:1로 연결되어 있습니다. 아래 <b>출처</b> 칩으로 어느 사전에서 온 대화인지 골라 볼 수 있습니다. 대화를 반복해서 입에 붙이면 모든 사전·한자 카드의 예문이 함께 외워집니다.</p>
+            <details class="covBox" id="covBox">
+              <summary>커버리지 — 대화가 어디까지 덮는가</summary>
+              <div id="covBody"></div>
+            </details>
           </header>
 
           <div class="toolbar" id="tbTalk">
@@ -432,11 +436,13 @@
 <script src="data/dialogue-29.js?v=20261018-o"></script>
 <script src="data/dialogue-30.js?v=20261018-o"></script>
 <script src="data/dialogue-31.js?v=20261018-o"></script>
+<script src="data/dialogue-32.js?v=20261112-daily3"></script>
 <script src="data/dialogue-practice.js?v=20261018-o"></script>
-<script src="data/dialogue-daily.js?v=20261112-daily2"></script>
-<script src="data/daily-overrides.js?v=20261112-daily2"></script>
-<script src="data/tracks.js?v=20261112-daily2"></script>
-<script src="data/targets-auto.js?v=20261112-daily2"></script>
+<script src="data/dialogue-daily.js?v=20261112-daily3"></script>
+<script src="data/daily-overrides.js?v=20261112-daily3"></script>
+<script src="data/tracks.js?v=20261112-daily3"></script>
+<script src="data/targets-auto.js?v=20261112-daily3"></script>
+<script src="data/coverage-patch.js?v=20261112-daily3"></script>
 <script src="data/colloquial.js?v=20261018-o"></script>
 <script src="data/colloquial-2.js?v=20261018-o"></script>
 <script src="data/dialect.js?v=20261018-o"></script>
@@ -455,7 +461,7 @@
 <script src="data/grammar.js?v=20261018-o"></script>
 <script src="data/expressions.js?v=20261018-o"></script>
 <script src="data/conjugation.js?v=20261018-o"></script>
-<script src="js/app.js?v=20261112-daily2"></script>
-<script src="js/ui.js?v=20261112-daily2"></script>
+<script src="js/app.js?v=20261112-daily3"></script>
+<script src="js/ui.js?v=20261112-daily3"></script>
 </body>
 </html>

@@ -814,6 +814,17 @@ body.clozeOn .sent em.g:hover rt,body.clozeOn .sent em.g.peek rt{visibility:visi
 .dlgLinkBadge .dlId{font-family:var(--mono);font-size:10.5px;font-weight:600;opacity:.85}
 
 /* ── 포인트 · 태그 (.uTip / .uFoot 규격과 통일) ── */
+/* 커버리지 대시보드 */
+.covBox{margin:0 0 16px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2)}
+.covBox summary{cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.03em}
+.covBox[open] summary{margin-bottom:8px}
+.covTable{width:100%;border-collapse:collapse;font-size:12.5px}
+.covTable th,.covTable td{padding:4px 6px;border-bottom:1px solid var(--line);text-align:left}
+.covTable th{font-family:var(--mono);font-size:10px;color:var(--faint);font-weight:600}
+.covTable td:last-child,.covTable th:last-child{text-align:right;font-family:var(--mono)}
+.covOk{color:var(--primary-ink);font-weight:700}
+.covNote{margin:6px 0 0;font-size:11.5px;line-height:1.6;color:var(--muted)}
+
 /* 일상 코스에서는 쓰지 않는 축·통계·출연진을 접어 목록을 위로 올린다 */
 #talkDay,#talkWhoRow,#talkLegend{display:none}
 

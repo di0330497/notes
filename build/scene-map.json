@@ -2871,6 +2871,24 @@
   "track": "life"
  },
  {
+  "id": "d374",
+  "title": "축제 준비 막판 — 예산과 일정",
+  "scene": "문법 보강",
+  "place": "도쿄 · 대학 동아리방",
+  "lv": "1",
+  "lines": 10,
+  "track": "coverage"
+ },
+ {
+  "id": "d375",
+  "title": "축제 마감 후 — 감정과 평가",
+  "scene": "문법 보강",
+  "place": "도쿄 · 대학 동아리방",
+  "lv": "1",
+  "lines": 8,
+  "track": "coverage"
+ },
+ {
   "id": "d368",
   "title": "SNS DM — 주말 카페 약속",
   "scene": "친구·SNS",

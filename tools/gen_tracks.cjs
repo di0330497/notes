@@ -31,6 +31,7 @@ function classify(d) {
   if (OVERRIDE[d.id]) return OVERRIDE[d.id];
   const s = d.scene || '', t = d.title || '';
   if (/(친구|연애|데이트|SNS|メッセージ|メ신저|단톡|동아리|스포츠)/.test(s) || /(친구|연애|데이트|SNS|메신저|단톡|동아리)/.test(t)) return 'peer';
+  if (s === '문법 보강') return 'coverage';
   if (s === '직장·사무실') {
     if (COVERAGE.test(t)) return 'coverage';
     if (WORK.test(t)) return 'work';

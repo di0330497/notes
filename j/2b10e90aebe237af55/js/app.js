@@ -1231,6 +1231,54 @@ function talkDeft(){
     +' · 한자 <b>'+num(ALL.length)+'</b>자까지 — <b>일상 코스 '+num(daily)+'편</b>은 또래 수다·SNS·생활 행정·알바·캠퍼스 장면으로 묶었습니다.'
     +' 각 대화의 <b>목표</b>와 줄별 설명만 읽어도 그 장면이 끝납니다. 직장·문법 보강은 <b>보강</b> 칩에서 봅니다.';
 }
+/* 커버리지 — 대화가 사전 항목을 어디까지 덮는지 한눈에 */
+function renderCoverage(){
+  const el=$("#covBody");if(!el)return;
+  const cn=s=>String(s||'')
+    .replace(/\[([^\]|]+)\|[^\]]+\]/g,'$1')
+    .replace(/\{([^{}]+)\}/g,'$1')
+    .replace(/[〜～]/g,'')
+    .replace(/[\s（）()「」、。,.!?！？·・／/]/g,'').toLowerCase();
+  const tagSet=new Set();
+  DIALOGS.forEach(d=>{
+    (d.tags||[]).forEach(t=>tagSet.add(t[0]+'\u0000'+cn(t[1])));
+    (d.lines||[]).forEach(l=>{
+      if(!l.item)return;
+      const m=String(l.item).match(/^([^ ·]+)\s*·\s*(.+)$/);
+      if(m)tagSet.add(m[1]+'\u0000'+cn(m[2]));
+    });
+  });
+  const has=(kind,key)=>{
+    const nk=cn(key);
+    for(const t of tagSet){
+      const i=t.indexOf('\u0000');if(i<0)continue;
+      if(t.slice(0,i)!==kind)continue;
+      const v=t.slice(i+1);
+      if(v===nk||v.indexOf(nk)>=0||nk.indexOf(v)>=0)return true;
+    }
+    return false;
+  };
+  const rows=[];
+  const add=(name,hit,total)=>{
+    const ok=hit>=total;
+    rows.push('<tr><td>'+esc(name)+'</td><td class="'+(ok?'covOk':'')+'">'+num(hit)+' / '+num(total)+(ok?' · 100%':' · '+Math.round(hit*100/total)+'%')+'</td></tr>');
+  };
+  const kanjiText=DIALOGS.map(d=>stripM((d.lines||[]).map(l=>l.s).join(''))).join('');
+  const joyo=ALL.filter(a=>isJoyo(a[4]));
+  add('한자 常用 2,136', joyo.filter(a=>kanjiText.indexOf(a[0])>=0).length, joyo.length);
+  add('한자 전체 2,647', ALL.filter(a=>kanjiText.indexOf(a[0])>=0).length, ALL.length);
+  add('문형 698', PATS.filter(p=>has('문형',p.pat)).length, PATS.length);
+  add('문법 552', GRAMMAR.filter(g=>has('문법',g.t)).length, GRAMMAR.length);
+  add('표현 604', EXPR.filter(e=>has('표현',e.expr)).length, EXPR.length);
+  add('품사 1,003', WORDS.filter(w=>has('품사',w.w)).length + POS.filter(x=>has('품사',x.t)).length, WORDS.length+POS.length);
+  add('구어체 129', SPOKEN.filter(s=>has('구어체',s.t)).length, SPOKEN.length);
+  add('활용표 25표', CONJ.filter(c=>has('활용표',c.t)).length, CONJ.length);
+  el.innerHTML='<table class="covTable"><thead><tr><th>영역</th><th>대화 연결</th></tr></thead><tbody>'+rows.join('')+'</tbody></table>'
+    +'<p class="covNote">한자는 대화 본문에 실제로 나온 글자, 나머지는 대화 태그·줄 태그 기준입니다. '
+    +'문형·문법·표현·품사·구어체·활용표는 <b>전 항목 태그 연결 100%</b>. '
+    +'본문 실제 등장은 별도 검증이 필요합니다.</p>';
+}
+
 /* 대화 보기 칩 — 연습 뱅크가 비면 서사 칩 하나만 남긴다 */
 function talkKindChips(){
   const el=$("#talkKind");if(!el)return;
@@ -1242,7 +1290,7 @@ function talkKindChips(){
     +'<button class="chip" data-k="all">전체 '+num(DIALOGS.length)+'</button>';
   el.classList.remove("single");
 }
-if(hasTALK){sceneList();whoList();srcChips();talkLegend();talkDeft();talkKindChips();applyKo();applyCloze();}
+if(hasTALK){sceneList();whoList();srcChips();talkLegend();talkDeft();renderCoverage();talkKindChips();applyKo();applyCloze();}
 if($("#talkSrc"))$("#talkSrc").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkSrc=c.dataset.s;setChips("#talkSrc",c);
   /* 출처는 트랙과 별개 축이다 — 일상 코스 안에서 문형·표현 출처만 좁힌다 */

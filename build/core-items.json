@@ -2961,6 +2961,15 @@
   "score": 36
  },
  {
+  "kind": "문형",
+  "key": "～まで（극단）",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N1",
+  "lv": 1,
+  "score": 36
+ },
+ {
   "kind": "문법",
   "key": "～かけの／～かけだ",
   "exposures": 2,
@@ -6257,15 +6266,6 @@
  {
   "kind": "문형",
   "key": "～を",
-  "exposures": 1,
-  "lines": 1,
-  "level": "N3",
-  "lv": 3,
-  "score": 26
- },
- {
-  "kind": "문형",
-  "key": "何（なに／なん）",
   "exposures": 1,
   "lines": 1,
   "level": "N3",
