@@ -1,0 +1,6572 @@
+[
+ {
+  "kind": "문형",
+  "key": "～てもらう",
+  "exposures": 11,
+  "lines": 15,
+  "level": "N5",
+  "lv": 5,
+  "score": 172
+ },
+ {
+  "kind": "문형",
+  "key": "～ておく",
+  "exposures": 8,
+  "lines": 12,
+  "level": "N4",
+  "lv": 4,
+  "score": 132
+ },
+ {
+  "kind": "한자",
+  "key": "届",
+  "exposures": 7,
+  "lines": 7,
+  "level": "N4",
+  "lv": 4,
+  "score": 114
+ },
+ {
+  "kind": "문형",
+  "key": "～そうだ",
+  "exposures": 5,
+  "lines": 8,
+  "level": "N4",
+  "lv": 4,
+  "score": 92
+ },
+ {
+  "kind": "품사",
+  "key": "의음어 (擬音語) — 실제로 나는 소리",
+  "exposures": 5,
+  "lines": 56,
+  "level": "N3",
+  "lv": 3,
+  "score": 92
+ },
+ {
+  "kind": "문형",
+  "key": "～てある",
+  "exposures": 5,
+  "lines": 6,
+  "level": "N4",
+  "lv": 4,
+  "score": 88
+ },
+ {
+  "kind": "문형",
+  "key": "～てみる",
+  "exposures": 5,
+  "lines": 6,
+  "level": "N4",
+  "lv": 4,
+  "score": 88
+ },
+ {
+  "kind": "품사",
+  "key": "의태어 ① 사람의 동작 · 상태",
+  "exposures": 4,
+  "lines": 43,
+  "level": "N4",
+  "lv": 4,
+  "score": 84
+ },
+ {
+  "kind": "품사",
+  "key": "동사와 조사의 짝 — 한국어와 어긋나는 것",
+  "exposures": 4,
+  "lines": 41,
+  "level": "N4",
+  "lv": 4,
+  "score": 84
+ },
+ {
+  "kind": "문형",
+  "key": "～ないといけない",
+  "exposures": 4,
+  "lines": 7,
+  "level": "N4",
+  "lv": 4,
+  "score": 78
+ },
+ {
+  "kind": "구어체",
+  "key": "～てしまう → ～ちゃう / ～じゃう",
+  "exposures": 4,
+  "lines": 7,
+  "level": "N4",
+  "lv": 4,
+  "score": 78
+ },
+ {
+  "kind": "문형",
+  "key": "～たら",
+  "exposures": 4,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "품사",
+  "key": "의태어 ② 감정 · 심리",
+  "exposures": 3,
+  "lines": 31,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "품사",
+  "key": "의태어 ③ 사물 · 질감 · 상태",
+  "exposures": 3,
+  "lines": 33,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "품사",
+  "key": "진술부사 (陳述副詞) — 문말이 정해진다",
+  "exposures": 3,
+  "lines": 30,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "품사",
+  "key": "[気|き] · [手|て] · [目|め]가 붙는 관용 동사",
+  "exposures": 3,
+  "lines": 30,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "품사",
+  "key": "판단 · 평가 부사",
+  "exposures": 3,
+  "lines": 29,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "품사",
+  "key": "상태 부사 (状態副詞)",
+  "exposures": 3,
+  "lines": 27,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "품사",
+  "key": "한자어 + する 동사",
+  "exposures": 3,
+  "lines": 27,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "품사",
+  "key": "신체",
+  "exposures": 3,
+  "lines": 20,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "활용표",
+  "key": "な형용사 · 명사문 활용",
+  "exposures": 3,
+  "lines": 13,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "활용표",
+  "key": "い형용사 활용",
+  "exposures": 3,
+  "lines": 12,
+  "level": "N4",
+  "lv": 4,
+  "score": 72
+ },
+ {
+  "kind": "문형",
+  "key": "～ことになる",
+  "exposures": 4,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 68
+ },
+ {
+  "kind": "활용표",
+  "key": "날짜 · 시간 읽기의 예외",
+  "exposures": 3,
+  "lines": 8,
+  "level": "N4",
+  "lv": 4,
+  "score": 68
+ },
+ {
+  "kind": "활용표",
+  "key": "2그룹(1단) 활용 총람",
+  "exposures": 3,
+  "lines": 8,
+  "level": "N4",
+  "lv": 4,
+  "score": 68
+ },
+ {
+  "kind": "활용표",
+  "key": "て형 + 보조동사 정리",
+  "exposures": 3,
+  "lines": 10,
+  "level": "N3",
+  "lv": 3,
+  "score": 68
+ },
+ {
+  "kind": "활용표",
+  "key": "경어 대응표 — 핵심 동사",
+  "exposures": 3,
+  "lines": 22,
+  "level": "N3",
+  "lv": 3,
+  "score": 68
+ },
+ {
+  "kind": "활용표",
+  "key": "조동사 · 문말 표현의 활용 유형",
+  "exposures": 3,
+  "lines": 15,
+  "level": "N3",
+  "lv": 3,
+  "score": 68
+ },
+ {
+  "kind": "활용표",
+  "key": "시각·시간 완전표 — 1시~12시 & 1분~60분(ぷん/ふん 규칙)",
+  "exposures": 3,
+  "lines": 7,
+  "level": "N4",
+  "lv": 4,
+  "score": 66
+ },
+ {
+  "kind": "문형",
+  "key": "～はずだ",
+  "exposures": 3,
+  "lines": 6,
+  "level": "N4",
+  "lv": 4,
+  "score": 64
+ },
+ {
+  "kind": "구어체",
+  "key": "종조사 조합 순서",
+  "exposures": 3,
+  "lines": 6,
+  "level": "N4",
+  "lv": 4,
+  "score": 64
+ },
+ {
+  "kind": "구어체",
+  "key": "조사·어미를 늘여 부드럽게 하기",
+  "exposures": 3,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 64
+ },
+ {
+  "kind": "구어체",
+  "key": "～んだけど…（말문 열기·완곡한 부탁·거절）",
+  "exposures": 3,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 64
+ },
+ {
+  "kind": "활용표",
+  "key": "3그룹 する·来る 활용 총람",
+  "exposures": 3,
+  "lines": 6,
+  "level": "N4",
+  "lv": 4,
+  "score": 64
+ },
+ {
+  "kind": "활용표",
+  "key": "보통형(普通形) 총람",
+  "exposures": 3,
+  "lines": 6,
+  "level": "N4",
+  "lv": 4,
+  "score": 64
+ },
+ {
+  "kind": "문형",
+  "key": "～ばいい",
+  "exposures": 3,
+  "lines": 3,
+  "level": "N5",
+  "lv": 5,
+  "score": 62
+ },
+ {
+  "kind": "문형",
+  "key": "～つもりだ",
+  "exposures": 3,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 62
+ },
+ {
+  "kind": "문형",
+  "key": "～みたいだ",
+  "exposures": 3,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 62
+ },
+ {
+  "kind": "한자",
+  "key": "休",
+  "exposures": 3,
+  "lines": 3,
+  "level": "N5",
+  "lv": 5,
+  "score": 62
+ },
+ {
+  "kind": "한자",
+  "key": "着",
+  "exposures": 3,
+  "lines": 3,
+  "level": "N5",
+  "lv": 5,
+  "score": 62
+ },
+ {
+  "kind": "표현",
+  "key": "お願いします",
+  "exposures": 3,
+  "lines": 3,
+  "level": "N5",
+  "lv": 5,
+  "score": 62
+ },
+ {
+  "kind": "문형",
+  "key": "お～する／お～いたす",
+  "exposures": 3,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "문형",
+  "key": "～かもしれない",
+  "exposures": 3,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "문법",
+  "key": "てあげる(해 주다)",
+  "exposures": 3,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "문법",
+  "key": "てくれる(해 주다: 상대→나)",
+  "exposures": 3,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "문법",
+  "key": "てもらう(해 받다)",
+  "exposures": 3,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "구어체",
+  "key": "의뢰의 정중도 사다리",
+  "exposures": 2,
+  "lines": 13,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "구어체",
+  "key": "줄임말(略語) — 낱말이 통째로 짧아진다",
+  "exposures": 2,
+  "lines": 20,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "구어체",
+  "key": "편의점 · 계산대",
+  "exposures": 2,
+  "lines": 17,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "구어체",
+  "key": "전화 · 문자",
+  "exposures": 2,
+  "lines": 16,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "품사",
+  "key": "조수사(助数詞) 대전",
+  "exposures": 2,
+  "lines": 15,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "품사",
+  "key": "생활 속 숫자 읽기",
+  "exposures": 2,
+  "lines": 16,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "품사",
+  "key": "순서 · 횟수 · 비율",
+  "exposures": 2,
+  "lines": 16,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "품사",
+  "key": "연체사 — 명사만 꾸미고 활용하지 않는다",
+  "exposures": 2,
+  "lines": 14,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "품사",
+  "key": "접미사 — 뒤에 붙어 품사를 바꾼다",
+  "exposures": 2,
+  "lines": 16,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "품사",
+  "key": "복합조사 ① 대상 · 관점",
+  "exposures": 2,
+  "lines": 15,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "품사",
+  "key": "복합조사 ② 시점 · 범위 · 대응",
+  "exposures": 2,
+  "lines": 17,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "품사",
+  "key": "なる · する · できる — 변화와 결정의 동사",
+  "exposures": 2,
+  "lines": 15,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "품사",
+  "key": "시간 표현의 격자",
+  "exposures": 2,
+  "lines": 16,
+  "level": "N4",
+  "lv": 4,
+  "score": 60
+ },
+ {
+  "kind": "문형",
+  "key": "～たい",
+  "exposures": 3,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 58
+ },
+ {
+  "kind": "한자",
+  "key": "席",
+  "exposures": 3,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 58
+ },
+ {
+  "kind": "한자",
+  "key": "修",
+  "exposures": 3,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 58
+ },
+ {
+  "kind": "구어체",
+  "key": "～ねん / ～やねん（설명·강조: 표준어 ～んだ）",
+  "exposures": 3,
+  "lines": 5,
+  "level": "N3",
+  "lv": 3,
+  "score": 58
+ },
+ {
+  "kind": "구어체",
+  "key": "정중체 → 보통체 전환표",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N4",
+  "lv": 4,
+  "score": 58
+ },
+ {
+  "kind": "문형",
+  "key": "～しか～ない",
+  "exposures": 3,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "～ては → ～ちゃ / ～では → ～じゃ",
+  "exposures": 2,
+  "lines": 10,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "は · が 생략",
+  "exposures": 2,
+  "lines": 10,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "관서벤 종조사와 관용구",
+  "exposures": 2,
+  "lines": 12,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "관서벤 동사 활용",
+  "exposures": 2,
+  "lines": 18,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "전철 · 길 묻기",
+  "exposures": 2,
+  "lines": 17,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "아르바이트 · 직장",
+  "exposures": 2,
+  "lines": 13,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "이자카야 · 음식점",
+  "exposures": 2,
+  "lines": 12,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "문장을 통째로 줄이는 생략",
+  "exposures": 2,
+  "lines": 17,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "[神対応|かみたいおう] · ガチ · バズる（극찬·진심·SNS 확산）",
+  "exposures": 2,
+  "lines": 10,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "[陰|いん]キャ · [陽|よう]キャ · リア[充|じゅう]（성격·라이프스타일 유형）",
+  "exposures": 2,
+  "lines": 11,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "コスパ · タイパ · ワンチャン（가성비·가심비·가능성）",
+  "exposures": 2,
+  "lines": 11,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "거친 문말 — ～かよ · ～じゃねーか · ～やがる",
+  "exposures": 2,
+  "lines": 10,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "명사 → 동사화 · 형용사화",
+  "exposures": 2,
+  "lines": 10,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "구어체",
+  "key": "[差|さ]し[支|つか]えなければ · お[手数|てすう]ですが（정중한 질문·부탁 쿠션어）",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N4",
+  "lv": 4,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "だけ · しか · のみ · ばかり — 한정",
+  "exposures": 2,
+  "lines": 11,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "ば · と · たら · なら — 조건",
+  "exposures": 2,
+  "lines": 10,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "빈도 부사 (頻度副詞)",
+  "exposures": 2,
+  "lines": 16,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "사람의 성격 · 인상",
+  "exposures": 2,
+  "lines": 15,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "종조사 총람",
+  "exposures": 2,
+  "lines": 11,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "さえ · でも · まで · すら — 극단의 예",
+  "exposures": 2,
+  "lines": 10,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "が · けど · のに · ても — 역접 · 양보",
+  "exposures": 2,
+  "lines": 10,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "놀람 · 감동",
+  "exposures": 2,
+  "lines": 20,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "시간 · 시점 부사",
+  "exposures": 2,
+  "lines": 16,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "맛 · 감각 · 몸",
+  "exposures": 2,
+  "lines": 14,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "い형용사 빈출 반대말 짝",
+  "exposures": 2,
+  "lines": 14,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "수량 부사 (数量副詞)",
+  "exposures": 2,
+  "lines": 14,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "조사가 바뀌면 뜻이 바뀌는 자리",
+  "exposures": 2,
+  "lines": 19,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "큰 수 · 자릿수",
+  "exposures": 2,
+  "lines": 17,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "な형용사 빈출",
+  "exposures": 2,
+  "lines": 14,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "의태어 ④ 몸 · 통증 · 컨디션",
+  "exposures": 2,
+  "lines": 16,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "감정 형용사와 3인칭 제약",
+  "exposures": 2,
+  "lines": 14,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "가족 호칭 — 안(内)과 밖(外)",
+  "exposures": 2,
+  "lines": 19,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "형식명사 — こと · もの · の · わけ · はず · つもり · ところ",
+  "exposures": 2,
+  "lines": 14,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "품사",
+  "key": "옷 · 쇼핑 · 돈",
+  "exposures": 2,
+  "lines": 12,
+  "level": "N3",
+  "lv": 3,
+  "score": 56
+ },
+ {
+  "kind": "문법",
+  "key": "～たり～たり（심화）",
+  "exposures": 3,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "한자",
+  "key": "泊",
+  "exposures": 3,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "구어체",
+  "key": "それな · わかる（최강 공감 리액션）",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "구어체",
+  "key": "[行|い]けたら[行|い]く · また[今度|こんど]（일본식 완곡 거절의 속뜻）",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N4",
+  "lv": 4,
+  "score": 54
+ },
+ {
+  "kind": "구어체",
+  "key": "え단 장음화 — すごい → すげー",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "구어체",
+  "key": "エモい · [尊|とうと]い（감성·감동 표현）",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "구어체",
+  "key": "[お前|おまえ] · あいつ · [奴|やつ]（친한 사이 2·3인칭）",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "구어체",
+  "key": "분실물 · 전철 지연 · 긴급 트러블 대처",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N4",
+  "lv": 4,
+  "score": 54
+ },
+ {
+  "kind": "구어체",
+  "key": "〇〇すぎて[滅|めつ]（감정 폭발）",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N4",
+  "lv": 4,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "は — 화제 · 대조",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "で — 장소 · 수단 · 원인",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "も — 첨가 · 강조",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "ながら · し · たり · つつ — 동시 · 나열",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "て — 나열 · 순서 · 원인 · 수단",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "から · ので · ために — 이유",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "뜻이 겹쳐 헷갈리는 동사 짝",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "こそ · ずつ · やら · か · なり — 그 밖의 부조사",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "1그룹(5단) 빈출 동사",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "하루의 시간 · 계절 · 날씨",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N4",
+  "lv": 4,
+  "score": 54
+ },
+ {
+  "kind": "품사",
+  "key": "음식 · 식사",
+  "exposures": 2,
+  "lines": 9,
+  "level": "N3",
+  "lv": 3,
+  "score": 54
+ },
+ {
+  "kind": "구어체",
+  "key": "인칭대명사 선택표",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N4",
+  "lv": 4,
+  "score": 52
+ },
+ {
+  "kind": "구어체",
+  "key": "を · に 생략",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "구어체",
+  "key": "～はる（칸사이 특유의 친근한 존경어）",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "구어체",
+  "key": "っす체 — 반말과 경어의 중간",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "구어체",
+  "key": "평가어 — ウケる · キモい · ウザい · ダルい",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "구어체",
+  "key": "[推|お]し · [推|お]し[活|かつ] · [沼|ぬま]る（최애와 덕질）",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "구어체",
+  "key": "～くない？ — 형용사로 동의 구하기",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "구어체",
+  "key": "ギュン · メロい（ときめき 강조）",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N4",
+  "lv": 4,
+  "score": 52
+ },
+ {
+  "kind": "구어체",
+  "key": "[水|みず]はやべぇだろ · [人|ひと]の[心|こころ]とかないんか？（밈）",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N4",
+  "lv": 4,
+  "score": 52
+ },
+ {
+  "kind": "구어체",
+  "key": "アテンション・デトックス（[注目|ちゅうもく]から[離|はな]れる）",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N4",
+  "lv": 4,
+  "score": 52
+ },
+ {
+  "kind": "품사",
+  "key": "より — 비교 기준",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "품사",
+  "key": "と — 나열 · 상대 · 인용",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "품사",
+  "key": "の — 연결 · 준체 · 설명",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "품사",
+  "key": "が — 주격 · 대상",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "품사",
+  "key": "まで — 도달점 · 한도",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "품사",
+  "key": "から — 기점 · 이유",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "품사",
+  "key": "くらい · ほど · など · なんか — 정도 · 예시",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "품사",
+  "key": "나열 조사 — と · や · とか · か · に",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "품사",
+  "key": "인사 · 정형 감탄사",
+  "exposures": 2,
+  "lines": 8,
+  "level": "N3",
+  "lv": 3,
+  "score": 52
+ },
+ {
+  "kind": "구어체",
+  "key": "～ている → ～てる",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N5",
+  "lv": 5,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "～といた / ～どいた（～ておいた 과거 축약）",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N3",
+  "lv": 3,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "けど · し — 말끝을 흐려 남기기",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "っけ — 기억 확인",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "なおす · ほかす · さら · いらち（표준어와 뜻이 다른 칸사이 어휘）",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N3",
+  "lv": 3,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "～やん / ～やんか（공감·확인: 표준어 ～じゃん）",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N3",
+  "lv": 3,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "～へん / ～ひん（부정: 표준어 ～ない）",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N3",
+  "lv": 3,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "칭찬 · 감탄의 회화어",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N3",
+  "lv": 3,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "撥音化 — わからない → わかんない",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N3",
+  "lv": 3,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "ドタキャン · [既読|きどく]スルー（당일 취소와 읽씹）",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N3",
+  "lv": 3,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "KY 계열 — 머리글자 줄임말",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N3",
+  "lv": 3,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "[飯|めし]テロ · [爆買|ばくが]い（야식 사진 공격과 폭풍 쇼핑）",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N3",
+  "lv": 3,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "マウントを[取|と]る · [地雷|じらい]（은근한 우월감 과시와 금기 건드리기）",
+  "exposures": 2,
+  "lines": 7,
+  "level": "N3",
+  "lv": 3,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "우치(内) · 소토(外) — 내 편을 낮춘다",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "반말로 내려가는 시점",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "きちゃー（[来|き]た！）",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "ピキる（イライラする）",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "うま[確|かく]（うますぎ[確定|かくてい]）",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "ビジュいい（[見|み]た[目|め]がいい）",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "フレネミー（[友達|ともだち]のふりをした[敵|てき]）",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "〇〇[界隈|かいわい]（커뮤니티·장르）",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "구어체",
+  "key": "ドパガキ（ドーパミン[中毒|ちゅうどく]の[若者|わかもの]）",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N4",
+  "lv": 4,
+  "score": 50
+ },
+ {
+  "kind": "문형",
+  "key": "～ことにする",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 48
+ },
+ {
+  "kind": "문형",
+  "key": "～によると／～によれば",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 48
+ },
+ {
+  "kind": "문법",
+  "key": "あげる·さしあげる·やる",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 48
+ },
+ {
+  "kind": "한자",
+  "key": "払",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N5",
+  "lv": 5,
+  "score": 48
+ },
+ {
+  "kind": "한자",
+  "key": "棚",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N5",
+  "lv": 5,
+  "score": 48
+ },
+ {
+  "kind": "구어체",
+  "key": "～なければ → ～なきゃ / ～なくちゃ",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N3",
+  "lv": 3,
+  "score": 48
+ },
+ {
+  "kind": "구어체",
+  "key": "ら抜き言葉 — 가능형에서 ら가 빠진다",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N3",
+  "lv": 3,
+  "score": 48
+ },
+ {
+  "kind": "구어체",
+  "key": "맞장구의 리듬 — あいづち",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N3",
+  "lv": 3,
+  "score": 48
+ },
+ {
+  "kind": "구어체",
+  "key": "って — は 대신 화제를 세운다",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N3",
+  "lv": 3,
+  "score": 48
+ },
+ {
+  "kind": "구어체",
+  "key": "～かなと思って（부드러운 제안·방문 이유）",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N3",
+  "lv": 3,
+  "score": 48
+ },
+ {
+  "kind": "구어체",
+  "key": "호텔 · 료칸 체크인과 짐 보관",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N3",
+  "lv": 3,
+  "score": 48
+ },
+ {
+  "kind": "구어체",
+  "key": "강조 부사 — めっちゃ · チョー · ガチ · マジ",
+  "exposures": 2,
+  "lines": 6,
+  "level": "N3",
+  "lv": 3,
+  "score": 48
+ },
+ {
+  "kind": "구어체",
+  "key": "[冷笑|れいしょう][系|けい]（[斜|ななめ]に[構|かま]えた[態度|たいど]）",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 48
+ },
+ {
+  "kind": "구어체",
+  "key": "メンパ（メンタルパフォーマンス）",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N4",
+  "lv": 4,
+  "score": 48
+ },
+ {
+  "kind": "문형",
+  "key": "～たほうがいい",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "문형",
+  "key": "～てくれる",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "문형",
+  "key": "～すぎる",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "문형",
+  "key": "～てから",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "문형",
+  "key": "誰（だれ）／どなた",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "문형",
+  "key": "～がほしいです",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "문형",
+  "key": "～てから／～た後で",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "문형",
+  "key": "～と同じ／～と違う",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "문법",
+  "key": "존경어 공식(お~になる·れる)",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "문법",
+  "key": "존경 특수동사(いらっしゃる·召し上がる…)",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "구어체",
+  "key": "～ておく → ～とく",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "구어체",
+  "key": "～てくれない？ → ～てくんない？",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N3",
+  "lv": 3,
+  "score": 46
+ },
+ {
+  "kind": "구어체",
+  "key": "기타 회화 축약 모음",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N3",
+  "lv": 3,
+  "score": 46
+ },
+ {
+  "kind": "구어체",
+  "key": "거절 · 발뺌의 완곡어",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N3",
+  "lv": 3,
+  "score": 46
+ },
+ {
+  "kind": "구어체",
+  "key": "ヤバい · えぐい · ハンパない（긍정·부정 만능 강조）",
+  "exposures": 2,
+  "lines": 5,
+  "level": "N3",
+  "lv": 3,
+  "score": 46
+ },
+ {
+  "kind": "표현",
+  "key": "お大事に",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "표현",
+  "key": "承知しました",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "표현",
+  "key": "お邪魔します",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "표현",
+  "key": "お疲れ様です",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N4",
+  "lv": 4,
+  "score": 46
+ },
+ {
+  "kind": "문형",
+  "key": "～うちに",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "문형",
+  "key": "～ように",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "문형",
+  "key": "～かどうか",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "문형",
+  "key": "～と言っていた",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "문형",
+  "key": "～と聞いた",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "문형",
+  "key": "～ちゃう／～じゃう",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "문형",
+  "key": "～ということだ",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "문법",
+  "key": "자동사와 타동사",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "문법",
+  "key": "と 조건",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "문법",
+  "key": "受身 (수동형)",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "문법",
+  "key": "推量・様態・伝聞 「そうだ・ようだ・らしい・かもしれない」 (추측·양태·전문 구별)",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "문법",
+  "key": "受身・使役で視点を変える (수동·사역·관점)",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "문법",
+  "key": "～ば～ほど（심화）",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "한자",
+  "key": "割",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "한자",
+  "key": "歳",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "한자",
+  "key": "診",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "한자",
+  "key": "換",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "한자",
+  "key": "荷",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "한자",
+  "key": "誕",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "한자",
+  "key": "押",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "한자",
+  "key": "証",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "한자",
+  "key": "染",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "구어체",
+  "key": "なんか — 만능 완충재",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "구어체",
+  "key": "～ても → ～たって / ～でも → ～だって",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "구어체",
+  "key": "～みたいな / ～的な（단정 회피·예시·비유）",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "구어체",
+  "key": "ヤバい — 뜻이 뒤집힌 대표어",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "구어체",
+  "key": "わ — 여성어와 관서 방언 두 갈래",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N3",
+  "lv": 3,
+  "score": 44
+ },
+ {
+  "kind": "표현",
+  "key": "申し訳ございません",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "표현",
+  "key": "ぴったり",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 44
+ },
+ {
+  "kind": "문형",
+  "key": "～てたまらない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문형",
+  "key": "～だす",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문형",
+  "key": "～わけではない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문형",
+  "key": "～がわかります",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문형",
+  "key": "～が上手です／下手です",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문형",
+  "key": "～ところに／ところへ",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문형",
+  "key": "～に決まっている",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "ます형(정중형)",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "동사 그룹 구별법",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "てある (상태)",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "てしまう (완료·유감)",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "ておく (준비)",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "なら 조건",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "い형용사 개요",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "な형용사(형용동사) 개요",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "疑問文・否定疑問 (의문·부정 의문)",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "～としたら／～とすれば",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "～に決まっている",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "～によると／～によれば",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "～おそれがある",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "～とみえる／～と見られる",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "～ということだ",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "～ところに／ところへ",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "～ずにはいられない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "～のではないだろうか",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "～し（심화）／それに／その上",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "せる・させる (사역)",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "使役 (사역형)",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문법",
+  "key": "한국인이 자주 틀리는 발음 5가지",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "구어체",
+  "key": "の — 설명 요구·부드러운 단정",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "구어체",
+  "key": "えーと · あのー — 시간 벌기",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "구어체",
+  "key": "のだ → んだ / のです → んです",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "구어체",
+  "key": "～という → ～って",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "구어체",
+  "key": "とか · なんか — 완곡하게 흐리기",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "구어체",
+  "key": "조사의 구어 변형",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "구어체",
+  "key": "w · [草|くさ]（온라인 웃음）",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "구어체",
+  "key": "[念|ねん]のため · ちなみに · ぶっちゃけ（확인·덧붙임·솔직 토크）",
+  "exposures": 1,
+  "lines": 7,
+  "level": "N4",
+  "lv": 4,
+  "score": 42
+ },
+ {
+  "kind": "표현",
+  "key": "あっという間に",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "표현",
+  "key": "おっしゃる通りです",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N3",
+  "lv": 3,
+  "score": 42
+ },
+ {
+  "kind": "문형",
+  "key": "～と",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～てしまう",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～てくる",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～なければならない",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～おかげで",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～くらい",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～っぽい",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～が好きです／嫌いです",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～予定だ",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "あげる／さしあげる",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～のを見る／聞く",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～とみえる／～と見られる",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～としたら／～とすれば",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "すなわち／つまり",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "조수사 (助数詞) 개요",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "ている (진행·결과·반복)",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "始める・続ける・終わる (복합동사)",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "가능형 (~할 수 있다)",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "そうだ (양태·전문)",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "なさい (지시)",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "い형용사 て형·연결",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "い형용사 과거·부정",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "～（か）と思うと／～（か）と思ったら",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "～か～ないかのうちに",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "ちっとも／少しも～ない",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "～も～ば、～も",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "～反面／～半面",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N2",
+  "lv": 2,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "～に見える／～と思われる",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N2",
+  "lv": 2,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "～ようとしている",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "～から見ると／～から言うと／～からすると",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N2",
+  "lv": 2,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "～にしたら／～にすれば／～にしてみれば",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N2",
+  "lv": 2,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "ず/ぬ 부정 (문어)",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "식당·술집 주문 실전 숫자 — 인원(人)·개수(つ)·잔(杯)·병(本)·접시(皿)",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "～っけ",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문법",
+  "key": "～ほかない／～よりほかない",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N2",
+  "lv": 2,
+  "score": 40
+ },
+ {
+  "kind": "한자",
+  "key": "眠",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "한자",
+  "key": "束",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "한자",
+  "key": "余",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "한자",
+  "key": "偶",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "한자",
+  "key": "窓",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "표현",
+  "key": "お得",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "표현",
+  "key": "ちょうど",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 40
+ },
+ {
+  "kind": "문형",
+  "key": "～反面／～半面",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문형",
+  "key": "～にわたって／～にわたる",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문형",
+  "key": "～をめぐって／～をめぐり",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문형",
+  "key": "～から見ると／～から言うと／～からすると",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문형",
+  "key": "～にしたら／～にすれば／～にしてみれば",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～としたら／～とすると／～とすれば（심화）",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～をめぐって／～をめぐり",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～どころではない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～にわたって／～にわたる",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～模様だ",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～に限る",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～てしかたがない／～てしょうがない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～ずにはすまない／～ないではすまない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～やら～やら",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～極まる／～極まりない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문법",
+  "key": "～次第だ／～次第で",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "표현",
+  "key": "お世話になりました",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "표현",
+  "key": "役に立つ",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "표현",
+  "key": "お言葉に甘えて",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "표현",
+  "key": "よいお年を",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N2",
+  "lv": 2,
+  "score": 38
+ },
+ {
+  "kind": "문형",
+  "key": "～させる",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문형",
+  "key": "～かけの／～かけだ",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문형",
+  "key": "～としたら／～とすると／～とすれば（심화）",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문형",
+  "key": "～に見える／～と思われる",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문형",
+  "key": "～のもとで／～のもとに",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문형",
+  "key": "～ぬく",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～かけの／～かけだ",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～うちに（심화）／～ないうちに",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～折（に）",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～ば～で",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～なおす",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "まるで～ようだ",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "すなわち／つまり",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～通す",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～ことだろう／～ことか（심화）",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～のもとで／～のもとに",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～ともなく／～ともなしに",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～たる～（단정 문어）",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N1",
+  "lv": 1,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～べからず／～べからざる",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N1",
+  "lv": 1,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～に（は）無理がある",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N1",
+  "lv": 1,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "ひとり～のみならず",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N1",
+  "lv": 1,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "必ずしも～ない",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N1",
+  "lv": 1,
+  "score": 36
+ },
+ {
+  "kind": "문법",
+  "key": "～てこそ",
+  "exposures": 2,
+  "lines": 4,
+  "level": "N1",
+  "lv": 1,
+  "score": 36
+ },
+ {
+  "kind": "한자",
+  "key": "祝",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "표현",
+  "key": "申し訳ありません",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N2",
+  "lv": 2,
+  "score": 36
+ },
+ {
+  "kind": "문형",
+  "key": "～てもいいですか",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～んですが",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～ところだった",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～ている",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～と思う",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～次第だ／～次第で",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～（よ）うと～まいと／～（よ）うが～まいが",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～いかんにかかわらず／～いかんによらず",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～たら最後／～たが最後",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～ともなく／～ともなしに",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～を顧みず／～も顧みず",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～ものと思われる",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～べからず／～べからざる",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～はというと／～はと言えば",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～こととする／～ものである",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～までに",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～（よ）うと～まいと／～（よ）うが～まいが",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～に（は）当たらない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～を禁じ得ない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～たら最後／～たが最後",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～にしたところで／～としたところで",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～を顧みず／～も顧みず",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～という＋같은 명사",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～といったらない／～といったらありはしない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～に～ない（～するにできない）",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～ものと思われる",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～こととする／～ものである",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "到底～ない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "一概に～ない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "いまだ（に）～ない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～とみるや",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "たかが～くらいで",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "どうやら～ようだ",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～はというと／～はと言えば",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "一向に～ない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "もはや～ない",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "문법",
+  "key": "～う（意向形）＋ではないか",
+  "exposures": 2,
+  "lines": 3,
+  "level": "N1",
+  "lv": 1,
+  "score": 34
+ },
+ {
+  "kind": "한자",
+  "key": "注",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "한자",
+  "key": "働",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "한자",
+  "key": "乗",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "한자",
+  "key": "駅",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "한자",
+  "key": "冊",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "한자",
+  "key": "返",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "한자",
+  "key": "鯖",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "한자",
+  "key": "葱",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "표현",
+  "key": "ごちそうさまでした",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N5",
+  "lv": 5,
+  "score": 34
+ },
+ {
+  "kind": "문형",
+  "key": "～ている間（に）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～たところ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～ているところ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～るところ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～ことにしている",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～ようにする",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～がする",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～に比べて",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～のほうが～より",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～にくい",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～たまま",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～とのことだ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "お＋ます형＋ください（정중 의뢰）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～に限る",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～にしたところで／～としたところで",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～に堪えず／～きらいがある",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～びる／～ぶる",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "겸양 특수동사(参る·拝見する…)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "くれる·くださる",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "もらう·いただく",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "お·ご 접두어",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "정중어(です·ます·ございます)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "경어 사용 장면과 주의",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～つ～つ",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～に堪える／～に堪えない",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～を余儀なくさせる",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～いかんにかかわらず／～いかんによらず",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～に堪えず／～きらいがある",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～ただ～のみ",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～ばそれまでだ",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～てならない",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～に（は）及ばない",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～まじ／～まい（문어 정리）",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～びる／～ぶる",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "まさか～とは",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "いかにも～らしい",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "なまじ～ため",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "ろくに～ない",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "さぞ～だろう",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "あながち～ない",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "満更～でもない",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～てのこと",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "よもや～まい",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "문법",
+  "key": "～ばそれまでだ（복습）／～までのことだ（복습 정리）",
+  "exposures": 2,
+  "lines": 2,
+  "level": "N1",
+  "lv": 1,
+  "score": 32
+ },
+ {
+  "kind": "표현",
+  "key": "～てる",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N4",
+  "lv": 4,
+  "score": 32
+ },
+ {
+  "kind": "문형",
+  "key": "～ことができる",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～せいで",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～らしい",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～ないように",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～際に",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～ついでに",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～前に",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～なくなる",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～たばかり",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "조수사（～人・～つ・～枚・～本・～冊・～台・～匹・～回 등）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "もう／まだ",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～ために（목적）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～ませんでした",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～とき",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～し、～し",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～という＋명사",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～たことがあります",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "い형용사～くなかったです",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "あまり～ません",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～ほうがいいです",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～までに",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "보통형（사전형・ない형・た형・なかった형）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "특별 겸양어（参る・申す・いただく・拝見する・伺う・おる 등）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～はじめる",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～つづける",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～にとって",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～でございます",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～中（じゅう／ちゅう）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～として",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～やすい",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～方（かた）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～おわる",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～でも（예시·권유）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～について",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "특별 존경어（いらっしゃる・おっしゃる・召し上がる・ご覧になる・なさる 등）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～ほど（정도）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～とか～とか",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～かたをする（～という形）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～って（구어 인용·화제）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～に対して",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "お／ご＋명사（미화어）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～など／～なんか",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～という（のは）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～がほしい／～てほしい",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문법",
+  "key": "条件形の比較",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "留",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "学",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "薬",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "痛",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "蒜",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "味",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "番",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "交",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "代",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "邪魔",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "迷",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "送",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "重",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "杯",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "乾",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "空",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "確",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "暇",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "迎",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "港",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "残",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "風",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "邪",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "刷",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "枚",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "階",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "限",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "縁",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "回",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "傘",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "濡",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "折",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "鏡",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "開",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "消",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "苺",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "渡",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "怠",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "欄",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "預",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "検",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "戻",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "険",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "誌",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "袋",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "列",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "映",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "券",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "連",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "写",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "配",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "転",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "入",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "履",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "単",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "한자",
+  "key": "断",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "표현",
+  "key": "いただきます",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "표현",
+  "key": "お時間よろしいでしょうか",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "표현",
+  "key": "お先に失礼します",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "표현",
+  "key": "都合",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "표현",
+  "key": "お疲れ様",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "표현",
+  "key": "わかんない",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "표현",
+  "key": "～ちゃった",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "표현",
+  "key": "～てた",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "표현",
+  "key": "～とく",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "표현",
+  "key": "～なくちゃ",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N4",
+  "lv": 4,
+  "score": 30
+ },
+ {
+  "kind": "문형",
+  "key": "～にかけて",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～に関して",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ていただけませんか",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～は～です",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～じゃありません／ではありません",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～でした",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ません",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ましょうか",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ましょう",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ませんか",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～じゃありませんでした",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～や～（など）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～て、～（동작 나열）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "위치명사（上・下・中・前・後ろ・隣・間 등）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～てください",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～だけ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～から～まで",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ことができます",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～てはいけません",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ています（진행）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～（よ）うと思う",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "수동형（～れる／～られる）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "사역수동형（～させられる）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ようだ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～でしょう／～だろう",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～なくてもいい",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～たとたん（に）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～にしては",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～わりに（は）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ばかりに",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～おそれがある",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～わけだ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～さえ～ば",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ばよかった",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～のことだから",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～に比べ（て）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～をもとに（して）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～に基づいて",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～向け",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～向き",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～代わりに",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～がち",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～に応じて",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ずに",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～にしたがって",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～につれて",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～に加えて",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ばかりでなく～も",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～はもちろん",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～ということは",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "まるで～ようだ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "せっかく",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "わざわざ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "思わず",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～たて",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "は (주제)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "が (주격)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "は와 が의 차이",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "と (함께·인용·나열)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "～しかない",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "だけ (한정)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "くらい／ぐらい (정도)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "접속조사 て・ので・のに",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "접속조사 ながら・たり",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "종조사 ね・よ・か・な",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "동사 3그룹 분류",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "てみる・ておく 등 보조동사 정리",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "はずだ・わけだ (당연·귀결)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "ない형 (부정)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "らしい (추측·전문)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "ようだ・みたいだ (추측·비유)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "형용사 비교(より·ほう)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "否定表現の整理 「ない・ず・まい」 (부정 정리)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "強調・倒置・省略 (강조·도치·생략)",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "～せいで／～せいか",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "～ため（に）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "～によって（원인）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "～のに（심화 용법）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "～くせに",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "～一方（で）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문법",
+  "key": "～最中（に）",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "お手数おかけします",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "失礼いたします",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "気が利く",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "わかる",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "うん",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "そうそう",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "そっか",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "なるほどね",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "確かに",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "それな",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "ほんとだ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "あーね",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "だろうね",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "言えてる",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "その通り",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "うそ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "あるある",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "おはようございます",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "はじめまして",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "いらっしゃいませ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "ご無沙汰しております",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "ただいま満席となっております",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "ご了承ください",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "こちらでよろしいでしょうか",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "かしこまりました",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "お箸はおつけしますか",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "お待たせしてすみません",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "お待たせしました",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "ありがとうございます",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "ごゆっくりどうぞ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "お待ちどおさま",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "気にしないでください",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "助かります",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "悪いけど",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "すみません",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "お支払いは現金でよろしいですか",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "レシートはご入用ですか",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "またお越しくださいませ",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "お時間よろしいですか",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "確認いたします",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "ちょっと難しいですね",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "표현",
+  "key": "心配いりません",
+  "exposures": 1,
+  "lines": 2,
+  "level": "N3",
+  "lv": 3,
+  "score": 28
+ },
+ {
+  "kind": "문형",
+  "key": "～気味",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～ことになっている",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～のに",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～ため",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～になる",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～場合",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～ばかり",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～かねる",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～ない",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～に行く",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～ば",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～次第",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～っけ",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～てくれてありがとう",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "これ・それ・あれ・どれ",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～から（출발점）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～の",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～まで",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "どんな＋명사",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "この・その・あの・どの＋명사",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～ます",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～ました",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "～を",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "문형",
+  "key": "何（なに／なん）",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "箱",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "座",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "印",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "餅",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "直",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "面",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "接",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "登",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "蕎",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "葉",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "約",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "便",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "納",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "暮",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "吹",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "雪",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "任",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "伺",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "同行",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "震",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "率",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "咲",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "涼",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "幕",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "詞",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "繰",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "負",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "担",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "件",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "粥",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "既",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "涙",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ },
+ {
+  "kind": "한자",
+  "key": "皿",
+  "exposures": 1,
+  "lines": 1,
+  "level": "N3",
+  "lv": 3,
+  "score": 26
+ }
+]

@@ -827,7 +827,7 @@ if($("#qConj"))$("#qConj").addEventListener("input",()=>renderConj());
 /* 이름 → 첫 글자(두 글자까지). 아바타용 */
 function initial(n){return n?String(n).slice(0,1):"?";}
 
-let tkScene="all", tkWho="all", tkLv="all", tkSrc="all", tkKo=true, tkKind="story", tkDay="all", tkCloze=false;
+let tkScene="all", tkWho="all", tkLv="all", tkSrc="all", tkKo=true, tkKind="daily", tkDay="all", tkCloze=false, tkView="list";
 /* 각 대화에 요일 루틴(Day 1~7) 배정 — 서사 대화(d01~d80)와 예문 뱅크(p001~) 각각 7일 균등 분배 */
 const DLG_DAY={};
 if(hasTALK){
@@ -888,14 +888,16 @@ function whoList(){
 function sceneList(){
   const sel=$("#talkScene");
   if(!sel)return;
-  const seen=[];DIALOGS.forEach(d=>{if(d.scene&&seen.indexOf(d.scene)<0)seen.push(d.scene);});
+  const tr=id=>(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[id])||"life";
+  const ok=d=>tkKind==="all"||(tkKind==="daily"?(tr(d.id)!=="work"&&tr(d.id)!=="coverage"):(tr(d.id)==="work"||tr(d.id)==="coverage"));
+  const seen=[];DIALOGS.forEach(d=>{if(ok(d)&&d.scene&&seen.indexOf(d.scene)<0)seen.push(d.scene);});
   if(sel.tagName==="SELECT"){
     sel.innerHTML='<option value="all">장면: 전체 ('+seen.length+'장면)</option>'
-      +seen.map(s=>{const n=DIALOGS.filter(d=>d.scene===s).length;
+      +seen.map(s=>{const n=DIALOGS.filter(d=>ok(d)&&d.scene===s).length;
         return '<option value="'+esc(s)+'">'+esc(s)+' ('+n+')</option>';}).join("");
   }else{
     let h='<button class="chip on" data-sc="all">전체 장면</button>';
-    seen.forEach(s=>{const n=DIALOGS.filter(d=>d.scene===s).length;
+    seen.forEach(s=>{const n=DIALOGS.filter(d=>ok(d)&&d.scene===s).length;
       h+='<button class="chip" data-sc="'+esc(s)+'">'+esc(s)+' <span class="chipN">'+n+'</span></button>';});
     sel.innerHTML=h;
   }
@@ -908,8 +910,10 @@ function talkMatch(d){
   if(tkSrc!=="all"){const s=DLG_SRC.get(d.id);if(!s||!s.has(tkSrc))return false;}
   if(tkScene!=="all"&&d.scene!==tkScene)return false;
   if(tkWho!=="all"&&(d.chars||[]).indexOf(tkWho)<0)return false;
-  if(tkKind==="story"&&isPractice(d))return false;
-  if(tkKind==="prac"&&!isPractice(d))return false;
+  /* 일상 코스 = 또래·생활·캠퍼스. 직장·문법 보강은 '보강' 칩에서만 본다. */
+  const tr=(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[d.id])||"life";
+  if(tkKind==="daily"&&(tr==="work"||tr==="coverage"))return false;
+  if(tkKind==="extra"&&tr!=="work"&&tr!=="coverage")return false;
   if(tkDay!=="all"&&DLG_DAY[d.id]!==tkDay)return false;
   return true;
 }
@@ -917,12 +921,24 @@ function talkMatch(d){
 function lineHTML(d,l,i){
   const c=CHARBY[l.who]||{name:l.who,color:"#667085"};
   const itemBadge=l.item?'<span class="lineItemTag">'+fmt(l.item)+'</span>':'';
+  const tg=(d.targets||[]).filter(t=>t.line===i)[0];
   return '<div class="line" id="dlg-'+esc(d.id)+'-'+i+'" data-l="'+i+'" data-who="'+esc(l.who)+'">'
     +'<span class="av" style="background:'+c.color+'">'+esc(initial(c.name))+'</span>'
     +'<span class="lb"><span class="whoName" style="color:'+c.color+'">'+esc(c.name)+'</span>'+itemBadge
     +'<span class="jp">'+fmt(l.s)+'</span>'
+    +(tg?'<span class="tgNote">'+fmt(tg.note)+'</span>':"")
     +(l.ko?'<span class="ko">'+esc(l.ko)+'</span>':"")+'</span>'
     +'</div>';
+}
+/* 이 대화에서 배우는 것 — 태그가 아니라 '목표'로 보여 준다 */
+function targetsHTML(d){
+  const ts=d.targets||[];
+  if(!ts.length)return "";
+  const auto=ts.every(t=>t.auto);
+  return '<div class="dlgTargets"><span class="uLabel">이 대화에서 배우는 것 '+ts.length+(auto?' · 자동 요약':'')+'</span>'
+    +'<div class="tgChips">'
+    +ts.map(t=>'<span class="tgChip"><b>'+esc(t.kind)+'</b> '+fmt(t.key)+'</span>').join("")
+    +'</div></div>';
 }
 function pointsHTML(p){
   if(!p||!p.length)return "";
@@ -945,6 +961,18 @@ function tagsHTML(t){
           +'<i>'+esc(kind)+'</i>'+tagText(val)+'</span>';
       }).join(" ")+'</div>';
 }
+/* 목록 한 줄 — 카드 대신 제목·목표·길이만. 누르면 읽기 화면이 열린다 */
+function dlgRowHTML(d){
+  const n=(d.lines||[]).length;
+  const ts=((d.targets&&d.targets.length)?d.targets:(d.tags||[]).map(t=>({kind:t[0],key:t[1]}))).slice(0,3);
+  return '<button type="button" class="dlgRow" data-open-dlg="'+esc(d.id)+'">'
+    +'<span class="lvdot n'+esc(d.lv)+'">N'+esc(d.lv)+'</span>'
+    +'<span class="rowMain"><span class="rowT">'+fmt(d.title)+'</span>'
+    +'<span class="rowS">'+esc(d.scene||"")+' · '+esc(d.place||"")+'</span></span>'
+    +'<span class="rowTags">'+ts.map(t=>'<span class="rowTag">'+esc(t.kind)+' '+fmt(t.key)+'</span>').join("")+'</span>'
+    +'<span class="rowN">'+n+'줄</span>'
+    +'<span class="rowGo">읽기 →</span></button>';
+}
 function renderTalk(){
   const view=$("#view-talk");
   if(!view)return;
@@ -956,6 +984,7 @@ function renderTalk(){
     return hay(d.title,d.scene,d.place,(d.lines||[]).map(l=>[l.s,l.ko]),
                (d.points||[]).map(p=>[p.t,p.d]),(d.tags||[]).map(t=>[t[0],t[1]])).includes(q);
   });
+  dlgNav=keep.map(d=>d.id);
   let lines=0;
   keep.forEach(d=>{(d.lines||[]).forEach(()=>lines++);});
   /* 장면별로 모아서 보여 준다 — 같은 장소의 대화가 붙어 있어야 "현장"이 된다 */
@@ -965,6 +994,7 @@ function renderTalk(){
     const ds=keep.filter(d=>d.scene===sc);
     blk.push({t:"h",lv:0,html:secHd(String(order.indexOf(sc)+1).padStart(2,"0"),sc,ds.length+"대화 · "+ds.reduce((a,d)=>a+(d.lines||[]).length,0)+"줄")});
     ds.forEach(d=>{
+      if(tkView==="list"){ blk.push({t:"c",k:d.id,html:dlgRowHTML(d)}); return; }
       const n=(d.lines||[]).length;
       const dayLabel=DLG_DAY[d.id]?'Day '+DLG_DAY[d.id]:'';
       blk.push({t:"c",k:d.id,html:'<div class="uCard dlg'+(isPractice(d)?" dlgP":"")+'" id="dlg-'+esc(d.id)+'">'
@@ -972,6 +1002,7 @@ function renderTalk(){
         +'<span class="dlgTitle">'+fmt(d.title)+'</span>'
         +'<span class="dlgMeta">'+esc(d.place||"")+' · '+n+'줄 '
         +'</span></div>'
+        +targetsHTML(d)
         +'<div class="dlgLines">'+d.lines.map((l,j)=>lineHTML(d,l,j)).join("")+'</div>'
         +pointsHTML(d.points)
         +tagsHTML(d.tags)
@@ -979,11 +1010,60 @@ function renderTalk(){
     });
   });
   PGFN.talk=()=>renderTalk();
-  pgFlush("talk",pgSig(tkScene,tkWho,tkLv,tkSrc,tkDay,tkKind,q),blk,"#view-talk","talk");
+  PGPER.talk=tkView==="list"?24:3;
+  pgFlush("talk",pgSig(tkScene,tkWho,tkLv,tkSrc,tkDay,tkKind,q,tkView),blk,"#view-talk","talk");
   setCount("대화 "+num(keep.length)+"편",num(lines)+"줄");
   bindTalk();
   applyKo();
 }
+
+/* ── 읽기 화면 — 한 편만 크게, 12줄씩 끊어서 ── */
+let dlgNav=[], dlgCur=null, dlgPart=0;
+function openDlg(id){
+  const d=DIALOGS.filter(x=>x.id===id)[0]; if(!d)return;
+  dlgCur=d; dlgPart=0;
+  const el=$("#dlgReader"); if(!el)return;
+  el.classList.add("on"); el.setAttribute("aria-hidden","false");
+  document.body.classList.add("readerOn");
+  paintDlg();
+}
+function closeDlg(){
+  const el=$("#dlgReader"); if(!el)return;
+  el.classList.remove("on"); el.setAttribute("aria-hidden","true");
+  document.body.classList.remove("readerOn");
+  dlgCur=null;
+}
+function paintDlg(){
+  const d=dlgCur; if(!d)return;
+  const MAX=12, parts=Math.max(1,Math.ceil((d.lines||[]).length/MAX));
+  if(dlgPart>=parts)dlgPart=parts-1;
+  const from=dlgPart*MAX, to=Math.min(from+MAX,(d.lines||[]).length);
+  const idx=dlgNav.indexOf(d.id);
+  const box=$("#dlgReaderBox"); if(!box)return;
+  box.innerHTML='<div class="rdTop"><span class="lvdot n'+esc(d.lv)+'">N'+esc(d.lv)+'</span>'
+    +'<span class="dlgScene">'+esc(d.id||"")+'</span>'
+    +'<span class="rdTitle">'+fmt(d.title)+'</span>'
+    +'<button type="button" class="rdClose" id="rdClose" aria-label="닫기">×</button></div>'
+    +'<div class="rdMeta">'+esc(d.scene||"")+' · '+esc(d.place||"")+' · '+(d.lines||[]).length+'줄'
+    +(parts>1?' · '+parts+'부 중 '+(dlgPart+1)+'부':'')+'</div>'
+    +targetsHTML(d)
+    +'<div class="dlgLines">'+(d.lines||[]).slice(from,to).map((l,j)=>lineHTML(d,l,from+j)).join("")+'</div>'
+    +pointsHTML(d.points)
+    +tagsHTML(d.tags)
+    +'<div class="rdFoot">'
+    +(parts>1?'<div class="rdParts">'+Array.from({length:parts},(_,i)=>'<button type="button" class="rdPart'+(i===dlgPart?' on':'')+'" data-part="'+i+'">'+(i+1)+'</button>').join("")+'</div>':'')
+    +'<div class="rdNav"><button type="button" class="chip" id="rdPrev"'+(idx<=0?' disabled':'')+'>‹ 이전</button>'
+    +'<span class="rdPos">'+(idx>=0?idx+1:"-")+' / '+dlgNav.length+'</span>'
+    +'<button type="button" class="chip on" id="rdNext"'+(idx<0||idx>=dlgNav.length-1?' disabled':'')+'>다음 ›</button></div>'
+    +'</div>';
+  box.scrollTop=0;
+  const cl=$("#rdClose"); if(cl)cl.onclick=closeDlg;
+  $$("#dlgReader .rdPart").forEach(b=>b.onclick=()=>{dlgPart=+b.dataset.part;paintDlg();});
+  const pv=$("#rdPrev"); if(pv)pv.onclick=()=>{if(idx>0)openDlg(dlgNav[idx-1]);};
+  const nx=$("#rdNext"); if(nx)nx.onclick=()=>{if(idx>=0&&idx<dlgNav.length-1)openDlg(dlgNav[idx+1]);};
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&dlgCur)closeDlg();});
+document.addEventListener("click",e=>{if(e.target&&e.target.id==="dlgReader")closeDlg();});
 
 /* ── 한국어 숨김/보임 · 빈칸 암기 모드 ── */
 function applyKo(){
@@ -1069,12 +1149,14 @@ function bindTalk(){
     runTagQuery(t.dataset.go,t.dataset.q);
     scrollTop();
   });
+  /* 목록 행 → 읽기 화면 */
+  $$("#view-talk [data-open-dlg]").forEach(b=>b.onclick=()=>openDlg(b.dataset.openDlg));
 }
 
 /* ── 카드↔대화 양방향 점프 ── */
 function gotoDlgLine(dlgId,lineIdx){
   tkScene="all";tkWho="all";tkLv="all";tkSrc="all";tkDay="all";
-  tkKind=/^p\d+$/.test(String(dlgId||""))?"prac":"story";
+  tkKind="all";
   if($("#qTalk"))$("#qTalk").value="";
   if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
   if($("#talkWho")&&$("#talkWho").tagName==="SELECT")$("#talkWho").value="all";
@@ -1121,17 +1203,16 @@ function talkLegend(){
   const el=$("#talkLegend");if(!el)return;
   const lv={};DIALOGS.forEach(d=>{const k='N'+(d.lv||'?');lv[k]=(lv[k]||0)+1;});
   const lvOrder=['N5','N4','N3','N2','N1','N0'].filter(k=>lv[k]);
-  const story=DIALOGS.filter(d=>!/^p\d+$/.test(String(d.id))).length;
-  const prac=DIALOGS.length-story;
+  const tr=id=>(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[id])||"life";
+  const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage";}).length;
+  const extra=DIALOGS.length-daily;
   const lineTot=Object.values(SRC_LINE).reduce((a,b)=>a+b,0);
   const row=(k,inner)=>'<div class="tlgRow"><span class="tlgK">'+k+'</span><span class="tlgI">'+inner+'</span></div>';
   const srcs=SRC_ORDER.filter(k=>SRC_DLG[k]).map(k=>'<span class="tlgChip">'+esc(k)+' <b>'+SRC_DLG[k]+'</b></span>').join("");
   const lvs=lvOrder.map(k=>'<span class="tlgChip">'+k+' <b>'+lv[k]+'</b></span>').join("");
   const lines=SRC_ORDER.filter(k=>SRC_LINE[k]).map(k=>esc(k)+' <b>'+num(SRC_LINE[k])+'</b>').join(" · ");
   el.innerHTML=
-    row('구성',(prac>0
-      ? '실전 서사 <b>'+story+'</b>편 + 연습 뱅크 <b>'+prac+'</b>편 = <b>'+DIALOGS.length+'</b>편 · <b>'+num(lineTot)+'</b>줄'
-      : '실전 서사 대화 <b>'+story+'</b>편 · <b>'+num(lineTot)+'</b>줄'))
+    row('구성','일상 코스 <b>'+daily+'</b>편 · 보강 <b>'+extra+'</b>편 = <b>'+DIALOGS.length+'</b>편 · <b>'+num(lineTot)+'</b>줄')
     +row('출처',srcs+' <span class="tlgNote">(한 편이 여러 탭을 겸하면 중복 집계)</span>')
     +row('N레벨',lvs)
     +row('줄 구성',lines);
@@ -1143,34 +1224,37 @@ function talkDeft(){
   const expr=(typeof EXPR!=="undefined")?EXPR.length:0;
   const conj=hasCONJ?CONJ.length:0, spoken=hasSPOKEN?SPOKEN.length:0;
   const pos=(hasPOS?POS.length:0)+WORDS.length;
+  const tr=id=>(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[id])||"life";
+  const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage";}).length;
   el.innerHTML='문형 <b>'+num(PATS.length)+'</b> · 문법 <b>'+num(gram)+'</b> · 활용표 <b>'+num(conj)+'</b>'
     +' · 표현 <b>'+num(expr)+'</b> · 구어체 <b>'+num(spoken)+'</b> · 품사 <b>'+num(pos)+'</b>'
-    +' · 한자 <b>'+num(ALL.length)+'</b>자까지 — <b>모든 학습 항목이 대화 대사와 1:1로 연결</b>되어 있습니다.'
-    +' 아래 <b>출처</b> 칩으로 어느 사전에서 온 대화인지 골라 볼 수 있습니다. 대화를 반복해서 입에 붙이면 모든 사전·한자 카드의 예문이 함께 외워집니다.';
+    +' · 한자 <b>'+num(ALL.length)+'</b>자까지 — <b>일상 코스 '+num(daily)+'편</b>은 또래 수다·SNS·생활 행정·알바·캠퍼스 장면으로 묶었습니다.'
+    +' 각 대화의 <b>목표</b>와 줄별 설명만 읽어도 그 장면이 끝납니다. 직장·문법 보강은 <b>보강</b> 칩에서 봅니다.';
 }
 /* 대화 보기 칩 — 연습 뱅크가 비면 서사 칩 하나만 남긴다 */
 function talkKindChips(){
   const el=$("#talkKind");if(!el)return;
-  const story=DIALOGS.filter(d=>!/^p\d+$/.test(String(d.id))).length;
-  const prac=DIALOGS.length-story;
-  let h='<button class="chip on" data-k="story">실전 서사 대화 '+num(story)+'</button>';
-  if(prac>0){
-    h+='<button class="chip" data-k="prac">연습 뱅크 '+num(prac)+'</button>';
-    h+='<button class="chip" data-k="all">전체 통합 '+num(DIALOGS.length)+'</button>';
-  }
-  el.innerHTML=h;
-  el.classList.toggle("single",prac===0);
+  const tr=id=>(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[id])||"life";
+  const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage";}).length;
+  const extra=DIALOGS.length-daily;
+  el.innerHTML='<button class="chip on" data-k="daily">일상 코스 '+num(daily)+'</button>'
+    +'<button class="chip" data-k="extra">보강 '+num(extra)+'</button>'
+    +'<button class="chip" data-k="all">전체 '+num(DIALOGS.length)+'</button>';
+  el.classList.remove("single");
 }
 if(hasTALK){sceneList();whoList();srcChips();talkLegend();talkDeft();talkKindChips();applyKo();applyCloze();}
 if($("#talkSrc"))$("#talkSrc").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkSrc=c.dataset.s;setChips("#talkSrc",c);
-  /* 출처를 고르면 종류도 맞춘다 — 서사면 서사, 사전 출처면 연습 뱅크, 전체면 전체 */
-  tkKind=tkSrc==="all"?"all":(tkSrc==="서사"?"story":"prac");
-  chipAll("#talkKind","k");renderTalk();});
+  /* 출처는 트랙과 별개 축이다 — 일상 코스 안에서 문형·표현 출처만 좁힌다 */
+  renderTalk();});
 if($("#talkKind"))$("#talkKind").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkKind=c.dataset.k;setChips("#talkKind",c);
-  /* 종류(서사/연습/전체)를 고르면 출처는 초기화한다 — 두 축이 같은 것을 가리킨다 */
+  /* 트랙을 고르면 장면 목록도 그 트랙 것만 보여 준다 */
+  tkScene="all";if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
+  sceneList();
   tkSrc="all";chipAll("#talkSrc","s");renderTalk();});
+if($("#talkView"))$("#talkView").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+  tkView=c.dataset.vw;setChips("#talkView",c);renderTalk();});
 if($("#talkDay"))$("#talkDay").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkDay=c.dataset.day;setChips("#talkDay",c);renderTalk();});
 if($("#qTalk"))$("#qTalk").addEventListener("input",()=>renderTalk());
