@@ -15,7 +15,7 @@ function load(files, tail) {
 }
 const dctx = load(
   fs.readdirSync(DATA).filter(f => /^dialogue-[0-9]+\.js$/.test(f)).sort((a, b) => (+a.match(/\d+/)[0]) - (+b.match(/\d+/)[0]))
-    .concat(['dialogue-daily.js', 'daily-overrides.js', 'scene-reskin.js', 'context-rewrite.js', 'rewrite-20.js', 'targets-auto.js', 'coverage-patch.js']),
+    .concat(['dialogue-daily.js', 'daily-overrides.js', 'scene-reskin.js', 'context-rewrite.js', 'rewrite-20.js', 'rewrite-40.js', 'targets-auto.js', 'coverage-patch.js']),
   'globalThis.D=DIALOGS;'
 );
 const D = dctx.D;
