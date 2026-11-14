@@ -5,13 +5,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d04-1",
-   "d09-1",
-   "d14-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -19,13 +15,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d83-1",
-   "d225-2",
-   "d239-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -33,13 +25,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d82-1",
-   "d211-3",
-   "d240-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -47,13 +35,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d88-3",
-   "d91-1",
-   "d93-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -61,13 +45,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d83-1",
-   "d225-2",
-   "d244-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -75,13 +55,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d112-3",
-   "d116-1",
-   "d253-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -89,13 +65,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d93-2",
-   "d254-1",
-   "d254-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -103,13 +75,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d255-1",
-   "d260-1",
-   "d268-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -117,13 +85,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d83-2",
-   "d225-3",
-   "d87-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -131,13 +95,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d14-1",
-   "d82-1",
-   "d211-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -145,13 +105,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d14-1",
-   "d82-3",
-   "d164-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -159,13 +115,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d88-3",
-   "d93-2",
-   "d95-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -173,13 +125,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d112-3",
-   "d116-1",
-   "d118-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -187,13 +135,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d112-3",
-   "d116-1",
-   "d118-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -201,13 +145,9 @@
   "level": "N4",
   "exposures": 4,
   "core": true,
-  "lessons": [
-   "d239-1",
-   "d246-1",
-   "d257-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -216,12 +156,10 @@
   "exposures": 3,
   "core": true,
   "lessons": [
-   "d93-2",
-   "d256-1",
    "d257-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "구어체",
@@ -230,12 +168,11 @@
   "exposures": 3,
   "core": true,
   "lessons": [
-   "d267-1",
-   "d272-1",
-   "d281-1"
+   "d78-1",
+   "d267-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "구어체",
@@ -243,13 +180,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d81-2",
-   "d83-3",
-   "d85-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -258,9 +191,9 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d81-1",
-   "d83-2",
-   "d239-1"
+   "d239-1",
+   "d274-1",
+   "d306-1"
   ],
   "count": 3,
   "need": 0
@@ -273,10 +206,22 @@
   "core": true,
   "lessons": [
    "d83-2",
-   "d225-3",
+   "d83-3",
+   "d84-1",
+   "d84-2",
+   "d225-1",
+   "d85-1",
+   "d85-2",
+   "d86-1",
+   "d86-2",
+   "d86-3",
+   "d87-2",
+   "d87-3",
+   "d88-1",
+   "d88-2",
    "d239-1"
   ],
-  "count": 3,
+  "count": 15,
   "need": 0
  },
  {
@@ -285,13 +230,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d239-1",
-   "d246-1",
-   "d257-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -299,13 +240,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d88-3",
-   "d91-1",
-   "d242-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -313,13 +250,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d88-3",
-   "d93-2",
-   "d242-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -327,13 +260,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d89-1",
-   "d91-2",
-   "d243-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -341,13 +270,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d89-2",
-   "d91-3",
-   "d244-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -357,10 +282,30 @@
   "core": true,
   "lessons": [
    "d89-1",
-   "d164-3",
+   "d89-2",
+   "d89-3",
+   "d90-1",
+   "d90-2",
+   "d90-3",
+   "d91-1",
+   "d91-3",
+   "d92-1",
+   "d92-2",
+   "d92-3",
+   "d93-1",
+   "d93-2",
+   "d94-1",
+   "d94-2",
+   "d94-3",
+   "d95-3",
+   "d96-3",
+   "d99-1",
+   "d100-3",
+   "d102-2",
+   "d102-3",
    "d244-1"
   ],
-  "count": 3,
+  "count": 23,
   "need": 0
  },
  {
@@ -370,12 +315,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d83-1",
-   "d177-2",
-   "d244-1"
+   "d83-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "구어체",
@@ -383,13 +326,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d83-1",
-   "d225-2",
-   "d245-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -397,13 +336,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d93-3",
-   "d258-1",
-   "d258-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -411,13 +346,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d93-2",
-   "d98-1",
-   "d257-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -425,13 +356,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d112-2",
-   "d114-3",
-   "d256-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -441,11 +368,10 @@
   "core": true,
   "lessons": [
    "d93-1",
-   "d95-2",
    "d260-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "구어체",
@@ -455,11 +381,10 @@
   "core": true,
   "lessons": [
    "d93-1",
-   "d95-2",
    "d267-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "구어체",
@@ -469,7 +394,7 @@
   "core": true,
   "lessons": [
    "d81-1",
-   "d83-2",
+   "d83-3",
    "d267-1"
   ],
   "count": 3,
@@ -481,13 +406,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d93-1",
-   "d97-3",
-   "d268-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -495,13 +416,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d110-1",
-   "d112-2",
-   "d269-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -509,13 +426,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d110-2",
-   "d112-3",
-   "d272-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -523,13 +436,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d110-2",
-   "d112-3",
-   "d272-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -537,13 +446,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d207-1",
-   "d229-1",
-   "d273-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -553,11 +458,10 @@
   "core": true,
   "lessons": [
    "d206-1",
-   "d226-2",
    "d272-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "구어체",
@@ -565,13 +469,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d206-1",
-   "d226-2",
-   "d275-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -580,12 +480,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d206-1",
-   "d226-2",
-   "d271-1"
+   "d206-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "구어체",
@@ -593,13 +491,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d207-1",
-   "d275-1",
-   "d275-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -607,13 +501,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d82-3",
-   "d225-1",
-   "d86-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -621,13 +511,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d82-1",
-   "d177-2",
-   "d192-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -635,13 +521,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d82-2",
-   "d84-3",
-   "d86-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -649,13 +531,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d88-2",
-   "d90-3",
-   "d93-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -663,13 +541,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d89-1",
-   "d91-2",
-   "d93-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -677,13 +551,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d04-1",
-   "d09-1",
-   "d14-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -693,10 +563,12 @@
   "core": true,
   "lessons": [
    "d93-1",
-   "d97-3",
-   "d100-1"
+   "d96-1",
+   "d96-2",
+   "d97-2",
+   "d102-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -706,12 +578,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d93-3",
-   "d96-1",
-   "d98-2"
+   "d93-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "구어체",
@@ -721,11 +591,10 @@
   "core": true,
   "lessons": [
    "d93-1",
-   "d97-3",
-   "d100-1"
+   "d103-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "구어체",
@@ -734,12 +603,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d93-2",
-   "d95-3",
-   "d98-1"
+   "d93-1",
+   "d93-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "구어체",
@@ -748,12 +616,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d04-1",
-   "d09-1",
-   "d14-1"
+   "d78-1",
+   "d80-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "구어체",
@@ -762,9 +629,9 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d04-1",
-   "d09-1",
-   "d14-1"
+   "d93-2",
+   "d95-2",
+   "d103-3"
   ],
   "count": 3,
   "need": 0
@@ -775,13 +642,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d110-1",
-   "d112-2",
-   "d114-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -789,13 +652,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d207-2",
-   "d230-1",
-   "d237-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -803,14 +662,9 @@
   "level": "N3",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d93-2",
-   "d253-1",
-   "d254-1",
-   "d254-2"
-  ],
-  "count": 4,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -818,13 +672,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d83-1",
-   "d225-2",
-   "d240-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -834,11 +684,10 @@
   "core": true,
   "lessons": [
    "d83-3",
-   "d85-1",
    "d240-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "구어체",
@@ -847,11 +696,15 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d83-3",
-   "d85-1",
-   "d240-1"
+   "d240-1",
+   "d244-1",
+   "d268-1",
+   "d270-1",
+   "d283-1",
+   "d303-1",
+   "d306-1"
   ],
-  "count": 3,
+  "count": 7,
   "need": 0
  },
  {
@@ -860,13 +713,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d83-2",
-   "d225-3",
-   "d240-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -874,13 +723,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d110-3",
-   "d215-3",
-   "d224-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -890,11 +735,10 @@
   "core": true,
   "lessons": [
    "d82-3",
-   "d225-1",
-   "d86-2"
+   "d241-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "구어체",
@@ -902,13 +746,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d82-2",
-   "d84-3",
-   "d86-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -916,13 +756,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d112-2",
-   "d114-3",
-   "d243-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -930,13 +766,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d112-2",
-   "d114-3",
-   "d243-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -944,13 +776,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d89-1",
-   "d93-3",
-   "d244-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -958,13 +786,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d89-2",
-   "d91-3",
-   "d94-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "구어체",
@@ -973,12 +797,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d110-2",
-   "d112-3",
-   "d245-1"
+   "d110-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -986,13 +808,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d04-1",
-   "d09-1",
-   "d14-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1000,13 +818,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d04-1",
-   "d09-1",
-   "d14-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1014,13 +828,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d19-1",
-   "d24-1",
-   "d29-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1028,13 +838,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d90-1",
-   "d92-2",
-   "d94-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1042,13 +848,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d92-1",
-   "d94-2",
-   "d96-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1056,13 +858,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d92-3",
-   "d97-2",
-   "d99-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1070,13 +868,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d19-1",
-   "d24-1",
-   "d29-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1084,13 +878,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d92-1",
-   "d94-2",
-   "d96-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1098,13 +888,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d123-1",
-   "d125-2",
-   "d127-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1112,13 +898,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d123-1",
-   "d125-2",
-   "d127-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1126,13 +908,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d123-1",
-   "d125-2",
-   "d127-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1140,13 +918,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d123-1",
-   "d125-2",
-   "d127-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1154,13 +928,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d19-1",
-   "d24-1",
-   "d29-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1168,13 +938,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-1",
-   "d92-2",
-   "d94-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1182,13 +948,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d19-1",
-   "d24-1",
-   "d29-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1196,13 +958,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-3",
-   "d93-1",
-   "d95-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1210,13 +968,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d19-1",
-   "d24-1",
-   "d29-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1224,13 +978,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d19-1",
-   "d24-1",
-   "d29-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1238,13 +988,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d34-1",
-   "d39-1",
-   "d44-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1252,13 +998,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d34-1",
-   "d39-1",
-   "d44-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1266,13 +1008,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d91-1",
-   "d95-3",
-   "d98-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1280,13 +1018,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d91-2",
-   "d96-1",
-   "d98-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1294,13 +1028,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d92-1",
-   "d94-2",
-   "d96-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1308,13 +1038,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d34-1",
-   "d39-1",
-   "d44-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1322,13 +1048,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d92-2",
-   "d97-1",
-   "d99-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1336,13 +1058,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d34-1",
-   "d39-1",
-   "d44-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1350,13 +1068,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d92-3",
-   "d97-2",
-   "d99-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1364,13 +1078,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d34-1",
-   "d39-1",
-   "d44-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1378,13 +1088,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d92-2",
-   "d94-3",
-   "d97-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1392,13 +1098,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d34-1",
-   "d39-1",
-   "d44-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1406,13 +1108,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-2",
-   "d92-3",
-   "d95-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1420,13 +1118,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-2",
-   "d92-3",
-   "d95-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1434,13 +1128,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-2",
-   "d92-3",
-   "d95-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1448,13 +1138,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d49-1",
-   "d54-1",
-   "d59-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1462,13 +1148,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d49-1",
-   "d54-1",
-   "d59-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1476,13 +1158,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d49-1",
-   "d54-1",
-   "d59-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1490,13 +1168,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d49-1",
-   "d54-1",
-   "d59-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1504,13 +1178,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-2",
-   "d92-3",
-   "d95-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1518,13 +1188,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-1",
-   "d92-2",
-   "d94-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1532,13 +1198,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d49-1",
-   "d54-1",
-   "d59-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1548,10 +1210,22 @@
   "core": true,
   "lessons": [
    "d90-3",
-   "d93-1",
-   "d95-2"
+   "d91-2",
+   "d92-2",
+   "d93-2",
+   "d93-3",
+   "d94-3",
+   "d95-1",
+   "d96-2",
+   "d97-2",
+   "d97-3",
+   "d98-1",
+   "d100-1",
+   "d100-2",
+   "d101-2",
+   "d109-3"
   ],
-  "count": 3,
+  "count": 15,
   "need": 0
  },
  {
@@ -1560,13 +1234,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-3",
-   "d93-1",
-   "d95-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1574,13 +1244,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d49-1",
-   "d59-1",
-   "d64-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1588,13 +1254,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d91-1",
-   "d93-2",
-   "d95-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1602,13 +1264,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d91-3",
-   "d94-1",
-   "d96-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1616,13 +1274,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d91-3",
-   "d94-1",
-   "d96-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1630,13 +1284,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d86-2",
-   "d88-3",
-   "d91-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1644,13 +1294,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d64-1",
-   "d69-1",
-   "d74-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1658,13 +1304,9 @@
   "level": "N4",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d86-1",
-   "d88-2",
-   "d90-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1672,13 +1314,9 @@
   "level": "N4",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d86-1",
-   "d88-2",
-   "d90-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1686,13 +1324,9 @@
   "level": "N4",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d86-2",
-   "d88-3",
-   "d91-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1700,13 +1334,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d91-1",
-   "d93-2",
-   "d95-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1716,8 +1346,8 @@
   "core": true,
   "lessons": [
    "d91-2",
-   "d93-3",
-   "d96-1"
+   "d109-3",
+   "d112-3"
   ],
   "count": 3,
   "need": 0
@@ -1728,13 +1358,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d91-2",
-   "d93-3",
-   "d96-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1742,13 +1368,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d91-3",
-   "d94-1",
-   "d96-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1756,13 +1378,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d64-1",
-   "d69-1",
-   "d74-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1770,13 +1388,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d64-1",
-   "d69-1",
-   "d74-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1784,13 +1398,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d91-3",
-   "d94-1",
-   "d96-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1798,13 +1408,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d91-3",
-   "d94-1",
-   "d96-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1812,13 +1418,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d64-1",
-   "d69-1",
-   "d74-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1826,13 +1428,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d64-1",
-   "d69-1",
-   "d74-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1841,12 +1439,11 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d69-1",
-   "d74-1",
-   "d80-1"
+   "d91-3",
+   "d96-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "문법",
@@ -1854,13 +1451,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d80-1",
-   "d82-2",
-   "d84-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1868,13 +1461,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d80-1",
-   "d82-2",
-   "d84-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1882,13 +1471,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d86-3",
-   "d89-1",
-   "d91-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1896,13 +1481,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d86-3",
-   "d89-1",
-   "d91-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1910,13 +1491,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d86-3",
-   "d89-1",
-   "d91-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1924,13 +1501,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d92-3",
-   "d95-1",
-   "d97-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1938,13 +1511,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d92-2",
-   "d97-1",
-   "d99-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1952,13 +1521,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d123-1",
-   "d125-2",
-   "d127-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1966,13 +1531,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d80-1",
-   "d82-2",
-   "d84-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1980,13 +1541,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d81-3",
-   "d84-1",
-   "d85-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -1994,13 +1551,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d80-1",
-   "d82-2",
-   "d84-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2008,13 +1561,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d80-1",
-   "d82-2",
-   "d225-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2022,13 +1571,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d91-2",
-   "d93-3",
-   "d96-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2036,13 +1581,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d123-2",
-   "d125-3",
-   "d128-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2050,13 +1591,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d82-2",
-   "d225-3",
-   "d86-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2064,13 +1601,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d225-3",
-   "d86-2",
-   "d88-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2078,13 +1611,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d86-2",
-   "d88-1",
-   "d89-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2092,13 +1621,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d86-2",
-   "d88-1",
-   "d89-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2106,13 +1631,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d123-2",
-   "d125-3",
-   "d128-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2120,13 +1641,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d88-1",
-   "d89-3",
-   "d93-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2134,13 +1651,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d88-1",
-   "d89-3",
-   "d96-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2149,38 +1662,13 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d04-1",
-   "d51-1",
-   "d63-1",
    "d90-3",
    "d91-1",
    "d92-1",
    "d97-1",
-   "d98-2",
-   "d101-1",
-   "d108-3",
-   "d112-1",
-   "d114-1",
-   "d117-2",
-   "d120-2",
-   "d122-1",
-   "d124-1",
-   "d124-2",
-   "d125-2",
-   "d127-2",
-   "d128-1",
-   "d129-2",
-   "d143-1",
-   "d222-1",
-   "d186-3",
-   "d232-1",
-   "d273-1",
-   "d286-1",
-   "d288-1",
-   "d318-1",
-   "d348-1"
+   "d108-3"
   ],
-  "count": 30,
+  "count": 5,
   "need": 0
  },
  {
@@ -2189,13 +1677,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-3",
-   "d93-1",
-   "d95-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2203,13 +1687,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d88-1",
-   "d89-3",
-   "d98-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2218,9 +1698,9 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d89-3",
-   "d98-1",
-   "d99-3"
+   "d90-2",
+   "d93-3",
+   "d102-1"
   ],
   "count": 3,
   "need": 0
@@ -2231,13 +1711,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-2",
-   "d95-1",
-   "d97-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2245,13 +1721,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d98-1",
-   "d99-3",
-   "d101-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2259,13 +1731,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-1",
-   "d92-2",
-   "d94-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2273,13 +1741,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d103-1",
-   "d105-3",
-   "d109-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2287,13 +1751,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d91-1",
-   "d93-2",
-   "d95-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2301,13 +1761,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d103-1",
-   "d105-3",
-   "d109-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2315,13 +1771,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d103-1",
-   "d105-3",
-   "d109-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2329,13 +1781,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d103-1",
-   "d105-3",
-   "d109-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2343,13 +1791,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d86-2",
-   "d88-3",
-   "d91-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2357,13 +1801,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d86-1",
-   "d88-2",
-   "d90-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2371,13 +1811,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d105-3",
-   "d109-2",
-   "d111-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2385,13 +1821,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d86-1",
-   "d88-2",
-   "d90-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2399,13 +1831,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d86-2",
-   "d88-3",
-   "d91-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2413,13 +1841,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d105-3",
-   "d109-2",
-   "d111-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2427,13 +1851,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d111-1",
-   "d112-3",
-   "d114-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2441,13 +1861,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d92-1",
-   "d94-2",
-   "d96-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2455,13 +1871,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d111-1",
-   "d112-3",
-   "d114-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2469,13 +1881,9 @@
   "level": "N4",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d92-2",
-   "d97-1",
-   "d99-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2483,13 +1891,9 @@
   "level": "N4",
   "exposures": 0,
   "core": true,
-  "lessons": [
-   "d111-1",
-   "d112-3",
-   "d114-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2497,13 +1901,9 @@
   "level": "N4",
   "exposures": 0,
   "core": true,
-  "lessons": [
-   "d111-1",
-   "d114-2",
-   "d117-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2512,12 +1912,10 @@
   "exposures": 3,
   "core": true,
   "lessons": [
-   "d114-2",
-   "d117-1",
-   "d118-3"
+   "d123-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -2525,13 +1923,9 @@
   "level": "N0",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d123-3",
-   "d126-1",
-   "d128-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2539,13 +1933,9 @@
   "level": "N0",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d114-2",
-   "d117-1",
-   "d118-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2553,13 +1943,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d92-2",
-   "d97-1",
-   "d99-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2567,13 +1953,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d117-1",
-   "d118-3",
-   "d120-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2581,13 +1963,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d117-1",
-   "d118-3",
-   "d120-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2597,11 +1975,10 @@
   "core": true,
   "lessons": [
    "d116-1",
-   "d118-2",
-   "d120-3"
+   "d117-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "문법",
@@ -2611,11 +1988,10 @@
   "core": true,
   "lessons": [
    "d99-1",
-   "d101-2",
-   "d103-3"
+   "d105-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "문법",
@@ -2623,13 +1999,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d99-2",
-   "d101-3",
-   "d144-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2637,13 +2009,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d118-3",
-   "d120-2",
-   "d123-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2651,13 +2019,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d99-3",
-   "d102-1",
-   "d105-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2665,13 +2029,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d144-2",
-   "d163-1",
-   "d164-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2679,13 +2039,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d120-2",
-   "d123-1",
-   "d124-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2694,12 +2050,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d99-1",
-   "d101-2",
-   "d103-3"
+   "d99-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -2707,13 +2061,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d120-2",
-   "d123-1",
-   "d124-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2721,13 +2071,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d120-2",
-   "d123-1",
-   "d124-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2735,13 +2081,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d123-1",
-   "d124-3",
-   "d126-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2749,13 +2091,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d116-3",
-   "d119-1",
-   "d122-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2763,13 +2101,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d123-2",
-   "d125-3",
-   "d128-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2777,13 +2111,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d123-2",
-   "d125-3",
-   "d128-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2792,32 +2122,13 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d09-1",
-   "d10-1",
-   "d24-1",
-   "d32-1",
-   "d80-1",
-   "d81-1",
-   "d82-3",
-   "d88-2",
-   "d94-1",
-   "d94-3",
-   "d95-2",
-   "d103-1",
-   "d120-1",
    "d123-3",
    "d126-3",
    "d128-2",
-   "d137-1",
    "d144-1",
-   "d212-3",
-   "d181-2",
-   "d207-2",
-   "d227-1",
-   "d241-1",
-   "d345-1"
+   "d212-3"
   ],
-  "count": 24,
+  "count": 5,
   "need": 0
  },
  {
@@ -2826,13 +2137,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d124-3",
-   "d126-2",
-   "d128-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2840,13 +2147,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d124-2",
-   "d126-3",
-   "d129-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2854,13 +2157,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d124-1",
-   "d126-2",
-   "d128-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2868,13 +2167,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d120-1",
-   "d123-2",
-   "d124-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2882,13 +2177,9 @@
   "level": "N0",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d124-3",
-   "d126-2",
-   "d128-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2896,13 +2187,9 @@
   "level": "N0",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d126-2",
-   "d129-3",
-   "d138-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2910,13 +2197,9 @@
   "level": "N0",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d126-2",
-   "d129-3",
-   "d138-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2924,13 +2207,9 @@
   "level": "N0",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d129-3",
-   "d138-2",
-   "d141-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2938,13 +2217,9 @@
   "level": "N0",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d129-3",
-   "d138-2",
-   "d141-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2952,13 +2227,9 @@
   "level": "N0",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d129-3",
-   "d138-2",
-   "d141-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2966,13 +2237,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d123-3",
-   "d126-1",
-   "d128-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2980,13 +2247,9 @@
   "level": "N0",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d129-3",
-   "d138-2",
-   "d141-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -2994,13 +2257,9 @@
   "level": "N0",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d90-1",
-   "d92-2",
-   "d94-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3009,9 +2268,9 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d141-1",
-   "d142-3",
-   "d144-2"
+   "d90-2",
+   "d96-2",
+   "d97-3"
   ],
   "count": 3,
   "need": 0
@@ -3022,13 +2281,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d91-2",
-   "d93-3",
-   "d96-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3036,13 +2291,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d86-3",
-   "d89-1",
-   "d91-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3050,13 +2301,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d92-3",
-   "d97-2",
-   "d99-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3064,13 +2311,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d92-3",
-   "d97-2",
-   "d99-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3078,13 +2321,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d141-1",
-   "d142-3",
-   "d144-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3093,12 +2332,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d98-2",
-   "d100-3",
-   "d103-1"
+   "d98-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3106,16 +2343,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d97-2",
-   "d114-2",
-   "d116-2",
-   "d125-2",
-   "d176-1",
-   "d361-1"
-  ],
-  "count": 6,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3124,19 +2354,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d81-2",
-   "d97-2",
-   "d98-3",
-   "d114-3",
-   "d123-3",
-   "d143-2",
-   "d179-2",
-   "d223-3",
-   "d201-2",
-   "d366-1"
+   "d98-3"
   ],
-  "count": 10,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3145,12 +2366,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d98-3",
-   "d101-1",
-   "d223-3"
+   "d98-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3158,13 +2377,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d116-3",
-   "d119-1",
-   "d122-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3173,12 +2388,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d142-3",
-   "d144-2",
-   "d210-2"
+   "d98-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3186,13 +2399,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d142-3",
-   "d144-2",
-   "d210-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3201,12 +2410,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d97-1",
-   "d98-3",
-   "d141-2"
+   "d98-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3214,13 +2421,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d03-1",
-   "d112-1",
-   "d126-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3229,19 +2432,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d46-1",
    "d98-2",
-   "d101-1",
-   "d122-3",
-   "d124-3",
-   "d138-2",
-   "d143-1",
-   "d143-2",
-   "d171-2",
-   "d361-1"
+   "d101-1"
   ],
-  "count": 10,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "문법",
@@ -3251,11 +2446,10 @@
   "core": true,
   "lessons": [
    "d98-1",
-   "d100-2",
-   "d102-3"
+   "d105-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "문법",
@@ -3265,10 +2459,11 @@
   "core": true,
   "lessons": [
    "d98-1",
-   "d100-2",
-   "d102-3"
+   "d113-3",
+   "d118-1",
+   "d120-1"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -3278,12 +2473,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d98-1",
-   "d100-2",
-   "d102-3"
+   "d98-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3291,13 +2484,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d142-3",
-   "d144-2",
-   "d210-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3306,12 +2495,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d97-1",
-   "d99-2",
    "d116-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3319,13 +2506,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d97-1",
-   "d114-1",
-   "d286-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3334,12 +2517,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d97-3",
-   "d98-2",
-   "d100-1"
+   "d98-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3349,10 +2530,16 @@
   "core": true,
   "lessons": [
    "d98-1",
-   "d100-2",
-   "d102-3"
+   "d99-2",
+   "d100-3",
+   "d101-3",
+   "d102-2",
+   "d102-3",
+   "d103-2",
+   "d110-1",
+   "d110-3"
   ],
-  "count": 3,
+  "count": 9,
   "need": 0
  },
  {
@@ -3362,16 +2549,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d97-2",
-   "d98-1",
-   "d126-2",
-   "d129-1",
-   "d141-1",
-   "d220-1",
-   "d289-1"
+   "d98-1"
   ],
-  "count": 7,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3379,13 +2560,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d142-3",
-   "d144-2",
-   "d210-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3394,12 +2571,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d105-3",
-   "d116-2",
-   "d356-1"
+   "d116-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3407,14 +2582,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d97-2",
-   "d105-2",
-   "d140-2",
-   "d143-2"
-  ],
-  "count": 4,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3423,12 +2593,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d98-3",
-   "d101-1",
-   "d103-2"
+   "d98-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3438,10 +2606,11 @@
   "core": true,
   "lessons": [
    "d98-3",
-   "d101-1",
-   "d103-2"
+   "d101-3",
+   "d102-1",
+   "d109-3"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -3451,12 +2620,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d116-2",
-   "d118-3",
-   "d122-1"
+   "d116-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3465,12 +2632,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d98-2",
-   "d100-3",
-   "d103-1"
+   "d98-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3480,11 +2645,10 @@
   "core": true,
   "lessons": [
    "d99-2",
-   "d101-3",
-   "d105-1"
+   "d101-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "문법",
@@ -3492,13 +2656,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d210-2",
-   "d211-1",
-   "d164-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3506,13 +2666,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d210-2",
-   "d211-1",
-   "d164-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3521,12 +2677,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d211-1",
-   "d164-3",
-   "d167-2"
+   "d99-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3534,13 +2688,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d22-1",
-   "d233-1",
-   "d370-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3550,10 +2700,11 @@
   "core": true,
   "lessons": [
    "d99-1",
-   "d101-2",
-   "d103-3"
+   "d103-1",
+   "d112-1",
+   "d119-1"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -3562,13 +2713,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d211-1",
-   "d164-3",
-   "d167-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3577,12 +2724,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d99-2",
-   "d101-3",
-   "d105-1"
+   "d99-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3591,12 +2736,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d99-2",
-   "d101-3",
-   "d105-1"
+   "d99-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3605,12 +2748,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d99-3",
-   "d102-1",
-   "d105-2"
+   "d99-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3618,13 +2759,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d211-1",
-   "d164-3",
-   "d167-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3633,12 +2770,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d99-3",
-   "d102-1",
-   "d304-1"
+   "d99-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3648,11 +2783,10 @@
   "core": true,
   "lessons": [
    "d99-1",
-   "d101-2",
-   "d103-3"
+   "d105-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "문법",
@@ -3661,12 +2795,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d113-3",
-   "d117-1",
-   "d297-1"
+   "d99-3",
+   "d113-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "문법",
@@ -3675,13 +2808,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d99-2",
-   "d113-1",
-   "d140-2",
-   "d297-1"
+   "d99-2"
   ],
-  "count": 4,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3689,39 +2819,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d42-1",
-   "d46-1",
-   "d97-2",
-   "d105-2",
-   "d108-1",
-   "d112-2",
-   "d113-1",
-   "d114-3",
-   "d116-3",
-   "d120-1",
-   "d120-3",
-   "d123-3",
-   "d125-1",
-   "d125-2",
-   "d137-2",
-   "d140-2",
-   "d142-1",
-   "d143-2",
-   "d220-2",
-   "d207-1",
-   "d268-1",
-   "d275-2",
-   "d297-1",
-   "d320-1",
-   "d323-1",
-   "d329-1",
-   "d356-1",
-   "d364-1",
-   "d370-1"
-  ],
-  "count": 29,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3729,13 +2829,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d211-1",
-   "d164-3",
-   "d167-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3744,12 +2840,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d99-1",
-   "d101-2",
-   "d103-3"
+   "d99-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3759,10 +2853,11 @@
   "core": true,
   "lessons": [
    "d99-3",
-   "d102-1",
-   "d105-2"
+   "d105-3",
+   "d109-2",
+   "d112-3"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -3771,20 +2866,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d32-1",
-   "d97-1",
-   "d112-2",
-   "d114-2",
-   "d114-3",
-   "d142-2",
-   "d164-2",
-   "d174-3",
-   "d304-1",
-   "d316-1"
-  ],
-  "count": 10,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3793,12 +2877,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d99-3",
-   "d102-1",
-   "d105-2"
+   "d99-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문법",
@@ -3806,20 +2888,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d58-1",
-   "d110-2",
-   "d116-2",
-   "d119-1",
-   "d120-1",
-   "d123-2",
-   "d125-2",
-   "d128-1",
-   "d273-1",
-   "d348-1"
-  ],
-  "count": 10,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3827,19 +2898,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d62-1",
-   "d114-1",
-   "d116-1",
-   "d117-1",
-   "d126-1",
-   "d128-2",
-   "d180-3",
-   "d223-2",
-   "d194-2"
-  ],
-  "count": 9,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3847,14 +2908,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d114-1",
-   "d122-1",
-   "d124-1",
-   "d142-2"
-  ],
-  "count": 4,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3862,17 +2918,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d81-1",
-   "d110-3",
-   "d114-1",
-   "d116-2",
-   "d162-1",
-   "d162-3",
-   "d182-1"
-  ],
-  "count": 7,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문법",
@@ -3882,8 +2930,8 @@
   "core": true,
   "lessons": [
    "d116-1",
-   "d118-2",
-   "d120-3"
+   "d116-3",
+   "d129-2"
   ],
   "count": 3,
   "need": 0
@@ -3895,12 +2943,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d114-2",
-   "d116-1",
-   "d290-1"
+   "d116-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -3908,13 +2954,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d167-2",
-   "d168-1",
-   "d216-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -3923,40 +2965,14 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d03-1",
-   "d47-1",
    "d54-1",
    "d59-1",
    "d60-1",
    "d63-1",
    "d74-1",
-   "d87-3",
-   "d95-2",
-   "d101-1",
-   "d101-2",
-   "d105-1",
-   "d109-1",
-   "d113-2",
-   "d116-3",
-   "d118-1",
-   "d128-3",
-   "d141-1",
-   "d143-2",
-   "d212-2",
-   "d178-2",
-   "d220-3",
-   "d221-1",
-   "d222-2",
-   "d223-1",
-   "d190-3",
-   "d194-3",
-   "d206-3",
-   "d230-1",
-   "d324-1",
-   "d355-1",
    "d371-1"
   ],
-  "count": 32,
+  "count": 6,
   "need": 0
  },
  {
@@ -3966,12 +2982,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d167-2",
-   "d168-1",
-   "d216-3"
+   "d144-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -3980,12 +2994,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d168-1",
-   "d216-3",
-   "d172-2"
+   "d144-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -3993,13 +3005,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d168-1",
-   "d216-3",
-   "d172-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4007,13 +3015,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d168-1",
-   "d216-3",
-   "d172-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4022,11 +3026,12 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d168-1",
-   "d216-3",
-   "d172-2"
+   "d144-1",
+   "d212-2",
+   "d178-2",
+   "d220-3"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -4037,11 +3042,10 @@
   "core": true,
   "lessons": [
    "d88-1",
-   "d90-2",
-   "d92-3"
+   "d88-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "문형",
@@ -4049,45 +3053,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d05-1",
-   "d62-1",
-   "d64-1",
-   "d67-1",
-   "d70-1",
-   "d77-1",
-   "d79-1",
-   "d225-3",
-   "d88-1",
-   "d88-2",
-   "d89-2",
-   "d95-1",
-   "d95-3",
-   "d96-3",
-   "d100-1",
-   "d100-3",
-   "d101-1",
-   "d101-3",
-   "d105-1",
-   "d108-3",
-   "d111-2",
-   "d112-1",
-   "d113-2",
-   "d117-1",
-   "d120-2",
-   "d122-3",
-   "d125-2",
-   "d140-2",
-   "d143-1",
-   "d227-1",
-   "d232-1",
-   "d241-1",
-   "d260-1",
-   "d314-1",
-   "d364-1"
-  ],
-  "count": 35,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4096,12 +3064,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d172-2",
-   "d174-1",
-   "d176-1"
+   "d88-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -4111,10 +3077,16 @@
   "core": true,
   "lessons": [
    "d88-1",
+   "d88-2",
+   "d88-3",
+   "d89-1",
+   "d89-2",
    "d90-2",
-   "d92-3"
+   "d90-3",
+   "d92-3",
+   "d100-3"
   ],
-  "count": 3,
+  "count": 9,
   "need": 0
  },
  {
@@ -4123,434 +3095,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d01-1",
-   "d02-1",
-   "d03-1",
-   "d04-1",
-   "d05-1",
-   "d06-1",
-   "d07-1",
-   "d08-1",
-   "d09-1",
-   "d10-1",
-   "d11-1",
-   "d12-1",
-   "d13-1",
-   "d15-1",
-   "d16-1",
-   "d17-1",
-   "d18-1",
-   "d19-1",
-   "d20-1",
-   "d21-1",
-   "d22-1",
-   "d23-1",
-   "d24-1",
-   "d25-1",
-   "d26-1",
-   "d27-1",
-   "d28-1",
-   "d29-1",
-   "d30-1",
-   "d31-1",
-   "d32-1",
-   "d33-1",
-   "d34-1",
-   "d35-1",
-   "d36-1",
-   "d37-1",
-   "d38-1",
-   "d39-1",
-   "d40-1",
-   "d41-1",
-   "d42-1",
-   "d43-1",
-   "d44-1",
-   "d45-1",
-   "d46-1",
-   "d47-1",
-   "d48-1",
-   "d49-1",
-   "d50-1",
-   "d51-1",
-   "d52-1",
-   "d53-1",
-   "d54-1",
-   "d55-1",
-   "d56-1",
-   "d58-1",
-   "d59-1",
-   "d60-1",
-   "d61-1",
-   "d62-1",
-   "d63-1",
-   "d64-1",
-   "d65-1",
-   "d66-1",
-   "d67-1",
-   "d68-1",
-   "d69-1",
-   "d70-1",
-   "d71-1",
-   "d72-1",
-   "d73-1",
-   "d74-1",
-   "d76-1",
-   "d77-1",
-   "d78-1",
-   "d79-1",
-   "d80-1",
-   "d81-2",
-   "d81-3",
-   "d82-1",
-   "d82-2",
-   "d82-3",
-   "d83-2",
-   "d83-3",
-   "d84-1",
-   "d84-2",
-   "d84-3",
-   "d225-1",
-   "d225-2",
-   "d225-3",
-   "d85-1",
-   "d85-2",
-   "d85-3",
-   "d87-1",
-   "d87-2",
-   "d87-3",
-   "d89-3",
-   "d93-3",
-   "d94-1",
-   "d94-2",
-   "d94-3",
-   "d95-1",
-   "d95-2",
-   "d95-3",
-   "d96-1",
-   "d96-2",
-   "d96-3",
-   "d97-3",
-   "d100-1",
-   "d100-2",
-   "d100-3",
-   "d101-2",
-   "d101-3",
-   "d102-1",
-   "d102-2",
-   "d102-3",
-   "d103-1",
-   "d103-2",
-   "d103-3",
-   "d105-1",
-   "d105-2",
-   "d105-3",
-   "d108-1",
-   "d108-2",
-   "d108-3",
-   "d109-1",
-   "d109-2",
-   "d109-3",
-   "d110-1",
-   "d110-2",
-   "d110-3",
-   "d111-1",
-   "d111-2",
-   "d111-3",
-   "d112-1",
-   "d112-3",
-   "d113-1",
-   "d113-2",
-   "d113-3",
-   "d114-2",
-   "d114-3",
-   "d117-1",
-   "d117-2",
-   "d117-3",
-   "d118-1",
-   "d118-2",
-   "d118-3",
-   "d119-1",
-   "d119-2",
-   "d119-3",
-   "d120-2",
-   "d122-1",
-   "d122-2",
-   "d122-3",
-   "d124-1",
-   "d124-2",
-   "d124-3",
-   "d125-1",
-   "d125-3",
-   "d126-1",
-   "d126-2",
-   "d126-3",
-   "d127-1",
-   "d127-2",
-   "d127-3",
-   "d128-1",
-   "d128-2",
-   "d128-3",
-   "d129-1",
-   "d129-2",
-   "d129-3",
-   "d137-1",
-   "d137-2",
-   "d137-3",
-   "d138-1",
-   "d138-2",
-   "d138-3",
-   "d140-1",
-   "d140-3",
-   "d141-1",
-   "d141-2",
-   "d141-3",
-   "d142-1",
-   "d142-2",
-   "d142-3",
-   "d143-3",
-   "d144-1",
-   "d144-2",
-   "d162-1",
-   "d162-2",
-   "d162-3",
-   "d210-1",
-   "d210-2",
-   "d210-3",
-   "d163-1",
-   "d163-2",
-   "d163-3",
-   "d211-1",
-   "d211-2",
-   "d211-3",
-   "d164-1",
-   "d164-2",
-   "d164-3",
-   "d212-1",
-   "d212-2",
-   "d212-3",
-   "d167-1",
-   "d167-2",
-   "d215-1",
-   "d215-2",
-   "d168-1",
-   "d168-2",
-   "d168-3",
-   "d216-1",
-   "d216-2",
-   "d216-3",
-   "d171-1",
-   "d171-2",
-   "d171-3",
-   "d172-1",
-   "d172-2",
-   "d172-3",
-   "d173-1",
-   "d173-2",
-   "d174-1",
-   "d174-2",
-   "d174-3",
-   "d175-1",
-   "d175-2",
-   "d176-1",
-   "d176-2",
-   "d176-3",
-   "d177-1",
-   "d177-2",
-   "d177-3",
-   "d219-1",
-   "d219-2",
-   "d219-3",
-   "d178-1",
-   "d178-2",
-   "d220-1",
-   "d220-2",
-   "d220-3",
-   "d179-1",
-   "d179-2",
-   "d179-3",
-   "d221-1",
-   "d221-2",
-   "d221-3",
-   "d180-1",
-   "d180-2",
-   "d180-3",
-   "d222-1",
-   "d222-2",
-   "d222-3",
-   "d181-1",
-   "d181-2",
-   "d223-1",
-   "d223-2",
-   "d223-3",
-   "d182-1",
-   "d182-2",
-   "d182-3",
-   "d224-1",
-   "d224-2",
-   "d184-1",
-   "d184-2",
-   "d186-1",
-   "d186-2",
-   "d186-3",
-   "d187-1",
-   "d187-2",
-   "d187-3",
-   "d190-1",
-   "d190-2",
-   "d190-3",
-   "d191-1",
-   "d191-2",
-   "d191-3",
-   "d192-1",
-   "d192-2",
-   "d192-3",
-   "d193-1",
-   "d193-2",
-   "d193-3",
-   "d194-1",
-   "d194-2",
-   "d194-3",
-   "d197-1",
-   "d197-2",
-   "d197-3",
-   "d198-1",
-   "d198-2",
-   "d198-3",
-   "d199-1",
-   "d199-2",
-   "d199-3",
-   "d201-1",
-   "d201-2",
-   "d206-1",
-   "d206-2",
-   "d206-3",
-   "d207-1",
-   "d207-2",
-   "d207-3",
-   "d226-1",
-   "d226-2",
-   "d227-1",
-   "d228-1",
-   "d229-1",
-   "d230-1",
-   "d231-1",
-   "d232-1",
-   "d233-1",
-   "d233-2",
-   "d235-1",
-   "d236-1",
-   "d237-1",
-   "d238-1",
-   "d241-1",
-   "d242-1",
-   "d243-1",
-   "d245-1",
-   "d246-1",
-   "d247-1",
-   "d253-1",
-   "d254-1",
-   "d254-2",
-   "d255-1",
-   "d256-1",
-   "d257-1",
-   "d258-1",
-   "d259-1",
-   "d259-2",
-   "d260-1",
-   "d261-1",
-   "d262-1",
-   "d262-2",
-   "d267-1",
-   "d267-2",
-   "d268-1",
-   "d269-1",
-   "d270-1",
-   "d271-1",
-   "d271-2",
-   "d272-1",
-   "d272-2",
-   "d273-1",
-   "d273-2",
-   "d274-1",
-   "d275-1",
-   "d275-2",
-   "d281-1",
-   "d282-1",
-   "d283-1",
-   "d284-1",
-   "d285-1",
-   "d286-1",
-   "d287-1",
-   "d288-1",
-   "d289-1",
-   "d290-1",
-   "d297-1",
-   "d299-1",
-   "d299-2",
-   "d300-1",
-   "d301-1",
-   "d302-1",
-   "d303-1",
-   "d304-1",
-   "d305-1",
-   "d306-1",
-   "d313-1",
-   "d314-1",
-   "d315-1",
-   "d316-1",
-   "d317-1",
-   "d318-1",
-   "d319-1",
-   "d320-1",
-   "d321-1",
-   "d322-1",
-   "d323-1",
-   "d324-1",
-   "d325-1",
-   "d330-1",
-   "d330-2",
-   "d331-1",
-   "d332-1",
-   "d333-1",
-   "d334-1",
-   "d335-1",
-   "d336-1",
-   "d337-1",
-   "d338-1",
-   "d345-1",
-   "d346-1",
-   "d347-1",
-   "d348-1",
-   "d349-1",
-   "d350-1",
-   "d351-1",
-   "d352-1",
-   "d353-1",
-   "d354-1",
-   "d355-1",
-   "d356-1",
-   "d357-1",
-   "d358-1",
-   "d361-1",
-   "d362-1",
-   "d362-2",
-   "d363-1",
-   "d363-2",
-   "d364-1",
-   "d365-1",
-   "d366-1",
-   "d367-1",
-   "d368-1",
-   "d369-1",
-   "d370-1",
-   "d371-1",
-   "d372-1",
-   "d373-1"
-  ],
-  "count": 424,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4558,13 +3105,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d174-1",
-   "d176-1",
-   "d177-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4572,13 +3115,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d174-1",
-   "d176-1",
-   "d177-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4586,13 +3125,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d174-1",
-   "d176-1",
-   "d177-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4600,13 +3135,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d174-1",
-   "d176-1",
-   "d177-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4614,13 +3145,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d177-3",
-   "d178-2",
-   "d179-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4628,13 +3155,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d178-2",
-   "d179-1",
-   "d221-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4642,13 +3165,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d178-2",
-   "d179-1",
-   "d221-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4657,20 +3176,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d47-1",
-   "d102-3",
-   "d138-2",
-   "d141-2",
-   "d173-2",
-   "d219-2",
-   "d197-1",
-   "d258-1",
-   "d303-1",
-   "d305-1",
-   "d346-1"
+   "d88-2"
   ],
-  "count": 11,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -4679,12 +3188,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d176-3",
-   "d178-1",
-   "d193-3"
+   "d88-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -4692,13 +3199,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d178-2",
-   "d179-1",
-   "d221-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4706,13 +3209,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d178-2",
-   "d179-1",
-   "d221-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4721,12 +3220,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d178-2",
-   "d221-3",
-   "d222-2"
+   "d88-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -4734,171 +3231,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d01-1",
-   "d02-1",
-   "d03-1",
-   "d04-1",
-   "d05-1",
-   "d06-1",
-   "d07-1",
-   "d08-1",
-   "d10-1",
-   "d11-1",
-   "d12-1",
-   "d13-1",
-   "d15-1",
-   "d16-1",
-   "d17-1",
-   "d19-1",
-   "d21-1",
-   "d22-1",
-   "d23-1",
-   "d26-1",
-   "d28-1",
-   "d29-1",
-   "d30-1",
-   "d31-1",
-   "d33-1",
-   "d34-1",
-   "d35-1",
-   "d37-1",
-   "d39-1",
-   "d41-1",
-   "d43-1",
-   "d45-1",
-   "d50-1",
-   "d51-1",
-   "d52-1",
-   "d57-1",
-   "d60-1",
-   "d62-1",
-   "d64-1",
-   "d65-1",
-   "d66-1",
-   "d67-1",
-   "d68-1",
-   "d69-1",
-   "d70-1",
-   "d71-1",
-   "d72-1",
-   "d73-1",
-   "d76-1",
-   "d77-1",
-   "d78-1",
-   "d79-1",
-   "d80-1",
-   "d81-2",
-   "d84-1",
-   "d84-2",
-   "d84-3",
-   "d225-1",
-   "d225-2",
-   "d225-3",
-   "d85-1",
-   "d85-2",
-   "d85-3",
-   "d89-3",
-   "d95-1",
-   "d95-2",
-   "d95-3",
-   "d96-1",
-   "d96-2",
-   "d96-3",
-   "d100-1",
-   "d100-2",
-   "d100-3",
-   "d101-2",
-   "d101-3",
-   "d103-2",
-   "d105-2",
-   "d108-2",
-   "d108-3",
-   "d109-2",
-   "d111-1",
-   "d111-2",
-   "d111-3",
-   "d113-2",
-   "d113-3",
-   "d117-2",
-   "d117-3",
-   "d118-1",
-   "d118-2",
-   "d118-3",
-   "d122-1",
-   "d122-2",
-   "d122-3",
-   "d124-3",
-   "d125-1",
-   "d125-3",
-   "d126-1",
-   "d126-2",
-   "d127-1",
-   "d127-2",
-   "d127-3",
-   "d128-2",
-   "d129-3",
-   "d140-1",
-   "d140-3",
-   "d143-3",
-   "d144-1",
-   "d144-2",
-   "d211-1",
-   "d171-2",
-   "d172-1",
-   "d172-3",
-   "d174-1",
-   "d174-2",
-   "d182-1",
-   "d184-1",
-   "d184-2",
-   "d186-1",
-   "d187-1",
-   "d187-2",
-   "d187-3",
-   "d193-3",
-   "d201-1",
-   "d206-2",
-   "d206-3",
-   "d230-1",
-   "d233-2",
-   "d237-1",
-   "d238-1",
-   "d242-1",
-   "d253-1",
-   "d254-1",
-   "d255-1",
-   "d256-1",
-   "d258-1",
-   "d258-2",
-   "d260-2",
-   "d262-1",
-   "d274-1",
-   "d282-1",
-   "d283-1",
-   "d289-1",
-   "d291-1",
-   "d301-1",
-   "d313-1",
-   "d314-1",
-   "d315-1",
-   "d317-1",
-   "d318-1",
-   "d321-1",
-   "d325-1",
-   "d331-1",
-   "d332-1",
-   "d346-1",
-   "d350-1",
-   "d356-1",
-   "d358-1",
-   "d364-1",
-   "d367-1",
-   "d370-1",
-   "d371-1"
-  ],
-  "count": 161,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -4906,103 +3241,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d06-1",
-   "d12-1",
-   "d13-1",
-   "d15-1",
-   "d17-1",
-   "d18-1",
-   "d23-1",
-   "d26-1",
-   "d29-1",
-   "d30-1",
-   "d31-1",
-   "d34-1",
-   "d35-1",
-   "d45-1",
-   "d50-1",
-   "d51-1",
-   "d57-1",
-   "d61-1",
-   "d62-1",
-   "d63-1",
-   "d64-1",
-   "d67-1",
-   "d68-1",
-   "d70-1",
-   "d72-1",
-   "d73-1",
-   "d79-1",
-   "d81-1",
-   "d84-1",
-   "d84-3",
-   "d225-2",
-   "d85-1",
-   "d85-2",
-   "d85-3",
-   "d86-1",
-   "d86-2",
-   "d88-1",
-   "d88-2",
-   "d88-3",
-   "d89-1",
-   "d89-2",
-   "d89-3",
-   "d93-3",
-   "d95-1",
-   "d96-1",
-   "d97-3",
-   "d100-1",
-   "d100-2",
-   "d101-1",
-   "d103-2",
-   "d105-3",
-   "d108-1",
-   "d108-2",
-   "d109-2",
-   "d111-1",
-   "d112-1",
-   "d113-1",
-   "d113-2",
-   "d116-3",
-   "d117-2",
-   "d117-3",
-   "d118-1",
-   "d118-2",
-   "d120-1",
-   "d120-3",
-   "d126-1",
-   "d127-1",
-   "d140-1",
-   "d143-1",
-   "d172-1",
-   "d174-1",
-   "d184-2",
-   "d206-3",
-   "d227-1",
-   "d230-1",
-   "d232-1",
-   "d233-1",
-   "d241-1",
-   "d243-1",
-   "d254-1",
-   "d255-1",
-   "d256-1",
-   "d257-1",
-   "d258-1",
-   "d259-1",
-   "d268-1",
-   "d282-1",
-   "d289-1",
-   "d331-1",
-   "d337-1",
-   "d350-1",
-   "d367-1",
-   "d371-1"
-  ],
-  "count": 93,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5010,84 +3251,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d02-1",
-   "d04-1",
-   "d05-1",
-   "d08-1",
-   "d11-1",
-   "d13-1",
-   "d23-1",
-   "d26-1",
-   "d28-1",
-   "d29-1",
-   "d31-1",
-   "d34-1",
-   "d35-1",
-   "d37-1",
-   "d39-1",
-   "d41-1",
-   "d45-1",
-   "d50-1",
-   "d52-1",
-   "d57-1",
-   "d60-1",
-   "d64-1",
-   "d66-1",
-   "d73-1",
-   "d77-1",
-   "d81-2",
-   "d84-1",
-   "d84-2",
-   "d84-3",
-   "d225-1",
-   "d225-2",
-   "d225-3",
-   "d85-1",
-   "d85-2",
-   "d85-3",
-   "d89-3",
-   "d95-3",
-   "d96-3",
-   "d100-3",
-   "d101-2",
-   "d101-3",
-   "d108-2",
-   "d108-3",
-   "d111-1",
-   "d111-2",
-   "d113-3",
-   "d118-1",
-   "d118-3",
-   "d122-2",
-   "d125-1",
-   "d127-1",
-   "d143-3",
-   "d172-2",
-   "d172-3",
-   "d174-1",
-   "d174-2",
-   "d176-3",
-   "d187-1",
-   "d187-2",
-   "d187-3",
-   "d229-1",
-   "d233-1",
-   "d258-2",
-   "d260-1",
-   "d274-1",
-   "d283-1",
-   "d289-1",
-   "d314-1",
-   "d331-1",
-   "d350-1",
-   "d358-1",
-   "d367-1",
-   "d370-1",
-   "d371-1"
-  ],
-  "count": 74,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5095,13 +3261,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d222-2",
-   "d223-1",
-   "d182-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5110,29 +3272,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d06-1",
-   "d39-1",
-   "d61-1",
-   "d69-1",
+   "d88-1",
    "d88-2",
-   "d89-2",
-   "d97-3",
-   "d101-2",
-   "d101-3",
-   "d105-1",
-   "d108-1",
-   "d111-1",
-   "d111-3",
-   "d117-1",
-   "d120-3",
-   "d125-3",
-   "d140-2",
-   "d140-3",
-   "d274-1",
-   "d304-1",
-   "d332-1"
+   "d89-2"
   ],
-  "count": 21,
+  "count": 3,
   "need": 0
  },
  {
@@ -5142,15 +3286,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d06-1",
-   "d39-1",
-   "d61-1",
-   "d88-1",
-   "d108-1",
-   "d120-3"
+   "d88-1"
   ],
-  "count": 6,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -5159,21 +3298,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d30-1",
-   "d51-1",
-   "d61-1",
-   "d79-1",
-   "d85-1",
-   "d89-3",
-   "d93-3",
-   "d100-2",
-   "d105-3",
-   "d108-2",
-   "d117-3",
-   "d257-1",
-   "d268-1"
+   "d88-3",
+   "d91-3",
+   "d92-3"
   ],
-  "count": 13,
+  "count": 3,
   "need": 0
  },
  {
@@ -5182,231 +3311,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d01-1",
-   "d02-1",
-   "d04-1",
-   "d07-1",
-   "d08-1",
-   "d10-1",
-   "d11-1",
-   "d12-1",
-   "d15-1",
-   "d17-1",
-   "d18-1",
-   "d19-1",
-   "d22-1",
-   "d25-1",
-   "d26-1",
-   "d27-1",
-   "d28-1",
-   "d30-1",
-   "d31-1",
-   "d37-1",
-   "d40-1",
-   "d41-1",
-   "d42-1",
-   "d43-1",
-   "d44-1",
-   "d46-1",
-   "d48-1",
-   "d49-1",
-   "d52-1",
-   "d53-1",
-   "d54-1",
-   "d55-1",
-   "d56-1",
-   "d57-1",
-   "d59-1",
-   "d65-1",
-   "d68-1",
-   "d69-1",
-   "d70-1",
-   "d71-1",
-   "d74-1",
-   "d76-1",
-   "d78-1",
-   "d80-1",
-   "d225-1",
-   "d225-2",
-   "d85-2",
-   "d94-1",
-   "d94-2",
-   "d96-1",
-   "d96-2",
-   "d102-1",
-   "d102-2",
-   "d103-1",
-   "d103-2",
-   "d103-3",
-   "d109-1",
-   "d110-1",
-   "d110-3",
-   "d111-2",
-   "d113-3",
-   "d114-2",
-   "d118-2",
-   "d118-3",
-   "d119-1",
-   "d119-2",
-   "d119-3",
-   "d120-2",
-   "d122-2",
-   "d124-2",
-   "d125-3",
-   "d126-3",
-   "d127-1",
-   "d127-2",
-   "d127-3",
-   "d128-1",
-   "d128-2",
-   "d128-3",
-   "d129-1",
-   "d129-2",
-   "d129-3",
-   "d137-1",
-   "d137-2",
-   "d137-3",
-   "d138-1",
-   "d138-2",
-   "d138-3",
-   "d140-1",
-   "d140-3",
-   "d141-1",
-   "d141-2",
-   "d141-3",
-   "d142-1",
-   "d142-2",
-   "d142-3",
-   "d143-3",
-   "d144-1",
-   "d210-1",
-   "d210-3",
-   "d163-1",
-   "d163-2",
-   "d163-3",
-   "d211-1",
-   "d211-2",
-   "d164-1",
-   "d164-2",
-   "d212-3",
-   "d167-3",
-   "d215-1",
-   "d216-3",
-   "d172-1",
-   "d175-2",
-   "d219-1",
-   "d178-3",
-   "d179-1",
-   "d179-2",
-   "d179-3",
-   "d221-1",
-   "d221-2",
-   "d180-1",
-   "d180-2",
-   "d180-3",
-   "d222-1",
-   "d222-2",
-   "d223-1",
-   "d223-2",
-   "d182-2",
-   "d224-2",
-   "d224-3",
-   "d184-1",
-   "d184-2",
-   "d184-3",
-   "d186-1",
-   "d186-2",
-   "d190-1",
-   "d191-1",
-   "d191-2",
-   "d191-3",
-   "d193-1",
-   "d194-3",
-   "d197-2",
-   "d198-1",
-   "d198-2",
-   "d199-1",
-   "d199-3",
-   "d201-1",
-   "d201-2",
-   "d226-1",
-   "d226-2",
-   "d228-1",
-   "d229-1",
-   "d231-1",
-   "d233-1",
-   "d233-2",
-   "d235-1",
-   "d237-1",
-   "d242-1",
-   "d246-1",
-   "d254-2",
-   "d255-1",
-   "d258-2",
-   "d259-1",
-   "d269-1",
-   "d271-1",
-   "d272-1",
-   "d273-1",
-   "d273-2",
-   "d274-1",
-   "d275-1",
-   "d275-2",
-   "d281-1",
-   "d282-1",
-   "d283-1",
-   "d286-1",
-   "d288-1",
-   "d290-1",
-   "d291-1",
-   "d299-1",
-   "d299-2",
-   "d300-1",
-   "d301-1",
-   "d302-1",
-   "d303-1",
-   "d306-1",
-   "d313-1",
-   "d314-1",
-   "d315-1",
-   "d316-1",
-   "d317-1",
-   "d318-1",
-   "d319-1",
-   "d320-1",
-   "d321-1",
-   "d322-1",
-   "d323-1",
-   "d324-1",
-   "d325-1",
-   "d329-1",
-   "d332-1",
-   "d334-1",
-   "d335-1",
-   "d337-1",
-   "d346-1",
-   "d347-1",
-   "d349-1",
-   "d350-1",
-   "d351-1",
-   "d352-1",
-   "d353-1",
-   "d354-1",
-   "d355-1",
-   "d356-1",
-   "d357-1",
-   "d358-1",
-   "d361-1",
-   "d362-1",
-   "d365-1",
-   "d366-1",
-   "d367-1",
-   "d368-1",
-   "d372-1"
-  ],
-  "count": 221,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5414,13 +3321,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d222-2",
-   "d223-1",
-   "d182-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5428,13 +3331,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d222-2",
-   "d223-1",
-   "d182-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5442,13 +3341,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d222-2",
-   "d223-1",
-   "d182-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5456,13 +3351,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d223-1",
-   "d182-3",
-   "d184-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5470,77 +3361,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d01-1",
-   "d13-1",
-   "d15-1",
-   "d18-1",
-   "d19-1",
-   "d25-1",
-   "d48-1",
-   "d58-1",
-   "d78-1",
-   "d84-1",
-   "d87-1",
-   "d87-2",
-   "d94-2",
-   "d103-1",
-   "d109-2",
-   "d109-3",
-   "d119-1",
-   "d122-2",
-   "d124-2",
-   "d127-3",
-   "d129-1",
-   "d129-2",
-   "d138-1",
-   "d141-3",
-   "d142-1",
-   "d143-3",
-   "d162-2",
-   "d162-3",
-   "d210-2",
-   "d210-3",
-   "d163-1",
-   "d211-1",
-   "d164-1",
-   "d164-2",
-   "d212-2",
-   "d167-1",
-   "d167-2",
-   "d215-2",
-   "d168-1",
-   "d168-3",
-   "d216-1",
-   "d172-2",
-   "d172-3",
-   "d173-2",
-   "d174-1",
-   "d175-2",
-   "d176-1",
-   "d177-1",
-   "d220-3",
-   "d181-1",
-   "d223-2",
-   "d182-2",
-   "d224-2",
-   "d186-2",
-   "d192-2",
-   "d193-1",
-   "d207-2",
-   "d207-3",
-   "d226-1",
-   "d235-1",
-   "d261-1",
-   "d283-1",
-   "d285-1",
-   "d329-1",
-   "d361-1",
-   "d362-1",
-   "d362-2"
-  ],
-  "count": 67,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5548,13 +3371,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d182-3",
-   "d184-2",
-   "d187-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5562,13 +3381,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d184-2",
-   "d187-1",
-   "d190-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5576,13 +3391,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d184-2",
-   "d187-1",
-   "d190-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5590,13 +3401,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d184-2",
-   "d187-1",
-   "d190-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5604,149 +3411,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d01-1",
-   "d02-1",
-   "d03-1",
-   "d05-1",
-   "d07-1",
-   "d11-1",
-   "d16-1",
-   "d18-1",
-   "d20-1",
-   "d21-1",
-   "d22-1",
-   "d23-1",
-   "d32-1",
-   "d34-1",
-   "d35-1",
-   "d37-1",
-   "d38-1",
-   "d42-1",
-   "d46-1",
-   "d49-1",
-   "d50-1",
-   "d55-1",
-   "d60-1",
-   "d63-1",
-   "d66-1",
-   "d67-1",
-   "d71-1",
-   "d72-1",
-   "d76-1",
-   "d77-1",
-   "d78-1",
-   "d82-1",
-   "d84-2",
-   "d225-3",
-   "d85-3",
-   "d87-1",
-   "d87-2",
-   "d94-1",
-   "d95-2",
-   "d95-3",
-   "d96-2",
-   "d96-3",
-   "d100-1",
-   "d100-2",
-   "d100-3",
-   "d102-1",
-   "d105-1",
-   "d105-2",
-   "d109-1",
-   "d109-3",
-   "d111-3",
-   "d113-1",
-   "d114-3",
-   "d117-1",
-   "d117-2",
-   "d117-3",
-   "d118-3",
-   "d119-1",
-   "d120-2",
-   "d122-1",
-   "d122-3",
-   "d124-3",
-   "d125-1",
-   "d126-1",
-   "d126-2",
-   "d127-2",
-   "d128-1",
-   "d128-3",
-   "d137-1",
-   "d138-1",
-   "d138-3",
-   "d140-1",
-   "d140-3",
-   "d141-1",
-   "d141-2",
-   "d141-3",
-   "d142-1",
-   "d142-2",
-   "d142-3",
-   "d144-2",
-   "d162-3",
-   "d163-1",
-   "d163-2",
-   "d211-1",
-   "d211-2",
-   "d164-3",
-   "d212-3",
-   "d215-3",
-   "d168-2",
-   "d168-3",
-   "d171-1",
-   "d171-3",
-   "d172-1",
-   "d172-2",
-   "d173-1",
-   "d175-1",
-   "d220-1",
-   "d179-1",
-   "d179-2",
-   "d180-1",
-   "d182-1",
-   "d182-2",
-   "d182-3",
-   "d224-1",
-   "d184-3",
-   "d186-2",
-   "d187-2",
-   "d192-1",
-   "d192-2",
-   "d193-1",
-   "d197-3",
-   "d199-2",
-   "d206-1",
-   "d206-2",
-   "d228-1",
-   "d229-1",
-   "d230-1",
-   "d232-1",
-   "d237-1",
-   "d238-1",
-   "d267-1",
-   "d267-2",
-   "d273-2",
-   "d284-1",
-   "d287-1",
-   "d288-1",
-   "d297-1",
-   "d299-1",
-   "d304-1",
-   "d306-1",
-   "d331-1",
-   "d337-1",
-   "d345-1",
-   "d347-1",
-   "d351-1",
-   "d353-1",
-   "d358-1",
-   "d364-1",
-   "d373-1"
-  ],
-  "count": 139,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5755,12 +3422,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d184-2",
-   "d190-3",
-   "d192-2"
+   "d89-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -5768,13 +3433,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d190-3",
-   "d192-2",
-   "d194-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5783,111 +3444,19 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d09-1",
-   "d10-1",
-   "d16-1",
-   "d17-1",
-   "d21-1",
-   "d33-1",
-   "d36-1",
-   "d38-1",
-   "d43-1",
-   "d52-1",
-   "d56-1",
-   "d65-1",
-   "d66-1",
-   "d74-1",
-   "d76-1",
-   "d83-3",
-   "d84-2",
-   "d87-1",
-   "d87-3",
+   "d89-2",
+   "d90-3",
+   "d91-2",
+   "d92-2",
+   "d93-2",
+   "d93-3",
    "d94-3",
-   "d96-1",
-   "d103-3",
-   "d109-1",
-   "d109-2",
-   "d109-3",
-   "d110-1",
-   "d118-2",
-   "d119-2",
-   "d125-3",
-   "d128-3",
-   "d129-1",
-   "d129-2",
-   "d129-3",
-   "d137-1",
-   "d137-2",
-   "d138-1",
-   "d138-2",
-   "d138-3",
-   "d141-3",
-   "d142-3",
-   "d162-1",
-   "d210-1",
-   "d212-3",
-   "d168-1",
-   "d216-1",
-   "d216-2",
-   "d171-2",
-   "d173-1",
-   "d173-2",
-   "d173-3",
-   "d174-2",
-   "d174-3",
-   "d175-2",
-   "d176-1",
-   "d176-2",
-   "d176-3",
-   "d219-2",
-   "d220-1",
-   "d179-1",
-   "d180-2",
-   "d222-3",
-   "d181-1",
-   "d181-2",
-   "d181-3",
-   "d182-2",
-   "d182-3",
-   "d184-1",
-   "d186-1",
-   "d186-3",
-   "d190-2",
-   "d191-1",
-   "d191-2",
-   "d197-1",
-   "d197-2",
-   "d198-2",
-   "d206-2",
-   "d226-1",
-   "d228-1",
-   "d235-1",
-   "d253-1",
-   "d258-2",
-   "d259-1",
-   "d262-2",
-   "d270-1",
-   "d271-1",
-   "d271-2",
-   "d275-1",
-   "d275-2",
-   "d286-1",
-   "d288-1",
-   "d290-1",
-   "d299-1",
-   "d320-1",
-   "d332-1",
-   "d333-1",
-   "d354-1",
-   "d355-1",
-   "d362-1",
-   "d363-2",
-   "d368-1",
-   "d369-1",
-   "d372-1",
-   "d373-1"
+   "d95-1",
+   "d97-3",
+   "d100-2",
+   "d101-2"
   ],
-  "count": 103,
+  "count": 11,
   "need": 0
  },
  {
@@ -5896,13 +3465,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d201-1",
-   "d207-3",
-   "d231-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5911,18 +3476,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d21-1",
-   "d29-1",
-   "d33-1",
-   "d68-1",
-   "d87-1",
-   "d87-2",
-   "d102-2",
-   "d315-1",
-   "d320-1",
-   "d368-1"
+   "d89-1",
+   "d91-3",
+   "d102-2"
   ],
-  "count": 10,
+  "count": 3,
   "need": 0
  },
  {
@@ -5931,13 +3489,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d190-3",
-   "d192-2",
-   "d194-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5945,18 +3499,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d102-1",
-   "d109-3",
-   "d222-1",
-   "d191-1",
-   "d287-1",
-   "d290-1",
-   "d366-1",
-   "d372-1"
-  ],
-  "count": 8,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5964,13 +3509,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d192-2",
-   "d194-1",
-   "d197-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5978,13 +3519,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d194-1",
-   "d197-3",
-   "d199-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -5992,13 +3529,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d197-3",
-   "d199-2",
-   "d206-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6006,13 +3539,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d197-3",
-   "d199-2",
-   "d206-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6020,13 +3549,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d197-3",
-   "d199-2",
-   "d206-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6034,13 +3559,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d199-2",
-   "d206-2",
-   "d226-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6048,13 +3569,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d226-1",
-   "d230-1",
-   "d235-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6062,13 +3579,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d226-1",
-   "d230-1",
-   "d235-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6076,13 +3589,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d226-1",
-   "d230-1",
-   "d235-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6090,13 +3599,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d226-1",
-   "d230-1",
-   "d235-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6104,13 +3609,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d226-1",
-   "d235-1",
-   "d240-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6118,13 +3619,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d235-1",
-   "d240-1",
-   "d245-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6133,12 +3630,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d240-1",
-   "d245-1",
-   "d254-2"
+   "d89-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -6147,12 +3642,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d240-1",
-   "d245-1",
-   "d254-2"
+   "d89-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -6160,13 +3653,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d240-1",
-   "d245-1",
-   "d254-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6175,20 +3664,17 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d16-1",
-   "d28-1",
-   "d56-1",
-   "d57-1",
-   "d69-1",
-   "d225-1",
-   "d96-2",
-   "d184-2",
-   "d233-2",
-   "d238-1",
-   "d325-1",
-   "d346-1"
+   "d89-2",
+   "d89-3",
+   "d90-1",
+   "d91-1",
+   "d91-2",
+   "d95-1",
+   "d108-1",
+   "d108-2",
+   "d108-3"
   ],
-  "count": 12,
+  "count": 9,
   "need": 0
  },
  {
@@ -6198,12 +3684,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d317-1",
-   "d324-1",
-   "d333-1"
+   "d201-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -6212,9 +3696,9 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d240-1",
-   "d245-1",
-   "d254-2"
+   "d89-3",
+   "d97-1",
+   "d100-1"
   ],
   "count": 3,
   "need": 0
@@ -6225,13 +3709,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d245-1",
-   "d254-2",
-   "d258-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6240,12 +3720,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d187-2",
-   "d191-3",
-   "d194-1"
+   "d201-1",
+   "d274-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "문형",
@@ -6254,12 +3733,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d258-2",
-   "d261-1",
-   "d268-1"
+   "d89-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -6268,11 +3745,16 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d258-2",
-   "d261-1",
-   "d268-1"
+   "d89-1",
+   "d89-2",
+   "d89-3",
+   "d90-1",
+   "d92-1",
+   "d93-1",
+   "d94-1",
+   "d94-2"
   ],
-  "count": 3,
+  "count": 8,
   "need": 0
  },
  {
@@ -6282,9 +3764,9 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d187-3",
-   "d260-1",
-   "d318-1"
+   "d201-1",
+   "d256-1",
+   "d260-1"
   ],
   "count": 3,
   "need": 0
@@ -6296,12 +3778,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d258-2",
-   "d261-1",
-   "d268-1"
+   "d120-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -6309,13 +3789,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d258-2",
-   "d261-1",
-   "d268-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6324,12 +3800,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d201-1",
-   "d207-3",
-   "d231-1"
+   "d89-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "문형",
@@ -6337,13 +3811,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d258-2",
-   "d261-1",
-   "d268-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6352,61 +3822,13 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d45-1",
-   "d56-1",
-   "d72-1",
    "d73-1",
    "d80-1",
    "d81-3",
-   "d83-2",
-   "d86-3",
-   "d94-1",
-   "d95-1",
-   "d97-3",
-   "d103-1",
-   "d105-3",
-   "d111-3",
-   "d112-3",
-   "d120-3",
-   "d124-3",
-   "d126-2",
-   "d127-3",
-   "d143-1",
-   "d144-1",
-   "d210-1",
-   "d163-1",
-   "d163-3",
-   "d171-2",
-   "d173-1",
-   "d177-1",
-   "d179-2",
-   "d222-1",
-   "d181-1",
-   "d223-1",
-   "d182-1",
-   "d224-1",
-   "d186-3",
-   "d206-2",
-   "d207-1",
-   "d207-2",
-   "d226-2",
-   "d227-1",
-   "d228-1",
-   "d229-1",
-   "d238-1",
-   "d241-1",
-   "d247-1",
-   "d271-1",
-   "d271-2",
-   "d282-1",
-   "d284-1",
-   "d349-1",
-   "d353-1",
-   "d354-1",
-   "d355-1",
-   "d368-1"
+   "d83-1",
+   "d83-2"
   ],
-  "count": 53,
+  "count": 5,
   "need": 0
  },
  {
@@ -6416,26 +3838,13 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d27-1",
-   "d40-1",
-   "d41-1",
-   "d42-1",
-   "d53-1",
-   "d137-2",
-   "d138-3",
-   "d142-3",
-   "d215-2",
-   "d175-2",
-   "d177-2",
-   "d220-2",
-   "d220-3",
-   "d180-2",
-   "d181-2",
-   "d260-2",
-   "d301-1",
-   "d338-1"
+   "d112-2",
+   "d113-1",
+   "d117-3",
+   "d128-1",
+   "d138-3"
   ],
-  "count": 18,
+  "count": 5,
   "need": 0
  },
  {
@@ -6444,13 +3853,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d261-1",
-   "d272-1",
-   "d275-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "문형",
@@ -6458,13 +3863,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d272-1",
-   "d275-1",
-   "d284-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -6473,16 +3874,47 @@
   "exposures": 3,
   "core": true,
   "lessons": [
+   "d01-1",
+   "d04-1",
+   "d06-1",
    "d07-1",
+   "d11-1",
    "d12-1",
+   "d13-1",
+   "d15-1",
+   "d17-1",
    "d19-1",
+   "d26-1",
+   "d29-1",
+   "d39-1",
+   "d45-1",
+   "d50-1",
+   "d60-1",
+   "d63-1",
    "d65-1",
-   "d187-1",
-   "d187-3",
+   "d67-1",
+   "d68-1",
+   "d72-1",
+   "d73-1",
+   "d78-1",
+   "d81-2",
+   "d88-3",
+   "d89-2",
+   "d90-1",
+   "d90-2",
+   "d101-3",
+   "d109-2",
+   "d112-3",
    "d193-3",
-   "d301-1"
+   "d253-1",
+   "d254-1",
+   "d256-1",
+   "d257-1",
+   "d268-1",
+   "d301-1",
+   "d304-1"
   ],
-  "count": 8,
+  "count": 39,
   "need": 0
  },
  {
@@ -6492,12 +3924,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d272-1",
-   "d275-1",
-   "d284-1"
+   "d76-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -6506,9 +3936,9 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d272-1",
-   "d275-1",
-   "d284-1"
+   "d13-1",
+   "d81-1",
+   "d257-1"
   ],
   "count": 3,
   "need": 0
@@ -6520,9 +3950,9 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d272-1",
-   "d275-1",
-   "d284-1"
+   "d10-1",
+   "d108-1",
+   "d182-1"
   ],
   "count": 3,
   "need": 0
@@ -6534,12 +3964,11 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d275-1",
-   "d284-1",
-   "d289-1"
+   "d79-1",
+   "d84-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -6548,12 +3977,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d284-1",
-   "d289-1",
-   "d299-2"
+   "d52-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -6561,13 +3988,9 @@
   "level": "N3",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d289-1",
-   "d299-2",
-   "d304-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -6577,10 +4000,12 @@
   "core": true,
   "lessons": [
    "d08-1",
-   "d15-1",
-   "d22-1"
+   "d37-1",
+   "d86-2",
+   "d86-3",
+   "d256-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -6590,12 +4015,11 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d323-1",
-   "d332-1",
-   "d345-1"
+   "d05-1",
+   "d323-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -6604,12 +4028,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d289-1",
-   "d299-2",
-   "d304-1"
+   "d80-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -6618,12 +4040,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d289-1",
-   "d299-2",
-   "d304-1"
+   "d15-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -6632,12 +4052,11 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d325-1",
-   "d334-1",
-   "d347-1"
+   "d34-1",
+   "d325-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -6646,12 +4065,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d47-1",
-   "d54-1",
-   "d61-1"
+   "d47-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -6660,12 +4077,10 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d180-3",
-   "d223-1",
-   "d224-2"
+   "d180-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -6674,13 +4089,13 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d09-1",
    "d32-1",
+   "d39-1",
+   "d51-1",
    "d54-1",
    "d102-2",
    "d162-1",
    "d164-2",
-   "d173-2",
    "d193-1",
    "d300-1"
   ],
@@ -6694,149 +4109,18 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d09-1",
-   "d14-1",
-   "d20-1",
-   "d24-1",
-   "d33-1",
-   "d36-1",
-   "d38-1",
-   "d40-1",
-   "d43-1",
-   "d44-1",
-   "d47-1",
-   "d49-1",
-   "d53-1",
-   "d54-1",
-   "d55-1",
-   "d59-1",
-   "d71-1",
+   "d82-1",
    "d82-2",
-   "d87-3",
-   "d94-2",
-   "d94-3",
-   "d102-1",
-   "d102-2",
-   "d102-3",
-   "d119-2",
-   "d119-3",
-   "d126-3",
-   "d162-1",
-   "d210-1",
-   "d210-2",
-   "d210-3",
-   "d163-2",
-   "d211-2",
-   "d211-3",
-   "d164-1",
-   "d212-2",
-   "d167-1",
-   "d167-2",
-   "d167-3",
-   "d215-1",
-   "d215-2",
-   "d215-3",
-   "d168-1",
-   "d168-2",
-   "d168-3",
-   "d216-2",
-   "d216-3",
-   "d171-1",
-   "d172-3",
-   "d173-1",
-   "d173-3",
-   "d174-2",
-   "d174-3",
-   "d175-1",
-   "d176-1",
-   "d176-2",
-   "d176-3",
-   "d177-3",
-   "d219-3",
-   "d178-2",
-   "d178-3",
-   "d220-1",
-   "d179-1",
-   "d221-1",
-   "d221-2",
-   "d221-3",
-   "d180-1",
-   "d180-3",
-   "d222-2",
-   "d222-3",
-   "d181-2",
-   "d181-3",
-   "d223-1",
-   "d223-2",
-   "d223-3",
-   "d184-1",
-   "d184-3",
-   "d186-1",
-   "d186-2",
-   "d186-3",
-   "d190-1",
-   "d190-3",
-   "d191-2",
-   "d191-3",
-   "d192-1",
-   "d192-3",
-   "d193-2",
-   "d193-3",
-   "d194-1",
-   "d194-2",
-   "d197-2",
-   "d198-1",
-   "d198-2",
-   "d198-3",
-   "d199-1",
-   "d199-3",
-   "d226-1",
-   "d226-2",
-   "d235-1",
-   "d236-1",
-   "d237-1",
-   "d245-1",
-   "d247-1",
-   "d259-1",
-   "d262-1",
-   "d269-1",
-   "d270-1",
-   "d272-1",
-   "d281-1",
-   "d284-1",
-   "d285-1",
-   "d287-1",
-   "d299-2",
-   "d300-1",
-   "d303-1",
-   "d306-1",
-   "d313-1",
-   "d315-1",
-   "d322-1",
-   "d330-1",
-   "d334-1",
-   "d335-1",
-   "d336-1",
-   "d338-1",
-   "d345-1",
-   "d347-1",
-   "d348-1",
-   "d349-1",
-   "d351-1",
-   "d352-1",
-   "d353-1",
-   "d354-1",
-   "d357-1",
-   "d362-1",
-   "d362-2",
-   "d363-1",
-   "d365-1",
-   "d366-1",
-   "d369-1",
-   "d372-1",
-   "d373-1"
+   "d83-2",
+   "d84-1",
+   "d85-2",
+   "d86-1",
+   "d86-2",
+   "d86-3",
+   "d87-1",
+   "d88-1"
   ],
-  "count": 141,
+  "count": 10,
   "need": 0
  },
  {
@@ -6845,16 +4129,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d59-1",
-   "d167-2",
-   "d178-2",
-   "d226-2",
-   "d352-1",
-   "d357-1"
-  ],
-  "count": 6,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -6863,11 +4140,12 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d330-2",
-   "d337-1",
-   "d350-1"
+   "d118-1",
+   "d122-3",
+   "d125-3",
+   "d140-3"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -6876,15 +4154,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d231-1",
-   "d302-1",
-   "d321-1",
-   "d333-1",
-   "d335-1"
-  ],
-  "count": 5,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -6893,12 +4165,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d289-1",
-   "d299-2",
-   "d304-1"
+   "d82-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -6907,11 +4177,15 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d299-2",
-   "d304-1",
-   "d315-1"
+   "d91-1",
+   "d92-3",
+   "d96-3",
+   "d101-1",
+   "d108-3",
+   "d111-3",
+   "d297-1"
   ],
-  "count": 3,
+  "count": 7,
   "need": 0
  },
  {
@@ -6921,9 +4195,9 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d304-1",
-   "d315-1",
-   "d320-1"
+   "d92-2",
+   "d100-2",
+   "d108-3"
   ],
   "count": 3,
   "need": 0
@@ -6937,17 +4211,15 @@
   "lessons": [
    "d53-1",
    "d74-1",
+   "d82-2",
+   "d92-2",
+   "d129-3",
    "d211-2",
-   "d167-1",
-   "d215-1",
-   "d168-2",
-   "d177-1",
-   "d221-1",
    "d224-2",
-   "d190-1",
-   "d197-2"
+   "d227-1",
+   "d304-1"
   ],
-  "count": 11,
+  "count": 9,
   "need": 0
  },
  {
@@ -6957,11 +4229,14 @@
   "exposures": 1,
   "core": true,
   "lessons": [
+   "d118-1",
+   "d164-1",
+   "d167-2",
    "d174-3",
-   "d177-2",
+   "d223-2",
    "d330-1"
   ],
-  "count": 3,
+  "count": 6,
   "need": 0
  },
  {
@@ -6971,12 +4246,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d315-1",
-   "d320-1",
-   "d325-1"
+   "d92-3",
+   "d258-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -6985,15 +4259,12 @@
   "exposures": 1,
   "core": true,
   "lessons": [
+   "d82-2",
+   "d83-1",
    "d87-3",
-   "d94-2",
-   "d168-1",
-   "d216-3",
-   "d171-3",
-   "d194-1",
-   "d198-2"
+   "d95-3"
   ],
-  "count": 7,
+  "count": 4,
   "need": 0
  },
  {
@@ -7003,12 +4274,22 @@
   "exposures": 1,
   "core": true,
   "lessons": [
+   "d43-1",
+   "d48-1",
+   "d52-1",
+   "d56-1",
+   "d76-1",
+   "d82-1",
+   "d88-3",
+   "d91-1",
+   "d91-2",
+   "d92-2",
    "d102-3",
    "d179-3",
-   "d190-1",
+   "d186-3",
    "d363-2"
   ],
-  "count": 4,
+  "count": 14,
   "need": 0
  },
  {
@@ -7019,10 +4300,11 @@
   "core": true,
   "lessons": [
    "d48-1",
+   "d82-2",
    "d102-3",
    "d179-3"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -7032,12 +4314,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d305-1",
-   "d318-1",
-   "d325-1"
+   "d82-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7046,12 +4326,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d190-2",
-   "d192-3",
-   "d330-2"
+   "d82-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7059,13 +4337,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d315-1",
-   "d320-1",
-   "d325-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7074,14 +4348,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d24-1",
-   "d164-1",
-   "d167-1",
-   "d216-2",
-   "d192-2"
+   "d82-2"
   ],
-  "count": 5,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7090,15 +4360,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d82-2",
-   "d162-3",
-   "d181-1",
-   "d224-2",
-   "d192-2",
-   "d269-1"
+   "d82-1",
+   "d82-2"
   ],
-  "count": 6,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -7106,13 +4372,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d315-1",
-   "d320-1",
-   "d325-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7121,12 +4383,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d315-1",
-   "d320-1",
-   "d325-1"
+   "d118-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7135,25 +4395,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d25-1",
-   "d48-1",
-   "d87-2",
-   "d162-2",
-   "d210-2",
-   "d210-3",
-   "d212-2",
-   "d167-2",
-   "d215-2",
-   "d168-3",
-   "d216-1",
-   "d172-2",
-   "d177-1",
-   "d220-3",
-   "d261-1",
-   "d285-1",
-   "d362-2"
+   "d82-1",
+   "d83-1",
+   "d87-2"
   ],
-  "count": 17,
+  "count": 3,
   "need": 0
  },
  {
@@ -7163,12 +4409,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d330-1",
-   "d336-1",
-   "d349-1"
+   "d82-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7177,12 +4421,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d325-1",
-   "d332-1",
-   "d337-1"
+   "d82-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7190,18 +4432,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d20-1",
-   "d55-1",
-   "d83-3",
-   "d192-1",
-   "d201-2",
-   "d284-1",
-   "d330-1",
-   "d352-1"
-  ],
-  "count": 8,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7209,13 +4442,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d210-2",
-   "d211-3",
-   "d224-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7224,35 +4453,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d24-1",
-   "d110-3",
-   "d119-3",
-   "d168-2",
-   "d216-2",
-   "d171-1",
-   "d178-2",
-   "d221-2",
-   "d180-1",
-   "d222-2",
-   "d224-1",
-   "d190-2",
-   "d191-1",
-   "d197-1",
-   "d199-2",
-   "d245-1",
-   "d272-2",
-   "d285-1",
-   "d287-1",
-   "d291-1",
-   "d333-1",
-   "d335-1",
-   "d336-1",
-   "d345-1",
-   "d347-1",
-   "d357-1",
-   "d365-1"
+   "d82-3",
+   "d87-2",
+   "d88-3"
   ],
-  "count": 27,
+  "count": 3,
   "need": 0
  },
  {
@@ -7262,11 +4467,19 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d267-2",
-   "d272-2",
-   "d282-1"
+   "d91-2",
+   "d93-1",
+   "d96-1",
+   "d97-1",
+   "d101-1",
+   "d101-2",
+   "d111-1",
+   "d118-1",
+   "d206-1",
+   "d206-2",
+   "d267-2"
   ],
-  "count": 3,
+  "count": 11,
   "need": 0
  },
  {
@@ -7276,12 +4489,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d332-1",
-   "d337-1",
-   "d348-1"
+   "d118-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7289,39 +4500,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d27-1",
-   "d36-1",
-   "d44-1",
-   "d81-3",
-   "d94-3",
-   "d119-2",
-   "d137-3",
-   "d162-2",
-   "d163-2",
-   "d163-3",
-   "d212-1",
-   "d219-2",
-   "d179-3",
-   "d221-3",
-   "d192-1",
-   "d199-1",
-   "d201-2",
-   "d246-1",
-   "d262-1",
-   "d281-1",
-   "d299-2",
-   "d316-1",
-   "d317-1",
-   "d319-1",
-   "d323-1",
-   "d324-1",
-   "d363-1",
-   "d363-2",
-   "d365-1"
-  ],
-  "count": 29,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7329,13 +4510,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d332-1",
-   "d337-1",
-   "d348-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7344,11 +4521,12 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d332-1",
-   "d337-1",
-   "d348-1"
+   "d59-1",
+   "d83-1",
+   "d102-1",
+   "d192-1"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -7360,10 +4538,14 @@
   "lessons": [
    "d36-1",
    "d38-1",
+   "d83-1",
+   "d119-1",
+   "d128-1",
+   "d162-1",
    "d281-1",
    "d330-2"
   ],
-  "count": 4,
+  "count": 8,
   "need": 0
  },
  {
@@ -7372,13 +4554,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d332-1",
-   "d337-1",
-   "d348-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7386,13 +4564,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d303-1",
-   "d316-1",
-   "d323-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7401,12 +4575,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d215-1",
-   "d216-2",
-   "d330-2"
+   "d83-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7414,13 +4586,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d348-1",
-   "d353-1",
-   "d358-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7429,11 +4597,13 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d291-1",
-   "d303-1",
-   "d316-1"
+   "d83-2",
+   "d94-2",
+   "d164-2",
+   "d168-3",
+   "d291-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -7442,13 +4612,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d348-1",
-   "d353-1",
-   "d358-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7457,12 +4623,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d353-1",
-   "d358-1",
-   "d363-2"
+   "d224-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7471,12 +4635,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d353-1",
-   "d358-1",
-   "d363-2"
+   "d83-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7484,13 +4646,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d353-1",
-   "d358-1",
-   "d363-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7499,12 +4657,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d353-1",
-   "d363-2",
-   "d368-1"
+   "d83-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7512,13 +4668,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d363-2",
-   "d368-1",
-   "d373-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7526,13 +4678,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d199-2",
-   "d246-1",
-   "d272-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7541,12 +4689,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d363-2",
-   "d368-1",
-   "d373-1"
+   "d83-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7554,13 +4700,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d119-3",
-   "d123-1",
-   "d221-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7568,13 +4710,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d40-1",
-   "d47-1",
-   "d137-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7582,13 +4720,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d194-3",
-   "d199-1",
-   "d306-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7596,13 +4730,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d01-1",
-   "d368-1",
-   "d373-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7611,12 +4741,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d01-1",
-   "d368-1",
-   "d373-1"
+   "d118-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7624,13 +4752,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d01-1",
-   "d368-1",
-   "d373-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7639,11 +4763,13 @@
   "exposures": 1,
   "core": true,
   "lessons": [
+   "d83-2",
+   "d92-3",
+   "d102-3",
    "d199-1",
-   "d206-3",
-   "d228-1"
+   "d281-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -7652,13 +4778,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d01-1",
-   "d02-1",
-   "d373-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7667,12 +4789,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d259-2",
-   "d267-2",
-   "d272-2"
+   "d126-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7681,12 +4801,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d01-1",
-   "d02-1",
-   "d03-1"
+   "d83-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7695,12 +4813,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d01-1",
-   "d02-1",
-   "d03-1"
+   "d126-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7709,12 +4825,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d01-1",
-   "d02-1",
-   "d03-1"
+   "d83-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7723,12 +4837,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d01-1",
-   "d02-1",
-   "d03-1"
+   "d83-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7737,9 +4849,9 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d02-1",
-   "d03-1",
-   "d04-1"
+   "d84-1",
+   "d86-2",
+   "d88-1"
   ],
   "count": 3,
   "need": 0
@@ -7750,13 +4862,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d02-1",
-   "d03-1",
-   "d04-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7765,12 +4873,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d02-1",
-   "d03-1",
-   "d05-1"
+   "d21-1",
+   "d225-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -7779,12 +4886,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d03-1",
-   "d05-1",
-   "d06-1"
+   "d256-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7793,12 +4898,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d05-1",
-   "d06-1",
-   "d07-1"
+   "d84-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7807,12 +4910,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d05-1",
-   "d06-1",
-   "d07-1"
+   "d100-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7821,12 +4922,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d05-1",
-   "d06-1",
-   "d07-1"
+   "d84-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7835,11 +4934,15 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d05-1",
-   "d06-1",
-   "d07-1"
+   "d01-1",
+   "d04-1",
+   "d22-1",
+   "d41-1",
+   "d66-1",
+   "d123-3",
+   "d304-1"
   ],
-  "count": 3,
+  "count": 7,
   "need": 0
  },
  {
@@ -7848,13 +4951,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d05-1",
-   "d06-1",
-   "d07-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7862,13 +4961,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d05-1",
-   "d06-1",
-   "d07-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7877,8 +4972,8 @@
   "exposures": 1,
   "core": true,
   "lessons": [
+   "d118-2",
    "d219-3",
-   "d179-1",
    "d181-3"
   ],
   "count": 3,
@@ -7891,12 +4986,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d184-3",
-   "d190-1",
-   "d192-2"
+   "d118-2",
+   "d124-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -7905,12 +4999,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d06-1",
-   "d07-1",
-   "d08-1"
+   "d118-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7918,13 +5010,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d184-3",
-   "d190-1",
-   "d192-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -7933,11 +5021,12 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d129-3",
-   "d140-1",
-   "d142-2"
+   "d07-1",
+   "d80-1",
+   "d123-2",
+   "d129-3"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -7947,12 +5036,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d07-1",
-   "d08-1",
-   "d09-1"
+   "d26-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7961,11 +5048,13 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d08-1",
-   "d09-1",
-   "d10-1"
+   "d21-1",
+   "d225-3",
+   "d86-1",
+   "d100-2",
+   "d331-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -7975,12 +5064,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d08-1",
-   "d10-1",
-   "d11-1"
+   "d126-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -7989,11 +5076,20 @@
   "exposures": 1,
   "core": true,
   "lessons": [
+   "d07-1",
+   "d11-1",
+   "d13-1",
+   "d26-1",
+   "d61-1",
+   "d66-1",
+   "d84-1",
    "d162-2",
-   "d163-3",
-   "d187-1"
+   "d237-1",
+   "d253-1",
+   "d254-1",
+   "d367-1"
   ],
-  "count": 3,
+  "count": 12,
   "need": 0
  },
  {
@@ -8003,12 +5099,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d08-1",
-   "d10-1",
-   "d11-1"
+   "d91-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8017,11 +5111,12 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d08-1",
-   "d10-1",
-   "d11-1"
+   "d34-1",
+   "d81-2",
+   "d225-1",
+   "d91-1"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -8031,11 +5126,19 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d08-1",
-   "d10-1",
-   "d11-1"
+   "d11-1",
+   "d13-1",
+   "d26-1",
+   "d39-1",
+   "d61-1",
+   "d64-1",
+   "d66-1",
+   "d84-2",
+   "d176-3",
+   "d367-1",
+   "d370-1"
   ],
-  "count": 3,
+  "count": 11,
   "need": 0
  },
  {
@@ -8045,11 +5148,17 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d08-1",
-   "d10-1",
-   "d11-1"
+   "d05-1",
+   "d86-2",
+   "d89-3",
+   "d93-3",
+   "d96-3",
+   "d108-3",
+   "d113-3",
+   "d172-3",
+   "d367-1"
   ],
-  "count": 3,
+  "count": 9,
   "need": 0
  },
  {
@@ -8059,12 +5168,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d10-1",
-   "d11-1",
-   "d12-1"
+   "d225-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8073,12 +5180,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d10-1",
-   "d11-1",
-   "d12-1"
+   "d84-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8087,12 +5192,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d11-1",
-   "d12-1",
-   "d13-1"
+   "d84-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8101,9 +5204,9 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d12-1",
-   "d13-1",
-   "d14-1"
+   "d84-2",
+   "d112-3",
+   "d253-1"
   ],
   "count": 3,
   "need": 0
@@ -8115,12 +5218,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d12-1",
-   "d13-1",
-   "d14-1"
+   "d84-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8129,12 +5230,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d12-1",
-   "d13-1",
-   "d15-1"
+   "d06-1",
+   "d100-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -8143,12 +5243,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d12-1",
-   "d13-1",
-   "d15-1"
+   "d225-2",
+   "d85-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -8157,12 +5256,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d12-1",
-   "d13-1",
-   "d15-1"
+   "d225-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8171,12 +5268,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d13-1",
-   "d15-1",
-   "d16-1"
+   "d84-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8185,12 +5280,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d13-1",
-   "d15-1",
-   "d16-1"
+   "d225-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8199,12 +5292,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d15-1",
-   "d16-1",
-   "d17-1"
+   "d118-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8213,12 +5304,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d15-1",
-   "d16-1",
-   "d17-1"
+   "d100-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8227,12 +5316,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d16-1",
-   "d17-1",
-   "d18-1"
+   "d100-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8241,12 +5328,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d16-1",
-   "d17-1",
-   "d18-1"
+   "d100-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8254,13 +5339,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d16-1",
-   "d17-1",
-   "d18-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -8269,12 +5350,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d16-1",
-   "d17-1",
-   "d18-1"
+   "d81-2",
+   "d86-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -8282,13 +5362,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d17-1",
-   "d18-1",
-   "d19-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -8297,12 +5373,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d17-1",
-   "d18-1",
-   "d19-1"
+   "d34-1",
+   "d100-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -8311,12 +5386,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d18-1",
-   "d20-1",
-   "d21-1"
+   "d100-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "표현",
@@ -8324,13 +5397,9 @@
   "level": "N3",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d18-1",
-   "d20-1",
-   "d21-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "표현",
@@ -8339,11 +5408,37 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d20-1",
-   "d21-1",
-   "d22-1"
+   "d03-1",
+   "d06-1",
+   "d08-1",
+   "d16-1",
+   "d30-1",
+   "d35-1",
+   "d39-1",
+   "d51-1",
+   "d57-1",
+   "d61-1",
+   "d70-1",
+   "d72-1",
+   "d79-1",
+   "d225-1",
+   "d86-1",
+   "d92-2",
+   "d96-2",
+   "d101-3",
+   "d123-1",
+   "d127-3",
+   "d230-1",
+   "d253-1",
+   "d255-1",
+   "d256-1",
+   "d257-1",
+   "d267-1",
+   "d282-1",
+   "d315-1",
+   "d364-1"
   ],
-  "count": 3,
+  "count": 29,
   "need": 0
  },
  {
@@ -8354,11 +5449,10 @@
   "core": true,
   "lessons": [
    "d171-3",
-   "d174-1",
-   "d176-3"
+   "d187-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "표현",
@@ -8367,11 +5461,50 @@
   "exposures": 1,
   "core": true,
   "lessons": [
+   "d15-1",
+   "d17-1",
+   "d18-1",
+   "d23-1",
+   "d26-1",
+   "d31-1",
+   "d34-1",
+   "d35-1",
+   "d50-1",
+   "d51-1",
+   "d57-1",
+   "d62-1",
+   "d64-1",
+   "d67-1",
+   "d68-1",
+   "d70-1",
+   "d72-1",
+   "d73-1",
    "d84-3",
+   "d225-2",
    "d86-1",
-   "d103-2"
+   "d86-2",
+   "d86-3",
+   "d88-3",
+   "d89-2",
+   "d91-1",
+   "d109-2",
+   "d123-1",
+   "d227-1",
+   "d233-1",
+   "d243-1",
+   "d254-1",
+   "d255-1",
+   "d256-1",
+   "d258-1",
+   "d259-1",
+   "d268-1",
+   "d282-1",
+   "d289-1",
+   "d331-1",
+   "d350-1",
+   "d367-1"
   ],
-  "count": 3,
+  "count": 42,
   "need": 0
  },
  {
@@ -8381,12 +5514,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d20-1",
-   "d21-1",
-   "d22-1"
+   "d33-1",
+   "d225-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "품사",
@@ -8395,15 +5527,16 @@
   "exposures": 2,
   "core": true,
   "lessons": [
+   "d172-1",
+   "d176-3",
+   "d219-1",
    "d219-3",
    "d220-2",
-   "d190-3",
-   "d194-1",
-   "d247-1",
-   "d254-2",
-   "d336-1"
+   "d221-1",
+   "d223-2",
+   "d224-2"
   ],
-  "count": 7,
+  "count": 8,
   "need": 0
  },
  {
@@ -8413,11 +5546,19 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d81-3",
-   "d84-1",
-   "d206-3"
+   "d179-1",
+   "d181-1",
+   "d181-2",
+   "d223-2",
+   "d182-1",
+   "d186-1",
+   "d186-2",
+   "d191-1",
+   "d192-1",
+   "d201-1",
+   "d206-1"
   ],
-  "count": 3,
+  "count": 11,
   "need": 0
  },
  {
@@ -8427,12 +5568,11 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d351-1",
-   "d358-1",
-   "d363-1"
+   "d198-2",
+   "d207-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "품사",
@@ -8442,10 +5582,11 @@
   "core": true,
   "lessons": [
    "d194-2",
-   "d198-3",
-   "d206-2"
+   "d198-2",
+   "d235-1",
+   "d269-1"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -8455,12 +5596,11 @@
   "exposures": 2,
   "core": true,
   "lessons": [
-   "d197-1",
-   "d199-2",
-   "d207-1"
+   "d168-1",
+   "d197-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "품사",
@@ -8470,8 +5610,8 @@
   "core": true,
   "lessons": [
    "d197-3",
-   "d201-1",
-   "d207-3"
+   "d207-1",
+   "d262-1"
   ],
   "count": 3,
   "need": 0
@@ -8483,12 +5623,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d171-1",
-   "d173-2",
-   "d176-1"
+   "d171-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -8497,12 +5635,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d20-1",
-   "d21-1",
-   "d22-1"
+   "d171-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -8511,12 +5647,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d337-1",
-   "d350-1",
-   "d357-1"
+   "d171-2",
+   "d224-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "품사",
@@ -8525,14 +5660,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d20-1",
-   "d215-3",
-   "d299-2",
-   "d300-1",
-   "d334-1",
-   "d338-1"
+   "d171-2",
+   "d176-1",
+   "d184-1"
   ],
-  "count": 6,
+  "count": 3,
   "need": 0
  },
  {
@@ -8541,13 +5673,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d20-1",
-   "d21-1",
-   "d22-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8556,12 +5684,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d271-2",
-   "d275-2",
-   "d287-1"
+   "d172-3",
+   "d224-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "품사",
@@ -8570,12 +5697,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d175-1",
-   "d177-3",
-   "d220-1"
+   "d175-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -8584,12 +5709,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d20-1",
-   "d21-1",
-   "d22-1"
+   "d175-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -8598,13 +5721,12 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d216-3",
-   "d207-3",
-   "d236-1",
-   "d262-1",
-   "d299-1"
+   "d175-1",
+   "d222-2",
+   "d186-3",
+   "d187-2"
   ],
-  "count": 5,
+  "count": 4,
   "need": 0
  },
  {
@@ -8613,13 +5735,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d207-3",
-   "d231-1",
-   "d238-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8628,12 +5746,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d20-1",
-   "d21-1",
-   "d22-1"
+   "d175-2",
+   "d220-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "품사",
@@ -8641,13 +5758,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d178-1",
-   "d179-2",
-   "d231-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8656,12 +5769,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d22-1",
-   "d23-1",
-   "d24-1"
+   "d175-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -8670,9 +5781,9 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d23-1",
-   "d24-1",
-   "d25-1"
+   "d176-1",
+   "d179-1",
+   "d222-2"
   ],
   "count": 3,
   "need": 0
@@ -8683,13 +5794,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d163-3",
-   "d212-1",
-   "d302-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8697,13 +5804,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d23-1",
-   "d25-1",
-   "d26-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8711,13 +5814,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d103-3",
-   "d220-2",
-   "d319-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8725,13 +5824,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d313-1",
-   "d320-1",
-   "d330-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8739,13 +5834,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d224-3",
-   "d187-1",
-   "d302-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8753,13 +5844,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d178-1",
-   "d179-2",
-   "d322-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8767,13 +5854,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d178-1",
-   "d207-3",
-   "d363-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8781,13 +5864,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d137-3",
-   "d270-1",
-   "d369-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8795,13 +5874,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d23-1",
-   "d25-1",
-   "d26-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8809,24 +5884,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d58-1",
-   "d212-1",
-   "d167-3",
-   "d175-1",
-   "d219-1",
-   "d178-3",
-   "d222-3",
-   "d181-3",
-   "d190-3",
-   "d191-2",
-   "d272-2",
-   "d291-1",
-   "d329-1",
-   "d348-1"
-  ],
-  "count": 14,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8834,14 +5894,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d103-3",
-   "d171-3",
-   "d219-1",
-   "d336-1"
-  ],
-  "count": 4,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8849,13 +5904,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d270-1",
-   "d274-1",
-   "d285-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8864,12 +5915,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d219-1",
-   "d220-2",
-   "d221-3"
+   "d167-1",
+   "d219-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "품사",
@@ -8878,12 +5928,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d219-2",
-   "d220-3",
-   "d180-1"
+   "d167-1",
+   "d219-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "품사",
@@ -8892,12 +5941,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d194-2",
-   "d198-3",
-   "d206-2"
+   "d167-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -8906,13 +5953,14 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d221-3",
-   "d192-3",
-   "d199-2",
-   "d319-1",
-   "d369-1"
+   "d167-2",
+   "d171-3",
+   "d172-2",
+   "d220-1",
+   "d179-3",
+   "d221-3"
   ],
-  "count": 5,
+  "count": 6,
   "need": 0
  },
  {
@@ -8922,12 +5970,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d23-1",
-   "d25-1",
-   "d26-1"
+   "d216-2",
+   "d184-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "품사",
@@ -8935,13 +5982,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d223-3",
-   "d184-1",
-   "d187-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8950,12 +5993,11 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d236-1",
-   "d243-1",
-   "d254-2"
+   "d173-1",
+   "d223-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "품사",
@@ -8963,17 +6005,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d27-1",
-   "d49-1",
-   "d190-2",
-   "d247-1",
-   "d305-1",
-   "d322-1",
-   "d362-2"
-  ],
-  "count": 7,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -8982,12 +6016,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d173-3",
-   "d176-2",
-   "d219-3"
+   "d173-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -8996,12 +6028,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d23-1",
-   "d25-1",
-   "d26-1"
+   "d177-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -9010,12 +6040,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d23-1",
-   "d25-1",
-   "d26-1"
+   "d177-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -9024,12 +6052,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d23-1",
-   "d25-1",
-   "d26-1"
+   "d186-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -9038,9 +6064,9 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d25-1",
-   "d26-1",
-   "d27-1"
+   "d186-1",
+   "d229-1",
+   "d245-1"
   ],
   "count": 3,
   "need": 0
@@ -9051,23 +6077,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d14-1",
-   "d211-3",
-   "d215-3",
-   "d216-1",
-   "d173-3",
-   "d219-3",
-   "d221-3",
-   "d194-1",
-   "d197-3",
-   "d261-1",
-   "d262-2",
-   "d273-2",
-   "d373-1"
-  ],
-  "count": 13,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -9075,17 +6087,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d14-1",
-   "d44-1",
-   "d176-2",
-   "d177-2",
-   "d180-2",
-   "d193-2",
-   "d316-1"
-  ],
-  "count": 7,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -9093,13 +6097,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d198-1",
-   "d261-1",
-   "d334-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -9107,19 +6107,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d164-3",
-   "d176-2",
-   "d181-3",
-   "d192-3",
-   "d193-2",
-   "d194-3",
-   "d198-1",
-   "d236-1",
-   "d349-1"
-  ],
-  "count": 9,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -9128,17 +6118,16 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d25-1",
-   "d58-1",
-   "d212-1",
+   "d179-1",
+   "d182-2",
+   "d190-2",
+   "d193-1",
+   "d197-1",
+   "d197-2",
    "d197-3",
-   "d231-1",
-   "d246-1",
-   "d305-1",
-   "d324-1",
-   "d338-1"
+   "d206-2"
   ],
-  "count": 9,
+  "count": 8,
   "need": 0
  },
  {
@@ -9148,12 +6137,13 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d177-3",
-   "d259-2",
-   "d321-1",
-   "d333-1"
+   "d179-1",
+   "d221-2",
+   "d184-2",
+   "d191-1",
+   "d199-2"
   ],
-  "count": 4,
+  "count": 5,
   "need": 0
  },
  {
@@ -9163,12 +6153,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d26-1",
-   "d27-1",
-   "d28-1"
+   "d179-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -9176,13 +6164,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d167-3",
-   "d216-1",
-   "d172-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -9191,11 +6175,12 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d212-1",
-   "d215-2",
-   "d267-2"
+   "d179-2",
+   "d181-1",
+   "d206-1",
+   "d206-2"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -9205,12 +6190,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d27-1",
-   "d28-1",
-   "d29-1"
+   "d179-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -9219,12 +6202,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d27-1",
-   "d28-1",
-   "d29-1"
+   "d179-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -9233,12 +6214,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d27-1",
-   "d28-1",
-   "d30-1"
+   "d179-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -9247,12 +6226,10 @@
   "exposures": 1,
   "core": true,
   "lessons": [
-   "d27-1",
-   "d28-1",
-   "d30-1"
+   "d179-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "품사",
@@ -9260,13 +6237,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d27-1",
-   "d28-1",
-   "d30-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "품사",
@@ -9274,13 +6247,9 @@
   "level": "N5",
   "exposures": 1,
   "core": true,
-  "lessons": [
-   "d27-1",
-   "d28-1",
-   "d30-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9289,13 +6258,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d167-3",
-   "d177-3",
-   "d178-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9304,13 +6269,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d193-2",
-   "d197-3",
-   "d271-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9319,13 +6280,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d28-1",
-   "d30-1",
-   "d31-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9334,13 +6291,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d30-1",
-   "d31-1",
-   "d32-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9349,13 +6302,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d182-3",
-   "d224-3",
-   "d267-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9364,13 +6313,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d198-3",
-   "d259-2",
-   "d262-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9379,13 +6324,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d262-2",
-   "d271-2",
-   "d329-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9394,13 +6335,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d30-1",
-   "d31-1",
-   "d32-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9409,13 +6346,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d30-1",
-   "d31-1",
-   "d32-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9424,13 +6357,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d191-3",
-   "d194-1",
-   "d198-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9440,11 +6369,14 @@
   "core": true,
   "sub": "常用",
   "lessons": [
+   "d222-1",
+   "d222-2",
+   "d182-1",
    "d182-3",
-   "d186-1",
-   "d190-2"
+   "d184-1",
+   "d285-1"
   ],
-  "count": 3,
+  "count": 6,
   "need": 0
  },
  {
@@ -9455,11 +6387,15 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d31-1",
-   "d32-1",
-   "d33-1"
+   "d243-1",
+   "d245-1",
+   "d256-1",
+   "d257-1",
+   "d267-1",
+   "d267-2",
+   "d270-1"
   ],
-  "count": 3,
+  "count": 7,
   "need": 0
  },
  {
@@ -9470,11 +6406,16 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d31-1",
-   "d32-1",
-   "d33-1"
+   "d94-1",
+   "d162-3",
+   "d284-1",
+   "d297-1",
+   "d313-1",
+   "d351-1",
+   "d353-1",
+   "d355-1"
   ],
-  "count": 3,
+  "count": 8,
   "need": 0
  },
  {
@@ -9485,11 +6426,27 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d224-3",
-   "d187-1",
-   "d191-2"
+   "d60-1",
+   "d61-1",
+   "d64-1",
+   "d67-1",
+   "d68-1",
+   "d71-1",
+   "d72-1",
+   "d73-1",
+   "d76-1",
+   "d78-1",
+   "d79-1",
+   "d82-1",
+   "d140-3",
+   "d212-3",
+   "d193-3",
+   "d338-1",
+   "d345-1",
+   "d348-1",
+   "d365-1"
   ],
-  "count": 3,
+  "count": 19,
   "need": 0
  },
  {
@@ -9499,13 +6456,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d31-1",
-   "d32-1",
-   "d33-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9515,11 +6468,17 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d177-3",
-   "d220-1",
-   "d191-3"
+   "d87-2",
+   "d127-2",
+   "d140-3",
+   "d167-3",
+   "d215-3",
+   "d238-1",
+   "d284-1",
+   "d299-1",
+   "d351-1"
   ],
-  "count": 3,
+  "count": 9,
   "need": 0
  },
  {
@@ -9529,13 +6488,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d31-1",
-   "d32-1",
-   "d33-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9544,13 +6499,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d32-1",
-   "d33-1",
-   "d34-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9560,12 +6511,11 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d33-1",
-   "d34-1",
-   "d35-1"
+   "d192-2",
+   "d335-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "한자",
@@ -9575,11 +6525,21 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d363-2",
-   "d366-1",
-   "d370-1"
+   "d110-3",
+   "d119-2",
+   "d221-3",
+   "d192-3",
+   "d233-2",
+   "d241-1",
+   "d267-2",
+   "d289-1",
+   "d290-1",
+   "d302-1",
+   "d351-1",
+   "d356-1",
+   "d363-1"
   ],
-  "count": 3,
+  "count": 13,
   "need": 0
  },
  {
@@ -9589,13 +6549,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d33-1",
-   "d35-1",
-   "d36-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9605,11 +6561,18 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d33-1",
-   "d35-1",
-   "d36-1"
+   "d102-2",
+   "d110-2",
+   "d119-2",
+   "d168-3",
+   "d220-3",
+   "d191-3",
+   "d227-1",
+   "d287-1",
+   "d319-1",
+   "d322-1"
   ],
-  "count": 3,
+  "count": 10,
   "need": 0
  },
  {
@@ -9620,11 +6583,12 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d35-1",
-   "d36-1",
-   "d37-1"
+   "d87-3",
+   "d90-1",
+   "d94-3",
+   "d356-1"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -9635,11 +6599,13 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d35-1",
-   "d36-1",
-   "d37-1"
+   "d87-3",
+   "d181-2",
+   "d193-3",
+   "d207-3",
+   "d345-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -9649,13 +6615,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d35-1",
-   "d36-1",
-   "d37-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9665,11 +6627,15 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d35-1",
-   "d36-1",
-   "d37-1"
+   "d206-3",
+   "d207-2",
+   "d226-1",
+   "d259-1",
+   "d259-2",
+   "d262-2",
+   "d271-1"
   ],
-  "count": 3,
+  "count": 7,
   "need": 0
  },
  {
@@ -9680,11 +6646,23 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d35-1",
-   "d36-1",
-   "d37-1"
+   "d127-1",
+   "d141-3",
+   "d162-3",
+   "d210-1",
+   "d164-2",
+   "d171-2",
+   "d171-3",
+   "d177-3",
+   "d229-1",
+   "d235-1",
+   "d269-1",
+   "d271-2",
+   "d319-1",
+   "d322-1",
+   "d366-1"
   ],
-  "count": 3,
+  "count": 15,
   "need": 0
  },
  {
@@ -9694,13 +6672,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d36-1",
-   "d37-1",
-   "d38-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9710,11 +6684,21 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d37-1",
-   "d38-1",
-   "d39-1"
+   "d222-3",
+   "d186-1",
+   "d194-3",
+   "d197-1",
+   "d198-3",
+   "d199-1",
+   "d201-2",
+   "d227-1",
+   "d232-1",
+   "d242-1",
+   "d333-1",
+   "d348-1",
+   "d361-1"
   ],
-  "count": 3,
+  "count": 13,
   "need": 0
  },
  {
@@ -9725,11 +6709,13 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d37-1",
-   "d38-1",
-   "d39-1"
+   "d223-1",
+   "d186-1",
+   "d186-3",
+   "d349-1",
+   "d368-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -9740,11 +6726,14 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d38-1",
-   "d40-1",
-   "d41-1"
+   "d236-1",
+   "d237-1",
+   "d242-1",
+   "d258-1",
+   "d284-1",
+   "d299-1"
   ],
-  "count": 3,
+  "count": 6,
   "need": 0
  },
  {
@@ -9755,9 +6744,9 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d178-1",
-   "d179-2",
-   "d180-3"
+   "d58-1",
+   "d168-3",
+   "d351-1"
   ],
   "count": 3,
   "need": 0
@@ -9770,11 +6759,13 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d38-1",
-   "d40-1",
-   "d41-1"
+   "d127-2",
+   "d140-3",
+   "d164-1",
+   "d167-3",
+   "d215-3"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -9785,9 +6776,9 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d38-1",
-   "d40-1",
-   "d41-1"
+   "d272-1",
+   "d273-1",
+   "d297-1"
   ],
   "count": 3,
   "need": 0
@@ -9800,12 +6791,11 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d38-1",
-   "d40-1",
-   "d41-1"
+   "d225-3",
+   "d246-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "한자",
@@ -9815,11 +6805,19 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d38-1",
-   "d40-1",
-   "d41-1"
+   "d127-1",
+   "d127-3",
+   "d162-1",
+   "d164-2",
+   "d215-2",
+   "d168-1",
+   "d180-1",
+   "d180-3",
+   "d222-2",
+   "d233-1",
+   "d243-1"
   ],
-  "count": 3,
+  "count": 11,
   "need": 0
  },
  {
@@ -9830,11 +6828,12 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d40-1",
-   "d41-1",
-   "d42-1"
+   "d260-1",
+   "d283-1",
+   "d284-1",
+   "d297-1"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -9845,12 +6844,10 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d40-1",
-   "d41-1",
-   "d42-1"
+   "d90-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "한자",
@@ -9859,13 +6856,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d40-1",
-   "d41-1",
-   "d42-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9874,13 +6867,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d42-1",
-   "d43-1",
-   "d44-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9890,11 +6879,15 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d42-1",
-   "d43-1",
-   "d44-1"
+   "d247-1",
+   "d262-2",
+   "d281-1",
+   "d287-1",
+   "d291-1",
+   "d303-1",
+   "d320-1"
   ],
-  "count": 3,
+  "count": 7,
   "need": 0
  },
  {
@@ -9905,12 +6898,10 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d42-1",
-   "d43-1",
-   "d45-1"
+   "d224-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "한자",
@@ -9919,13 +6910,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d42-1",
-   "d43-1",
-   "d45-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9934,13 +6921,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d42-1",
-   "d43-1",
-   "d45-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9949,13 +6932,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d43-1",
-   "d45-1",
-   "d46-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -9965,11 +6944,15 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d43-1",
-   "d45-1",
-   "d46-1"
+   "d94-1",
+   "d212-2",
+   "d192-2",
+   "d193-1",
+   "d247-1",
+   "d259-1",
+   "d348-1"
   ],
-  "count": 3,
+  "count": 7,
   "need": 0
  },
  {
@@ -9980,9 +6963,9 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d43-1",
-   "d45-1",
-   "d46-1"
+   "d87-2",
+   "d237-1",
+   "d238-1"
   ],
   "count": 3,
   "need": 0
@@ -9994,13 +6977,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d45-1",
-   "d46-1",
-   "d47-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10010,11 +6989,29 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d178-3",
-   "d221-1",
-   "d222-2"
+   "d94-1",
+   "d94-3",
+   "d102-1",
+   "d109-3",
+   "d119-1",
+   "d127-1",
+   "d180-1",
+   "d224-3",
+   "d206-3",
+   "d226-1",
+   "d258-2",
+   "d259-1",
+   "d270-1",
+   "d284-1",
+   "d286-1",
+   "d288-1",
+   "d299-1",
+   "d330-2",
+   "d336-1",
+   "d349-1",
+   "d366-1"
   ],
-  "count": 3,
+  "count": 21,
   "need": 0
  },
  {
@@ -10025,11 +7022,15 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d45-1",
-   "d46-1",
-   "d47-1"
+   "d25-1",
+   "d30-1",
+   "d35-1",
+   "d55-1",
+   "d56-1",
+   "d87-1",
+   "d347-1"
   ],
-  "count": 3,
+  "count": 7,
   "need": 0
  },
  {
@@ -10040,11 +7041,13 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d46-1",
-   "d47-1",
-   "d48-1"
+   "d127-3",
+   "d162-2",
+   "d180-3",
+   "d258-2",
+   "d262-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -10055,11 +7058,12 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d46-1",
-   "d47-1",
-   "d48-1"
+   "d224-2",
+   "d186-2",
+   "d192-1",
+   "d273-2"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -10069,13 +7073,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d46-1",
-   "d47-1",
-   "d48-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10084,13 +7084,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d47-1",
-   "d48-1",
-   "d49-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10100,12 +7096,11 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d47-1",
-   "d48-1",
-   "d49-1"
+   "d193-1",
+   "d236-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "한자",
@@ -10115,11 +7110,18 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d173-3",
-   "d176-2",
-   "d198-3"
+   "d87-1",
+   "d119-2",
+   "d171-3",
+   "d181-2",
+   "d223-3",
+   "d198-3",
+   "d238-1",
+   "d348-1",
+   "d357-1",
+   "d371-1"
   ],
-  "count": 3,
+  "count": 10,
   "need": 0
  },
  {
@@ -10129,13 +7131,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d48-1",
-   "d50-1",
-   "d51-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10144,13 +7142,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d48-1",
-   "d50-1",
-   "d51-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10160,11 +7154,13 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d48-1",
-   "d50-1",
-   "d51-1"
+   "d36-1",
+   "d47-1",
+   "d49-1",
+   "d71-1",
+   "d92-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -10175,11 +7171,20 @@
   "core": true,
   "sub": "常用",
   "lessons": [
+   "d223-2",
+   "d224-1",
+   "d224-2",
+   "d224-3",
+   "d184-1",
+   "d184-2",
+   "d197-2",
+   "d198-1",
+   "d199-2",
    "d199-3",
-   "d207-2",
-   "d260-2"
+   "d314-1",
+   "d354-1"
   ],
-  "count": 3,
+  "count": 12,
   "need": 0
  },
  {
@@ -10189,13 +7194,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d50-1",
-   "d51-1",
-   "d52-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10204,13 +7205,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d50-1",
-   "d51-1",
-   "d52-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10220,11 +7217,16 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d259-2",
-   "d267-2",
-   "d272-2"
+   "d04-1",
+   "d09-1",
+   "d10-1",
+   "d17-1",
+   "d24-1",
+   "d90-1",
+   "d232-1",
+   "d348-1"
   ],
-  "count": 3,
+  "count": 8,
   "need": 0
  },
  {
@@ -10235,12 +7237,11 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d50-1",
-   "d51-1",
-   "d52-1"
+   "d90-3",
+   "d212-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "한자",
@@ -10250,11 +7251,12 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d50-1",
-   "d51-1",
-   "d52-1"
+   "d127-2",
+   "d231-1",
+   "d289-1",
+   "d362-1"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -10265,9 +7267,9 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d50-1",
-   "d51-1",
-   "d52-1"
+   "d09-1",
+   "d11-1",
+   "d29-1"
   ],
   "count": 3,
   "need": 0
@@ -10280,11 +7282,15 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d52-1",
-   "d53-1",
-   "d54-1"
+   "d225-3",
+   "d232-1",
+   "d299-2",
+   "d302-1",
+   "d322-1",
+   "d363-2",
+   "d364-1"
   ],
-  "count": 3,
+  "count": 7,
   "need": 0
  },
  {
@@ -10294,13 +7300,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d52-1",
-   "d53-1",
-   "d54-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10310,9 +7312,9 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d52-1",
-   "d53-1",
-   "d55-1"
+   "d87-1",
+   "d258-1",
+   "d337-1"
   ],
   "count": 3,
   "need": 0
@@ -10325,12 +7327,11 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d53-1",
-   "d55-1",
-   "d56-1"
+   "d220-3",
+   "d222-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "한자",
@@ -10340,11 +7341,14 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d53-1",
-   "d55-1",
-   "d56-1"
+   "d180-1",
+   "d222-3",
+   "d187-1",
+   "d190-1",
+   "d194-2",
+   "d198-2"
   ],
-  "count": 3,
+  "count": 6,
   "need": 0
  },
  {
@@ -10354,13 +7358,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d260-2",
-   "d269-1",
-   "d273-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10371,10 +7371,11 @@
   "sub": "常用",
   "lessons": [
    "d199-3",
-   "d207-2",
-   "d230-1"
+   "d206-1",
+   "d206-2",
+   "d207-3"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -10384,13 +7385,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d53-1",
-   "d55-1",
-   "d56-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10400,11 +7397,12 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d53-1",
-   "d55-1",
-   "d56-1"
+   "d222-2",
+   "d186-3",
+   "d193-3",
+   "d272-2"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -10415,9 +7413,9 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d53-1",
-   "d55-1",
-   "d56-1"
+   "d345-1",
+   "d348-1",
+   "d358-1"
   ],
   "count": 3,
   "need": 0
@@ -10430,11 +7428,13 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d55-1",
-   "d56-1",
-   "d57-1"
+   "d297-1",
+   "d347-1",
+   "d350-1",
+   "d356-1",
+   "d364-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -10444,13 +7444,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d55-1",
-   "d56-1",
-   "d57-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10459,13 +7455,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d56-1",
-   "d57-1",
-   "d58-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10474,13 +7466,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d57-1",
-   "d58-1",
-   "d59-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10489,13 +7477,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d57-1",
-   "d58-1",
-   "d59-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10505,11 +7489,12 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d57-1",
-   "d58-1",
-   "d60-1"
+   "d94-3",
+   "d119-3",
+   "d206-3",
+   "d275-1"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -10520,11 +7505,21 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d57-1",
-   "d58-1",
-   "d60-1"
+   "d102-2",
+   "d118-1",
+   "d181-2",
+   "d224-3",
+   "d193-3",
+   "d244-1",
+   "d246-1",
+   "d259-1",
+   "d267-2",
+   "d289-1",
+   "d305-1",
+   "d317-1",
+   "d335-1"
   ],
-  "count": 3,
+  "count": 13,
   "need": 0
  },
  {
@@ -10534,13 +7529,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d57-1",
-   "d58-1",
-   "d60-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10549,13 +7540,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d58-1",
-   "d60-1",
-   "d61-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10565,11 +7552,14 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d58-1",
-   "d60-1",
-   "d61-1"
+   "d127-2",
+   "d210-1",
+   "d221-3",
+   "d300-1",
+   "d337-1",
+   "d362-2"
   ],
-  "count": 3,
+  "count": 6,
   "need": 0
  },
  {
@@ -10579,13 +7569,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d60-1",
-   "d61-1",
-   "d62-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10594,13 +7580,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d60-1",
-   "d61-1",
-   "d62-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10610,12 +7592,10 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d60-1",
-   "d61-1",
-   "d62-1"
+   "d262-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "한자",
@@ -10625,12 +7605,10 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d61-1",
-   "d62-1",
-   "d63-1"
+   "d285-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "한자",
@@ -10640,11 +7618,14 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d61-1",
-   "d62-1",
-   "d63-1"
+   "d206-3",
+   "d254-1",
+   "d271-2",
+   "d299-2",
+   "d330-1",
+   "d356-1"
   ],
-  "count": 3,
+  "count": 6,
   "need": 0
  },
  {
@@ -10655,12 +7636,11 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d62-1",
-   "d63-1",
-   "d64-1"
+   "d87-2",
+   "d237-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "한자",
@@ -10670,12 +7650,10 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d62-1",
-   "d63-1",
-   "d64-1"
+   "d94-3"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "한자",
@@ -10685,11 +7663,13 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d62-1",
-   "d63-1",
-   "d65-1"
+   "d33-1",
+   "d44-1",
+   "d50-1",
+   "d71-1",
+   "d301-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -10699,13 +7679,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d63-1",
-   "d65-1",
-   "d66-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10714,13 +7690,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d63-1",
-   "d65-1",
-   "d66-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10729,13 +7701,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d63-1",
-   "d65-1",
-   "d66-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10744,13 +7712,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d65-1",
-   "d66-1",
-   "d67-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10759,13 +7723,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d65-1",
-   "d66-1",
-   "d67-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10774,13 +7734,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d65-1",
-   "d66-1",
-   "d67-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10789,13 +7745,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d65-1",
-   "d66-1",
-   "d67-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10805,11 +7757,20 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d66-1",
-   "d67-1",
-   "d68-1"
+   "d87-3",
+   "d88-1",
+   "d167-3",
+   "d228-1",
+   "d233-1",
+   "d287-1",
+   "d300-1",
+   "d301-1",
+   "d303-1",
+   "d305-1",
+   "d356-1",
+   "d363-1"
   ],
-  "count": 3,
+  "count": 12,
   "need": 0
  },
  {
@@ -10819,13 +7780,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d67-1",
-   "d68-1",
-   "d69-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10835,12 +7792,10 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d67-1",
-   "d68-1",
-   "d69-1"
+   "d347-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 1,
+  "need": 2
  },
  {
   "kind": "한자",
@@ -10849,13 +7804,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d67-1",
-   "d68-1",
-   "d70-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10864,13 +7815,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d68-1",
-   "d70-1",
-   "d71-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10879,13 +7826,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d68-1",
-   "d70-1",
-   "d71-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10894,13 +7837,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d68-1",
-   "d70-1",
-   "d71-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10909,13 +7848,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d68-1",
-   "d70-1",
-   "d71-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10925,11 +7860,15 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d70-1",
-   "d71-1",
-   "d72-1"
+   "d288-1",
+   "d290-1",
+   "d304-1",
+   "d320-1",
+   "d323-1",
+   "d345-1",
+   "d347-1"
   ],
-  "count": 3,
+  "count": 7,
   "need": 0
  },
  {
@@ -10939,13 +7878,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d70-1",
-   "d71-1",
-   "d72-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -10955,9 +7890,9 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d70-1",
-   "d71-1",
-   "d72-1"
+   "d321-1",
+   "d334-1",
+   "d353-1"
   ],
   "count": 3,
   "need": 0
@@ -10970,11 +7905,21 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d71-1",
-   "d72-1",
-   "d73-1"
+   "d119-1",
+   "d127-2",
+   "d210-3",
+   "d163-2",
+   "d212-3",
+   "d167-3",
+   "d180-2",
+   "d222-2",
+   "d231-1",
+   "d246-1",
+   "d288-1",
+   "d354-1",
+   "d357-1"
   ],
-  "count": 3,
+  "count": 13,
   "need": 0
  },
  {
@@ -10985,12 +7930,11 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d72-1",
-   "d73-1",
-   "d74-1"
+   "d192-3",
+   "d193-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "한자",
@@ -11000,11 +7944,13 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d72-1",
-   "d73-1",
-   "d74-1"
+   "d236-1",
+   "d237-1",
+   "d238-1",
+   "d258-1",
+   "d268-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -11014,13 +7960,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d72-1",
-   "d73-1",
-   "d76-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11029,13 +7971,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d72-1",
-   "d73-1",
-   "d76-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11044,13 +7982,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d73-1",
-   "d76-1",
-   "d77-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11060,11 +7994,16 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d73-1",
-   "d76-1",
-   "d77-1"
+   "d228-1",
+   "d231-1",
+   "d246-1",
+   "d253-1",
+   "d262-1",
+   "d271-2",
+   "d314-1",
+   "d318-1"
   ],
-  "count": 3,
+  "count": 8,
   "need": 0
  },
  {
@@ -11074,13 +8013,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d73-1",
-   "d76-1",
-   "d77-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11089,13 +8024,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d76-1",
-   "d77-1",
-   "d78-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11105,11 +8036,12 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d76-1",
-   "d77-1",
-   "d78-1"
+   "d254-2",
+   "d267-1",
+   "d273-1",
+   "d286-1"
   ],
-  "count": 3,
+  "count": 4,
   "need": 0
  },
  {
@@ -11119,13 +8051,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d76-1",
-   "d77-1",
-   "d78-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11134,13 +8062,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d77-1",
-   "d78-1",
-   "d79-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11149,13 +8073,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d77-1",
-   "d78-1",
-   "d79-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11164,13 +8084,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d78-1",
-   "d79-1",
-   "d80-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11179,13 +8095,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d78-1",
-   "d79-1",
-   "d80-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11194,13 +8106,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d78-1",
-   "d79-1",
-   "d81-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11209,13 +8117,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d79-1",
-   "d81-1",
-   "d81-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11224,13 +8128,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d79-1",
-   "d81-1",
-   "d81-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11239,13 +8139,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d79-1",
-   "d81-1",
-   "d81-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11255,11 +8151,18 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d81-1",
-   "d81-2",
-   "d81-3"
+   "d233-2",
+   "d239-1",
+   "d247-1",
+   "d258-2",
+   "d271-1",
+   "d275-2",
+   "d282-1",
+   "d283-1",
+   "d287-1",
+   "d303-1"
   ],
-  "count": 3,
+  "count": 10,
   "need": 0
  },
  {
@@ -11270,11 +8173,13 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d81-1",
-   "d81-2",
-   "d81-3"
+   "d180-1",
+   "d180-2",
+   "d180-3",
+   "d355-1",
+   "d362-1"
   ],
-  "count": 3,
+  "count": 5,
   "need": 0
  },
  {
@@ -11285,11 +8190,21 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d81-1",
-   "d81-2",
-   "d81-3"
+   "d273-1",
+   "d275-1",
+   "d281-1",
+   "d285-1",
+   "d287-1",
+   "d288-1",
+   "d290-1",
+   "d297-1",
+   "d302-1",
+   "d305-1",
+   "d317-1",
+   "d319-1",
+   "d355-1"
   ],
-  "count": 3,
+  "count": 13,
   "need": 0
  },
  {
@@ -11299,13 +8214,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d81-1",
-   "d81-2",
-   "d81-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11314,13 +8225,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d81-2",
-   "d81-3",
-   "d82-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11329,13 +8236,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d81-3",
-   "d82-1",
-   "d82-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11344,13 +8247,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d81-3",
-   "d82-1",
-   "d82-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11360,11 +8259,18 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d81-3",
-   "d82-1",
-   "d82-3"
+   "d212-2",
+   "d167-2",
+   "d216-1",
+   "d172-1",
+   "d172-3",
+   "d173-2",
+   "d175-1",
+   "d175-2",
+   "d220-3",
+   "d180-1"
   ],
-  "count": 3,
+  "count": 10,
   "need": 0
  },
  {
@@ -11374,13 +8280,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d82-1",
-   "d82-3",
-   "d83-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11390,12 +8292,11 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d222-3",
-   "d198-3",
-   "d273-2"
+   "d60-1",
+   "d361-1"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "한자",
@@ -11404,13 +8305,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d82-1",
-   "d82-3",
-   "d83-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11419,13 +8316,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d82-1",
-   "d82-3",
-   "d83-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11435,11 +8328,16 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d82-1",
-   "d82-3",
-   "d83-1"
+   "d290-1",
+   "d299-1",
+   "d305-1",
+   "d320-1",
+   "d332-1",
+   "d333-1",
+   "d337-1",
+   "d351-1"
   ],
-  "count": 3,
+  "count": 8,
   "need": 0
  },
  {
@@ -11449,13 +8347,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d82-3",
-   "d83-1",
-   "d83-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11464,13 +8358,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d82-3",
-   "d83-1",
-   "d83-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11479,13 +8369,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d82-3",
-   "d83-1",
-   "d83-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11495,12 +8381,11 @@
   "core": true,
   "sub": "常用",
   "lessons": [
-   "d83-1",
-   "d83-2",
-   "d83-3"
+   "d193-1",
+   "d193-2"
   ],
-  "count": 3,
-  "need": 0
+  "count": 2,
+  "need": 1
  },
  {
   "kind": "한자",
@@ -11509,13 +8394,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d83-2",
-   "d83-3",
-   "d84-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "한자",
@@ -11524,13 +8405,9 @@
   "exposures": 1,
   "core": true,
   "sub": "常用",
-  "lessons": [
-   "d83-2",
-   "d83-3",
-   "d84-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11538,13 +8415,9 @@
   "level": "N5",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d83-3",
-   "d84-2",
-   "d84-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11552,13 +8425,9 @@
   "level": "N5",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d83-3",
-   "d84-2",
-   "d84-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11566,13 +8435,9 @@
   "level": "N5",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d83-3",
-   "d84-2",
-   "d84-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11580,13 +8445,9 @@
   "level": "N5",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d83-3",
-   "d84-2",
-   "d84-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11594,13 +8455,9 @@
   "level": "N5",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d84-2",
-   "d84-3",
-   "d225-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11608,13 +8465,9 @@
   "level": "N5",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d84-2",
-   "d84-3",
-   "d225-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11622,13 +8475,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d84-2",
-   "d225-1",
-   "d225-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11636,13 +8485,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d84-2",
-   "d225-1",
-   "d225-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11650,13 +8495,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d225-1",
-   "d225-2",
-   "d225-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11664,13 +8505,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d225-1",
-   "d225-2",
-   "d225-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11678,13 +8515,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d85-1",
-   "d85-2",
-   "d85-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11692,13 +8525,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d85-1",
-   "d85-2",
-   "d85-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11706,13 +8535,9 @@
   "level": "N5",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d85-1",
-   "d85-2",
-   "d85-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11720,13 +8545,9 @@
   "level": "N4",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d85-1",
-   "d85-2",
-   "d85-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11734,13 +8555,9 @@
   "level": "N4",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d85-1",
-   "d85-2",
-   "d85-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11748,13 +8565,9 @@
   "level": "N4",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d85-2",
-   "d85-3",
-   "d86-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11762,13 +8575,9 @@
   "level": "N4",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d85-2",
-   "d85-3",
-   "d86-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11776,13 +8585,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d85-3",
-   "d86-1",
-   "d86-2"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11790,13 +8595,9 @@
   "level": "N4",
   "exposures": 2,
   "core": true,
-  "lessons": [
-   "d86-1",
-   "d86-2",
-   "d86-3"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  },
  {
   "kind": "활용표",
@@ -11804,12 +8605,8 @@
   "level": "N3",
   "exposures": 3,
   "core": true,
-  "lessons": [
-   "d233-2",
-   "d241-1",
-   "d253-1"
-  ],
-  "count": 3,
-  "need": 0
+  "lessons": [],
+  "count": 0,
+  "need": 3
  }
 ]

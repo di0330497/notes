@@ -888,7 +888,7 @@ function whoList(){
 function sceneList(){
   const sel=$("#talkScene");
   if(!sel)return;
-  if(tkCourse&&typeof LESSONS!=="undefined"){
+  if(tkCourse&&tkKind==="daily"&&typeof LESSONS!=="undefined"){
     const seen=[];
     LESSONS.forEach(l=>{if(l.scene&&seen.indexOf(l.scene)<0)seen.push(l.scene);});
     if(sel.tagName==="SELECT"){
@@ -1044,7 +1044,7 @@ function paintLesson(){
     +ts.map(t=>'<span class="tgChip" title="'+esc(t.note||"")+'"><b>'+esc(t.kind)+'</b> '+fmt(t.key)+'</span>').join("")
     +'</div></div>'
     +'<div class="dlgLines">'+d.lines.slice(l.from,l.to).map((x,j)=>lineHTML(d,x,l.from+j)).join("")+'</div>'
-    +(rv.length?'<div class="rdReview"><span class="uLabel">이전 레슨 복습 '+rv.length+'</span>'
+    +(rv.length?'<div class="rdReview"><span class="uLabel">이 대화에 다시 나온 것 '+rv.length+'</span>'
       +rv.map(r=>'<div class="reviewCard"><b>'+esc(r.kind)+' · '+fmt(r.key)+'</b>'
         +(r.note?'<span>'+fmt(r.note)+'</span>':'')
         +(r.example?'<span class="reviewEx">'+fmt(r.example)+'</span><span class="reviewKo">'+esc(r.ko||"")+'</span>':'')
@@ -1061,7 +1061,7 @@ function renderTalk(){
   const view=$("#view-talk");
   if(!view)return;
   if(!hasTALK){view.innerHTML=emptyNote("talk");setCount("대화 — 데이터 없음");return;}
-  if(tkCourse&&typeof LESSONS!=="undefined"&&LESSONS.length){renderCourse();return;}
+  if(tkCourse&&tkKind==="daily"&&typeof LESSONS!=="undefined"&&LESSONS.length){renderCourse();return;}
   const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
   const keep=DIALOGS.filter(d=>{
     if(!talkMatch(d))return false;
@@ -1391,6 +1391,11 @@ if($("#talkSrc"))$("#talkSrc").addEventListener("click",e=>{const c=e.target.clo
   renderTalk();});
 if($("#talkKind"))$("#talkKind").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkKind=c.dataset.k;setChips("#talkKind",c);
+  /* N1·보강은 코스에 없으므로 대화 목록으로 자동 전환한다 */
+  if(tkKind==="n1"||tkKind==="extra"){
+    tkCourse=false;
+    const md=$('#talkMode .chip[data-md="dialog"]');if(md)setChips("#talkMode",md);
+  }
   /* 트랙을 고르면 장면 목록도 그 트랙 것만 보여 준다 */
   tkScene="all";if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
   sceneList();
@@ -1399,6 +1404,8 @@ if($("#talkView"))$("#talkView").addEventListener("click",e=>{const c=e.target.c
   tkView=c.dataset.vw;setChips("#talkView",c);renderTalk();});
 if($("#talkMode"))$("#talkMode").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkCourse=c.dataset.md==="course";setChips("#talkMode",c);
+  /* 코스로 돌아오면 트랙도 일상으로 맞춘다 (N1은 대화 목록 전용) */
+  if(tkCourse){tkKind="daily";const kc=$('#talkKind .chip[data-k="daily"]');if(kc)setChips("#talkKind",kc);}
   tkScene="all";if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
   sceneList();renderTalk();});
 if($("#talkDay"))$("#talkDay").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
@@ -1708,6 +1715,7 @@ function gsRender(){
 }
 /* 탭별 검색창·렌더러 대응. "외 N개" 와 검색어 넘기기에 쓴다 */
 const GS_TAB={talk:["#qTalk",()=>{tkScene="all";tkWho="all";tkLv="all";tkKind="all";tkSrc="all";tkDay="all";
+    tkCourse=false;const gmd=$('#talkMode .chip[data-md="dialog"]');if(gmd)setChips("#talkMode",gmd);
     if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";else chipAll("#talkScene","sc");
     if($("#talkWho")&&$("#talkWho").tagName==="SELECT")$("#talkWho").value="all";else chipAll("#talkWho","w");
     chipAll("#talkKind","k");chipAll("#talkLv","l");chipAll("#talkSrc","s");chipAll("#talkDay","day");renderTalk();}],
