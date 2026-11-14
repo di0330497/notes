@@ -827,7 +827,7 @@ if($("#qConj"))$("#qConj").addEventListener("input",()=>renderConj());
 /* 이름 → 첫 글자(두 글자까지). 아바타용 */
 function initial(n){return n?String(n).slice(0,1):"?";}
 
-let tkScene="all", tkWho="all", tkLv="all", tkSrc="all", tkKo=true, tkKind="daily", tkDay="all", tkCloze=false, tkView="list";
+let tkScene="all", tkWho="all", tkLv="all", tkSrc="all", tkKo=true, tkKind="daily", tkDay="all", tkCloze=false, tkView="list", tkCourse=true;
 /* 각 대화에 요일 루틴(Day 1~7) 배정 — 서사 대화(d01~d80)와 예문 뱅크(p001~) 각각 7일 균등 분배 */
 const DLG_DAY={};
 if(hasTALK){
@@ -888,6 +888,16 @@ function whoList(){
 function sceneList(){
   const sel=$("#talkScene");
   if(!sel)return;
+  if(tkCourse&&typeof LESSONS!=="undefined"){
+    const seen=[];
+    LESSONS.forEach(l=>{if(l.scene&&seen.indexOf(l.scene)<0)seen.push(l.scene);});
+    if(sel.tagName==="SELECT"){
+      sel.innerHTML='<option value="all">장면: 전체 ('+seen.length+'장면)</option>'
+        +seen.map(s=>{const n=LESSONS.filter(l=>l.scene===s).length;
+          return '<option value="'+esc(s)+'">'+esc(s)+' ('+n+'레슨)</option>';}).join("");
+    }
+    return;
+  }
   const tr=id=>(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[id])||"life";
   const ok=d=>tkKind==="all"||(tkKind==="daily"?(tr(d.id)!=="work"&&tr(d.id)!=="coverage"&&tr(d.id)!=="n1"):tkKind==="n1"?tr(d.id)==="n1":(tr(d.id)==="work"||tr(d.id)==="coverage"));
   const seen=[];DIALOGS.forEach(d=>{if(ok(d)&&d.scene&&seen.indexOf(d.scene)<0)seen.push(d.scene);});
@@ -974,10 +984,84 @@ function dlgRowHTML(d){
     +'<span class="rowN">'+n+'줄</span>'
     +'<span class="rowGo">읽기 →</span></button>';
 }
+/* ── 코스 — 484레슨 ── */
+let lessonNav=[], lessonCur=null;
+function lessonRowHTML(l){
+  const n=(l.to-l.from);
+  const ts=(l.targets||[]).slice(0,3);
+  return '<button type="button" class="dlgRow" data-open-lesson="'+esc(l.id)+'">'
+    +'<span class="lvdot n'+esc(String(l.level).replace('N',''))+'">'+esc(l.level)+'</span>'
+    +'<span class="rowMain"><span class="rowT">'+fmt(l.goal)+'</span>'
+    +'<span class="rowS">'+esc(l.scene||"")+' · '+n+'줄 · '+esc(l.id)+'</span></span>'
+    +'<span class="rowTags">'+ts.map(t=>'<span class="rowTag">'+esc(t.kind)+' '+fmt(t.key)+'</span>').join("")+'</span>'
+    +'<span class="rowN">'+((l.targets||[]).length)+'목표</span>'
+    +'<span class="rowGo">읽기 →</span></button>';
+}
+function renderCourse(){
+  const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
+  const keep=LESSONS.filter(l=>{
+    if(tkLv!=="all"&&l.level!=="N"+tkLv)return false;
+    if(tkScene!=="all"&&l.scene!==tkScene)return false;
+    if(!q)return true;
+    return hay(l.goal,l.scene,l.level,l.id,(l.targets||[]).map(t=>[t.kind,t.key,t.note]),(l.review||[]).map(r=>[r.key,r.note,r.example])).includes(q);
+  });
+  lessonNav=keep.map(l=>l.id);
+  const order=[];keep.forEach(l=>{if(order.indexOf(l.scene)<0)order.push(l.scene);});
+  const blk=[];
+  order.forEach((sc,i)=>{
+    const ls=keep.filter(l=>l.scene===sc);
+    blk.push({t:"h",lv:0,html:secHd(String(i+1).padStart(2,"0"),sc,ls.length+"레슨")});
+    ls.forEach(l=>blk.push({t:"c",k:l.id,html:lessonRowHTML(l)}));
+  });
+  PGFN.talk=()=>renderTalk();
+  PGPER.talk=24;
+  pgFlush("talk",pgSig("course",tkScene,tkLv,q,tkKind),blk,"#view-talk","talk");
+  setCount("코스 "+num(keep.length)+"레슨", "장면 "+order.length+"개");
+  bindTalk();
+  applyKo();
+}
+function openLesson(id){
+  const l=LESSONS.filter(x=>x.id===id)[0]; if(!l)return;
+  lessonCur=l;
+  const el=$("#dlgReader"); if(!el)return;
+  el.classList.add("on"); el.setAttribute("aria-hidden","false");
+  document.body.classList.add("readerOn");
+  paintLesson();
+}
+function paintLesson(){
+  const l=lessonCur; if(!l)return;
+  const d=DIALOGS.filter(x=>x.id===l.src)[0];
+  const idx=lessonNav.indexOf(l.id);
+  const box=$("#dlgReaderBox"); if(!box||!d)return;
+  const ts=(l.targets||[]);
+  const rv=(l.review||[]);
+  box.innerHTML='<div class="rdTop"><span class="lvdot n'+esc(String(l.level).replace('N',''))+'">'+esc(l.level)+'</span>'
+    +'<span class="dlgScene">'+esc(l.id)+'</span>'
+    +'<span class="rdTitle">'+fmt(l.goal)+'</span>'
+    +'<button type="button" class="rdClose" id="rdClose" aria-label="닫기">×</button></div>'
+    +'<div class="rdMeta">'+esc(l.scene||"")+' · '+esc(d.place||"")+' · '+(l.to-l.from)+'줄</div>'
+    +'<div class="dlgTargets"><span class="uLabel">이 레슨에서 배우는 것 '+ts.length+'</span><div class="tgChips">'
+    +ts.map(t=>'<span class="tgChip" title="'+esc(t.note||"")+'"><b>'+esc(t.kind)+'</b> '+fmt(t.key)+'</span>').join("")
+    +'</div></div>'
+    +'<div class="dlgLines">'+d.lines.slice(l.from,l.to).map((x,j)=>lineHTML(d,x,l.from+j)).join("")+'</div>'
+    +(rv.length?'<div class="rdReview"><span class="uLabel">이전 레슨 복습 '+rv.length+'</span>'
+      +rv.map(r=>'<div class="reviewCard"><b>'+esc(r.kind)+' · '+fmt(r.key)+'</b>'
+        +(r.note?'<span>'+fmt(r.note)+'</span>':'')
+        +(r.example?'<span class="reviewEx">'+fmt(r.example)+'</span><span class="reviewKo">'+esc(r.ko||"")+'</span>':'')
+        +'</div>').join("")+'</div>':'')
+    +'<div class="rdFoot"><div class="rdNav"><button type="button" class="chip" id="rdPrev"'+(idx<=0?' disabled':'')+'>‹ 이전 레슨</button>'
+    +'<span class="rdPos">'+(idx>=0?idx+1:"-")+' / '+lessonNav.length+'</span>'
+    +'<button type="button" class="chip on" id="rdNext"'+(idx<0||idx>=lessonNav.length-1?' disabled':'')+'>다음 레슨 ›</button></div></div>';
+  box.scrollTop=0;
+  const cl=$("#rdClose"); if(cl)cl.onclick=closeDlg;
+  const pv=$("#rdPrev"); if(pv)pv.onclick=()=>{if(idx>0)openLesson(lessonNav[idx-1]);};
+  const nx=$("#rdNext"); if(nx)nx.onclick=()=>{if(idx>=0&&idx<lessonNav.length-1)openLesson(lessonNav[idx+1]);};
+}
 function renderTalk(){
   const view=$("#view-talk");
   if(!view)return;
   if(!hasTALK){view.innerHTML=emptyNote("talk");setCount("대화 — 데이터 없음");return;}
+  if(tkCourse&&typeof LESSONS!=="undefined"&&LESSONS.length){renderCourse();return;}
   const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
   const keep=DIALOGS.filter(d=>{
     if(!talkMatch(d))return false;
@@ -1038,7 +1122,7 @@ function closeDlg(){
   const el=$("#dlgReader"); if(!el)return;
   el.classList.remove("on"); el.setAttribute("aria-hidden","true");
   document.body.classList.remove("readerOn");
-  dlgCur=null;
+  dlgCur=null;lessonCur=null;
 }
 function paintDlg(){
   const d=dlgCur; if(!d)return;
@@ -1069,7 +1153,7 @@ function paintDlg(){
   const pv=$("#rdPrev"); if(pv)pv.onclick=()=>{if(idx>0)openDlg(dlgNav[idx-1]);};
   const nx=$("#rdNext"); if(nx)nx.onclick=()=>{if(idx>=0&&idx<dlgNav.length-1)openDlg(dlgNav[idx+1]);};
 }
-document.addEventListener("keydown",e=>{if(e.key==="Escape"&&dlgCur)closeDlg();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&(dlgCur||lessonCur))closeDlg();});
 document.addEventListener("click",e=>{if(e.target&&e.target.id==="dlgReader")closeDlg();});
 
 /* ── 한국어 숨김/보임 · 빈칸 암기 모드 ── */
@@ -1158,6 +1242,7 @@ function bindTalk(){
   });
   /* 목록 행 → 읽기 화면 */
   $$("#view-talk [data-open-dlg]").forEach(b=>b.onclick=()=>openDlg(b.dataset.openDlg));
+  $$("#view-talk [data-open-lesson]").forEach(b=>b.onclick=()=>openLesson(b.dataset.openLesson));
 }
 
 /* ── 카드↔대화 양방향 점프 ── */
@@ -1312,6 +1397,10 @@ if($("#talkKind"))$("#talkKind").addEventListener("click",e=>{const c=e.target.c
   tkSrc="all";chipAll("#talkSrc","s");renderTalk();});
 if($("#talkView"))$("#talkView").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkView=c.dataset.vw;setChips("#talkView",c);renderTalk();});
+if($("#talkMode"))$("#talkMode").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+  tkCourse=c.dataset.md==="course";setChips("#talkMode",c);
+  tkScene="all";if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
+  sceneList();renderTalk();});
 if($("#talkDay"))$("#talkDay").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkDay=c.dataset.day;setChips("#talkDay",c);renderTalk();});
 if($("#qTalk"))$("#qTalk").addEventListener("input",()=>renderTalk());
