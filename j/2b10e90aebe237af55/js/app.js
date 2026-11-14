@@ -827,7 +827,7 @@ if($("#qConj"))$("#qConj").addEventListener("input",()=>renderConj());
 /* 이름 → 첫 글자(두 글자까지). 아바타용 */
 function initial(n){return n?String(n).slice(0,1):"?";}
 
-let tkScene="all", tkWho="all", tkLv="all", tkSrc="all", tkKo=true, tkKind="daily", tkDay="all", tkCloze=false, tkView="list", tkCourse=true;
+let tkScene="all", tkWho="all", tkLv="all", tkSrc="all", tkKo=true, tkKind="daily", tkDay="all", tkCloze=false, tkView="list", tkCourse=true, tkTrack="scene";
 /* 각 대화에 요일 루틴(Day 1~7) 배정 — 서사 대화(d01~d80)와 예문 뱅크(p001~) 각각 7일 균등 분배 */
 const DLG_DAY={};
 if(hasTALK){
@@ -889,12 +889,13 @@ function sceneList(){
   const sel=$("#talkScene");
   if(!sel)return;
   if(tkCourse&&tkKind==="daily"&&typeof LESSONS!=="undefined"){
+    const pool=LESSONS.filter(l=>(l.track||"scene")===tkTrack);
     const seen=[];
-    LESSONS.forEach(l=>{if(l.scene&&seen.indexOf(l.scene)<0)seen.push(l.scene);});
+    pool.forEach(l=>{if(l.scene&&seen.indexOf(l.scene)<0)seen.push(l.scene);});
     if(sel.tagName==="SELECT"){
       sel.innerHTML='<option value="all">장면: 전체 ('+seen.length+'장면)</option>'
-        +seen.map(s=>{const n=LESSONS.filter(l=>l.scene===s).length;
-          return '<option value="'+esc(s)+'">'+esc(s)+' ('+n+'레슨)</option>';}).join("");
+        +seen.map(s=>{const n=pool.filter(l=>l.scene===s).length;
+          return '<option value="'+esc(s)+'">'+esc(s)+' ('+n+'편)</option>';}).join("");
     }
     return;
   }
@@ -1001,6 +1002,7 @@ function renderCourse(){
   const cb=$("#covBox");if(cb)cb.hidden=true;
   const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
   const keep=LESSONS.filter(l=>{
+    if((l.track||"scene")!==tkTrack)return false;
     if(tkLv!=="all"&&l.level!=="N"+tkLv)return false;
     if(tkScene!=="all"&&l.scene!==tkScene)return false;
     if(!q)return true;
@@ -1010,7 +1012,7 @@ function renderCourse(){
   const order=[];keep.forEach(l=>{if(order.indexOf(l.scene)<0)order.push(l.scene);});
   const tcount=keep.reduce((a,l)=>a+((l.targets||[]).length),0);
   const byKind={};keep.forEach(l=>(l.targets||[]).forEach(t=>{byKind[t.kind]=(byKind[t.kind]||0)+1;}));
-  const cov='<details class="covBox"><summary>이 코스의 목표 '+num(tcount)+'개 — 종류별</summary>'
+  const cov='<details class="covBox"><summary>이 트랙의 목표 '+num(tcount)+'개 — 종류별</summary>'
     +'<table class="covTable"><tr><th>종류</th><th>목표</th></tr>'
     +Object.keys(byKind).map(k=>'<tr><td>'+esc(k)+'</td><td class="covOk">'+num(byKind[k])+'</td></tr>').join("")
     +'</table><p class="covNote">목표는 각 쇼츠 본문에 실제로 나오는 항목만 셉니다. 1편당 3~4개, 목표 없는 줄이 71%입니다.</p></details>';
@@ -1023,7 +1025,8 @@ function renderCourse(){
   PGFN.talk=()=>renderTalk();
   PGPER.talk=24;
   pgFlush("talk",pgSig("course",tkScene,tkLv,q,tkKind),blk,"#view-talk","talk");
-  setCount("쇼츠 "+num(keep.length)+"편 · 목표 "+num(tcount)+"개", "장면 "+order.length+"개");
+  const TRACK_LABEL={scene:"장면",grammar:"문법",kanji:"한자",n1:"N1"};
+  setCount((TRACK_LABEL[tkTrack]||"쇼츠")+" "+num(keep.length)+"편 · 목표 "+num(tcount)+"개", "장면 "+order.length+"개");
   bindTalk();
   applyKo();
 }
@@ -1408,6 +1411,11 @@ if($("#talkKind"))$("#talkKind").addEventListener("click",e=>{const c=e.target.c
   tkScene="all";if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
   sceneList();
   tkSrc="all";chipAll("#talkSrc","s");renderTalk();});
+if($("#talkTrack"))$("#talkTrack").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+  tkTrack=c.dataset.tr;setChips("#talkTrack",c);
+  if(!tkCourse){tkCourse=true;const md=$('#talkMode .chip[data-md="course"]');if(md)setChips("#talkMode",md);}
+  tkScene="all";if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
+  sceneList();renderTalk();});
 if($("#talkView"))$("#talkView").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkView=c.dataset.vw;setChips("#talkView",c);renderTalk();});
 if($("#talkMode"))$("#talkMode").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
