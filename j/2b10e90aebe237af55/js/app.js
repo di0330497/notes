@@ -889,7 +889,7 @@ function sceneList(){
   const sel=$("#talkScene");
   if(!sel)return;
   const tr=id=>(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[id])||"life";
-  const ok=d=>tkKind==="all"||(tkKind==="daily"?(tr(d.id)!=="work"&&tr(d.id)!=="coverage"):(tr(d.id)==="work"||tr(d.id)==="coverage"));
+  const ok=d=>tkKind==="all"||(tkKind==="daily"?(tr(d.id)!=="work"&&tr(d.id)!=="coverage"&&tr(d.id)!=="n1"):tkKind==="n1"?tr(d.id)==="n1":(tr(d.id)==="work"||tr(d.id)==="coverage"));
   const seen=[];DIALOGS.forEach(d=>{if(ok(d)&&d.scene&&seen.indexOf(d.scene)<0)seen.push(d.scene);});
   if(sel.tagName==="SELECT"){
     sel.innerHTML='<option value="all">장면: 전체 ('+seen.length+'장면)</option>'
@@ -912,8 +912,9 @@ function talkMatch(d){
   if(tkWho!=="all"&&(d.chars||[]).indexOf(tkWho)<0)return false;
   /* 일상 코스 = 또래·생활·캠퍼스. 직장·문법 보강은 '보강' 칩에서만 본다. */
   const tr=(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[d.id])||"life";
-  if(tkKind==="daily"&&(tr==="work"||tr==="coverage"))return false;
+  if(tkKind==="daily"&&(tr==="work"||tr==="coverage"||tr==="n1"))return false;
   if(tkKind==="extra"&&tr!=="work"&&tr!=="coverage")return false;
+  if(tkKind==="n1"&&tr!=="n1")return false;
   if(tkDay!=="all"&&DLG_DAY[d.id]!==tkDay)return false;
   return true;
 }
@@ -1010,7 +1011,10 @@ function renderTalk(){
     });
   });
   if(tkKind==="extra"){
-    blk.unshift({t:"h",lv:0,html:'<div class="note"><b>직장·문법 참고</b> — 20세 일상 코스가 아니라 N1·N2 직장·문법 참고 대화입니다. 일상 대화는 <b>일상 코스</b>에서 보세요.</div>'});
+    blk.unshift({t:"h",lv:0,html:'<div class="note"><b>직장·문법 참고</b> — 20세 일상 코스가 아니라 N2 직장·문법 참고 대화입니다. 일상 대화는 <b>일상 코스</b>에서 보세요.</div>'});
+  }
+  if(tkKind==="n1"){
+    blk.unshift({t:"h",lv:0,html:'<div class="note"><b>N1 고급</b> — N1 문형은 일상 회화가 아니라 논설·발표·계약 같은 문어체 상황의 참고 대화입니다. 일상 회화는 <b>일상 코스</b>에서 보세요.</div>'});
   }
   PGFN.talk=()=>renderTalk();
   PGPER.talk=tkView==="list"?24:3;
@@ -1207,7 +1211,7 @@ function talkLegend(){
   const lv={};DIALOGS.forEach(d=>{const k='N'+(d.lv||'?');lv[k]=(lv[k]||0)+1;});
   const lvOrder=['N5','N4','N3','N2','N1','N0'].filter(k=>lv[k]);
   const tr=id=>(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[id])||"life";
-  const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage";}).length;
+  const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage"&&t!=="n1";}).length;
   const extra=DIALOGS.length-daily;
   const lineTot=Object.values(SRC_LINE).reduce((a,b)=>a+b,0);
   const row=(k,inner)=>'<div class="tlgRow"><span class="tlgK">'+k+'</span><span class="tlgI">'+inner+'</span></div>';
@@ -1228,7 +1232,7 @@ function talkDeft(){
   const conj=hasCONJ?CONJ.length:0, spoken=hasSPOKEN?SPOKEN.length:0;
   const pos=(hasPOS?POS.length:0)+WORDS.length;
   const tr=id=>(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[id])||"life";
-  const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage";}).length;
+  const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage"&&t!=="n1";}).length;
   el.innerHTML='문형 <b>'+num(PATS.length)+'</b> · 문법 <b>'+num(gram)+'</b> · 활용표 <b>'+num(conj)+'</b>'
     +' · 표현 <b>'+num(expr)+'</b> · 구어체 <b>'+num(spoken)+'</b> · 품사 <b>'+num(pos)+'</b>'
     +' · 한자 <b>'+num(ALL.length)+'</b>자까지 — <b>일상 코스 '+num(daily)+'편</b>은 또래 수다·SNS·생활 행정·알바·캠퍼스 장면으로 묶었습니다.'
@@ -1286,9 +1290,11 @@ function renderCoverage(){
 function talkKindChips(){
   const el=$("#talkKind");if(!el)return;
   const tr=id=>(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[id])||"life";
-  const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage";}).length;
-  const extra=DIALOGS.length-daily;
+  const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage"&&t!=="n1";}).length;
+  const n1=DIALOGS.filter(d=>tr(d.id)==="n1").length;
+  const extra=DIALOGS.filter(d=>{const t=tr(d.id);return t==="work"||t==="coverage";}).length;
   el.innerHTML='<button class="chip on" data-k="daily">일상 코스 '+num(daily)+'</button>'
+    +'<button class="chip" data-k="n1">N1 고급 '+num(n1)+'</button>'
     +'<button class="chip" data-k="extra">직장·문법 참고 '+num(extra)+'</button>'
     +'<button class="chip" data-k="all">전체 '+num(DIALOGS.length)+'</button>';
   el.classList.remove("single");

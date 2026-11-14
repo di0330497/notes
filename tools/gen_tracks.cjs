@@ -36,6 +36,7 @@ const WORK = /(거래|계약|감사|납품|결재|품의|프레젠테이션|사�
 const OFFICE_DAILY = /(첫 출근|연차|OJT|야근|잡담|라운지|탕비실|시프트|아르바이트|알바|면접|환영회|술자리|전화|창고|연휴|아침|로비|휴게실|계단)/;
 
 function classify(d) {
+  if (String(d.lv) === '1') return 'n1';
   if (OVERRIDE[d.id]) return OVERRIDE[d.id];
   const s = d.scene || '', t = d.title || '';
   if (/(친구|연애|데이트|SNS|メッセージ|メ신저|단톡|동아리|스포츠)/.test(s) || /(친구|연애|데이트|SNS|메신저|단톡|동아리)/.test(t)) return 'peer';

@@ -45,6 +45,7 @@ const OVERRIDE = {
   d372: 'campus', d373: 'life'
 };
 function classify(d) {
+  if (String(d.lv) === '1') return 'n1';
   if (OVERRIDE[d.id]) return OVERRIDE[d.id];
   const s = d.scene || '';
   const t = d.title || '';
