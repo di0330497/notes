@@ -998,6 +998,7 @@ function lessonRowHTML(l){
     +'<span class="rowGo">읽기 →</span></button>';
 }
 function renderCourse(){
+  const cb=$("#covBox");if(cb)cb.hidden=true;
   const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
   const keep=LESSONS.filter(l=>{
     if(tkLv!=="all"&&l.level!=="N"+tkLv)return false;
@@ -1007,7 +1008,13 @@ function renderCourse(){
   });
   lessonNav=keep.map(l=>l.id);
   const order=[];keep.forEach(l=>{if(order.indexOf(l.scene)<0)order.push(l.scene);});
-  const blk=[];
+  const tcount=keep.reduce((a,l)=>a+((l.targets||[]).length),0);
+  const byKind={};keep.forEach(l=>(l.targets||[]).forEach(t=>{byKind[t.kind]=(byKind[t.kind]||0)+1;}));
+  const cov='<details class="covBox"><summary>이 코스의 목표 '+num(tcount)+'개 — 종류별</summary>'
+    +'<table class="covTable"><tr><th>종류</th><th>목표</th></tr>'
+    +Object.keys(byKind).map(k=>'<tr><td>'+esc(k)+'</td><td class="covOk">'+num(byKind[k])+'</td></tr>').join("")
+    +'</table><p class="covNote">목표는 각 쇼츠 본문에 실제로 나오는 항목만 셉니다. 1편당 3~4개, 목표 없는 줄이 71%입니다.</p></details>';
+  const blk=[{t:"c",k:"course-cov",html:cov}];
   order.forEach((sc,i)=>{
     const ls=keep.filter(l=>l.scene===sc);
     blk.push({t:"h",lv:0,html:secHd(String(i+1).padStart(2,"0"),sc,ls.length+"편")});
@@ -1016,7 +1023,6 @@ function renderCourse(){
   PGFN.talk=()=>renderTalk();
   PGPER.talk=24;
   pgFlush("talk",pgSig("course",tkScene,tkLv,q,tkKind),blk,"#view-talk","talk");
-  const tcount=keep.reduce((a,l)=>a+((l.targets||[]).length),0);
   setCount("쇼츠 "+num(keep.length)+"편 · 목표 "+num(tcount)+"개", "장면 "+order.length+"개");
   bindTalk();
   applyKo();
@@ -1063,6 +1069,7 @@ function renderTalk(){
   if(!view)return;
   if(!hasTALK){view.innerHTML=emptyNote("talk");setCount("대화 — 데이터 없음");return;}
   if(tkCourse&&tkKind==="daily"&&typeof LESSONS!=="undefined"&&LESSONS.length){renderCourse();return;}
+  const cb=$("#covBox");if(cb)cb.hidden=false;
   const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
   const keep=DIALOGS.filter(d=>{
     if(!talkMatch(d))return false;
