@@ -1009,6 +1009,9 @@ function renderTalk(){
         +'</div>'});
     });
   });
+  if(tkKind==="extra"){
+    blk.unshift({t:"h",lv:0,html:'<div class="note"><b>직장·문법 참고</b> — 20세 일상 코스가 아니라 N1·N2 직장·문법 참고 대화입니다. 일상 대화는 <b>일상 코스</b>에서 보세요.</div>'});
+  }
   PGFN.talk=()=>renderTalk();
   PGPER.talk=tkView==="list"?24:3;
   pgFlush("talk",pgSig(tkScene,tkWho,tkLv,tkSrc,tkDay,tkKind,q,tkView),blk,"#view-talk","talk");
@@ -1286,7 +1289,7 @@ function talkKindChips(){
   const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage";}).length;
   const extra=DIALOGS.length-daily;
   el.innerHTML='<button class="chip on" data-k="daily">일상 코스 '+num(daily)+'</button>'
-    +'<button class="chip" data-k="extra">보강 '+num(extra)+'</button>'
+    +'<button class="chip" data-k="extra">직장·문법 참고 '+num(extra)+'</button>'
     +'<button class="chip" data-k="all">전체 '+num(DIALOGS.length)+'</button>';
   el.classList.remove("single");
 }

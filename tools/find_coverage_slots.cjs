@@ -4,7 +4,7 @@ const vm = require('vm');
 const ROOT = path.resolve(__dirname, '..');
 const DATA = path.join(ROOT, 'j', '2b10e90aebe237af55', 'data');
 function load(files, tail) { const ctx = { console }; vm.createContext(ctx); vm.runInContext(files.map(f => fs.readFileSync(path.join(DATA, f), 'utf8')).join('\n') + '\n' + tail, ctx, { timeout: 40000 }); return ctx; }
-const dctx = load(fs.readdirSync(DATA).filter(f => /^dialogue-[0-9]+\.js$/.test(f)).sort((a, b) => (+a.match(/\d+/)[0]) - (+b.match(/\d+/)[0])).concat(['dialogue-daily.js', 'daily-overrides.js', 'scene-reskin.js', 'context-rewrite.js', 'rewrite-20.js', 'rewrite-40.js', 'rewrite-60.js', 'rewrite-80.js', 'rewrite-final.js', 'targets-auto.js', 'coverage-patch.js']), 'globalThis.D=DIALOGS;');
+const dctx = load(fs.readdirSync(DATA).filter(f => /^dialogue-[0-9]+\.js$/.test(f)).sort((a, b) => (+a.match(/\d+/)[0]) - (+b.match(/\d+/)[0])).concat(['dialogue-daily.js', 'daily-overrides.js', 'scene-reskin.js', 'context-rewrite.js', 'rewrite-20.js', 'rewrite-40.js', 'rewrite-60.js', 'rewrite-80.js', 'rewrite-final.js', 'rewrite-n1.js', 'targets-auto.js', 'coverage-patch.js']), 'globalThis.D=DIALOGS;');
 const D = dctx.D;
 const ctx = load(['grammar.js', 'patterns.js', 'expressions.js'], 'globalThis.X={GRAMMAR,PATS,EXPR};');
 const { GRAMMAR, PATS, EXPR } = ctx.X;
