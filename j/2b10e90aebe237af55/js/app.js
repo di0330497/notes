@@ -1016,7 +1016,8 @@ function renderCourse(){
   PGFN.talk=()=>renderTalk();
   PGPER.talk=24;
   pgFlush("talk",pgSig("course",tkScene,tkLv,q,tkKind),blk,"#view-talk","talk");
-  setCount("쇼츠 "+num(keep.length)+"편", "장면 "+order.length+"개");
+  const tcount=keep.reduce((a,l)=>a+((l.targets||[]).length),0);
+  setCount("쇼츠 "+num(keep.length)+"편 · 목표 "+num(tcount)+"개", "장면 "+order.length+"개");
   bindTalk();
   applyKo();
 }
