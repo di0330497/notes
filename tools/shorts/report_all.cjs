@@ -30,9 +30,9 @@ md.push('', '## 레벨 분포', '', '| 트랙 | N5 | N4 | N3 | N2 | N1 |', '|---
 for (const [k, v] of Object.entries(by)) md.push(`| ${k} | ${v.levels.N5 || 0} | ${v.levels.N4 || 0} | ${v.levels.N3 || 0} | ${v.levels.N2 || 0} | ${v.levels.N1 || 0} |`);
 md.push('', '## 검증', '',
   '- 장면: 498슬롯 / 492고유 98.8%',
-  '- 문법·문형·구어체·활용: 542 / 553 (98.0%)',
+  '- 문법·문형·구어체·활용: 455 / 465 (97.8%)',
   '- 한자: 2,136 / 2,136 (100%)',
-  '- N1: 180 / 180 (100%)',
+  '- N1 읽기: 135 / 135 (100%)',
   '- 모든 쇼츠 4~12줄, 1편 = 1레슨');
 fs.writeFileSync(path.join(OUT, 'report-all.md'), md.join('\n') + '\n', 'utf8');
 console.log(md.slice(0, 20).join('\n'));

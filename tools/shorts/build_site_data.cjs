@@ -9,6 +9,15 @@ function read(name, fallback) {
   const p = path.join(OUT, name);
   return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : fallback;
 }
+const NOTE_FALLBACK = {
+  '～を': '목적격 조사 — 동작의 대상을 표시',
+  '～の（명사화）': '명사를 수식하거나 문장을 명사처럼 묶는다',
+  '～へ': '방향 — ~쪽으로',
+  '～か（간접의문）': '의문·간접의문을 만든다',
+  'い형용사～くないです': 'い형용사 부정 정중형',
+  'い형용사＋です': 'い형용사 정중형',
+  '～をもとに（して）': '~을 바탕으로'
+};
 const sources = [
   { track: 'scene', file: 'shorts-all.json', assign: 'assignments.json' },
   { track: 'grammar', file: 'grammar-all.json', assign: 'grammar-assignments.json' },
@@ -26,7 +35,7 @@ for (const src of sources) {
     const noteBy = new Map((a.targets || []).map(t => [t.kind + ' · ' + t.key, t]));
     const targets = (d.targets || []).map(t => {
       const n = noteBy.get(t.kind + ' · ' + t.key) || t;
-      return { kind: t.kind, key: t.key, line: t.line, note: n.note || t.note || '', examples: n.examples || [] };
+      return { kind: t.kind, key: t.key, line: t.line, note: n.note || t.note || NOTE_FALLBACK[t.key] || '', examples: n.examples || [] };
     });
     const lines = (d.lines || []).map(x => ({ who: x.who, s: x.s, ko: x.ko || '' }));
     lessons.push({

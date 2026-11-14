@@ -34,7 +34,9 @@ const THEMES = [
 function themeOf(a) {
   const text = String(a[5] || '').toLowerCase();
   for (const [key, jp, re] of THEMES) if (re.test(text)) return { key, jp };
-  return { key: '기타', jp: '漢字' };
+  const g = +a[4];
+  if (g >= 1 && g <= 8) return { key: '상용 ' + g + '학년', jp: '常用' + g + '年' };
+  return { key: '인명·표외', jp: '人名・表外' };
 }
 function firstReading(s) {
   return String(s || '').split(/[・·]/).map(x => x.trim()).filter(Boolean)[0] || '';
