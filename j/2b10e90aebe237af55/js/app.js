@@ -94,8 +94,8 @@ const PORDER=Object.keys(PNAME);
 /* 학습 모드 이름 — 탭·개수 줄·빈 화면·통합 검색이 같은 말을 쓴다 */
 const QSEL={study:"#qStudy",pat:"#qPat",gram:"#qGram",conj:"#qConj",
   pos:"#qPos",spoken:"#qSpoken",expr:"#qExpr",talk:"#qTalk"};
-const MODE={study:"학습 카드",pat:"문형",gram:"문법",conj:"활용표",
-            pos:"품사",spoken:"구어체",expr:"표현·관용구",talk:"대화"};
+const MODE={study:"한자 사전",pat:"문형 사전",gram:"문법 사전",conj:"활용표",
+            pos:"품사 사전",spoken:"구어체",expr:"표현·관용구",talk:"쇼츠"};
 
 /* ══════════ 대화 ↔ 전체 사전·한자 역색인 (Single Source of Truth) ══════════
    모든 카드(학습 카드·문형·문법·활용표·품사·구어체·표현)의 예문이
@@ -827,7 +827,7 @@ if($("#qConj"))$("#qConj").addEventListener("input",()=>renderConj());
 /* 이름 → 첫 글자(두 글자까지). 아바타용 */
 function initial(n){return n?String(n).slice(0,1):"?";}
 
-let tkScene="all", tkWho="all", tkLv="all", tkSrc="all", tkKo=true, tkKind="daily", tkDay="all", tkCloze=false, tkView="list", tkCourse=true, tkTrack="scene";
+let tkScene="all", tkWho="all", tkLv="all", tkSrc="all", tkKo=true, tkKind="daily", tkCloze=false, tkView="list", tkCourse=true, tkTrack="scene";
 /* 각 대화에 요일 루틴(Day 1~7) 배정 — 서사 대화(d01~d80)와 예문 뱅크(p001~) 각각 7일 균등 분배 */
 const DLG_DAY={};
 if(hasTALK){
@@ -921,12 +921,12 @@ function talkMatch(d){
   if(tkSrc!=="all"){const s=DLG_SRC.get(d.id);if(!s||!s.has(tkSrc))return false;}
   if(tkScene!=="all"&&d.scene!==tkScene)return false;
   if(tkWho!=="all"&&(d.chars||[]).indexOf(tkWho)<0)return false;
-  /* 일상 코스 = 또래·생활·캠퍼스. 직장·문법 보강은 '보강' 칩에서만 본다. */
+  /* 대화 모드 = 옛 327편 아카이브. 새 코스는 쇼츠 트랙에서 본다. */
   const tr=(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[d.id])||"life";
   if(tkKind==="daily"&&(tr==="work"||tr==="coverage"||tr==="n1"))return false;
   if(tkKind==="extra"&&tr!=="work"&&tr!=="coverage")return false;
   if(tkKind==="n1"&&tr!=="n1")return false;
-  if(tkDay!=="all"&&DLG_DAY[d.id]!==tkDay)return false;
+
   return true;
 }
 /* 한 줄 — 화자 · 일본어 · 한국어 */
@@ -985,7 +985,7 @@ function dlgRowHTML(d){
     +'<span class="rowN">'+n+'줄</span>'
     +'<span class="rowGo">읽기 →</span></button>';
 }
-/* ── 코스 — 484레슨 ── */
+/* ── 코스 — 4트랙 662쇼츠 ── */
 let lessonNav=[], lessonCur=null;
 function lessonRowHTML(l){
   const n=(l.to-l.from);
@@ -999,7 +999,7 @@ function lessonRowHTML(l){
     +'<span class="rowGo">읽기 →</span></button>';
 }
 function setTalkModeUI(course){
-  ["#talkKind","#talkSrc","#talkDay","#talkView","#talkWho"].forEach(function(sel){const el=$(sel);if(el)el.style.display=course?"none":"";});
+  ["#talkKind","#talkSrc","#talkView","#talkWho","#talkLegend"].forEach(function(sel){const el=$(sel);if(el)el.style.display=course?"none":"";});
   const tr=$("#talkTrack");if(tr)tr.style.display=course?"":"none";
 }
 function setTalkCount(n){
@@ -1007,7 +1007,6 @@ function setTalkCount(n){
   const b=$('#modebar .mc[data-for="talk"]');if(b)b.textContent=num(n);
 }
 function renderCourse(){
-  const cb=$("#covBox");if(cb)cb.hidden=true;
   setTalkModeUI(true);
   setTalkCount(typeof LESSONS!=="undefined"?LESSONS.length:0);
   const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
@@ -1084,7 +1083,6 @@ function renderTalk(){
   if(tkCourse&&tkKind==="daily"&&typeof LESSONS!=="undefined"&&LESSONS.length){renderCourse();return;}
   setTalkModeUI(false);
   setTalkCount(typeof DIALOGS!=="undefined"?DIALOGS.length:0);
-  const cb=$("#covBox");if(cb)cb.hidden=false;
   const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
   const keep=DIALOGS.filter(d=>{
     if(!talkMatch(d))return false;
@@ -1118,14 +1116,14 @@ function renderTalk(){
     });
   });
   if(tkKind==="extra"){
-    blk.unshift({t:"h",lv:0,html:'<div class="note"><b>직장·문법 참고</b> — 20세 일상 코스가 아니라 N2 직장·문법 참고 대화입니다. 일상 대화는 <b>일상 코스</b>에서 보세요.</div>'});
+    blk.unshift({t:"h",lv:0,html:'<div class="note"><b>옛 직장·문법 아카이브</b> — 새 코스의 문법 트랙과 별개인 옛 대화입니다. 새 쇼츠는 <b>쇼츠</b> 모드에서 보세요.</div>'});
   }
   if(tkKind==="n1"){
-    blk.unshift({t:"h",lv:0,html:'<div class="note"><b>N1 고급</b> — N1 문형은 일상 회화가 아니라 논설·발표·계약 같은 문어체 상황의 참고 대화입니다. 일상 회화는 <b>일상 코스</b>에서 보세요.</div>'});
+    blk.unshift({t:"h",lv:0,html:'<div class="note"><b>옛 N1 아카이브</b> — 새 N1 트랙은 쇼츠 모드의 <b>N1</b> 칩에 있습니다. 이 목록은 옛 대화입니다.</div>'});
   }
   PGFN.talk=()=>renderTalk();
   PGPER.talk=tkView==="list"?24:3;
-  pgFlush("talk",pgSig(tkScene,tkWho,tkLv,tkSrc,tkDay,tkKind,q,tkView),blk,"#view-talk","talk");
+  pgFlush("talk",pgSig(tkScene,tkWho,tkLv,tkSrc,tkKind,q,tkView),blk,"#view-talk","talk");
   setCount("대화 "+num(keep.length)+"편",num(lines)+"줄");
   bindTalk();
   applyKo();
@@ -1270,13 +1268,13 @@ function bindTalk(){
 
 /* ── 카드↔대화 양방향 점프 ── */
 function gotoDlgLine(dlgId,lineIdx){
-  tkScene="all";tkWho="all";tkLv="all";tkSrc="all";tkDay="all";
+  tkScene="all";tkWho="all";tkLv="all";tkSrc="all";
   tkKind="all";
   if($("#qTalk"))$("#qTalk").value="";
   if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
   if($("#talkWho")&&$("#talkWho").tagName==="SELECT")$("#talkWho").value="all";
   const kc=$('#talkKind .chip[data-k="'+tkKind+'"]');if(kc)setChips("#talkKind",kc);
-  chipAll("#talkLv","l");chipAll("#talkSrc","s");chipAll("#talkDay","day");
+  chipAll("#talkLv","l");chipAll("#talkSrc","s");
   switchView("talk");
   pgGoto("talk",dlgId);   /* 대상 대화가 다른 페이지에 있으면 그 페이지로 옮겨 논다 */
   const ln=$("#dlg-"+dlgId+"-"+lineIdx)||$("#dlg-"+dlgId);
@@ -1327,73 +1325,21 @@ function talkLegend(){
   const lvs=lvOrder.map(k=>'<span class="tlgChip">'+k+' <b>'+lv[k]+'</b></span>').join("");
   const lines=SRC_ORDER.filter(k=>SRC_LINE[k]).map(k=>esc(k)+' <b>'+num(SRC_LINE[k])+'</b>').join(" · ");
   el.innerHTML=
-    row('구성','일상 코스 <b>'+daily+'</b>편 · 보강 <b>'+extra+'</b>편 = <b>'+DIALOGS.length+'</b>편 · <b>'+num(lineTot)+'</b>줄')
+    row('구성','옛 일상 <b>'+daily+'</b>편 · 옛 보강 <b>'+extra+'</b>편 = <b>'+DIALOGS.length+'</b>편 · <b>'+num(lineTot)+'</b>줄')
     +row('출처',srcs+' <span class="tlgNote">(한 편이 여러 탭을 겸하면 중복 집계)</span>')
     +row('N레벨',lvs)
     +row('줄 구성',lines);
 }
-/* 대화 탭 머리말 — 실제 집계로 채운다(하드코딩 금지) */
+/* 쇼츠 탭 머리말 — 4트랙 실제 집계 */
 function talkDeft(){
   const el=$("#talkDeft");if(!el)return;
-  const gram=(typeof GRAMMAR!=="undefined")?GRAMMAR.length:0;
-  const expr=(typeof EXPR!=="undefined")?EXPR.length:0;
-  const conj=hasCONJ?CONJ.length:0, spoken=hasSPOKEN?SPOKEN.length:0;
-  const pos=(hasPOS?POS.length:0)+WORDS.length;
-  const tr=id=>(typeof DLG_TRACK!=="undefined"&&DLG_TRACK[id])||"life";
-  const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage"&&t!=="n1";}).length;
-  el.innerHTML='문형 <b>'+num(PATS.length)+'</b> · 문법 <b>'+num(gram)+'</b> · 활용표 <b>'+num(conj)+'</b>'
-    +' · 표현 <b>'+num(expr)+'</b> · 구어체 <b>'+num(spoken)+'</b> · 품사 <b>'+num(pos)+'</b>'
-    +' · 한자 <b>'+num(ALL.length)+'</b>자까지 — <b>일상 코스 '+num(daily)+'편</b>은 또래 수다·SNS·생활 행정·알바·캠퍼스 장면으로 묶었습니다.'
-    +' 각 대화의 <b>목표</b>와 줄별 설명만 읽어도 그 장면이 끝납니다. 직장·문법 보강은 <b>보강</b> 칩에서 봅니다.';
+  if(typeof LESSONS==="undefined"||!LESSONS.length){el.textContent="";return;}
+  const c={scene:0,grammar:0,kanji:0,n1:0};
+  LESSONS.forEach(l=>{c[l.track]=(c[l.track]||0)+1;});
+  el.innerHTML='장면 <b>'+num(c.scene)+'</b> · 문법 <b>'+num(c.grammar)+'</b> · 한자 <b>'+num(c.kanji)+'</b> · N1 <b>'+num(c.n1)+'</b>'
+    +' — 총 <b>'+num(LESSONS.length)+'편</b>. 목표는 모두 그 쇼츠 본문에 실제로 나오는 항목만 셉니다.'
+    +' <b>대화</b>로 바꾸면 옛 대화 '+num((typeof DIALOGS!=="undefined")?DIALOGS.length:0)+'편 아카이브를 볼 수 있습니다.';
 }
-/* 커버리지 — 대화가 사전 항목을 어디까지 덮는지 한눈에 */
-function renderCoverage(){
-  const el=$("#covBody");if(!el)return;
-  const cn=s=>String(s||'')
-    .replace(/\[([^\]|]+)\|[^\]]+\]/g,'$1')
-    .replace(/\{([^{}]+)\}/g,'$1')
-    .replace(/[〜～]/g,'')
-    .replace(/[\s（）()「」、。,.!?！？·・／/]/g,'').toLowerCase();
-  const tagSet=new Set();
-  DIALOGS.forEach(d=>{
-    (d.tags||[]).forEach(t=>tagSet.add(t[0]+'\u0000'+cn(t[1])));
-    (d.lines||[]).forEach(l=>{
-      if(!l.item)return;
-      const m=String(l.item).match(/^([^ ·]+)\s*·\s*(.+)$/);
-      if(m)tagSet.add(m[1]+'\u0000'+cn(m[2]));
-    });
-  });
-  const has=(kind,key)=>{
-    const nk=cn(key);
-    for(const t of tagSet){
-      const i=t.indexOf('\u0000');if(i<0)continue;
-      if(t.slice(0,i)!==kind)continue;
-      const v=t.slice(i+1);
-      if(v===nk||v.indexOf(nk)>=0||nk.indexOf(v)>=0)return true;
-    }
-    return false;
-  };
-  const rows=[];
-  const add=(name,hit,total)=>{
-    const ok=hit>=total;
-    rows.push('<tr><td>'+esc(name)+'</td><td class="'+(ok?'covOk':'')+'">'+num(hit)+' / '+num(total)+(ok?' · 100%':' · '+Math.round(hit*100/total)+'%')+'</td></tr>');
-  };
-  const kanjiText=DIALOGS.map(d=>stripM((d.lines||[]).map(l=>l.s).join(''))).join('');
-  const joyo=ALL.filter(a=>isJoyo(a[4]));
-  add('한자 常用 2,136', joyo.filter(a=>kanjiText.indexOf(a[0])>=0).length, joyo.length);
-  add('한자 전체 2,647', ALL.filter(a=>kanjiText.indexOf(a[0])>=0).length, ALL.length);
-  add('문형 698', PATS.filter(p=>has('문형',p.pat)).length, PATS.length);
-  add('문법 552', GRAMMAR.filter(g=>has('문법',g.t)).length, GRAMMAR.length);
-  add('표현 604', EXPR.filter(e=>has('표현',e.expr)).length, EXPR.length);
-  add('품사 1,003', WORDS.filter(w=>has('품사',w.w)).length + POS.filter(x=>has('품사',x.t)).length, WORDS.length+POS.length);
-  add('구어체 129', SPOKEN.filter(s=>has('구어체',s.t)).length, SPOKEN.length);
-  add('활용표 25표', CONJ.filter(c=>has('활용표',c.t)).length, CONJ.length);
-  el.innerHTML='<table class="covTable"><thead><tr><th>영역</th><th>대화 연결</th></tr></thead><tbody>'+rows.join('')+'</tbody></table>'
-    +'<p class="covNote">한자는 대화 본문에 실제로 나온 글자, 나머지는 대화 태그·줄 태그 기준입니다. '
-    +'문형·문법·표현·품사·구어체·활용표는 <b>전 항목 태그 연결 100%</b>. '
-    +'본문 실제 등장은 별도 검증이 필요합니다.</p>';
-}
-
 /* 대화 보기 칩 — 연습 뱅크가 비면 서사 칩 하나만 남긴다 */
 function talkKindChips(){
   const el=$("#talkKind");if(!el)return;
@@ -1401,16 +1347,16 @@ function talkKindChips(){
   const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage"&&t!=="n1";}).length;
   const n1=DIALOGS.filter(d=>tr(d.id)==="n1").length;
   const extra=DIALOGS.filter(d=>{const t=tr(d.id);return t==="work"||t==="coverage";}).length;
-  el.innerHTML='<button class="chip on" data-k="daily">일상 대화 '+num(daily)+'</button>'
-    +'<button class="chip" data-k="n1">N1 고급 '+num(n1)+'</button>'
-    +'<button class="chip" data-k="extra">직장·문법 참고 '+num(extra)+'</button>'
-    +'<button class="chip" data-k="all">전체 '+num(DIALOGS.length)+'</button>';
+  el.innerHTML='<button class="chip on" data-k="daily">옛 일상 '+num(daily)+'</button>'
+    +'<button class="chip" data-k="n1">옛 N1 '+num(n1)+'</button>'
+    +'<button class="chip" data-k="extra">옛 직장·문법 '+num(extra)+'</button>'
+    +'<button class="chip" data-k="all">옛 전체 '+num(DIALOGS.length)+'</button>';
   el.classList.remove("single");
 }
-if(hasTALK){sceneList();whoList();srcChips();talkLegend();talkDeft();renderCoverage();talkKindChips();applyKo();applyCloze();}
+if(hasTALK){sceneList();whoList();srcChips();talkLegend();talkDeft();talkKindChips();applyKo();applyCloze();}
 if($("#talkSrc"))$("#talkSrc").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkSrc=c.dataset.s;setChips("#talkSrc",c);
-  /* 출처는 트랙과 별개 축이다 — 일상 코스 안에서 문형·표현 출처만 좁힌다 */
+  /* 옛 대화 아카이브의 출처 필터 */
   renderTalk();});
 if($("#talkKind"))$("#talkKind").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkKind=c.dataset.k;setChips("#talkKind",c);
@@ -1437,8 +1383,6 @@ if($("#talkMode"))$("#talkMode").addEventListener("click",e=>{const c=e.target.c
   if(tkCourse){tkKind="daily";const kc=$('#talkKind .chip[data-k="daily"]');if(kc)setChips("#talkKind",kc);}
   tkScene="all";if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
   sceneList();renderTalk();});
-if($("#talkDay"))$("#talkDay").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
-  tkDay=c.dataset.day;setChips("#talkDay",c);renderTalk();});
 if($("#qTalk"))$("#qTalk").addEventListener("input",()=>renderTalk());
 if($("#talkScene")){
   if($("#talkScene").tagName==="SELECT"){
@@ -1743,11 +1687,11 @@ function gsRender(){
   panel.innerHTML=h;panel.hidden=false;
 }
 /* 탭별 검색창·렌더러 대응. "외 N개" 와 검색어 넘기기에 쓴다 */
-const GS_TAB={talk:["#qTalk",()=>{tkScene="all";tkWho="all";tkLv="all";tkKind="all";tkSrc="all";tkDay="all";
+const GS_TAB={talk:["#qTalk",()=>{tkScene="all";tkWho="all";tkLv="all";tkKind="all";tkSrc="all";
     tkCourse=false;const gmd=$('#talkMode .chip[data-md="dialog"]');if(gmd)setChips("#talkMode",gmd);
     if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";else chipAll("#talkScene","sc");
     if($("#talkWho")&&$("#talkWho").tagName==="SELECT")$("#talkWho").value="all";else chipAll("#talkWho","w");
-    chipAll("#talkKind","k");chipAll("#talkLv","l");chipAll("#talkSrc","s");chipAll("#talkDay","day");renderTalk();}],
+    chipAll("#talkKind","k");chipAll("#talkLv","l");chipAll("#talkSrc","s");renderTalk();}],
   study:["#qStudy",()=>{fLv="all";chipAll("#lvChips","l");fJoyo="all";chipAll("#joyoChips","j");renderStudy();}],
   pat:["#qPat",()=>{pLv="all";chipAll("#patLv","l");$("#patCat").value="all";renderPat();}],
   gram:["#qGram",()=>{gCh="all";gLv="all";chipAll("#gramCh","c");chipAll("#gramLv","l");renderGrammar();}],
@@ -1914,8 +1858,8 @@ function switchView(v){
 /* 상단바 빵부스러기 — 통합 검색으로 튀어 들어올 때도 같이 따라간다 */
 function setCrumb(v){
   const el=$("#crumb");if(!el)return;
-  const FULL={study:"학습 카드",pat:"문형 사전",gram:"문법",conj:"활용표",
-              pos:"품사 사전",spoken:"구어체",expr:"표현·관용구",talk:"대화",cover:""};
+  const FULL={study:"한자 사전",pat:"문형 사전",gram:"문법 사전",conj:"활용표",
+              pos:"품사 사전",spoken:"구어체",expr:"표현·관용구",talk:"쇼츠",cover:""};
   const label=FULL[v]||"";
   el.innerHTML="<b>빈도순 일본어</b>"+(label?" · "+label:"");
   document.title=(label?label+" · ":"")+"빈도순 일본어";
@@ -2008,8 +1952,8 @@ $$(".pgRank").forEach(el=>el.setAttribute("max",String(ALL.length)));
   const gramCh=(typeof GRAMMAR!=="undefined")?new Set(GRAMMAR.map(g=>g.ch)).size:0;
   const exprCat=(typeof EXPR!=="undefined")?new Set(EXPR.map(x=>x.cat)).size:0;
   const props=[
-    ["대화",num(talk)+"편","장면 "+num(new Set(DIALOGS.map(d=>d.scene)).size)+" · "+num(talkLines)+"줄"],
-    ["학습 카드",num(kanji)+"자","상용 2,136 · 상용 외 464 · 식재료 47"],
+    ["쇼츠",num(talk)+"편","장면 "+num(new Set(LESSONS.map(d=>d.scene)).size)+" · "+num(talkLines)+"줄"],
+    ["한자 사전",num(kanji)+"자","상용 2,136 · 상용 외 464 · 식재료 47"],
     ["문형 사전",num(pats)+"개","N5~N1 · 의미 분류 "+new Set(PATS.map(p=>p.cat)).size+"갈래"],
     ["문법",num(gram)+"항목",gramCh+"장"],
     ["활용표",num(conj)+"표","표 "+num(conjRows)+"행"],

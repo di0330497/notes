@@ -48,7 +48,7 @@
       <a class="nav-item home" id="navCover" href="#cover"><span class="nid"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>표지</a>
 
       <div class="nav-stage" id="navStage">
-        <div class="nav-stage-t">코스 · 사전 <span class="sn">8</span></div>
+        <div class="nav-stage-t">코스 · 사전 <span class="sn">7</span></div>
         <button class="nav-item tab" data-v="talk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>코스·대화 <span class="mc" id="cntTalk">—</span></button>
         <div class="nav-group">文字</div>
         <button class="nav-item tab on" data-v="study"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>한자 <span class="mc" id="cntStudy">—</span></button>
@@ -92,7 +92,7 @@
 
             <div class="stage-grid" id="stageGrid">
               <a class="st-card" href="#talk" data-v="talk"><span class="sn">01</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>쇼츠·대화</b><em>장면·문법·한자·N1 쇼츠 662편 — 일본어·한국어 대역, 후리가나 켜고 끄기</em></span><span class="st-n" id="stnTalk">—</span></a>
-              <a class="st-card" href="#study" data-v="study"><span class="sn">02</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>학습 카드</b><em>빈도순 한자 카드 — 읽기·뜻·예문, N레벨별 필터</em></span><span class="st-n" id="stnStudy">—</span></a>
+              <a class="st-card" href="#study" data-v="study"><span class="sn">02</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>한자 사전</b><em>빈도순 한자 카드 — 읽기·뜻·예문, N레벨별 필터</em></span><span class="st-n" id="stnStudy">—</span></a>
               <a class="st-card" href="#pat" data-v="pat"><span class="sn">03</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>문형 사전</b><em>「〜たい」「〜ばかり」 — 의미 분류로 묶어 대조</em></span><span class="st-n" id="stnPat">—</span></a>
               <a class="st-card" href="#gram" data-v="gram"><span class="sn">04</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>문법</b><em>552항목 · N5부터 N1까지 장별로</em></span><span class="st-n" id="stnGram">—</span></a>
               <a class="st-card" href="#conj" data-v="conj"><span class="sn">05</span><span class="st-body"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M12 3v18"/></svg>활용표</b><em>3그룹 · て형 음편 · 조건 4형 · 경어 대응</em></span><span class="st-n" id="stnConj">—</span></a>
@@ -120,11 +120,7 @@
           <header class="phead">
             <div class="crumb"><span class="pn">01</span> 대화 <span class="pid">전 범위 100% 연동</span></div>
             <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>실전 대화</h2>
-            <p class="deft" id="talkDeft">쇼츠 150편에 목표 506개를 3~4개씩 배치했습니다. 목표는 모두 그 쇼츠 본문에 실제로 나오는 항목만 셉니다. <b>대화</b>로 바꾸면 기존 327편 전체 대화를 볼 수 있습니다.</p>
-            <details class="covBox" id="covBox">
-              <summary>커버리지 — 대화가 어디까지 덮는가</summary>
-              <div id="covBody"></div>
-            </details>
+            <p class="deft" id="talkDeft">장면 150 · 문법 155 · 한자 312 · N1 45, 총 <b>662편</b>입니다. 각 쇼츠의 목표는 본문에 실제로 나오는 항목만 셉니다. <b>대화</b>로 바꾸면 옛 대화 327편 아카이브를 볼 수 있습니다.</p>
           </header>
 
           <div class="toolbar" id="tbTalk">
@@ -156,16 +152,6 @@
               <button class="chip lv1" data-l="1">N1</button>
             </div>
             <div class="chips lvchips srcChips" id="talkSrc"></div>
-            <div class="chips talkDayChips" id="talkDay">
-              <button class="chip on" data-day="all">전체 루틴</button>
-              <button class="chip" data-day="1">Day 1</button>
-              <button class="chip" data-day="2">Day 2</button>
-              <button class="chip" data-day="3">Day 3</button>
-              <button class="chip" data-day="4">Day 4</button>
-              <button class="chip" data-day="5">Day 5</button>
-              <button class="chip" data-day="6">Day 6</button>
-              <button class="chip" data-day="7">Day 7</button>
-            </div>
             <div class="talkCtrlRow">
               <select id="talkScene" aria-label="장면 선택"><option value="all">장면: 전체</option></select>
               <select id="talkWho" aria-label="화자 선택"><option value="all">화자: 전체</option></select>
@@ -183,11 +169,11 @@
         </div>
       </section>
 
-      <!-- ══ 학습 카드 ═══════════════════════════════════ -->
+      <!-- ══ 한자 사전 ═══════════════════════════════════ -->
       <section class="page" id="page-study">
         <div class="wrap wide">
           <header class="phead">
-            <div class="crumb"><span class="pn">02</span> 학습 카드 <span class="pid">2,647자</span></div>
+            <div class="crumb"><span class="pn">02</span> 한자 사전 <span class="pid">2,647자</span></div>
             <h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>빈도순 한자</h2>
             <p class="deft">신문 코퍼스 빈도순으로 놓은 한자 카드. 예문 속 <span class="u">파란 표시</span>는 해당 한자, 밑줄은 그 한자가 쓰인 낱말입니다. N레벨 필터를 켜면 그 수준의 상세 예문만 봅니다. 상용 2,136 필터로 常用漢字表 밖의 글자를 걷어낼 수 있습니다.</p>
           </header>
@@ -214,7 +200,7 @@
             <button class="furi" data-furi>ふりがな ON</button>
           </div>
 
-                    <div class="note" id="noteStudy"><b>빈도순 2,600자 + 식재료 47자</b>를 학습 카드로 제공합니다. <b>상용 2,136</b> 칩을 켜면 常用漢字表 안의 글자만 남습니다 — 교육한자 1,026자(1~6학년) + 중학 이후 1,110자. 나머지 <b>511자</b>는 인명용 126 · 표외 327 · 추가 11 · 식재료 47입니다.</div>
+                    <div class="note" id="noteStudy"><b>빈도순 2,600자 + 식재료 47자</b>를 한자 사전으로 제공합니다. <b>상용 2,136</b> 칩을 켜면 常用漢字表 안의 글자만 남습니다 — 교육한자 1,026자(1~6학년) + 중학 이후 1,110자. 나머지 <b>511자</b>는 인명용 126 · 표외 327 · 추가 11 · 식재료 47입니다.</div>
 
           <div class="count" id="cnt"></div>
 
@@ -465,7 +451,6 @@
 <script src="data/tracks.js?v=20261114-fix3"></script>
 <script src="data/targets-auto.js?v=20261114-fix3"></script>
 <script src="data/coverage-patch.js?v=20261115-shorts"></script>
-<script src="data/shorts.js?v=20261115-tracks"></script>
 <script src="data/lessons.js?v=20261115-tracks4"></script>
 <script src="data/colloquial.js?v=20261018-o"></script>
 <script src="data/colloquial-2.js?v=20261018-o"></script>

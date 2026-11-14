@@ -9,7 +9,7 @@ const BUILD = path.join(ROOT, 'build');
 const OUT = path.join(BUILD, 'shorts');
 fs.mkdirSync(OUT, { recursive: true });
 
-const core = JSON.parse(fs.readFileSync(path.join(BUILD, 'reconstruction', 'core-items.json'), 'utf8'));
+const core = JSON.parse(fs.readFileSync(path.join(OUT, 'core-items-source.json'), 'utf8'));
 const inv = JSON.parse(fs.readFileSync(path.join(OUT, 'inventory.json'), 'utf8'));
 const norm = s => String(s || '').replace(/[〜～]/g, '～').replace(/[\s（）()「」、。,.!?！？·・／/]/g, '').toLowerCase();
 const byKey = new Map();

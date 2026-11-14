@@ -38,7 +38,7 @@ node tools/shorts/report_all.cjs
 ## 검증
 
 `validate_tracks.cjs`는 목표가 실제 해당 줄에 있는지 검사한다.  
-미검증 항목은 `build/shorts/*-problems.json`에 남는다.
+미검증 항목은 콘솔에 출력되고, 최종 수치는 `report-all.md`에 남는다.
 
 ## 사이트
 
