@@ -19,6 +19,7 @@ const code = files.map(f => fs.readFileSync(path.join(DATA, f), 'utf8')).join('\
   + '\n' + fs.readFileSync(path.join(DATA, 'rewrite-20.js'), 'utf8')
   + '\n' + fs.readFileSync(path.join(DATA, 'rewrite-40.js'), 'utf8')
   + '\n' + fs.readFileSync(path.join(DATA, 'rewrite-60.js'), 'utf8')
+  + '\n' + fs.readFileSync(path.join(DATA, 'rewrite-80.js'), 'utf8')
   + '\n;globalThis.D=DIALOGS;';
 vm.runInContext(code, ctx, { timeout: 30000 });
 const D = ctx.D;

@@ -9,7 +9,7 @@ function load(files, tail) {
   vm.runInContext(files.map(f => fs.readFileSync(path.join(DATA, f), 'utf8')).join('\n') + '\n' + tail, ctx, { timeout: 40000 });
   return ctx;
 }
-const dctx = load(fs.readdirSync(DATA).filter(f => /^dialogue-[0-9]+\.js$/.test(f)).sort((a, b) => (+a.match(/\d+/)[0]) - (+b.match(/\d+/)[0])).concat(['dialogue-daily.js', 'daily-overrides.js', 'scene-reskin.js', 'context-rewrite.js', 'rewrite-20.js', 'rewrite-40.js', 'rewrite-60.js', 'targets-auto.js', 'coverage-patch.js']), 'globalThis.D=DIALOGS;');
+const dctx = load(fs.readdirSync(DATA).filter(f => /^dialogue-[0-9]+\.js$/.test(f)).sort((a, b) => (+a.match(/\d+/)[0]) - (+b.match(/\d+/)[0])).concat(['dialogue-daily.js', 'daily-overrides.js', 'scene-reskin.js', 'context-rewrite.js', 'rewrite-20.js', 'rewrite-40.js', 'rewrite-60.js', 'rewrite-80.js', 'targets-auto.js', 'coverage-patch.js']), 'globalThis.D=DIALOGS;');
 const D = dctx.D;
 const ctx = load(['kanji-list.js', 'kanji-cards.js', 'grammar.js', 'patterns.js', 'expressions.js', 'conjugation.js', 'pos-josa.js', 'pos-verb.js', 'pos-noun.js', 'pos-fukushi.js', 'pos-other.js', 'pos-words.js', 'pos-keiyou-2.js', 'colloquial.js', 'colloquial-2.js', 'dialect.js', 'slang.js', 'slang-2026.js'], 'globalThis.X={STUDY_FULL,ALL,FOOD,GRAMMAR,PATS,EXPR,CONJ,SPOKEN,POS_WORDS,POS_JOSA:typeof POS_JOSA!=="undefined"?POS_JOSA:[],POS_ADV:typeof POS_ADV!=="undefined"?POS_ADV:[],POS_OTHER:typeof POS_OTHER!=="undefined"?POS_OTHER:[],POS_VERB:typeof POS_VERB!=="undefined"?POS_VERB:[],POS_NOUN:typeof POS_NOUN!=="undefined"?POS_NOUN:[]};');
 const { STUDY_FULL, ALL, FOOD, GRAMMAR, PATS, EXPR, CONJ, SPOKEN, POS_WORDS } = ctx.X;
