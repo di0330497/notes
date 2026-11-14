@@ -998,8 +998,18 @@ function lessonRowHTML(l){
     +'<span class="rowN">'+((l.targets||[]).length)+'목표</span>'
     +'<span class="rowGo">읽기 →</span></button>';
 }
+function setTalkModeUI(course){
+  ["#talkKind","#talkSrc","#talkDay","#talkView","#talkWho"].forEach(function(sel){const el=$(sel);if(el)el.style.display=course?"none":"";});
+  const tr=$("#talkTrack");if(tr)tr.style.display=course?"":"none";
+}
+function setTalkCount(n){
+  const a=$("#cntTalk");if(a)a.textContent=num(n);
+  const b=$('#modebar .mc[data-for="talk"]');if(b)b.textContent=num(n);
+}
 function renderCourse(){
   const cb=$("#covBox");if(cb)cb.hidden=true;
+  setTalkModeUI(true);
+  setTalkCount(typeof LESSONS!=="undefined"?LESSONS.length:0);
   const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
   const keep=LESSONS.filter(l=>{
     if((l.track||"scene")!==tkTrack)return false;
@@ -1072,6 +1082,8 @@ function renderTalk(){
   if(!view)return;
   if(!hasTALK){view.innerHTML=emptyNote("talk");setCount("대화 — 데이터 없음");return;}
   if(tkCourse&&tkKind==="daily"&&typeof LESSONS!=="undefined"&&LESSONS.length){renderCourse();return;}
+  setTalkModeUI(false);
+  setTalkCount(typeof DIALOGS!=="undefined"?DIALOGS.length:0);
   const cb=$("#covBox");if(cb)cb.hidden=false;
   const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
   const keep=DIALOGS.filter(d=>{
@@ -1414,6 +1426,7 @@ if($("#talkKind"))$("#talkKind").addEventListener("click",e=>{const c=e.target.c
 if($("#talkTrack"))$("#talkTrack").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkTrack=c.dataset.tr;setChips("#talkTrack",c);
   if(!tkCourse){tkCourse=true;const md=$('#talkMode .chip[data-md="course"]');if(md)setChips("#talkMode",md);}
+  tkLv="all";chipAll("#talkLv","l");
   tkScene="all";if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";
   sceneList();renderTalk();});
 if($("#talkView"))$("#talkView").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
@@ -1856,7 +1869,7 @@ function showCover(){
     spoken:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z\"/><path d=\"M19 10v1a7 7 0 0 1-14 0v-1\"/><path d=\"M12 18v4\"/></svg>",
     expr:"<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M10 11H6a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5a4 4 0 0 0-4-4\"/><path d=\"M20 11h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5a4 4 0 0 0-4-4\"/></svg>"
   };
-  var LABEL={talk:"대화",study:"학습 카드",pat:"문형 사전",gram:"문법",conj:"활용표",
+  var LABEL={talk:"쇼츠",study:"한자 사전",pat:"문형 사전",gram:"문법 사전",conj:"활용표",
              pos:"품사 사전",spoken:"구어체",expr:"표현·관용구"};
   var items=[{v:"cover",t:"표지",ic:ICON.cover}].concat(
     (typeof VIEWS!=="undefined"?VIEWS:[]).map(function(v){
@@ -1972,8 +1985,10 @@ $$(".pgRank").forEach(el=>el.setAttribute("max",String(ALL.length)));
         expr=(typeof EXPR!=="undefined")?EXPR.length:0,
         conj=hasCONJ?CONJ.length:0, spoken=hasSPOKEN?SPOKEN.length:0,
         pos=hasPOS?POS.length:0;
-  const talk=(typeof DIALOGS!=="undefined")?DIALOGS.length:0;
-  const talkLines=(typeof DIALOGS!=="undefined")?DIALOGS.reduce((a,d)=>a+(d.lines||[]).length,0):0;
+  const talk=(typeof LESSONS!=="undefined"&&LESSONS.length)?LESSONS.length:((typeof DIALOGS!=="undefined")?DIALOGS.length:0);
+  const talkLines=(typeof LESSONS!=="undefined"&&LESSONS.length)
+    ?LESSONS.reduce((a,d)=>a+(d.lines||[]).length,0)
+    :((typeof DIALOGS!=="undefined")?DIALOGS.reduce((a,d)=>a+(d.lines||[]).length,0):0);
   const set=(id,v)=>{const el=$("#"+id);if(el)el.textContent=num(v);};
   set("cntStudy",kanji);set("cntPat",pats);set("cntGram",gram);
   set("cntConj",conj);set("cntPos",pos+WORDS.length);set("cntSpoken",spoken);set("cntExpr",expr);
