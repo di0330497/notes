@@ -89,13 +89,13 @@ const shorts = chunks.map((c, idx) => {
   const onLine = on.length ? `音読みは「${on.join('」「')}」。` : '';
   const kunLine = kun.length ? `訓読みは「${kun.join('」「')}」。` : '';
   const lines = [
-    { who: 'jihu', s: `今日は「${c.themeJp}」の漢字。読める？`, ko: `오늘은 '${c.theme}' 한자. 읽을 수 있어?` },
-    { who: 'aki', s: `${w1}。`, ko: words.slice(0, 3).map(w => `${w.word}(${w.reading})`).join(' · ') },
-    { who: 'jihu', s: `${w2}。`, ko: words.slice(3).map(w => `${w.word}(${w.reading})`).join(' · ') },
-    { who: 'aki', s: onLine, ko: on.length ? `음독은 '${on.join("', '")}'.` : '음독은 따로 없어.' },
-    { who: 'jihu', s: kunLine, ko: kun.length ? `훈독은 '${kun.join("', '")}'.` : '훈독은 따로 없어.' },
-    { who: 'aki', s: `同じ漢字でも、言葉によって読みが変わるんだね。`, ko: `같은 한자도 단어에 따라 읽기가 달라지네.` }
-  ].filter(x => x.s);
+    { who: 'jihu', s: `今日は「${c.themeJp}」の漢字。読める？`, ko: `오늘은 '${c.theme}' 한자. 읽을 수 있어?` }
+  ];
+  if (w1) lines.push({ who: 'aki', s: `${w1}。`, ko: words.slice(0, 3).map(w => `${w.word}(${w.reading})`).join(' · ') });
+  if (w2) lines.push({ who: 'jihu', s: `${w2}。`, ko: words.slice(3).map(w => `${w.word}(${w.reading})`).join(' · ') });
+  if (onLine) lines.push({ who: 'aki', s: onLine, ko: `음독은 '${on.join("', '")}'.` });
+  if (kunLine) lines.push({ who: 'jihu', s: kunLine, ko: `훈독은 '${kun.join("', '")}'.` });
+  lines.push({ who: 'aki', s: `同じ漢字でも、言葉によって読みが変わるんだね。`, ko: `같은 한자도 단어에 따라 읽기가 달라지네.` });
   const targets = words.map((w, i) => ({
     kind: '한자', key: w.a[0], line: i < 3 ? 1 : 2,
     note: [meaningOf(w.a), w.a[1] ? '음 ' + w.a[1] : '', w.a[2] ? '훈 ' + w.a[2] : ''].filter(Boolean).join(' · ')
