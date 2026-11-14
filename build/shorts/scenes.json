@@ -1,0 +1,2378 @@
+{
+ "total": 150,
+ "scenes": [
+  {
+   "id": "sh001",
+   "scene": "카페",
+   "tags": [
+    "cafe",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N5",
+   "title": "카페 — 첫 주문",
+   "function": "첫 주문"
+  },
+  {
+   "id": "sh002",
+   "scene": "카페",
+   "tags": [
+    "cafe",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N4",
+   "title": "카페 — 친구와 수다",
+   "function": "친구와 수다"
+  },
+  {
+   "id": "sh003",
+   "scene": "카페",
+   "tags": [
+    "cafe",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N3",
+   "title": "카페 — 주문 실수",
+   "function": "주문 실수"
+  },
+  {
+   "id": "sh004",
+   "scene": "편의점",
+   "tags": [
+    "konbini",
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "편의점 — 계산",
+   "function": "계산"
+  },
+  {
+   "id": "sh005",
+   "scene": "편의점",
+   "tags": [
+    "konbini",
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "편의점 — 알바 인수인계",
+   "function": "알바 인수인계"
+  },
+  {
+   "id": "sh006",
+   "scene": "편의점",
+   "tags": [
+    "konbini",
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N3",
+   "title": "편의점 — 상품 문의",
+   "function": "상품 문의"
+  },
+  {
+   "id": "sh007",
+   "scene": "레스토랑",
+   "tags": [
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "레스토랑 — 주문",
+   "function": "주문"
+  },
+  {
+   "id": "sh008",
+   "scene": "레스토랑",
+   "tags": [
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "레스토랑 — 맛 평가",
+   "function": "맛 평가"
+  },
+  {
+   "id": "sh009",
+   "scene": "레스토랑",
+   "tags": [
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N3",
+   "title": "레스토랑 — 계산",
+   "function": "계산"
+  },
+  {
+   "id": "sh010",
+   "scene": "이자카야",
+   "tags": [
+    "food",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "이자카야 — 권유",
+   "function": "권유"
+  },
+  {
+   "id": "sh011",
+   "scene": "이자카야",
+   "tags": [
+    "food",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki",
+    "sato"
+   ],
+   "level": "N3",
+   "title": "이자카야 — 고민 상담",
+   "function": "고민 상담"
+  },
+  {
+   "id": "sh012",
+   "scene": "이자카야",
+   "tags": [
+    "food",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki",
+    "sato"
+   ],
+   "level": "N2",
+   "title": "이자카야 — 완곡한 거절",
+   "function": "완곡한 거절"
+  },
+  {
+   "id": "sh013",
+   "scene": "패스트푸드",
+   "tags": [
+    "food",
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N5",
+   "title": "패스트푸드 — 세트 주문",
+   "function": "세트 주문"
+  },
+  {
+   "id": "sh014",
+   "scene": "패스트푸드",
+   "tags": [
+    "food",
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N4",
+   "title": "패스트푸드 — 사이즈 변경",
+   "function": "사이즈 변경"
+  },
+  {
+   "id": "sh015",
+   "scene": "패스트푸드",
+   "tags": [
+    "food",
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N3",
+   "title": "패스트푸드 — 포장",
+   "function": "포장"
+  },
+  {
+   "id": "sh016",
+   "scene": "베이커리",
+   "tags": [
+    "food",
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "베이커리 — 빵 고르기",
+   "function": "빵 고르기"
+  },
+  {
+   "id": "sh017",
+   "scene": "베이커리",
+   "tags": [
+    "food",
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "베이커리 — 추천",
+   "function": "추천"
+  },
+  {
+   "id": "sh018",
+   "scene": "베이커리",
+   "tags": [
+    "food",
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N3",
+   "title": "베이커리 — 계산",
+   "function": "계산"
+  },
+  {
+   "id": "sh019",
+   "scene": "슈퍼마켓",
+   "tags": [
+    "shop",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "슈퍼마켓 — 장보기",
+   "function": "장보기"
+  },
+  {
+   "id": "sh020",
+   "scene": "슈퍼마켓",
+   "tags": [
+    "shop",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "슈퍼마켓 — 계산",
+   "function": "계산"
+  },
+  {
+   "id": "sh021",
+   "scene": "슈퍼마켓",
+   "tags": [
+    "shop",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N3",
+   "title": "슈퍼마켓 — 할인",
+   "function": "할인"
+  },
+  {
+   "id": "sh022",
+   "scene": "쇼핑몰",
+   "tags": [
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N5",
+   "title": "쇼핑몰 — 길 찾기",
+   "function": "길 찾기"
+  },
+  {
+   "id": "sh023",
+   "scene": "쇼핑몰",
+   "tags": [
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N4",
+   "title": "쇼핑몰 — 교환",
+   "function": "교환"
+  },
+  {
+   "id": "sh024",
+   "scene": "쇼핑몰",
+   "tags": [
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N3",
+   "title": "쇼핑몰 — 선물",
+   "function": "선물"
+  },
+  {
+   "id": "sh025",
+   "scene": "옷가게",
+   "tags": [
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "옷가게 — 사이즈",
+   "function": "사이즈"
+  },
+  {
+   "id": "sh026",
+   "scene": "옷가게",
+   "tags": [
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "옷가게 — 시착",
+   "function": "시착"
+  },
+  {
+   "id": "sh027",
+   "scene": "옷가게",
+   "tags": [
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N3",
+   "title": "옷가게 — 환불",
+   "function": "환불"
+  },
+  {
+   "id": "sh028",
+   "scene": "신발가게",
+   "tags": [
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "신발가게 — 발 사이즈",
+   "function": "발 사이즈"
+  },
+  {
+   "id": "sh029",
+   "scene": "신발가게",
+   "tags": [
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "신발가게 — 교환",
+   "function": "교환"
+  },
+  {
+   "id": "sh030",
+   "scene": "신발가게",
+   "tags": [
+    "shop"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N3",
+   "title": "신발가게 — 소재",
+   "function": "소재"
+  },
+  {
+   "id": "sh031",
+   "scene": "서점",
+   "tags": [
+    "shop",
+    "study"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "서점 — 책 찾기",
+   "function": "책 찾기"
+  },
+  {
+   "id": "sh032",
+   "scene": "서점",
+   "tags": [
+    "shop",
+    "study"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "서점 — 주문",
+   "function": "주문"
+  },
+  {
+   "id": "sh033",
+   "scene": "서점",
+   "tags": [
+    "shop",
+    "study"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N3",
+   "title": "서점 — 선물",
+   "function": "선물"
+  },
+  {
+   "id": "sh034",
+   "scene": "미용실",
+   "tags": [
+    "salon"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N5",
+   "title": "미용실 — 컷 주문",
+   "function": "컷 주문"
+  },
+  {
+   "id": "sh035",
+   "scene": "미용실",
+   "tags": [
+    "salon"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N3",
+   "title": "미용실 — 염색 상담",
+   "function": "염색 상담"
+  },
+  {
+   "id": "sh036",
+   "scene": "미용실",
+   "tags": [
+    "salon"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N2",
+   "title": "미용실 — 예약 변경",
+   "function": "예약 변경"
+  },
+  {
+   "id": "sh037",
+   "scene": "병원",
+   "tags": [
+    "hospital",
+    "body"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "병원 — 증상 설명",
+   "function": "증상 설명"
+  },
+  {
+   "id": "sh038",
+   "scene": "병원",
+   "tags": [
+    "hospital",
+    "body"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "병원 — 진료 결과",
+   "function": "진료 결과"
+  },
+  {
+   "id": "sh039",
+   "scene": "병원",
+   "tags": [
+    "hospital",
+    "body"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N2",
+   "title": "병원 — 생활 지도",
+   "function": "생활 지도"
+  },
+  {
+   "id": "sh040",
+   "scene": "약국",
+   "tags": [
+    "pharmacy",
+    "hospital"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "약국 — 처방전",
+   "function": "처방전"
+  },
+  {
+   "id": "sh041",
+   "scene": "약국",
+   "tags": [
+    "pharmacy",
+    "hospital"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "약국 — 약 복용",
+   "function": "약 복용"
+  },
+  {
+   "id": "sh042",
+   "scene": "약국",
+   "tags": [
+    "pharmacy",
+    "hospital"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N2",
+   "title": "약국 — 부작용",
+   "function": "부작용"
+  },
+  {
+   "id": "sh043",
+   "scene": "시청",
+   "tags": [
+    "cityhall"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "시청 — 전입신고",
+   "function": "전입신고"
+  },
+  {
+   "id": "sh044",
+   "scene": "시청",
+   "tags": [
+    "cityhall"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "시청 — 서류 발급",
+   "function": "서류 발급"
+  },
+  {
+   "id": "sh045",
+   "scene": "시청",
+   "tags": [
+    "cityhall"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N2",
+   "title": "시청 — 상담",
+   "function": "상담"
+  },
+  {
+   "id": "sh046",
+   "scene": "은행",
+   "tags": [
+    "bank"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "은행 — 계좌 개설",
+   "function": "계좌 개설"
+  },
+  {
+   "id": "sh047",
+   "scene": "은행",
+   "tags": [
+    "bank"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "은행 — 송금",
+   "function": "송금"
+  },
+  {
+   "id": "sh048",
+   "scene": "은행",
+   "tags": [
+    "bank"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N2",
+   "title": "은행 — ATM 문제",
+   "function": "ATM 문제"
+  },
+  {
+   "id": "sh049",
+   "scene": "우체국",
+   "tags": [
+    "post"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "우체국 — 소포 발송",
+   "function": "소포 발송"
+  },
+  {
+   "id": "sh050",
+   "scene": "우체국",
+   "tags": [
+    "post"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "우체국 — 주소 문제",
+   "function": "주소 문제"
+  },
+  {
+   "id": "sh051",
+   "scene": "우체국",
+   "tags": [
+    "post"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N2",
+   "title": "우체국 — 재배달",
+   "function": "재배달"
+  },
+  {
+   "id": "sh052",
+   "scene": "전철",
+   "tags": [
+    "station"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "전철 — 길 묻기",
+   "function": "길 묻기"
+  },
+  {
+   "id": "sh053",
+   "scene": "전철",
+   "tags": [
+    "station"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "전철 — 지연 안내",
+   "function": "지연 안내"
+  },
+  {
+   "id": "sh054",
+   "scene": "전철",
+   "tags": [
+    "station"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N2",
+   "title": "전철 — 환승",
+   "function": "환승"
+  },
+  {
+   "id": "sh055",
+   "scene": "버스",
+   "tags": [
+    "station"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N5",
+   "title": "버스 — 노선 확인",
+   "function": "노선 확인"
+  },
+  {
+   "id": "sh056",
+   "scene": "버스",
+   "tags": [
+    "station"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N4",
+   "title": "버스 — 요금",
+   "function": "요금"
+  },
+  {
+   "id": "sh057",
+   "scene": "버스",
+   "tags": [
+    "station"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N3",
+   "title": "버스 — 하차",
+   "function": "하차"
+  },
+  {
+   "id": "sh058",
+   "scene": "공항",
+   "tags": [
+    "airport",
+    "travel"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "공항 — 체크인",
+   "function": "체크인"
+  },
+  {
+   "id": "sh059",
+   "scene": "공항",
+   "tags": [
+    "airport",
+    "travel"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "공항 — 보안 검색",
+   "function": "보안 검색"
+  },
+  {
+   "id": "sh060",
+   "scene": "공항",
+   "tags": [
+    "airport",
+    "travel"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N2",
+   "title": "공항 — 탑승",
+   "function": "탑승"
+  },
+  {
+   "id": "sh061",
+   "scene": "호텔",
+   "tags": [
+    "hotel",
+    "travel"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N5",
+   "title": "호텔 — 체크인",
+   "function": "체크인"
+  },
+  {
+   "id": "sh062",
+   "scene": "호텔",
+   "tags": [
+    "hotel",
+    "travel"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N4",
+   "title": "호텔 — 짐 보관",
+   "function": "짐 보관"
+  },
+  {
+   "id": "sh063",
+   "scene": "호텔",
+   "tags": [
+    "hotel",
+    "travel"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N2",
+   "title": "호텔 — 체크아웃",
+   "function": "체크아웃"
+  },
+  {
+   "id": "sh064",
+   "scene": "료칸",
+   "tags": [
+    "hotel",
+    "travel"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "료칸 — 예약",
+   "function": "예약"
+  },
+  {
+   "id": "sh065",
+   "scene": "료칸",
+   "tags": [
+    "hotel",
+    "travel"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "료칸 — 온천 매너",
+   "function": "온천 매너"
+  },
+  {
+   "id": "sh066",
+   "scene": "료칸",
+   "tags": [
+    "hotel",
+    "travel"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N2",
+   "title": "료칸 — 식사",
+   "function": "식사"
+  },
+  {
+   "id": "sh067",
+   "scene": "관광지",
+   "tags": [
+    "travel",
+    "nature"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N5",
+   "title": "관광지 — 길 찾기",
+   "function": "길 찾기"
+  },
+  {
+   "id": "sh068",
+   "scene": "관광지",
+   "tags": [
+    "travel",
+    "nature"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N4",
+   "title": "관광지 — 사진",
+   "function": "사진"
+  },
+  {
+   "id": "sh069",
+   "scene": "관광지",
+   "tags": [
+    "travel",
+    "nature"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N2",
+   "title": "관광지 — 역사",
+   "function": "역사"
+  },
+  {
+   "id": "sh070",
+   "scene": "축제",
+   "tags": [
+    "festival",
+    "food"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "축제 — 음식",
+   "function": "음식"
+  },
+  {
+   "id": "sh071",
+   "scene": "축제",
+   "tags": [
+    "festival",
+    "food"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "축제 — 유카타",
+   "function": "유카타"
+  },
+  {
+   "id": "sh072",
+   "scene": "축제",
+   "tags": [
+    "festival",
+    "food"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N3",
+   "title": "축제 — 사진",
+   "function": "사진"
+  },
+  {
+   "id": "sh073",
+   "scene": "학교",
+   "tags": [
+    "school",
+    "study"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "학교 — 수업",
+   "function": "수업"
+  },
+  {
+   "id": "sh074",
+   "scene": "학교",
+   "tags": [
+    "school",
+    "study"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "학교 — 과제",
+   "function": "과제"
+  },
+  {
+   "id": "sh075",
+   "scene": "학교",
+   "tags": [
+    "school",
+    "study"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N2",
+   "title": "학교 — 시험",
+   "function": "시험"
+  },
+  {
+   "id": "sh076",
+   "scene": "도서관",
+   "tags": [
+    "school",
+    "study"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "도서관 — 책 찾기",
+   "function": "책 찾기"
+  },
+  {
+   "id": "sh077",
+   "scene": "도서관",
+   "tags": [
+    "school",
+    "study"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "도서관 — 대출",
+   "function": "대출"
+  },
+  {
+   "id": "sh078",
+   "scene": "도서관",
+   "tags": [
+    "school",
+    "study"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N2",
+   "title": "도서관 — 공부",
+   "function": "공부"
+  },
+  {
+   "id": "sh079",
+   "scene": "동아리",
+   "tags": [
+    "school",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana",
+    "ken"
+   ],
+   "level": "N5",
+   "title": "동아리 — 합숙 준비",
+   "function": "합숙 준비"
+  },
+  {
+   "id": "sh080",
+   "scene": "동아리",
+   "tags": [
+    "school",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana",
+    "ken"
+   ],
+   "level": "N4",
+   "title": "동아리 — 역할 분담",
+   "function": "역할 분담"
+  },
+  {
+   "id": "sh081",
+   "scene": "동아리",
+   "tags": [
+    "school",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana",
+    "ken"
+   ],
+   "level": "N3",
+   "title": "동아리 — 회비",
+   "function": "회비"
+  },
+  {
+   "id": "sh082",
+   "scene": "아르바이트",
+   "tags": [
+    "work",
+    "konbini"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "아르바이트 — 첫날",
+   "function": "첫날"
+  },
+  {
+   "id": "sh083",
+   "scene": "아르바이트",
+   "tags": [
+    "work",
+    "konbini"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "아르바이트 — 인수인계",
+   "function": "인수인계"
+  },
+  {
+   "id": "sh084",
+   "scene": "아르바이트",
+   "tags": [
+    "work",
+    "konbini"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N3",
+   "title": "아르바이트 — 시프트",
+   "function": "시프트"
+  },
+  {
+   "id": "sh085",
+   "scene": "회사",
+   "tags": [
+    "work",
+    "business"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato",
+    "tanaka"
+   ],
+   "level": "N5",
+   "title": "회사 — 보고",
+   "function": "보고"
+  },
+  {
+   "id": "sh086",
+   "scene": "회사",
+   "tags": [
+    "work",
+    "business"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato",
+    "tanaka"
+   ],
+   "level": "N3",
+   "title": "회사 — 회의",
+   "function": "회의"
+  },
+  {
+   "id": "sh087",
+   "scene": "회사",
+   "tags": [
+    "work",
+    "business"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato",
+    "tanaka"
+   ],
+   "level": "N2",
+   "title": "회사 — 전화 응대",
+   "function": "전화 응대"
+  },
+  {
+   "id": "sh088",
+   "scene": "집",
+   "tags": [
+    "home"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "집 — 청소",
+   "function": "청소"
+  },
+  {
+   "id": "sh089",
+   "scene": "집",
+   "tags": [
+    "home"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "집 — 요리",
+   "function": "요리"
+  },
+  {
+   "id": "sh090",
+   "scene": "집",
+   "tags": [
+    "home"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N3",
+   "title": "집 — 수리",
+   "function": "수리"
+  },
+  {
+   "id": "sh091",
+   "scene": "이웃",
+   "tags": [
+    "home",
+    "friend"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "이웃 — 인사",
+   "function": "인사"
+  },
+  {
+   "id": "sh092",
+   "scene": "이웃",
+   "tags": [
+    "home",
+    "friend"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "이웃 — 소음",
+   "function": "소음"
+  },
+  {
+   "id": "sh093",
+   "scene": "이웃",
+   "tags": [
+    "home",
+    "friend"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N3",
+   "title": "이웃 — 택배",
+   "function": "택배"
+  },
+  {
+   "id": "sh094",
+   "scene": "택배",
+   "tags": [
+    "home",
+    "post"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "택배 — 재배달",
+   "function": "재배달"
+  },
+  {
+   "id": "sh095",
+   "scene": "택배",
+   "tags": [
+    "home",
+    "post"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "택배 — 부재",
+   "function": "부재"
+  },
+  {
+   "id": "sh096",
+   "scene": "택배",
+   "tags": [
+    "home",
+    "post"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N3",
+   "title": "택배 — 설치",
+   "function": "설치"
+  },
+  {
+   "id": "sh097",
+   "scene": "전화",
+   "tags": [
+    "phone",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N5",
+   "title": "전화 — 예약",
+   "function": "예약"
+  },
+  {
+   "id": "sh098",
+   "scene": "전화",
+   "tags": [
+    "phone",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N4",
+   "title": "전화 — 문의",
+   "function": "문의"
+  },
+  {
+   "id": "sh099",
+   "scene": "전화",
+   "tags": [
+    "phone",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N2",
+   "title": "전화 — 잘못 걸린 전화",
+   "function": "잘못 걸린 전화"
+  },
+  {
+   "id": "sh100",
+   "scene": "친구 약속",
+   "tags": [
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "친구 약속 — 약속",
+   "function": "약속"
+  },
+  {
+   "id": "sh101",
+   "scene": "친구 약속",
+   "tags": [
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "친구 약속 — 고민",
+   "function": "고민"
+  },
+  {
+   "id": "sh102",
+   "scene": "친구 약속",
+   "tags": [
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N3",
+   "title": "친구 약속 — 취미",
+   "function": "취미"
+  },
+  {
+   "id": "sh103",
+   "scene": "가족 저녁",
+   "tags": [
+    "family",
+    "home"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana",
+    "aki"
+   ],
+   "level": "N5",
+   "title": "가족 저녁 — 저녁",
+   "function": "저녁"
+  },
+  {
+   "id": "sh104",
+   "scene": "가족 저녁",
+   "tags": [
+    "family",
+    "home"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana",
+    "aki"
+   ],
+   "level": "N4",
+   "title": "가족 저녁 — 가족 소개",
+   "function": "가족 소개"
+  },
+  {
+   "id": "sh105",
+   "scene": "가족 저녁",
+   "tags": [
+    "family",
+    "home"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana",
+    "aki"
+   ],
+   "level": "N3",
+   "title": "가족 저녁 — 고향",
+   "function": "고향"
+  },
+  {
+   "id": "sh106",
+   "scene": "연애",
+   "tags": [
+    "love",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "연애 — 고백",
+   "function": "고백"
+  },
+  {
+   "id": "sh107",
+   "scene": "연애",
+   "tags": [
+    "love",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "연애 — 데이트",
+   "function": "데이트"
+  },
+  {
+   "id": "sh108",
+   "scene": "연애",
+   "tags": [
+    "love",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N2",
+   "title": "연애 — 이별",
+   "function": "이별"
+  },
+  {
+   "id": "sh109",
+   "scene": "시험 공부",
+   "tags": [
+    "study",
+    "school"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "ken"
+   ],
+   "level": "N5",
+   "title": "시험 공부 — 단어",
+   "function": "단어"
+  },
+  {
+   "id": "sh110",
+   "scene": "시험 공부",
+   "tags": [
+    "study",
+    "school"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "ken"
+   ],
+   "level": "N4",
+   "title": "시험 공부 — 발음",
+   "function": "발음"
+  },
+  {
+   "id": "sh111",
+   "scene": "시험 공부",
+   "tags": [
+    "study",
+    "school"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "ken"
+   ],
+   "level": "N2",
+   "title": "시험 공부 — 시험",
+   "function": "시험"
+  },
+  {
+   "id": "sh112",
+   "scene": "발음 연습",
+   "tags": [
+    "study"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N5",
+   "title": "발음 연습 — 장음",
+   "function": "장음"
+  },
+  {
+   "id": "sh113",
+   "scene": "발음 연습",
+   "tags": [
+    "study"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N4",
+   "title": "발음 연습 — 악센트",
+   "function": "악센트"
+  },
+  {
+   "id": "sh114",
+   "scene": "발음 연습",
+   "tags": [
+    "study"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N2",
+   "title": "발음 연습 — 연습",
+   "function": "연습"
+  },
+  {
+   "id": "sh115",
+   "scene": "언어 학습",
+   "tags": [
+    "study",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N5",
+   "title": "언어 학습 — 학습법",
+   "function": "학습법"
+  },
+  {
+   "id": "sh116",
+   "scene": "언어 학습",
+   "tags": [
+    "study",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N4",
+   "title": "언어 학습 — 실수",
+   "function": "실수"
+  },
+  {
+   "id": "sh117",
+   "scene": "언어 학습",
+   "tags": [
+    "study",
+    "friend"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N2",
+   "title": "언어 학습 — 동기",
+   "function": "동기"
+  },
+  {
+   "id": "sh118",
+   "scene": "뉴스",
+   "tags": [
+    "news",
+    "work"
+   ],
+   "register": "written",
+   "chars": [
+    "jihu",
+    "tanaka"
+   ],
+   "level": "N4",
+   "title": "뉴스 — 기사 읽기",
+   "function": "기사 읽기"
+  },
+  {
+   "id": "sh119",
+   "scene": "뉴스",
+   "tags": [
+    "news",
+    "work"
+   ],
+   "register": "written",
+   "chars": [
+    "jihu",
+    "tanaka"
+   ],
+   "level": "N3",
+   "title": "뉴스 — 통계",
+   "function": "통계"
+  },
+  {
+   "id": "sh120",
+   "scene": "뉴스",
+   "tags": [
+    "news",
+    "work"
+   ],
+   "register": "written",
+   "chars": [
+    "jihu",
+    "tanaka"
+   ],
+   "level": "N2",
+   "title": "뉴스 — 사회 문제",
+   "function": "사회 문제"
+  },
+  {
+   "id": "sh121",
+   "scene": "비즈니스 미팅",
+   "tags": [
+    "business",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato",
+    "tanaka"
+   ],
+   "level": "N3",
+   "title": "비즈니스 미팅 — 계약",
+   "function": "계약"
+  },
+  {
+   "id": "sh122",
+   "scene": "비즈니스 미팅",
+   "tags": [
+    "business",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato",
+    "tanaka"
+   ],
+   "level": "N2",
+   "title": "비즈니스 미팅 — 일정",
+   "function": "일정"
+  },
+  {
+   "id": "sh123",
+   "scene": "비즈니스 미팅",
+   "tags": [
+    "business",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato",
+    "tanaka"
+   ],
+   "level": "N1",
+   "title": "비즈니스 미팅 — 협상",
+   "function": "협상"
+  },
+  {
+   "id": "sh124",
+   "scene": "프레젠테이션",
+   "tags": [
+    "business",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "tanaka"
+   ],
+   "level": "N3",
+   "title": "프레젠테이션 — 발표",
+   "function": "발표"
+  },
+  {
+   "id": "sh125",
+   "scene": "프레젠테이션",
+   "tags": [
+    "business",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "tanaka"
+   ],
+   "level": "N2",
+   "title": "프레젠테이션 — 질의응답",
+   "function": "질의응답"
+  },
+  {
+   "id": "sh126",
+   "scene": "프레젠테이션",
+   "tags": [
+    "business",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "tanaka"
+   ],
+   "level": "N1",
+   "title": "프레젠테이션 — 피드백",
+   "function": "피드백"
+  },
+  {
+   "id": "sh127",
+   "scene": "협상",
+   "tags": [
+    "business",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N3",
+   "title": "협상 — 가격",
+   "function": "가격"
+  },
+  {
+   "id": "sh128",
+   "scene": "협상",
+   "tags": [
+    "business",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N2",
+   "title": "협상 — 조건",
+   "function": "조건"
+  },
+  {
+   "id": "sh129",
+   "scene": "협상",
+   "tags": [
+    "business",
+    "work"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N1",
+   "title": "협상 — 양보",
+   "function": "양보"
+  },
+  {
+   "id": "sh130",
+   "scene": "자연·등산",
+   "tags": [
+    "nature",
+    "travel"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N3",
+   "title": "자연·등산 — 준비",
+   "function": "준비"
+  },
+  {
+   "id": "sh131",
+   "scene": "자연·등산",
+   "tags": [
+    "nature",
+    "travel"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N2",
+   "title": "자연·등산 — 날씨",
+   "function": "날씨"
+  },
+  {
+   "id": "sh132",
+   "scene": "자연·등산",
+   "tags": [
+    "nature",
+    "travel"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N1",
+   "title": "자연·등산 — 경치",
+   "function": "경치"
+  },
+  {
+   "id": "sh133",
+   "scene": "바다·수영",
+   "tags": [
+    "nature",
+    "travel"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N3",
+   "title": "바다·수영 — 준비",
+   "function": "준비"
+  },
+  {
+   "id": "sh134",
+   "scene": "바다·수영",
+   "tags": [
+    "nature",
+    "travel"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N2",
+   "title": "바다·수영 — 안전",
+   "function": "안전"
+  },
+  {
+   "id": "sh135",
+   "scene": "바다·수영",
+   "tags": [
+    "nature",
+    "travel"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N1",
+   "title": "바다·수영 — 추억",
+   "function": "추억"
+  },
+  {
+   "id": "sh136",
+   "scene": "캠핑",
+   "tags": [
+    "nature",
+    "travel"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "ken"
+   ],
+   "level": "N3",
+   "title": "캠핑 — 장비",
+   "function": "장비"
+  },
+  {
+   "id": "sh137",
+   "scene": "캠핑",
+   "tags": [
+    "nature",
+    "travel"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "ken"
+   ],
+   "level": "N2",
+   "title": "캠핑 — 불",
+   "function": "불"
+  },
+  {
+   "id": "sh138",
+   "scene": "캠핑",
+   "tags": [
+    "nature",
+    "travel"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "ken"
+   ],
+   "level": "N1",
+   "title": "캠핑 — 요리",
+   "function": "요리"
+  },
+  {
+   "id": "sh139",
+   "scene": "시장",
+   "tags": [
+    "foodrare",
+    "food"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N3",
+   "title": "시장 — 생선",
+   "function": "생선"
+  },
+  {
+   "id": "sh140",
+   "scene": "시장",
+   "tags": [
+    "foodrare",
+    "food"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N2",
+   "title": "시장 — 채소",
+   "function": "채소"
+  },
+  {
+   "id": "sh141",
+   "scene": "시장",
+   "tags": [
+    "foodrare",
+    "food"
+   ],
+   "register": "casual",
+   "chars": [
+    "jihu",
+    "aki"
+   ],
+   "level": "N1",
+   "title": "시장 — 값",
+   "function": "값"
+  },
+  {
+   "id": "sh142",
+   "scene": "생선가게",
+   "tags": [
+    "foodrare",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N3",
+   "title": "생선가게 — 종류",
+   "function": "종류"
+  },
+  {
+   "id": "sh143",
+   "scene": "생선가게",
+   "tags": [
+    "foodrare",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N2",
+   "title": "생선가게 — 손질",
+   "function": "손질"
+  },
+  {
+   "id": "sh144",
+   "scene": "생선가게",
+   "tags": [
+    "foodrare",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "sato"
+   ],
+   "level": "N1",
+   "title": "생선가게 — 조리",
+   "function": "조리"
+  },
+  {
+   "id": "sh145",
+   "scene": "채소가게",
+   "tags": [
+    "foodrare",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N3",
+   "title": "채소가게 — 종류",
+   "function": "종류"
+  },
+  {
+   "id": "sh146",
+   "scene": "채소가게",
+   "tags": [
+    "foodrare",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N2",
+   "title": "채소가게 — 제철",
+   "function": "제철"
+  },
+  {
+   "id": "sh147",
+   "scene": "채소가게",
+   "tags": [
+    "foodrare",
+    "food"
+   ],
+   "register": "polite",
+   "chars": [
+    "jihu",
+    "hana"
+   ],
+   "level": "N1",
+   "title": "채소가게 — 조리",
+   "function": "조리"
+  },
+  {
+   "id": "sh148",
+   "scene": "N1 읽기",
+   "tags": [
+    "news",
+    "study"
+   ],
+   "register": "written",
+   "chars": [
+    "jihu"
+   ],
+   "level": "N2",
+   "title": "N1 읽기 — 사회",
+   "function": "사회"
+  },
+  {
+   "id": "sh149",
+   "scene": "N1 읽기",
+   "tags": [
+    "news",
+    "study"
+   ],
+   "register": "written",
+   "chars": [
+    "jihu"
+   ],
+   "level": "N1",
+   "title": "N1 읽기 — 언어",
+   "function": "언어"
+  },
+  {
+   "id": "sh150",
+   "scene": "N1 읽기",
+   "tags": [
+    "news",
+    "study"
+   ],
+   "register": "written",
+   "chars": [
+    "jihu"
+   ],
+   "level": "N1",
+   "title": "N1 읽기 — 문화",
+   "function": "문화"
+  }
+ ]
+}

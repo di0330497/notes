@@ -1010,13 +1010,13 @@ function renderCourse(){
   const blk=[];
   order.forEach((sc,i)=>{
     const ls=keep.filter(l=>l.scene===sc);
-    blk.push({t:"h",lv:0,html:secHd(String(i+1).padStart(2,"0"),sc,ls.length+"레슨")});
+    blk.push({t:"h",lv:0,html:secHd(String(i+1).padStart(2,"0"),sc,ls.length+"편")});
     ls.forEach(l=>blk.push({t:"c",k:l.id,html:lessonRowHTML(l)}));
   });
   PGFN.talk=()=>renderTalk();
   PGPER.talk=24;
   pgFlush("talk",pgSig("course",tkScene,tkLv,q,tkKind),blk,"#view-talk","talk");
-  setCount("코스 "+num(keep.length)+"레슨", "장면 "+order.length+"개");
+  setCount("쇼츠 "+num(keep.length)+"편", "장면 "+order.length+"개");
   bindTalk();
   applyKo();
 }
@@ -1030,9 +1030,9 @@ function openLesson(id){
 }
 function paintLesson(){
   const l=lessonCur; if(!l)return;
-  const d=DIALOGS.filter(x=>x.id===l.src)[0];
+  const d=DIALOGS.filter(x=>x.id===l.src)[0]||l;
   const idx=lessonNav.indexOf(l.id);
-  const box=$("#dlgReaderBox"); if(!box||!d)return;
+  const box=$("#dlgReaderBox"); if(!box||!d||!d.lines)return;
   const ts=(l.targets||[]);
   const rv=(l.review||[]);
   box.innerHTML='<div class="rdTop"><span class="lvdot n'+esc(String(l.level).replace('N',''))+'">'+esc(l.level)+'</span>'
@@ -1040,7 +1040,7 @@ function paintLesson(){
     +'<span class="rdTitle">'+fmt(l.goal)+'</span>'
     +'<button type="button" class="rdClose" id="rdClose" aria-label="닫기">×</button></div>'
     +'<div class="rdMeta">'+esc(l.scene||"")+' · '+esc(d.place||"")+' · '+(l.to-l.from)+'줄</div>'
-    +'<div class="dlgTargets"><span class="uLabel">이 레슨에서 배우는 것 '+ts.length+'</span><div class="tgChips">'
+    +'<div class="dlgTargets"><span class="uLabel">이 쇼츠에서 배우는 것 '+ts.length+'</span><div class="tgChips">'
     +ts.map(t=>'<span class="tgChip" title="'+esc(t.note||"")+'"><b>'+esc(t.kind)+'</b> '+fmt(t.key)+'</span>').join("")
     +'</div></div>'
     +'<div class="dlgLines">'+d.lines.slice(l.from,l.to).map((x,j)=>lineHTML(d,x,l.from+j)).join("")+'</div>'
@@ -1049,9 +1049,9 @@ function paintLesson(){
         +(r.note?'<span>'+fmt(r.note)+'</span>':'')
         +(r.example?'<span class="reviewEx">'+fmt(r.example)+'</span><span class="reviewKo">'+esc(r.ko||"")+'</span>':'')
         +'</div>').join("")+'</div>':'')
-    +'<div class="rdFoot"><div class="rdNav"><button type="button" class="chip" id="rdPrev"'+(idx<=0?' disabled':'')+'>‹ 이전 레슨</button>'
+    +'<div class="rdFoot"><div class="rdNav"><button type="button" class="chip" id="rdPrev"'+(idx<=0?' disabled':'')+'>‹ 이전 쇼츠</button>'
     +'<span class="rdPos">'+(idx>=0?idx+1:"-")+' / '+lessonNav.length+'</span>'
-    +'<button type="button" class="chip on" id="rdNext"'+(idx<0||idx>=lessonNav.length-1?' disabled':'')+'>다음 레슨 ›</button></div></div>';
+    +'<button type="button" class="chip on" id="rdNext"'+(idx<0||idx>=lessonNav.length-1?' disabled':'')+'>다음 쇼츠 ›</button></div></div>';
   box.scrollTop=0;
   const cl=$("#rdClose"); if(cl)cl.onclick=closeDlg;
   const pv=$("#rdPrev"); if(pv)pv.onclick=()=>{if(idx>0)openLesson(lessonNav[idx-1]);};
@@ -1378,7 +1378,7 @@ function talkKindChips(){
   const daily=DIALOGS.filter(d=>{const t=tr(d.id);return t!=="work"&&t!=="coverage"&&t!=="n1";}).length;
   const n1=DIALOGS.filter(d=>tr(d.id)==="n1").length;
   const extra=DIALOGS.filter(d=>{const t=tr(d.id);return t==="work"||t==="coverage";}).length;
-  el.innerHTML='<button class="chip on" data-k="daily">일상 코스 '+num(daily)+'</button>'
+  el.innerHTML='<button class="chip on" data-k="daily">일상 대화 '+num(daily)+'</button>'
     +'<button class="chip" data-k="n1">N1 고급 '+num(n1)+'</button>'
     +'<button class="chip" data-k="extra">직장·문법 참고 '+num(extra)+'</button>'
     +'<button class="chip" data-k="all">전체 '+num(DIALOGS.length)+'</button>';
