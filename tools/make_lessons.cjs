@@ -90,13 +90,49 @@ for (const [k, idxs] of occur) {
   let next = intro + 7;
   while (idxs.length < 3 && next < lessons.length) {
     const l = lessons[next];
-    if (l.review.length < 4 && !l.targets.some(t => t.kind === kind && t.key === key)) {
+    if (l.review.length < 6 && !l.targets.some(t => t.kind === kind && t.key === key)
+        && !l.review.some(r => r.kind === kind && r.key === key)) {
       const src = D.find(x => x.id === l.src);
       const line = src.lines.find(x => String(x.s).includes(key.split(' — ')[0].replace(/～/g, '')));
       l.review.push({ kind, key, from: lessons[intro].id, example: line ? line.s : '', ko: line ? line.ko : '', note: noteFor(kind, key) });
       idxs.push(next);
     }
     next += 7;
+  }
+}
+/* 문장에 다시 등장하지 않는 코어도 복습 카드로 3회 노출 */
+for (const x of core) {
+  const k = x.kind + ' · ' + x.key;
+  const idxs = occur.get(k) || [];
+  if (idxs.length >= 3) continue;
+  let n = idxs.length;
+  let at = (idxs[0] || 0) + 3;
+  while (n < 3 && at < lessons.length) {
+    const l = lessons[at];
+    if (l.review.length < 6 && !l.targets.some(t => t.kind === x.kind && t.key === x.key)
+        && !l.review.some(r => r.kind === x.kind && r.key === x.key)) {
+      l.review.push({ kind: x.kind, key: x.key, from: idxs[0] != null ? lessons[idxs[0]].id : '', example: '', ko: '', note: noteFor(x.kind, x.key) });
+      idxs.push(at); occur.set(k, idxs); n++;
+    }
+    at += 5;
+  }
+}
+/* 마지막 보정 — 남은 코어를 복습 카드로 채워 3회 노출 */
+const expCount = new Map();
+for (const l of lessons) {
+  for (const t of l.targets) { const k = t.kind + ' · ' + t.key; expCount.set(k, (expCount.get(k) || 0) + 1); }
+  for (const r of l.review) { const k = r.kind + ' · ' + r.key; expCount.set(k, (expCount.get(k) || 0) + 1); }
+}
+for (const x of core) {
+  const k = x.kind + ' · ' + x.key;
+  let n = expCount.get(k) || 0;
+  for (let i = 0; i < lessons.length && n < 3; i++) {
+    const l = lessons[i];
+    if (l.review.length >= 8) continue;
+    if (l.targets.some(t => t.kind === x.kind && t.key === x.key)) continue;
+    if (l.review.some(r => r.kind === x.kind && r.key === x.key)) continue;
+    l.review.push({ kind: x.kind, key: x.key, from: '', example: '', ko: '', note: noteFor(x.kind, x.key) });
+    n++; expCount.set(k, n);
   }
 }
 const js = `/* lessons.js — 484레슨 코스. build/reconstruction/lesson-plan.json 기반. */
