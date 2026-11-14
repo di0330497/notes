@@ -35,10 +35,11 @@ vm.runInContext(
     'pos-josa.js', 'pos-verb.js', 'pos-noun.js', 'pos-fukushi.js', 'pos-other.js', 'pos-words.js', 'pos-keiyou-2.js',
     'colloquial.js', 'colloquial-2.js', 'dialect.js', 'slang.js', 'slang-2026.js']
     .map(f => fs.readFileSync(path.join(DATA, f), 'utf8')).join('\n')
-  + ';globalThis.X={STUDY_FULL,ALL,GRAMMAR,PATS,EXPR,CONJ,SPOKEN,POS_WORDS};',
+  + ';globalThis.X={STUDY_FULL,ALL,FOOD,GRAMMAR,PATS,EXPR,CONJ,SPOKEN,POS_WORDS};',
   xctx);
-const { STUDY_FULL, ALL, GRAMMAR, PATS, EXPR, CONJ, SPOKEN, POS_WORDS } = xctx.X;
+const { STUDY_FULL, ALL, FOOD, GRAMMAR, PATS, EXPR, CONJ, SPOKEN, POS_WORDS } = xctx.X;
 const KANJI = new Map(STUDY_FULL.map(x => [x.k, x]));
+FOOD.forEach(f => { if (!KANJI.has(f[0])) KANJI.set(f[0], { k: f[0], hun: f[5], on: f[1], kun: f[2] }); });
 
 /* ── 표기 정리 ── */
 const strip = s => String(s || '')
