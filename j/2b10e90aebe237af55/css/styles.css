@@ -815,6 +815,8 @@ body.clozeOn .sent em.g:hover rt,body.clozeOn .sent em.g.peek rt{visibility:visi
 
 /* ── 포인트 · 태그 (.uTip / .uFoot 규격과 통일) ── */
 /* 커버리지 대시보드 */
+.nav-group{margin:12px 14px 4px;font-family:var(--mono);font-size:9.5px;font-weight:700;
+  letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
 .covBox{margin:0 0 16px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2)}
 .covBox summary{cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.03em}
 .covBox[open] summary{margin-bottom:8px}
