@@ -933,12 +933,10 @@ function talkMatch(d){
 function lineHTML(d,l,i){
   const c=CHARBY[l.who]||{name:l.who,color:"#667085"};
   const itemBadge=l.item?'<span class="lineItemTag">'+fmt(l.item)+'</span>':'';
-  const tg=(d.targets||[]).filter(t=>t.line===i)[0];
   return '<div class="line" id="dlg-'+esc(d.id)+'-'+i+'" data-l="'+i+'" data-who="'+esc(l.who)+'">'
     +'<span class="av" style="background:'+c.color+'">'+esc(initial(c.name))+'</span>'
     +'<span class="lb"><span class="whoName" style="color:'+c.color+'">'+esc(c.name)+'</span>'+itemBadge
     +'<span class="jp">'+fmt(l.s)+'</span>'
-    +(tg?'<span class="tgNote">'+fmt(tg.note)+'</span>':"")
     +(l.ko?'<span class="ko">'+esc(l.ko)+'</span>':"")+'</span>'
     +'</div>';
 }
