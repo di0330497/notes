@@ -5,8 +5,8 @@
 ## 플래그 종류
 
 - SAME_SPEAKER: 239
-- STAFF_PHRASE: 26
-- SHORT_TARGET: 10
+- STAFF_PHRASE: 25
+- SHORT_TARGET: 11
 - MIXED_REGISTER: 6
 - MULTI_TARGET: 4
 - KO_HAS_JP: 3
@@ -118,7 +118,7 @@
 
 ### sh128 | N2 | scene | 협상 — 조건
 
-- STAFF_PHRASE jihu line 9: 店員さんが「{レシートはご入用ですか}」とおっしゃっていますよ。
+- SHORT_TARGET line 9: レシートは{ご入用ですか}。
 
 ### sh131 | N2 | scene | 자연·등산 — 날씨
 
