@@ -1667,8 +1667,8 @@
   },
   {
    "id": "g044",
-   "scene": "시청",
-   "title": "시청 — 서류 발급 문법",
+   "scene": "오사카 시청",
+   "title": "오사카 시청 — 서류 발급 문법",
    "level": "N4",
    "register": "polite",
    "chars": [
@@ -1781,8 +1781,8 @@
   },
   {
    "id": "g047",
-   "scene": "은행",
-   "title": "은행 — 송금 문법",
+   "scene": "오사카 은행",
+   "title": "오사카 은행 — 송금 문법",
    "level": "N4",
    "register": "polite",
    "chars": [
@@ -1895,10 +1895,10 @@
   },
   {
    "id": "g050",
-   "scene": "우체국",
-   "title": "우체국 — 주소 문제 문법",
+   "scene": "친구",
+   "title": "친구 — 택배 이야기 문법",
    "level": "N4",
-   "register": "polite",
+   "register": "casual",
    "chars": [
     "jihu",
     "sato"
@@ -1913,21 +1913,24 @@
      "key": "[冷笑|れいしょう][系|けい]（[斜|ななめ]に[構|かま]えた[態度|たいど]）",
      "level": "N4",
      "note": "진지한 주장이나 열의를 [斜|ななめ]に[構|かま]えて 냉소적으로 보는 태도·사람을 가리킨다.",
-     "family": "misc"
+     "family": "misc",
+     "line": 0
     },
     {
      "kind": "구어체",
      "key": "きちゃー（[来|き]た！）",
      "level": "N4",
      "note": "기다리던 전개나 반가운 소식이 왔을 때의 환호다.",
-     "family": "misc"
+     "family": "misc",
+     "line": 4
     },
     {
      "kind": "구어체",
      "key": "うま[確|かく]（うますぎ[確定|かくてい]）",
      "level": "N4",
      "note": "「うますぎ[確定|かくてい]」를 줄인 말로, 보기만 해도 맛있을 게 확실한 음식·메뉴에 쓴다.",
-     "family": "misc"
+     "family": "misc",
+     "line": 3
     }
    ]
   },
@@ -2706,10 +2709,10 @@
   },
   {
    "id": "g071",
-   "scene": "축제",
-   "title": "축제 — 유카타 문법",
+   "scene": "유카타 대여점",
+   "title": "유카타 대여점 — 대여 문법",
    "level": "N4",
-   "register": "casual",
+   "register": "polite",
    "chars": [
     "jihu",
     "hana"
@@ -2725,21 +2728,24 @@
      "key": "お～ください",
      "level": "N4",
      "note": "~해 주십시오. 예: 저쪽 소파에서 잠시 기다려 주십시오.",
-     "family": "honorific"
+     "family": "honorific",
+     "line": 1
     },
     {
      "kind": "문형",
      "key": "お～する／お～いたす",
      "level": "N4",
      "note": "~하다 (겸양). 예: 내일 오후에 저희 쪽에서 전화드리겠습니다.",
-     "family": "honorific"
+     "family": "honorific",
+     "line": 2
     },
     {
      "kind": "문형",
      "key": "～おわる",
      "level": "N4",
      "note": "다 ~하다. 예: 이 책 다 읽으면 빌려줄게.",
-     "family": "honorific"
+     "family": "honorific",
+     "line": 3
     }
    ]
   },
