@@ -84,8 +84,9 @@ for (const [key, v] of byTheme) {
 const shorts = chunks.map((c, idx) => {
   const id = 'k' + String(idx + 1).padStart(3, '0');
   const words = c.items.map(a => ({ a, ...wordFor(a) }));
-  const on = c.items.map(a => firstReading(a[1])).filter(Boolean);
-  const kun = c.items.map(a => firstReading(a[2])).filter(Boolean);
+  const clean = x => x && x !== '—' && x !== '-' && x !== '－';
+  const on = c.items.map(a => firstReading(a[1])).filter(clean);
+  const kun = c.items.map(a => firstReading(a[2])).filter(clean);
   const w1 = words.slice(0, 3).map(w => `[${w.word}|${w.reading}]`).join('、');
   const w2 = words.slice(3).map(w => `[${w.word}|${w.reading}]`).join('、');
   const onLine = on.length ? `音読みは「${on.join('」「')}」。` : '';
