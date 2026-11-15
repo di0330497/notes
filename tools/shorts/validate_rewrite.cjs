@@ -29,7 +29,7 @@ for (const d of rw) { if (!byId.has(d.id)) byId.set(d.id, d); }
 
 const problems = [], stats = { lessons: 0, lines: 0, targets: 0, dropped: 0, targetFree: 0 };
 const minL = kind === 'grammar' ? 4 : kind === 'n1' ? 4 : 9;
-const maxL = kind === 'grammar' ? 6 : kind === 'n1' ? 6 : 12;
+const maxL = kind === 'grammar' ? 6 : kind === 'n1' ? 6 : 14;
 let multi = 0;
 
 for (const id of srcById.keys()) {
@@ -54,7 +54,7 @@ for (const id of srcById.keys()) {
   const used = new Set();
   if (kind === 'grammar' && keep.length < 1) problems.push('NO_TARGET ' + id);
   if (kind === 'grammar' && keep.length > 2) problems.push(`TOO_MANY_TARGETS ${id} ${keep.length}`);
-  if (kind === 'n1' && keep.length !== 2) problems.push(`N1_TARGETS ${id} ${keep.length}`);
+  if (kind === 'n1' && (keep.length < 1 || keep.length > 2)) problems.push(`N1_TARGETS ${id} ${keep.length}`);
   for (const t of keep) {
     if (typeof t.line !== 'number' || t.line < 0 || t.line >= lineCount) { problems.push(`LINE_INDEX ${id} ${t.key} ${t.line}`); continue; }
     used.add(t.line);

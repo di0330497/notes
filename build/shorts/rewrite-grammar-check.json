@@ -2,9 +2,9 @@
  "stats": {
   "lessons": 150,
   "lines": 855,
-  "targets": 300,
+  "targets": 288,
   "dropped": 0,
-  "targetFree": 555
+  "targetFree": 567
  },
  "problems": []
 }
