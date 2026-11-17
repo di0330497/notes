@@ -1,0 +1,10 @@
+const { execSync } = require('child_process');
+const fs = require('fs');
+const ROOT = 'C:/Users/user/Downloads/japanese-pages';
+const path = ROOT + '/j/2b10e90aebe237af55/index.html';
+const good = execSync('git show 2781e78:j/2b10e90aebe237af55/index.html', { cwd: ROOT, encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 });
+const fixed = good.replace(/data\/lessons\.js\?v=[^"']+/, 'data/lessons.js?v=20261116-tracks1');
+fs.writeFileSync(path, fixed, 'utf8');
+console.log('restored', fixed.length, 'FFFD', (fixed.match(/\uFFFD/g) || []).length);
+console.log((fixed.match(/<title>[\s\S]*?<\/title>/) || [''])[0]);
+console.log((fixed.match(/data\/lessons\.js\?v=[^"']+/) || [''])[0]);
