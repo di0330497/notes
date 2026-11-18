@@ -1088,7 +1088,7 @@ function renderTalk(){
   const view=$("#view-talk");
   if(!view)return;
   if(!hasTALK){view.innerHTML=emptyNote("talk");setCount("대화 — 데이터 없음");return;}
-  if(tkCourse&&tkKind==="daily"&&typeof LESSONS!=="undefined"&&LESSONS.length){renderCourse();return;}
+  if(tkCourse&&typeof LESSONS!=="undefined"&&LESSONS.length){renderCourse();return;}
   setTalkModeUI(false);
   setTalkCount(typeof DIALOGS!=="undefined"?DIALOGS.length:0);
   const q=($("#qTalk")?$("#qTalk").value:"").trim().toLowerCase();
@@ -1351,8 +1351,7 @@ function talkDeft(){
   const c={scene:0,grammar:0,kanji:0,n1:0};
   LESSONS.forEach(l=>{c[l.track]=(c[l.track]||0)+1;});
   el.innerHTML='장면 <b>'+num(c.scene)+'</b> · 문법 <b>'+num(c.grammar)+'</b> · 한자 <b>'+num(c.kanji)+'</b> · N1 <b>'+num(c.n1)+'</b>'
-    +' — 총 <b>'+num(LESSONS.length)+'편</b>. 목표는 모두 그 쇼츠 본문에 실제로 나오는 항목만 셉니다.'
-    +' <b>대화</b>로 바꾸면 옛 대화 '+num((typeof DIALOGS!=="undefined")?DIALOGS.length:0)+'편 아카이브를 볼 수 있습니다.';
+    +' — 총 <b>'+num(LESSONS.length)+'편</b>. 목표는 모두 그 쇼츠 본문에 실제로 나오는 항목만 셉니다.';
 }
 /* 대화 보기 칩 — 연습 뱅크가 비면 서사 칩 하나만 남긴다 */
 function talkKindChips(){
@@ -1700,11 +1699,9 @@ function gsRender(){
   panel.innerHTML=h;panel.hidden=false;
 }
 /* 탭별 검색창·렌더러 대응. "외 N개" 와 검색어 넘기기에 쓴다 */
-const GS_TAB={talk:["#qTalk",()=>{tkScene="all";tkWho="all";tkLv="all";tkKind="all";tkSrc="all";
-    tkCourse=false;const gmd=$('#talkMode .chip[data-md="dialog"]');if(gmd)setChips("#talkMode",gmd);
+const GS_TAB={talk:["#qTalk",()=>{tkCourse=true;tkScene="all";tkWho="all";tkLv="all";tkKind="daily";tkSrc="all";
     if($("#talkScene")&&$("#talkScene").tagName==="SELECT")$("#talkScene").value="all";else chipAll("#talkScene","sc");
-    if($("#talkWho")&&$("#talkWho").tagName==="SELECT")$("#talkWho").value="all";else chipAll("#talkWho","w");
-    chipAll("#talkKind","k");chipAll("#talkLv","l");chipAll("#talkSrc","s");renderTalk();}],
+    chipAll("#talkLv","l");renderTalk();}],
   study:["#qStudy",()=>{fLv="all";chipAll("#lvChips","l");fJoyo="all";chipAll("#joyoChips","j");renderStudy();}],
   pat:["#qPat",()=>{pLv="all";chipAll("#patLv","l");$("#patCat").value="all";renderPat();}],
   gram:["#qGram",()=>{gCh="all";gLv="all";chipAll("#gramCh","c");chipAll("#gramLv","l");renderGrammar();}],
