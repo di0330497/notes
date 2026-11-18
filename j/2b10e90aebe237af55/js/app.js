@@ -2024,7 +2024,7 @@ $$(".pgRank").forEach(el=>el.setAttribute("max",String(ALL.length)));
   $$(".pgRank").forEach(function(el){el.setAttribute("aria-label","순위로 이동 (숫자 입력)");});
   var cnt=$("#cnt"); if(cnt){cnt.setAttribute("role","status");cnt.setAttribute("aria-live","polite");}
   var ft=$("#fltToggle"); if(ft){ft.setAttribute("aria-controls","tbStudy");ft.setAttribute("aria-expanded","false");}
-  $$('[data-furi]').forEach(function(fb){fb.setAttribute("aria-pressed","true");});
+  $$('[data-furi]').forEach(function(fb){fb.setAttribute("aria-pressed",String(!document.body.classList.contains("noFuri")));});
 })();
 
 renderStudy();
