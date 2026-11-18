@@ -791,6 +791,7 @@ html.narrow #toTop{bottom:80px;right:16px}
 .line .jp .tg{color:var(--blue);font-weight:600}
 .line .ko{display:block;font-size:13.5px;line-height:1.7;color:var(--muted);margin-top:5px}
 body.noKo .line .ko{display:none}
+.rdToggles{display:flex;gap:8px;margin:2px 0 10px;flex-wrap:wrap}
 .line.hlLine{background:color-mix(in srgb,var(--primary) 8%,transparent);
   border-radius:8px;padding-left:8px;padding-right:8px;margin-left:-8px;margin-right:-8px}
 

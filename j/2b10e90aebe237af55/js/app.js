@@ -1045,6 +1045,15 @@ function openLesson(id){
   document.body.classList.add("readerOn");
   paintLesson();
 }
+/* 본문 위 후리가나·한국어 토글 — 읽기 화면 안에서 바로 켜고 끈다 */
+function viewTogglesHTML(){
+  const fo=document.body.classList.contains("noFuri");
+  const ko=document.body.classList.contains("noKo");
+  return '<div class="rdToggles">'
+    +'<button type="button" class="furi'+(fo?' off':'')+'" data-furi aria-pressed="'+String(!fo)+'">ふりがな '+(fo?'OFF':'ON')+'</button>'
+    +'<button type="button" class="furi'+(ko?' off':'')+'" data-ko aria-pressed="'+String(!ko)+'">한국어 '+(ko?'OFF':'ON')+'</button>'
+    +'</div>';
+}
 function paintLesson(){
   const l=lessonCur; if(!l)return;
   const d=DIALOGS.filter(x=>x.id===l.src)[0]||l;
@@ -1057,6 +1066,7 @@ function paintLesson(){
     +'<span class="rdTitle">'+fmt(l.goal)+'</span>'
     +'<button type="button" class="rdClose" id="rdClose" aria-label="닫기">×</button></div>'
     +'<div class="rdMeta">'+esc(l.scene||"")+' · '+esc(d.place||"")+' · '+(l.to-l.from)+'줄</div>'
+    +viewTogglesHTML()
     +'<div class="dlgTargets"><span class="uLabel">이 쇼츠에서 배우는 것 '+ts.length+'</span><div class="tgChips">'
     +ts.map(t=>'<span class="tgChip" title="'+esc(t.note||"")+'"><b>'+esc(t.kind)+'</b> '+fmt(t.key)+'</span>').join("")
     +'</div></div>'
@@ -1156,6 +1166,7 @@ function paintDlg(){
     +'<button type="button" class="rdClose" id="rdClose" aria-label="닫기">×</button></div>'
     +'<div class="rdMeta">'+esc(d.scene||"")+' · '+esc(d.place||"")+' · '+(d.lines||[]).length+'줄'
     +(parts>1?' · '+parts+'부 중 '+(dlgPart+1)+'부':'')+'</div>'
+    +viewTogglesHTML()
     +targetsHTML(d)
     +'<div class="dlgLines">'+(d.lines||[]).slice(from,to).map((l,j)=>lineHTML(d,l,from+j)).join("")+'</div>'
     +pointsHTML(d.points)
@@ -1178,12 +1189,17 @@ document.addEventListener("click",e=>{if(e.target&&e.target.id==="dlgReader")clo
 /* ── 한국어 숨김/보임 · 빈칸 암기 모드 ── */
 function applyKo(){
   document.body.classList.toggle("noKo",!tkKo);
-  const b=$("#talkKo");
-  if(b){
+  $$('[data-ko],#talkKo').forEach(b=>{
     b.classList.toggle("off",!tkKo);
     b.textContent=tkKo?"한국어 ON":"한국어 OFF";
     b.setAttribute("aria-pressed",String(tkKo));
-  }
+  });
+}
+function saveView(){
+  try{
+    localStorage.setItem("jp_noFuri",document.body.classList.contains("noFuri")?"1":"0");
+    localStorage.setItem("jp_noKo",tkKo?"0":"1");
+  }catch(e){}
 }
 function applyCloze(){
   document.body.classList.toggle("clozeOn",tkCloze);
@@ -1400,8 +1416,7 @@ if($("#talkWho")){
 }
 if($("#talkLv"))$("#talkLv").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
   tkLv=c.dataset.l;setChips("#talkLv",c);renderTalk();});
-if($("#talkKo"))$("#talkKo").onclick=()=>{tkKo=!tkKo;applyKo();
-  toast(tkKo?"한국어 번역을 켰어요":"한국어 번역을 껐어요 — 일본어만");};
+if($("#talkKo"))$("#talkKo").setAttribute("aria-label","한국어 뜻 켜기/끄기");
 if($("#talkCloze"))$("#talkCloze").onclick=()=>{tkCloze=!tkCloze;applyCloze();
   toast(tkCloze?"빈칸 암기 모드 ON — 밑줄 표현에 마우스를 올리거나 눌러 확인하세요":"빈칸 암기 모드 OFF");};
 /* ══════════ 구어체 ══════════ */
@@ -1910,8 +1925,37 @@ function toggleFurigana(){
     btn.classList.toggle("off",off);
     btn.setAttribute("aria-pressed",String(!off));
   });
+  saveView();
 }
-$$('[data-furi]').forEach(btn=>btn.onclick=toggleFurigana);
+/* 한국어 뜻 토글 */
+function toggleKo(){
+  tkKo=!tkKo;
+  applyKo();
+  saveView();
+  if(typeof toast==="function")toast(tkKo?"한국어 뜻을 켰어요":"한국어 뜻을 껐어요 — 일본어만");
+}
+/* 읽기 화면은 다시 그려지므로 버튼마다 붙이지 않고 문서에서 한 번만 받는다 */
+document.addEventListener("click",e=>{
+  const t=e.target;
+  if(!t||!t.closest)return;
+  if(t.closest("[data-furi]")){toggleFurigana();return;}
+  if(t.closest("[data-ko]")){toggleKo();}
+});
+/* 저장한 선택 복원 */
+(function(){
+  try{
+    if(localStorage.getItem("jp_noFuri")==="1")document.body.classList.add("noFuri");
+    tkKo=localStorage.getItem("jp_noKo")!=="1";
+    document.body.classList.toggle("noKo",!tkKo);
+  }catch(e){}
+  const off=document.body.classList.contains("noFuri");
+  $$('[data-furi]').forEach(btn=>{
+    btn.textContent="ふりがな "+(off?"OFF":"ON");
+    btn.classList.toggle("off",off);
+    btn.setAttribute("aria-pressed",String(!off));
+  });
+  applyKo();
+})();
 
 /* 문형 의미 분류 셀렉트 */
 (function(){const seen=new Set();PATS.forEach(p=>{if(seen.has(p.cat))return;seen.add(p.cat);
